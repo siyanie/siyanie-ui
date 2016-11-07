@@ -1,0 +1,75 @@
+{
+  "name": "starter",
+  "version": "1.0.0",
+  "description": "Architecture for frontend project",
+  "scripts": {
+    "postinstall": "npm run modernizr",
+    "styles": "node tasks/npm/styles",
+    "templates": "node tasks/npm/templates",
+    "scripts": "webpack",
+    "images": "node tasks/npm/images",
+    "watch": "node tasks/watch",
+    "build": "npm run images && npm run modernizr && npm run styles && npm run templates && npm run scripts && npm run scripts",
+    "modernizr": "modernizr -c .modernizr.json -d build/",
+    "test": "ava test/*.js",
+    "test:scripts": "eslint '{modules,src,tasks,test}/**/*.js'",
+    "test:styles": "stylelint '{modules,src}/**/*.scss'",
+    "test:html": "htmlhint '{modules,src,build}/**/*.html'",
+    "posttest": "npm run test:scripts && npm run test:html && npm run test:styles",
+    "deploy": "surge ./build snappykit.project.alanev.ru",
+    "undeploy": "surge teardown snappykit.project.alanev.ru",
+    "prefinish": "zip -r ./build/snappykit.zip build",
+    "finish": "npm run deploy",
+    "postfinish": "rm -rf build/snappykit.zip"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanev/starter.git"
+  },
+  "keywords": [
+    "start",
+    "architecture",
+    "boilerplate",
+    "kickstart"
+  ],
+  "author": "alanev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alanev/starter/issues"
+  },
+  "homepage": "https://github.com/alanev/starter#readme",
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "browser-sync": "^2.17.5",
+    "chokidar": "^1.6.1",
+    "del": "^2.2.2",
+    "eslint": "^3.9.1",
+    "glob": "^7.1.1",
+    "htmlhint": "^0.9.13",
+    "imagemin": "^5.2.2",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-pngquant": "^5.0.0",
+    "imagemin-webp": "^4.0.0",
+    "mkdirp": "^0.5.1",
+    "modernizr": "^3.3.1",
+    "postcss": "^5.2.5",
+    "postcss-pack-alanev": "^1.1.0",
+    "postcss-scss": "^0.3.1",
+    "postxml": "^0.2.9",
+    "postxml-pack-alanev": "^1.1.1",
+    "siyanie-graphics": "github:siyanie/siyanie-graphics",
+    "stylelint": "^7.5.0",
+    "stylelint-config-standard": "^14.0.0",
+    "surge": "^0.18.0",
+    "webpack": "^1.13.3"
+  },
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "os": [
+    "linux"
+  ]
+}
