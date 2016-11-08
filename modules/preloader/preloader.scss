@@ -7,7 +7,9 @@
 
 	display: flex;
 
-	visibility: hidden;
+	animation: fadeOut 5s;
+	/*transition: 5s;*/
+	opacity: 0;
 
 	// elements
 	&__{
@@ -17,5 +19,14 @@
 		&logo{
 			max-size: 6.25rem;
 		}
+	}
+}
+
+@keyframes fadeOut{
+	form{
+		opacity: 1;
+	}
+	to{
+		opacity: 0;
 	}
 }
