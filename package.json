@@ -1,7 +1,7 @@
 {
   "name": "starter",
   "version": "1.0.0",
-  "description": "Architecture for frontend project",
+  "description": "UI for siyanie website",
   "scripts": {
     "postinstall": "npm run modernizr",
     "styles": "node tasks/npm/styles",
@@ -16,11 +16,7 @@
     "test:styles": "stylelint '{modules,src}/**/*.scss'",
     "test:html": "htmlhint '{modules,src,build}/**/*.html'",
     "posttest": "npm run test:scripts && npm run test:html && npm run test:styles",
-    "deploy": "surge ./build snappykit.project.alanev.ru",
-    "undeploy": "surge teardown snappykit.project.alanev.ru",
-    "prefinish": "zip -r ./build/snappykit.zip build",
-    "finish": "npm run deploy",
-    "postfinish": "rm -rf build/snappykit.zip"
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -47,6 +43,7 @@
     "chokidar": "^1.6.1",
     "del": "^2.2.2",
     "eslint": "^3.9.1",
+    "gh-pages": "^0.11.0",
     "glob": "^7.1.1",
     "htmlhint": "^0.9.13",
     "imagemin": "^5.2.2",
