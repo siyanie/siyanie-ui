@@ -10,8 +10,7 @@ const tasks = [
 			'index.html',
 			'styles.css',
 			'defer.js',
-			'assets/images/a.png',
-			'assets/images/a.webp'
+			'modernizr.js'
 		]
 	}
 ]

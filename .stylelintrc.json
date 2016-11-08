@@ -4,6 +4,9 @@
   {
   	"indentation": "tab",
     "number-leading-zero": "never",
+    "property-no-unknown": [true, {
+      "ignoreProperties": ["max-size"]
+    }],
     "declaration-empty-line-before": null,
     "declaration-block-semicolon-space-before": null,
   	"block-opening-brace-space-before": "never",
