@@ -1,0 +1,31 @@
+.social{
+
+	display: flex;
+
+	// elements
+	&__{
+		&link{
+			@extend .link;
+
+			box-sizing: ;
+			size: 2.125rem;
+			padding: .5rem;
+
+			background: currentColor;
+			fill: $c-primary;
+
+			// pseudoselectors
+			&:not(:last-child){
+				margin-right: 1rem;
+			}
+
+			// pseudoclasses
+			&:hover{
+				background: $c-secondary;
+			}
+		}
+		&icon{
+			max-size: 100%;
+		}
+	}
+}

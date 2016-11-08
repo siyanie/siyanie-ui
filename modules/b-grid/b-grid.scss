@@ -1,0 +1,15 @@
+.b-grid{
+
+	display: flex;
+
+	// mods
+	&--{
+		&row{
+			justify-content: space-between;
+		}
+		&centred{
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}

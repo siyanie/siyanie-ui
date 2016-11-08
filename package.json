@@ -59,7 +59,7 @@
     "postcss-pack-alanev": "^1.1.0",
     "postcss-scss": "^0.3.1",
     "postxml": "^0.2.9",
-    "postxml-pack-alanev": "^1.1.1",
+    "postxml-pack-alanev": "^1.2.0",
     "siyanie-graphics": "github:siyanie/siyanie-graphics",
     "stylelint": "^7.5.0",
     "stylelint-config-standard": "^14.0.0",

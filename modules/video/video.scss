@@ -1,0 +1,59 @@
+.video{
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+
+	// elements
+	&__{
+		&source{
+			position: absolute 50% * * 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: auto;
+		}
+		&preview{
+			flex: 1;
+
+			position: relative;
+			z-index: $z-higher;
+
+			min-height: 100%;
+
+			background: color($c-primary a(.4));
+
+			transition: ;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			// mods
+			&._hidden{
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+		&title{
+			@extend .title;
+		}
+		&button{
+			size: 5rem;
+			// margin: 3rem auto -8rem;
+			margin: 0 auto;
+
+			border-radius: ;
+
+			background: color(white a(.1));
+			fill: currentColor;
+
+			cursor: pointer;
+
+			display: flex;
+		}
+		&icon{
+			size: .75rem 1rem;
+			margin: auto;
+		}
+	}
+}

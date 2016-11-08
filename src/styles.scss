@@ -1,2 +1,24 @@
-@import '../modules/a/a.scss';
-@import '../modules/b/b.scss';
+@import '../modules/u-vars/colors.scss';
+@import '../modules/u-vars/fonts.scss';
+@import '../modules/u-vars/props.scss';
+@import '../modules/u-vars/z-index.scss';
+
+@import '../modules/g-doc/g-doc.scss';
+@import '../modules/g-page/g-page.scss';
+@import '../modules/g-errors/g-errors.scss';
+
+@import '../modules/b-svg/b-svg.scss';
+@import '../modules/b-grid/b-grid.scss';
+
+@import '../modules/section/section.scss';
+@import '../modules/link/link.scss';
+@import '../modules/title/title.scss';
+
+@import '../modules/preloader/preloader.scss';
+@import '../modules/header/header.scss';
+@import '../modules/main/main.scss';
+@import '../modules/menu/menu.scss';
+@import '../modules/phone/phone.scss';
+@import '../modules/footer/footer.scss';
+@import '../modules/social/social.scss';
+@import '../modules/video/video.scss';

@@ -1,0 +1,33 @@
+/* stylelint-disable */
+.menu{
+
+	padding: 0;
+
+	font-size: $font-size--secondary;
+
+	text-transform: uppercase;
+
+	display: flex;
+
+
+	// elements
+	&__{
+		&link{
+			@extend .link;
+
+			font-weight: bold;
+
+			// pseudoclasses
+			&:not(:last-child){
+				margin-right: 2.75rem;
+			}
+
+			// mods
+			&:hover,
+			&--active,
+			&._active{
+				color: white;
+			}
+		}
+	}
+}

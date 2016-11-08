@@ -1,0 +1,25 @@
+.g-page{
+	min-height: 100%;
+	margin: initial;
+	padding: initial;
+
+	font-size: ;
+	font-family: ;
+
+	background: $c-primary;
+
+	display: flex;
+	flex-direction: column;
+
+	// elements
+	&__{
+		&content{
+			flex: 1;
+			min-height: 100%;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+	}
+}

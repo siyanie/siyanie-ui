@@ -1,0 +1,20 @@
+.phone{
+	@extend .link;
+
+	font-weight: bold;
+
+	// elements
+	&__{
+		&icon{
+			max-size: 1.125rem;
+		}
+		&prefix{
+			font-size: $font-size--secondary;
+		}
+		&icon,
+		&number{
+			fill: currentColor;
+			color: white;
+		}
+	}
+}

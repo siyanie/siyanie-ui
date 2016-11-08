@@ -1,0 +1,34 @@
+.g-errors{
+
+	/*elements*/
+	&__{
+		&item{
+			display: none;
+			position: fixed;
+			z-index: 10000;
+			top: 0;
+			right: 0;
+			left: 0;
+			box-sizing: border-box;
+			background: #d63f3f;
+			padding: 0 20px;
+			text-align: center;
+			font-size: 18px;
+			font-weight: 700;
+			line-height: 30px;
+			opacity: 1;
+		}
+		&popup{
+			bottom: 0;
+			padding: 10% 0;
+		}
+		&old{
+			.u-support--no-flexwrap &{
+				display: block;
+			}
+		}
+	}
+	.u-support--no-flexwrap .g-page > :not(&){
+		display: none;
+	}
+}

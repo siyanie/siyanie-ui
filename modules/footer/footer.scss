@@ -1,0 +1,44 @@
+/* stylelint-disable */
+.footer{
+
+	padding: 4rem *;
+
+	font-size: $font-size--secondary;
+
+	background: $c-primary;
+	color: $c-primary-text;
+
+	// mods
+
+	// elements
+	&__{
+		&content{
+			@extend .section__content;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		&copyright{
+			fill: currentColor;
+
+			display: flex;
+			align-items: center;
+		}
+		&logo{
+			max-size: 6.25rem 2rem;
+			margin: * * * 1rem;
+		}
+		&dev{
+
+			// subelements
+			&-{
+				&name{
+					@extend .link;
+
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}

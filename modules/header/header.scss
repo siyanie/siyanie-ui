@@ -1,0 +1,28 @@
+/* stylelint-disable */
+.header{
+
+	color: $c-primary-text;
+
+	// elements
+	&__{
+		&content{
+			@extend .section__content;
+
+			padding: 4rem *;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		&logo{
+			max-size: 11.25rem 3.25rem;
+		}
+		&nav{
+			display: flex;
+			align-items: center;
+		}
+		&phone{
+			margin-left: 6.25rem;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.preloader{
+
+	position: fixed 0;
+	z-index: $z-under-everything;
+
+	background: $c-primary;
+
+	display: flex;
+
+	visibility: hidden;
+
+	// elements
+	&__{
+		&content{
+			margin: auto;
+		}
+		&logo{
+			max-size: 6.25rem;
+		}
+	}
+}

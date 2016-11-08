@@ -1,0 +1,12 @@
+<div class="video">
+	<video id="video" class="video__source" width="1280" height="720" onclick="this.pause();preview.classList.remove('_hidden')">
+		<source src="assets/video/siyanie.mp4" type="video/mp4">
+		<source src="assets/video/siyanie.webm" type="video/webm">
+	</video>
+	<div class="video__preview" id="preview">
+		<div class="video__title">Дела важнее слов</div>
+		<div class="video__button _hidden" onclick="video.play();preview.classList.add('_hidden')">
+			<icon class="video__icon">play</icon>
+		</div>
+	</div>
+</div>

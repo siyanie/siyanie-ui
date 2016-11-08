@@ -1,0 +1,18 @@
+.main{
+	flex: 1;
+
+	color: white;
+
+	// elements
+	&__{
+		&content{
+			min-height: 100%;
+
+			overflow: hidden;
+
+			/* &:not(:target){
+				display: none;
+			} */
+		}
+	}
+}
