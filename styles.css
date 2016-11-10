@@ -547,7 +547,7 @@ button.swiper-pagination-bullet{
   -webkit-filter:blur(3px);
           filter:blur(3px);}
 .footer__content,.header__content,.section__content{box-sizing:border-box;max-width:1280px;padding-right:48px;padding-left:48px;padding-right:3rem;padding-left:3rem;margin-right:auto;margin-left:auto;}
-.section__slide{height:800px;background-color:rgba(38,42,59,.6);position:relative;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:flex;
+.section__slide{background-color:rgba(38,42,59,.6);position:relative;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:flex;
   -webkit-box-orient:vertical;
   -webkit-box-direction:normal;
       -ms-flex-direction:column;
@@ -598,7 +598,7 @@ button.swiper-pagination-bullet{
   -webkit-box-pack:center;
       -ms-flex-pack:center;
           justify-content:center;}
-.section__client-logo{max-width:150px;}
+.section__client-logo{max-width:160px;max-height:96px;max-width:10rem;max-height:6rem;}
 .footer__dev-name,.footer__logo,.link,.menu__link,.phone,.social__link{
 	text-decoration:none;
 
@@ -608,7 +608,7 @@ button.swiper-pagination-bullet{
 
 	transition:.3s;
 }
-.footer__dev-name:focus,.footer__dev-name:hover,.footer__logo:focus,.footer__logo:hover,.link--dark:focus,.link--dark:hover,.menu__link:focus,.menu__link:hover{color:#fff;}
+.footer__dev-name:focus,.footer__dev-name:hover,.footer__logo:focus,.footer__logo:hover,.link--dark:focus,.link--dark:hover{color:#fff;}
 .section__title,.title,.video__title{
 	font-family:ARubricaXtCn,PT Sans,PT Sans Narrow,Open Sans Condensed,Arial Narrow,Open Sans,Arial,sans-serif;
 	font-size:72px;
@@ -710,7 +710,8 @@ button.swiper-pagination-bullet{
 }
 .menu__link{font-weight:700;}
 .menu__link:not(:last-child){margin-right:44px;margin-right:2.75rem;}
-.menu__link--active,.menu__link._active,.menu__link:focus,.menu__link:hover,.menu__link:last-child{color:#fff;}
+.menu__link:not(:first-child){opacity:.3;}
+.menu__link--active,.menu__link._active,.menu__link:first-child:focus,.menu__link:first-child:hover,.menu__link:last-child{color:#fff;}
 .phone{
 
 	font-weight:700;
