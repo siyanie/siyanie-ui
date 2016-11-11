@@ -4,7 +4,7 @@ const defaultPage = 'main'
 const { subsections: { about: { content: data}}} = require('../../data/about.yml')
 const pAbout = require('../p-about/p-about.js')
 
-const openSlide = (index) => {
+const openSlide = () => {
 	// const { title, text, quote, author } = data[index]
 
 	// document.querySelector('.section__title').innerHTML = title

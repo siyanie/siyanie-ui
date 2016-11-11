@@ -195,6 +195,7 @@
 
 			fill: currentColor;
 
+			// pseudosectors
 			&:not(:last-child):not(:nth-child(5n)){
 				margin-right: 5rem;
 			}
