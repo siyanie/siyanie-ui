@@ -17,9 +17,19 @@
 			flex: 1;
 			min-height: 100%;
 
+			transition:
+				visibility 0s $transition__preloader,
+				opacity $transition__preloader $transition__preloader;
+
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+
+			// siblings
+			.preloader:not(._hidden) + &{
+				visibility: hidden;
+				opacity: 0;
+			}
 		}
 	}
 }

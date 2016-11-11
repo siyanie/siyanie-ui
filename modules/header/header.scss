@@ -1,4 +1,3 @@
-/* stylelint-disable */
 .header{
 
 	color: $c-primary-text;
@@ -15,7 +14,15 @@
 			justify-content: space-between;
 		}
 		&logo{
-			max-size: 11.25rem 3.25rem;
+
+			display: flex;
+
+			// subelement
+			&-{
+				&icon{
+					max-size: 11.25rem 3.25rem;
+				}
+			}
 		}
 		&nav{
 			display: flex;

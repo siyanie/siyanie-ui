@@ -1,12 +1,13 @@
 
 // types
-$font-family--sans-serif: PT Sans, Open Sans, Arial, sans-serif;
+$font-family--sans-serif: PT Sans, PT Sans Narrow, Open Sans Condensed, 'Arial Narrow', Open Sans, Arial, sans-serif;
 $font-family--serif: More, Times New Roman, Times, serif;
-$font-family--condensed: A Rubrica Xt Cn, Open Sans Condensed, 'Arial Narrow', $font-family--sans-serif;
+$font-family--condensed: PT Sans Pro, $font-family--sans-serif;
 
 // abastract
 $font-family--primary: $font-family--sans-serif;
 $font-family--quote: $font-family--serif;
+$font-family--title: ARubricaXtCn, $font-family--sans-serif;
 
 // props
 $font-family: $font-family--primary;

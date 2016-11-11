@@ -1,4 +1,7 @@
 $transition: .3s;
+$transition--long: 4s;
+$transition__preloader: calc($transition * 10);
+$tf-easeInBack: cubic-bezier(.6, -.28, .735, .045);
 
 $box-sizing: border-box;
 

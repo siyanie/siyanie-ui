@@ -1,4 +1,3 @@
-/* stylelint-disable */
 .menu{
 
 	padding: 0;
@@ -14,6 +13,7 @@
 	&__{
 		&link{
 			@extend .link;
+			// @extend .link--dark;
 
 			font-weight: bold;
 
@@ -21,9 +21,15 @@
 			&:not(:last-child){
 				margin-right: 2.75rem;
 			}
+			&:not(:first-child){
+				opacity: .3;
+			}
+			&:last-child{
+				color: white;
+			}
 
 			// mods
-			&:hover,
+			&:first-child:hover,
 			&--active,
 			&._active{
 				color: white;

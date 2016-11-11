@@ -2,4 +2,13 @@
 	text-decoration: none;
 
 	color: inherit;
+
+	transition: ;
+
+	// mods
+	&--dark{
+		&:hover{
+			color: white;
+		}
+	}
 }

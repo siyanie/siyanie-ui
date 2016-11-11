@@ -12,12 +12,19 @@ module.exports = {
 		loaders: [{
 			test: /\.js$/,
 			exclude: /node_modules/,
-			loader: 'babel-loader',
+			loader: 'babel',
 			query: {
 				presets: [
 					'es2015'
 				]
 			}
+		},
+		{
+			test: /\.yml$/,
+			loaders: [
+				'json',
+				'yaml'
+			]
 		}]
 	},
 	plugins: [

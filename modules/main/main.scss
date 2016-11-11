@@ -12,11 +12,17 @@
 			flex: 1;
 			min-height: 100%;
 
+			display: flex;
+			flex-direction: column;
 			overflow: hidden;
 
-			/* &:not(:target){
+			// mods
+			&:not(:last-child):not(:target){
 				display: none;
-			} */
+			}
+			&:target ~ &:last-child{
+				display: none;
+			}
 		}
 	}
 }

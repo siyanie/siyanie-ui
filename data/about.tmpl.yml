@@ -1,0 +1,51 @@
+name: О компании
+subsections:
+	about:
+    name: О нас
+    content:
+    - title: Заголовок
+    	text: Контент
+      quote: Цитата
+      author: Автор
+      bg: Название файла фона
+    - title: Заголовок2
+    	text: Контент2
+      quote: Цитата2
+      author: Автор2
+      bg: Название файла фона2
+  leadership:
+  	name: Руководство
+    content:
+    - quote: Цитата
+    	author: Автор
+      post: Должность
+      bg: Название файла фона
+  team:
+    name: Проектная работа
+    content:
+    - title: Заголовок
+    	text: Контент
+      quote: Цитата
+      author: Автор
+      bg: Название файла фона
+  principles:
+    name: Принципы
+    content:
+    - title: Заголовок
+    	text: Контент
+      bg: Название файла фона
+  work:
+  	name: Работа в сиянии
+    content:
+    - quote: Цитата
+    	author: Автор
+      post: Должность
+      bg: Название файла фона
+  history:
+  	name: История компании
+    content:
+    - year: Номер года
+    	title: Заголовок
+      quote: Цитата
+      author: Автор
+      bg: Название файла фона

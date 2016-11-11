@@ -1,8 +1,4 @@
 .video{
-	position: relative;
-
-	display: flex;
-	flex-direction: column;
 
 	// elements
 	&__{
@@ -39,10 +35,11 @@
 		}
 		&button{
 			size: 5rem;
-			// margin: 3rem auto -8rem;
-			margin: 0 auto;
+			margin: 3rem auto -8rem;
 
 			border-radius: ;
+
+			transition: ;
 
 			background: color(white a(.1));
 			fill: currentColor;
@@ -50,9 +47,14 @@
 			cursor: pointer;
 
 			display: flex;
+
+			// mods
+			&:hover{
+				background: $c-primary--bright;
+			}
 		}
 		&icon{
-			size: .75rem 1rem;
+			max-size: 2rem 3rem;
 			margin: auto;
 		}
 	}

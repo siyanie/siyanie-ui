@@ -2,10 +2,10 @@ b-grid:
 b-svg:
 g-doc:
 g-errors:
+g-fonts:
 g-foot:
 g-head:
 g-page:
-u-fonts:
 u-vars:
 header:
 footer:
@@ -30,3 +30,4 @@ callback:
 menu:
 link:
 title:
+p-about:

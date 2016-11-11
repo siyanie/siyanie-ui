@@ -2,14 +2,17 @@
 // direct
 $c-blue-dark: hsl(219, 48%, 16%);
 $c-blue-text: hsl(229, 33%, 34%);
+$c-blue: hsl(235, 68%, 58%);
 // $c-blue-text: white;
 $c-blue-text--light: hsl(230, 28%, 55%);
 
 // preabstract
 $c-dark: $c-blue-dark;
 $c-bright: hsl(318, 100%, 64%);
+$c-bg: hsl(229, 21%, 19%);
 
 // abstract
 $c-primary: $c-dark;
+$c-primary--bright: $c-blue;
 $c-primary-text: $c-blue-text;
 $c-secondary: $c-bright;

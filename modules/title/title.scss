@@ -1,7 +1,11 @@
 .title{
-	font-family: $font-family--condensed;
+	font-family: $font-family--title;
 	font-size: 4.5rem;
+	letter-spacing: .1em;
 
 	text-align: center;
 	text-transform: uppercase;
+
+	user-select: none;
+	cursor: default;
 }

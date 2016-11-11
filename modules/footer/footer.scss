@@ -20,14 +20,23 @@
 			justify-content: space-between;
 		}
 		&copyright{
-			fill: currentColor;
-
 			display: flex;
 			align-items: center;
 		}
 		&logo{
-			max-size: 6.25rem 2rem;
-			margin: * * * 1rem;
+			@extend .link;
+
+			fill: currentColor;
+
+			display: flex;
+
+			// subelements
+			&-{
+				&icon{
+					max-size: 6.25rem 2rem;
+					margin: * * * 1rem;
+				}
+			}
 		}
 		&dev{
 
@@ -35,6 +44,7 @@
 			&-{
 				&name{
 					@extend .link;
+					@extend .link--dark;
 
 					font-weight: bold;
 				}

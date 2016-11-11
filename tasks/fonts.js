@@ -5,7 +5,7 @@ const glob = prms(require('glob'))
 const mkdirp = prms(require('mkdirp'))
 
 const task = (outdir = 'build/assets/fonts') => {
-	glob('modules/**/*.woff')
+	glob('modules/**/*.{woff,woff2}')
 		.then(files => {
 			if (files.length > 0) {
 				mkdirp(outdir)

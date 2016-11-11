@@ -3,18 +3,59 @@
 
 	font-weight: bold;
 
-	// elements
+	position: relative;
+
+	// pseudoclasses
+	/* &:hover &__{
+		&button{
+			background: $c-primary--bright;
+			box-shadow: 0 0 0 .5rem $c-primary--bright;
+		}
+		&note{
+			opacity: 1;
+		}
+	} */
+
+	// elementsb
 	&__{
+		&button{
+			size: 1.5rem;
+			margin: * .5rem * *;
+
+			border-radius: ;
+
+			transition:
+				background $transition,
+				box-shadow calc($transition * 3)
+				;
+
+			display: inline-flex;
+		}
 		&icon{
 			max-size: 1.125rem;
+			margin: auto;
 		}
 		&prefix{
 			font-size: $font-size--secondary;
 		}
-		&icon,
+		&prefix,
 		&number{
+			font-family: $font-family--condensed;
+		}
+		&icon,
+		&number,
+		&note{
 			fill: currentColor;
 			color: white;
+		}
+		&note{
+			position: absolute 100% 0 * *;
+
+			font-size: $font-size--secondary;
+			font-weight: 700;
+
+			opacity: 0;
+			transition: calc($transition * 3) ease-out;
 		}
 	}
 }

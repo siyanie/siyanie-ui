@@ -1,10 +1,39 @@
-/* stylelint-disable */
 .quote{
 
-	// mods
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
 
 	// elements
 	&__{
+		&content{
+			flex: 1;
+			display: inline;
 
+			font-family: $font-family--quote;
+			font-size: 1.75rem;
+			line-height: 1.3;
+
+			display: flex;
+			align-items: center;
+		}
+		&text{
+			position: relative;
+
+			// pseudoelements
+			&::before{
+				content: '';
+				position: absolute .5em calc(100% + 1rem) * *;
+
+				size: 1.5rem .125rem;
+
+				background: currentColor;
+			}
+		}
+		&author{
+			margin-top: .4rem;
+			line-height: 1;
+		}
 	}
 }

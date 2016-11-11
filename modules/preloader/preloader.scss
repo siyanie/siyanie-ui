@@ -7,9 +7,15 @@
 
 	display: flex;
 
-	animation: fadeOut 5s;
-	/*transition: 5s;*/
-	opacity: 0;
+	transition:
+		opacity $transition__preloader,
+		visibility 0s $transition__preloader;
+
+	// mods
+	&._hidden{
+		opacity: 0;
+		visibility: hidden;
+	}
 
 	// elements
 	&__{
@@ -22,11 +28,9 @@
 	}
 }
 
-@keyframes fadeOut{
-	form{
-		opacity: 1;
-	}
+@keyframes hidePrelaoder{
 	to{
 		opacity: 0;
+		visibility: hidden;
 	}
 }
