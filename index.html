@@ -1,4 +1,4 @@
-<!--htmlhint inline-script-disabled:false -->
+<!--htmlhint inline-style-disabled: false -->
 <!DOCTYPE html>
 <html class="g-doc" lang="ru">
 	
@@ -29,10 +29,10 @@
 		<div class="header__nav">
 			<menu class="menu header__menu">
 	<a class="menu__link" href="#about">&#x41E; &#x43A;&#x43E;&#x43C;&#x43F;&#x430;&#x43D;&#x438;&#x438;</a>
-	<a class="menu__link" href="#">&#x423;&#x441;&#x43B;&#x443;&#x433;&#x438;</a>
-	<a class="menu__link" href="#">&#x41F;&#x440;&#x435;&#x441;&#x441;-&#x446;&#x435;&#x43D;&#x442;&#x440;</a>
-	<a class="menu__link" href="#">&#x41A;&#x43E;&#x43D;&#x442;&#x430;&#x43A;&#x442;&#x44B;</a>
-	<a class="menu__link" href="#">&#x41F;&#x440;&#x43E;&#x435;&#x43A;&#x442;&#x44B;</a>
+	<a class="menu__link" href="#services">&#x423;&#x441;&#x43B;&#x443;&#x433;&#x438;</a>
+	<a class="menu__link _disable" href="#">&#x41F;&#x440;&#x435;&#x441;&#x441;-&#x446;&#x435;&#x43D;&#x442;&#x440;</a>
+	<a class="menu__link _disable" href="#">&#x41A;&#x43E;&#x43D;&#x442;&#x430;&#x43A;&#x442;&#x44B;</a>
+	<a class="menu__link _disable" href="#">&#x41F;&#x440;&#x43E;&#x435;&#x43A;&#x442;&#x44B;</a>
 </menu>
 
 			<a class="phone header__phone" href="tel:495 607-7777">
@@ -49,7 +49,8 @@
 </div>
 
 		<main class="main">
-	<div class="section carousel swiper-container" id="about">
+	<!--htmlhint inline-style-disabled: false -->
+<div class="section swiper-container" id="about">
 	<div class="section__wrapper swiper-wrapper">
 		<div class="section__slide swiper-slide">
 			<div class="section__bg" style="background-image:url(assets/images/about_onas_1.jpg)"></div>
@@ -170,6 +171,316 @@
 			</div>
 		</div>
 	</div>
+	<div class="section__pag swiper-pagination"></div>
+	<div class="section__buttons">
+		<div class="section__button section__button--prev swiper-button-prev">
+			<svg class="section__button-icon"><use xlink:href="#icon--arrow"/></svg>
+		</div>
+		<div class="section__button section__button--next swiper-button-next">
+			<svg class="section__button-icon"><use xlink:href="#icon--arrow"/></svg>
+		</div>
+	</div>
+</div>
+
+	<!--htmlhint inline-style-disabled: false -->
+<div class="section swiper-container" id="services">
+	<div class="section__wrapper swiper-wrapper">
+		
+	<div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_gen_1.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Генеральный подрядчик</div>
+				<div class="section__text">Мы жестко подойдем к отбору компаний, которые будут реализовывать Ваш проект, отбор будет производиться только среди опытнейших организаций, хорошо зарекомендовавших себя на рынке.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Кто хочет делать – находит возможности, кто не хочет делать – подыскивает причины!</span>
+					</div>
+					<div class="quote__author">Йонг</div>
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_gen_2.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">ГЕНЕРАЛЬНЫЙ ПРОЕКТИРОВЩИК</div>
+				<div class="section__text">Каждый исполнитель пройдет через "мелкое сито" тендеров и конкурсов, к работам на объекте будут допущены только те, кто делом доказал свою состоятельность.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Единственный способ определить границы возможного – <br>выйти за его границы.</span>
+					</div>
+					<div class="quote__author">Артур Кларк</div>
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_gen_3.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">ЗАКАЗЧИК-ЗАСТРОЙЩИК</div>
+				<div class="section__text">Мы снимем с Вас заботы и найдем возможность сэкономить Ваши средства не в ущерб качеству. Мы не можем реализовать проект дешево и быстро! Мы можем выполнить работы за разумные деньги и в срок!</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Если изба гнилая – думать надо не о её ремонте, <br>а о новой постройке.</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_eom_1.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">ЭОМ</div>
+				<div class="section__text">Электромонтажным работам в обязательном порядке предшествует поэтапная разработка проекта с учетом специфики объекта. Поэтапный план предполагает четкую последовательность действий при электромонтаже, что позволяет комфортно и безопасно эксплуатировать электрооборудование.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Будь проклят тот день, <br>когда я сел за баранку этого пылесоса!</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_eom_2.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">ЭОМ</div>
+				<div class="section__text">Электромонтажные работы включают в себя: прокладку кабельных и воздушных линий электропередач; сборку и установку щитов; монтаж розеток, выключателей, электросчетчиков; монтаж внутреннего, наружного и других видов освещения; прокладку распределительных сетей.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Будь проклят тот день, <br>когда я сел за баранку этого пылесоса!</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_meh_1.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Кондиционирование</div>
+				<div class="section__text">Мы имеем многолетний опыт работы в проектировании систем кондиционирования для торговых комплексов, медицинских учреждений, центров обработки данных и других аналогичных помещений.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Совершить невозможное — не такая уж великая проблема, <br>если знаешь с чего начать.</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_meh_2.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Вентиляция</div>
+				<div class="section__text">Мы осуществляем проекты по созданию приточно-вытяжных систем вентиляции, противодымных систем в общественных и промышленных зданиях в полном соответствии с требованиями российских и международных строительных и санитарных норм.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Многие люди не представляют, как близко они подобрались к успеху в тот момент, когда сдались.</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_meh_3.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Отопление</div>
+				<div class="section__text">Мы предоставляем полный спектр услуг по созданию внутренних сетей отопления, в том числе <br>систем водяного и воздушного отопления, индивидуальных тепловых пунктов (ИТП).</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Умение слушать приносит много пользы, <br>которой никогда не принесет умение много говорить.</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_meh_4.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Водоснабжение</div>
+				<div class="section__text">Наши специалисты предлагают широкий спектр услуг по созданию разнообразных систем водоснабжения, в том числе: хозяйственно-питьевой холодной воды, питьевой горячей воды (циркуляционный, а также подающий виды водопроводов), объединенный противопожарный и хозяйственно-питьевой водопровод.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Не заставляй себя ждать.</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_meh_5.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Канализация</div>
+				<div class="section__text">Компания «Сияние Генподряд» – это профессиональные услуги по проектированию различных систем канализации, в числе которых: производственная канализация (щелочной воды, жиросодержащих вод, химически и механически загрязненной воды, кислотощелочных и кислых вод), бытовая канализация, дождевая канализация (так называемая «ливневка»), дренажная канализация (удаляет и аварийно сбрасывает воды из технических помещений в дренажный колодец).</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Способность предполагается заранее, <br>но она должна стать умением.</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_obshestroit_1.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Общестроительные работы</div>
+				<div class="section__text">Комплекс работ по возведению здания. Общестроительные работы одновременно включают в себя различные организационные мероприятия, в том числе, разработку и утверждение проектно-технической документации для строительства и подготовку площадки для возведения здания.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Вы никогда не пройдете путь до конца, если будете останавливаться, чтобы бросить камень в каждую встречную собаку.</span>
+					</div>
+					<div class="quote__author">Уинстон Черчилль</div>
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_sks_1.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">ЛВС - Локальные сети</div>
+				<div class="section__text">Гарант стабильности бизнес-процессов, ведь работа современного офиса невозможна без электронного документооборота. Наша компания оказывает услуги по разработке проектов и монтажу сетей ЛВС, позволяющих создать телекоммуникационную инфраструктуру и обеспечить эффективное решение задач предприятия.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Кто делает то, что может – делает то, что должен.</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_sks_2.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Видеонаблюдение</div>
+				<div class="section__text">позволяет обеспечить безопасность объектов, территории и людей путем круглосуточного визуального контроля. Наши специалисты выполнят монтаж систем для офиса, частного дома или любых других объектов в соответствии с проектной документацией.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Когда человек мыслит, он сомневается, <br>но он уверен, когда действует.</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_sks_3.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">СКУД</div>
+				<div class="section__text">Системы контроля управлением доступом являются эффективным средством защиты от незаконного проникновения даже самых крупных объектов, гарантируя безопасность находящихся в нем людей. Наши квалифицированные специалисты осуществляют качественную установку и обслуживание систем в соответствии <br>с рекомендациями и нормами.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Изобретение можно усовершенствовать, <br>творению можно лишь подражать.</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_sks_4.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">ОПС</div>
+				<div class="section__text">Монтаж пожарной сигнализации следует выполнять в соответствии с утвержденными нормами, иначе оборудование не сможет выполнить свою основную функцию – предупредить о возгорании. Наши специалисты выполнят установку сигнализации, соблюдая все требования безопасности.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Чем больше у человека имущества, <br>тем дороже могут стоить его услуги.</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_sks_5.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">СКС</div>
+				<div class="section__text">Структурированная кабельная система (СКС) является элементом модернизации цифровой инфраструктуры, инструментом, повышающим рентабельность предприятия и эффективность производственных процессов. Наша компания предлагает услуги по созданию СКС в соответствии с утвержденными нормами.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">По закону подлости транспорт, на который ты опоздал, уходит точно по расписанию, зато следующий – обязательно опаздывает.</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_sks_6.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Телефония</div>
+				<div class="section__text">Одним из основных способов коммуникации, позволяющих значительно повысить производительность труда на любом предприятии, будь это офис или торговый центр, является телефонизация. Мы предлагаем услуги по созданию телефонной сети, включая разработку проектов, монтаж и обслуживание.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Величайшая слава приходит не к тем, кто забрался выше остальных, а которые продолжали забираться высоко после каждого падения.</span>
+					</div>
+					
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_otdelka_1.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Отделочные работы</div>
+				<div class="section__text">Интерьер помещения является визитной карточкой своего владельца и нередко может отражать характер и жизненное кредо; поэтому в любом проекте отделочным работам уделяется особое внимание, а современное многообразие отделочных материалов позволяет воплотить в жизнь самые искушенные пожелания заказчика.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Один человек не может найти решение, но сотня — <br>и каждый со своей долей идей — могут что-нибудь придумать.</span>
+					</div>
+					<div class="quote__author">Йонг</div>
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_otdelka_2.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Отделочные работы</div>
+				<div class="section__text">Отделочные работы – подразделяют на внешние и внутренние. Под внешней отделкой понимают: гидроизоляционные работы, теплоизоляцию зданий, отделку внешних стен. Внешние отделочные работы подразумевают применение специализированных материалов и выполняются высокопрофессиональными специалистами.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Если можешь быть орлом, не стремись стать первым среди галок.</span>
+					</div>
+					<div class="quote__author">Пифагор</div>
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_otdelka_3.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Отделочные работы</div>
+				<div class="section__text">Внутренние отделочные работы фактически можно назвать ремонтом помещения. Ремонт может быть «черновым» - внутренние поверхности только готовятся к последующей отделке, и полным – с укладкой напольных покрытий, устройством потолка, интерьерной обработкой стен и установкой декоративных элементов.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Если осталось еще что-нибудь доделать, считай, <br>что ничего не сделано.</span>
+					</div>
+					<div class="quote__author">Лукан</div>
+				</div>
+			</div>
+		</div><div class="section__slide swiper-slide">
+			<div class="section__bg" style="background-image: url(assets/images/uslugi_otdelka_4.jpg);"></div>
+			<div class="section__info">
+				<div class="section__title">Отделочные работы</div>
+				<div class="section__text">Процесс реализации комплекса отделочных работ был бы неполным без создания дизайн-проекта, поэтому для детальной проработки интерьеров помещений и в дальнейшем осуществления авторского надзора к сотрудничеству приглашаются дизайнеры.</div>
+			</div>
+			<div class="section__footer">
+				<div class="quote section__footer-content">
+					<div class="quote__content">
+						<span class="quote__text">Хороший пастух снимает с овец шерсть, а не шкуру.</span>
+					</div>
+					<div class="quote__author">Салюстий</div>
+				</div>
+			</div>
+		</div></div>
 	<div class="section__pag swiper-pagination"></div>
 	<div class="section__buttons">
 		<div class="section__button section__button--prev swiper-button-prev">
