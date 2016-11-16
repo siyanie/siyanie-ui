@@ -2,7 +2,7 @@ const className = '_active'
 const defaultPage = 'main'
 
 const { subsections: { about: { content: data}}} = require('../../data/about.yml')
-const pAbout = require('../p-about/p-about.js')
+const carousel = require('../carousel/carousel.js')
 
 const openSlide = () => {
 	// const { title, text, quote, author } = data[index]
@@ -20,11 +20,14 @@ const openSlide = () => {
 
 module.exports = {
 	openPage (pageName = defaultPage) {
-		if (pageName === '') pageName = defaultPage
+		if (pageName === '') {
+			pageName = defaultPage
+		}
 		document.querySelector('.section._active').classList.remove(className)
 		document.querySelector(`.section#${pageName}`).classList.add(className)
-
-		if (pageName === 'about') pAbout.init()
+		if (pageName != defaultPage) {
+			carousel.init(pageName)
+		}
 	},
 	carouselInit () {
 		const pag = document.querySelector('.section__pag')

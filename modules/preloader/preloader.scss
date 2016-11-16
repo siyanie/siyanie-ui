@@ -18,12 +18,26 @@
 	}
 
 	// elements
+
+	/* svg{
+		overflow: visible;
+	}
+	svg:first-child{
+		transform: translateX(100%);
+	}
+	svg:last-child path{
+		&:first-child{
+			transform-origin: center bottom;
+			transform:
+				rotate(90deg);
+		}
+	} */
 	&__{
 		&content{
 			margin: auto;
 		}
 		&logo{
-			max-size: 6.25rem;
+			max-size: 3.75rem 3.25rem;
 		}
 	}
 }

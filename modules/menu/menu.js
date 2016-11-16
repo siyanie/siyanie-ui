@@ -10,6 +10,9 @@ const removeActive = () => {
 }
 
 const handler = (e) => {
+	if (/^http/.test(e.target.getAttribute('href'))){
+		return
+	}
 	e.preventDefault()
 
 	removeActive()
@@ -24,6 +27,5 @@ module.exports = {
 	init () {
 		logo.addEventListener('click', handler)
 		items.forEach(item => item.addEventListener('click', handler))
-		items[0].addEventListener('click', handler)
 	}
 }
