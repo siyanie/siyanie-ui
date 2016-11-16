@@ -20,6 +20,8 @@
 		&text{
 			position: relative;
 
+			letter-spacing: .025em;
+
 			// pseudoelements
 			&::before{
 				content: '';

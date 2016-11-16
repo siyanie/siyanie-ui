@@ -85,6 +85,9 @@
 
 			line-height: 1;
 		}
+		&text{
+			letter-spacing: .05em;
+		}
 		&button{
 			position: absolute calc(50% - 1.5rem) * * *;
 
