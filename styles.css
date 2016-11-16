@@ -481,7 +481,7 @@ button.swiper-pagination-bullet{
 .g-page__content{
   -webkit-box-flex:1;
       -ms-flex:1;
-          flex:1;
+          flex:1;-webkit-transition:visibility 0s 3s,opacity 3s 3s;transition:visibility 0s 3s,opacity 3s 3s;
       -ms-flex-direction:column;
           flex-direction:column;
   -webkit-box-pack:justify;
