@@ -18,6 +18,7 @@
 			align-items: center;
 		}
 		&text{
+			/*display: inline !important;*/
 			position: relative;
 
 			letter-spacing: .025em;
@@ -25,7 +26,9 @@
 			// pseudoelements
 			&::before{
 				content: '';
-				position: absolute .5em calc(100% + 1rem) * *;
+				display: inline-block;
+				vertical-align: middle;
+				margin: * .5em .125em *;
 
 				size: 1.5rem .125rem;
 
