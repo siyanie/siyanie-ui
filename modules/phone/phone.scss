@@ -1,9 +1,9 @@
 .phone{
 	@extend .link;
 
-	font-weight: bold;
-
 	position: relative;
+	display: flex;
+	align-items: center;
 
 	// pseudoclasses
 
@@ -27,21 +27,20 @@
 
 			transition:
 				background $transition,
-				box-shadow calc($transition * 3)
-				;
+				box-shadow calc($transition * 3);
 
 			display: inline-flex;
 		}
 		&icon{
 			max-size: 1.125rem;
+			transform: translateY(-.125em);
 			margin: auto;
-		}
-		&prefix{
-			font-size: $font-size--secondary;
 		}
 		&prefix,
 		&number{
 			font-family: $font-family--condensed;
+			font-weight: 900;
+			letter-spacing: .05em;
 		}
 		&icon,
 		&number,
@@ -55,7 +54,7 @@
 			font-size: $font-size--secondary;
 			font-weight: 700;
 
-			opacity: 0;
+			opacity: 1;
 			transition: calc($transition * 3) ease-out;
 		}
 	}
