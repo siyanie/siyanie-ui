@@ -1,7 +1,13 @@
 const Swiper = require('swiper')
 
+let slider
+
 module.exports = {
 	init (pageName) {
+
+		if (slider) {
+			slider.destroy(false)
+		}
 
 		const pagination = document.querySelector(`#${pageName} .swiper-pagination`)
 		const quotes = [...document.querySelectorAll(`#${pageName} .section__footer`)]
@@ -12,10 +18,9 @@ module.exports = {
 		const setSlideHeight = () => {
 			document.querySelector(`#${pageName} .section__wrapper`).style.height = `${document.querySelector('.section._active').clientHeight}px`
 		}
-		const aboutSlider = new Swiper(`#${pageName}.swiper-container`, {
-			loop: true,
+		slider = new Swiper(`#${pageName}.swiper-container`, {
 
-			pagination: `#${pageName}.swiper-pagination`,
+			pagination: `#${pageName} .swiper-pagination`,
 			paginationClickable: true,
 
 			nextButton: `#${pageName} .swiper-button-next`,
@@ -24,7 +29,7 @@ module.exports = {
 
 		setSlideHeight()
 		changeHeight()
-		aboutSlider.on('onSlideChangeStart', () => changeHeight(aboutSlider.realIndex))
+		slider.on('onSlideChangeStart', () => changeHeight(slider.realIndex))
 		window.addEventListener('resize', setSlideHeight)
 	}
 }
