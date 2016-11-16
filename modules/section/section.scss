@@ -92,6 +92,14 @@
 				}
 			}
 		}
+		&date{
+			margin: * * 1rem;
+
+			font-weight: bold;
+
+			text-transform: uppercase;
+			color: color(white a(.3));
+		}
 		&title{
 			@extend .title;
 
