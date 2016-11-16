@@ -1,15 +1,15 @@
 .preloader{
 
 	position: fixed 0;
-	z-index: $z-under-everything;
+	z-index: $z-over-everything;
 
 	background: $c-primary;
 
 	display: flex;
 
-	transition:
+	/*transition:
 		opacity $transition__preloader,
-		visibility 0s $transition__preloader;
+		visibility 0s $transition__preloader;*/
 
 	// mods
 	&._hidden{

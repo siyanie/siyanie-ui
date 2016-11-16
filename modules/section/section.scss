@@ -44,12 +44,24 @@
 		&slide{
 			height: auto;
 
+			background-image: linear-gradient(transparent 50%, color(black a(.1)) 50%);
+			background-size: 100% .25rem;
+			background-repeat: repeat-y;
 			background-color: color($c-bg a(.6));
 
 			position: relative;
 			overflow: hidden;
 			display: flex;
 			flex-direction: column;
+
+			// pseudoelements
+			&::after{
+				content: '';
+				position: absolute 0;
+				z-index: $z-under;
+
+				background: color($c-bg--secondary a(.3));
+			}
 		}
 		&bg{
 			position: absolute 0;
