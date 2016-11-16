@@ -723,14 +723,18 @@ button.swiper-pagination-bullet{
 	display:-webkit-box;
 	display:-ms-flexbox;
 	display:flex;
+}
+.phone,.phone__button{
 	-webkit-box-align:center;
 	    -ms-flex-align:center;
-	        align-items:center;
-}
-.phone__button{width:1.5rem;height:1.5rem;margin-right:8px;margin-right:.5rem;border-radius:50%;-webkit-transition:background .3s,box-shadow .9s;transition:background .3s,box-shadow .9s;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;}
+	        align-items:center;}
+.phone__button{width:1.5rem;height:1.5rem;margin-right:8px;margin-right:.5rem;border-radius:50%;-webkit-transition:background .3s,box-shadow .9s;transition:background .3s,box-shadow .9s;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;}
 .phone__icon{max-width:18px;max-height:18px;max-width:1.125rem;max-height:1.125rem;
-  -webkit-transform:translateY(-.25em);
-          transform:translateY(-.25em);margin:auto;}
+  -webkit-transform:translateY(-.125em);
+          transform:translateY(-.125em);}
 .phone__number,.phone__prefix{font-family:PT Sans Pro,PT Sans,PT Sans Narrow,Open Sans Condensed,Arial Narrow,Open Sans,Arial,sans-serif;font-weight:900;letter-spacing:.05em;}
 .phone__icon,.phone__note,.phone__number{fill:currentColor;color:#fff;}
 .phone__note{top:100%;right:0;position:absolute;font-weight:700;opacity:0;-webkit-transition:.9s ease-out;transition:.9s ease-out;}
