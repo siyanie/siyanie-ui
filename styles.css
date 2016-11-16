@@ -733,7 +733,7 @@ button.swiper-pagination-bullet{
           transform:translateY(-.125em);margin:auto;}
 .phone__number,.phone__prefix{font-family:PT Sans Pro,PT Sans,PT Sans Narrow,Open Sans Condensed,Arial Narrow,Open Sans,Arial,sans-serif;font-weight:900;letter-spacing:.05em;}
 .phone__icon,.phone__note,.phone__number{fill:currentColor;color:#fff;}
-.phone__note{top:100%;right:0;position:absolute;font-weight:700;opacity:1;-webkit-transition:.9s ease-out;transition:.9s ease-out;}
+.phone__note{top:100%;right:0;position:absolute;font-weight:700;opacity:0;-webkit-transition:.9s ease-out;transition:.9s ease-out;}
 .footer,.phone__note{font-size:14px;font-size:.875rem;
 }
 .footer{
