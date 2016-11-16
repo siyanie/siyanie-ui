@@ -81,6 +81,8 @@
 			max-width: 40rem;
 			margin: 10vh auto 1rem;
 
+			letter-spacing: .05em;
+
 			text-align: center;
 
 			// mods
@@ -96,9 +98,6 @@
 			margin: * * 3rem;
 
 			line-height: 1;
-		}
-		&text{
-			letter-spacing: .05em;
 		}
 		&button{
 			position: absolute calc(50% - 1.5rem) * * *;
