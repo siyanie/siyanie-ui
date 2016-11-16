@@ -30,11 +30,12 @@
 				box-shadow calc($transition * 3);
 
 			display: inline-flex;
+			align-items: center;
+			justify-content: center;
 		}
 		&icon{
 			max-size: 1.125rem;
 			transform: translateY(-.125em);
-			margin: auto;
 		}
 		&prefix,
 		&number{
