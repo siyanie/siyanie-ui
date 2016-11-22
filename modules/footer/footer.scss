@@ -19,6 +19,51 @@
 			align-items: center;
 			justify-content: space-between;
 		}
+		&section{
+			color: white;
+
+			// subelements
+			&-{
+				&arrow{
+					size: 1rem .5rem;
+
+					fill: currentColor;
+				}
+			}
+		}
+		&menu{
+			@extend .menu;
+
+			width: 100%;
+
+			text-align: center;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		&link{
+			@extend .menu__link;
+
+			// subelements
+			&:not(:last-child) {
+				margin: initial;
+			}
+		}
+		&dots{
+			margin: .75rem * -.95rem;
+
+			display: flex;
+			justify-content: center;
+		}
+		&dot{
+			@extend .section__dot;
+
+			size: .2rem;
+			margin: 0 .125rem;
+
+			cursor: default;
+		}
 		&copyright{
 			display: flex;
 			align-items: center;

@@ -17,9 +17,9 @@
 			flex: 1;
 			min-height: 100%;
 
-			transition:
+			/*transition:
 				visibility 0s $transition__preloader,
-				opacity $transition__preloader $transition__preloader;
+				opacity $transition__preloader $transition__preloader;*/
 
 			display: flex;
 			flex-direction: column;
@@ -30,6 +30,14 @@
 				visibility: hidden;
 				opacity: 0;
 			}
+		}
+		&main{
+			flex: 1;
+
+			color: white;
+
+			display: flex;
+			flex-direction: column;
 		}
 	}
 }

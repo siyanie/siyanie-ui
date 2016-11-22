@@ -2,7 +2,8 @@ const webpack = require('webpack')
 
 module.exports = {
 	entry: {
-		defer: './src/defer.js'
+		defer: './src/defer.js',
+		main: './src/main.js'
 	},
 	output: {
 		path: './build',
@@ -15,9 +16,14 @@ module.exports = {
 			loader: 'babel',
 			query: {
 				presets: [
+					'react',
 					'es2015'
 				]
 			}
+		},
+		{
+			test: /\.svg$/,
+			loader: 'babel?presets[]=es2015,presets[]=react!svg-react'
 		},
 		{
 			test: /\.yml$/,
@@ -28,6 +34,6 @@ module.exports = {
 		}]
 	},
 	plugins: [
-		new webpack.optimize.UglifyJsPlugin()
+		new webpack.HotModuleReplacementPlugin()
 	]
 }

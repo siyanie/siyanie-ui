@@ -12,6 +12,7 @@ footer:
 main:
 nav:
 intro:
+icon:
 preloader:
 video:
 social:
@@ -30,6 +31,9 @@ callback:
 menu:
 link:
 title:
+store:
+submenu:
+events:
 p-about:
 p-services:
 p-press-center:

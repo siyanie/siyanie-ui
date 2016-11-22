@@ -1,6 +1,7 @@
 .section{
 	flex: 1;
 	max-width: 100%;
+	width: 100%;
 
 	position: relative;
 	overflow: hidden;
@@ -41,7 +42,13 @@
 			padding: * 3rem;
 			margin: * auto;
 		}
+		&wrapper{
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+		}
 		&slide{
+			flex: 1;
 			height: auto;
 
 			background-image: linear-gradient(transparent 50%, color(black a(.1)) 50%);
@@ -145,6 +152,7 @@
 			}
 		}
 		&pag{
+			position: absolute * 0 0;
 			margin: 1rem *;
 
 			transition:
@@ -153,22 +161,20 @@
 
 			display: flex;
 			justify-content: center;
+		}
+		&dot{
+			size: .5rem;
+			margin: * .5rem;
 
-			// subelement
-			.swiper-pagination-bullet{
-				size: .5rem;
-				margin: * .5rem;
+			background: white;
+			border-radius: ;
 
-				background: white;
-				border-radius: ;
-
-				// mods
-				&:not(&-active){
-					opacity: .5;
-				}
-				&:hover{
-					cursor: pointer;
-				}
+			// mods
+			&:not(._active){
+				opacity: .5;
+			}
+			&:hover{
+				cursor: pointer;
 			}
 		}
 		&footer{
