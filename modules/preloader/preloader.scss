@@ -15,23 +15,44 @@
 	&._hidden{
 		opacity: 0;
 		visibility: hidden;
+
+	// elements
+		path{
+			transform: none !important;
+			opacity: 1;
+		}
 	}
 
 	// elements
-
-	/* svg{
+	svg{
 		overflow: visible;
 	}
-	svg:first-child{
-		transform: translateX(100%);
-	}
-	svg:last-child path{
+	path{
+		animation-duration: $transition__preloader;
+		transition: $transition__preloader;
+		opacity: .2;
+
+		// pseudoselectors
 		&:first-child{
-			transform-origin: center bottom;
+			transform-origin: right bottom;
 			transform:
-				rotate(90deg);
+				rotate(80deg)
+				translate(-30%, -15%);
+	}
+		&:nth-child(2){
+			transform-origin: left top;
+			transform:
+				rotate(65deg)
+				translate(70%, -35%);
+
 		}
-	} */
+		&:last-child{
+			transform-origin: right top;
+			transform:
+				rotate(85deg)
+				translate(30%, 100%);
+		}
+		}
 	&__{
 		&content{
 			margin: auto;
@@ -46,5 +67,32 @@
 	to{
 		opacity: 0;
 		visibility: hidden;
+	}
+}
+
+@keyframes logoFirst{
+	from{
+		opacity: .2;
+		transform:
+			rotate(80deg)
+			translate(-30%, -15%);
+	}
+}
+
+@keyframes logoSecond{
+	from{
+		opacity: .2;
+		transform:
+			rotate(65deg)
+			translate(70%, -35%);
+	}
+}
+
+@keyframes logoThird{
+	from{
+		opacity: .2;
+		transform:
+			rotate(85deg)
+			translate(30%, 100%);
 	}
 }
