@@ -1,8 +1,7 @@
-import React from 'react'
-
+import { Component } from 'react'
 import Icon from '../icon/icon.react.js'
 
-export default class Phone extends React.Component {
+export default class Phone extends Component {
 	render () {
 		return (
 			<a href="tel:495 607-7777" className="phone">

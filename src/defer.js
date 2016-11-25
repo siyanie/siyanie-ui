@@ -8,7 +8,6 @@ preloader.init()
 // video.init()
 // section.carouselInit()
 
-import React from 'react'
 import ReactDOM from 'react-dom'
 import Section from '../modules/section/section.react.js'
 import data from '../data/about.yml'

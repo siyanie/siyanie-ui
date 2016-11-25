@@ -1,5 +1,4 @@
-import React from 'react'
-
+import { Component } from 'react'
 import Icon from '../icon/icon.react.js'
 
 const socials = [{
@@ -13,7 +12,7 @@ const socials = [{
 	url: 'https://instagram.com/siyanie.group'
 }]
 
-export default class Social extends React.Component {
+export default class Social extends Component {
 	render () {
 		return (
 			<div className="social">

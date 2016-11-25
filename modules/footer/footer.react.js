@@ -1,12 +1,11 @@
-import React from 'react'
-
+import { Component } from 'react'
 import Social from '../social/social.react'
 import Icon from '../icon/icon.react'
 import { Link } from 'react-router'
 
 import store from '../store/store.react'
 
-export default class Footer extends React.Component {
+export default class Footer extends Component {
 	constructor () {
 		super()
 
@@ -22,12 +21,12 @@ export default class Footer extends React.Component {
 		})
 	}
 	render () {
-		const { params, params: { section, subsection: subsectionKey } } = this.props
-		const submenu = Object.keys(params).length > 0 && section
+		const { params, params: { section: sectionKey, subsection: subsectionKey } } = this.props
+		const submenu = Object.keys(params).length > 0 && sectionKey
 		let Content
 
 		if (submenu) {
-			const { name: sectionName, subsections } = store.sections[section]
+			const { name: sectionName, subsections } = store.sections[sectionKey]
 			Content = (
 				<div className="footer__content">
 					<menu className="footer__menu">
@@ -43,10 +42,11 @@ export default class Footer extends React.Component {
 
 							return (
 								<div key={index} className="footer__subsection">
-									<Link to={`/section/${section}/${key}`} className="footer__link">{subsection.name}</Link>
-									<div className="footer__dots">
-										{Dots}
-									</div>
+									<Link
+										to={`/section/${sectionKey}/${key}`}
+										className="footer__link"
+										activeClassName="_active">{subsection.name}</Link>
+									{subsection.content.length > 1 ? (<div className="footer__dots">{Dots}</div>) : ''}
 								</div>
 							)
 						})}

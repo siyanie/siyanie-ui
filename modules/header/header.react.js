@@ -1,11 +1,10 @@
-import React from 'react'
-
+import { Component } from 'react'
 import Menu from '../menu/menu.react.js'
 import Phone from '../phone/phone.react.js'
 import Icon from '../icon/icon.react.js'
 import { Link } from 'react-router'
 
-export default class Header extends React.Component {
+export default class Header extends Component {
 	render () {
 		return (
 			<div className="header">
@@ -15,7 +14,7 @@ export default class Header extends React.Component {
 					</Link>
 					<div className="header__nav">
 						<div className="header__menu">
-							<Menu />
+							<Menu params={this.props.params} />
 						</div>
 						<div className="header__phone">
 							<Phone />

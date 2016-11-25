@@ -43,11 +43,12 @@
 			justify-content: space-between;
 		}
 		&link{
-			@extend .menu__link;
+			@extend .link;
 
-			// subelements
-			&:not(:last-child) {
-				margin: initial;
+			// mods
+			&._active,
+			&:hover{
+				color: white;
 			}
 		}
 		&dots{

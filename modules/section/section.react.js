@@ -1,10 +1,9 @@
-import React from 'react'
-
+import { Component } from 'react'
 import Icon from '../icon/icon.react'
 
 import store from '../store/store.react'
 
-export default class Section extends React.Component {
+export default class Section extends Component {
 	constructor () {
 		super()
 
