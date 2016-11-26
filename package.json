@@ -9,6 +9,7 @@
     "scripts": "webpack",
     "images": "node tasks/npm/images",
     "watch": "node tasks/watch",
+    "dev": "webpack-dev-server --content-base build/ --port 8181 --hot --inline",
     "build": "npm run images && npm run modernizr && npm run styles && npm run templates && npm run scripts && npm run scripts",
     "modernizr": "modernizr -c .modernizr.json -d build/",
     "test": "ava test/*.js",
@@ -45,6 +46,7 @@
     "chokidar": "^1.6.1",
     "del": "^2.2.2",
     "eslint": "^3.9.1",
+    "eslint-plugin-react": "^6.7.1",
     "gh-pages": "^0.11.0",
     "glob": "^7.1.1",
     "htmlhint": "^0.9.13",
@@ -60,15 +62,12 @@
     "postcss-scss": "^0.3.1",
     "postxml": "^0.2.9",
     "postxml-pack-alanev": "^1.2.0",
-    "react": "^15.4.0",
-    "react-dom": "^15.4.0",
-    "react-router": "^3.0.0",
     "siyanie-graphics": "github:siyanie/siyanie-graphics",
     "stylelint": "^7.5.0",
     "stylelint-config-standard": "^14.0.0",
     "surge": "^0.18.0",
-    "swiper": "^3.4.0",
     "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2",
     "yaml-loader": "^0.4.0"
   },
   "engines": {
@@ -76,5 +75,12 @@
   },
   "os": [
     "linux"
-  ]
+  ],
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-addons-css-transition-group": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-input-mask": "^0.7.5",
+    "react-router": "^3.0.0"
+  }
 }

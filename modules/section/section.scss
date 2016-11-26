@@ -1,9 +1,10 @@
 .section{
+	position: absolute 0;
+
 	flex: 1;
 	max-width: 100%;
 	width: 100%;
 
-	position: relative;
 	overflow: hidden;
 
 	transition: opacity $transition--long;
@@ -11,27 +12,20 @@
 	display: flex;
 	flex-direction: column;
 
-	// mods
-	&._active &__{
-		&bg{
-			transform: scale(1.05);
-		}
+	// animation
+	&.anim-enter{
+		opacity: .01;
 	}
-	&:not(._active){
-		opacity: 0;
-		max-height: 0;
-		max-width: 0;
+	&.anim-enter.anim-enter-active{
+		opacity: 1;
+		transition: opacity calc($transition * 3) ease-in;
 	}
-	&:not(._active) &__{
-		&info,
-		&pag,
-		&footer{
-			opacity: 0;
-		}
-		&bg{
-			transform: none;
-			filter: blur(3px);
-		}
+	&.anim-leave{
+		opacity: 1;
+	}
+	&.anim-leave.anim-leave-active{
+		opacity: .01;
+		transition: opacity calc($transition * 2) ease-in;
 	}
 
 	// elements

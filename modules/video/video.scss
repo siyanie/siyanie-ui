@@ -1,12 +1,56 @@
 .video{
 
+	position: relative;
+
+	// pseudoelements
+	&::before,
+	&::after{
+		content: '';
+		position: absolute * 0;
+		z-index: $z-higher;
+
+		background: $c-primary;
+
+		transition: min-height $transition;
+	}
+	&::before{
+		top: 0;
+	}
+	&::after{
+		bottom: 0;
+	}
+
+	// mods
+	&--paused{
+		&::before,
+		&::after{
+			min-height: 10vh;
+		}
+	}
+	&--played &__{
+		&preview{
+			opacity: 0;
+			visibility: hidden;
+		}
+		&info{
+			transform: scale(.8);
+		}
+	}
+	&:hover{
+		&::before,
+		&::after{
+			min-height: 0;
+		}
+	}
+	&:hover &__button{
+		background: $c-primary--bright;
+	}
+
 	// elements
 	&__{
 		&source{
 			position: absolute 50% * * 50%;
 			transform: translate(-50%, -50%);
-			width: 100%;
-			height: auto;
 		}
 		&preview{
 			flex: 1;
@@ -18,17 +62,15 @@
 
 			background: color($c-primary a(.4));
 
-			transition: ;
+			cursor: pointer;
 
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-
-			// mods
-			&._hidden{
-				opacity: 0;
-				visibility: hidden;
-			}
+		}
+		&preview,
+		&info{
+			transition: ;
 		}
 		&title{
 			@extend .title;
@@ -39,19 +81,12 @@
 
 			border-radius: ;
 
-			transition: ;
+			transition: calc($transition * 2);
 
 			background: color(white a(.1));
 			fill: currentColor;
 
-			cursor: pointer;
-
 			display: flex;
-
-			// mods
-			&:hover{
-				background: $c-primary--bright;
-			}
 		}
 		&icon{
 			max-size: 2rem 3rem;

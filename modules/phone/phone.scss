@@ -1,13 +1,10 @@
 .phone{
-	@extend .link;
-
 	position: relative;
 	display: flex;
 	align-items: center;
 
-	// pseudoclasses
-
-	/* &:hover &__{
+	// mods
+	&:hover &__{
 		&button{
 			background: $c-primary--bright;
 			box-shadow: 0 0 0 .5rem $c-primary--bright;
@@ -15,10 +12,13 @@
 		&note{
 			opacity: 1;
 		}
-	} */
+	}
 
 	// elementsb
 	&__{
+		&link{
+			@extend .link;
+		}
 		&button{
 			size: 1.5rem;
 			margin: * .5rem * *;
@@ -35,7 +35,6 @@
 		}
 		&icon{
 			max-size: 1.125rem;
-			transform: translateY(-.125em);
 		}
 		&prefix,
 		&number{
@@ -54,6 +53,8 @@
 
 			font-size: $font-size--secondary;
 			font-weight: 700;
+
+			text-decoration: none;
 
 			opacity: 0;
 			transition: calc($transition * 3) ease-out;

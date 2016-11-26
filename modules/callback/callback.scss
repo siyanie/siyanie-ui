@@ -1,10 +1,148 @@
-/* stylelint-disable */
 .callback{
 
-	// mods
+	position: fixed 0;
+	z-index: $z-over-everything;
+
+	font-size: 1.125rem;
+
+	background: $c-primary;
+	color: white;
+
+	display: flex;
+
+	// animation
+	&.anim-enter{
+		opacity: .01;
+	}
+	&.anim-enter.anim-enter-active{
+		opacity: 1;
+		transition: opacity calc($transition * 3) ease-in;
+	}
+	&.anim-leave{
+		opacity: 1;
+	}
+	&.anim-leave.anim-leave-active{
+		opacity: .01;
+		transition: opacity calc($transition * 2) ease-in;
+	}
 
 	// elements
 	&__{
+		&content{
+			margin: auto;
 
+			position: relative;
+		}
+		&close{
+			position: absolute * * 110% 110%;
+			size: 1.25rem;
+
+			fill: $c-primary-text;
+
+			transition: ;
+
+			// mods
+			&:hover{
+				fill: white;
+				cursor: pointer;
+			}
+		}
+		&title{
+			@extend .title;
+
+			margin: * * 2rem;
+		}
+		&form{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			// mods
+			&._sent{
+				display: none;
+			}
+		}
+		&field,
+		&submit{
+			all: initial;
+
+			font-family: $font-family--condensed;
+			font-family: inherit;
+			font-style: italic;
+			font-size: inherit;
+
+			text-align: center;
+		}
+		&field{
+			box-sizing: border-box;
+			max-width: 4.5rem;
+			padding: 1rem *;
+
+			line-height: 1;
+
+			opacity: 1;
+			box-shadow: inset 0 -1px 0 0 currentColor;
+			color: $c-primary-text;
+
+			transition: ;
+
+			// mods
+			&:not(:last-of-type){
+				margin: * * 1.5rem;
+			}
+			&._filled,
+			&:focus{
+				max-width: 24rem;
+
+				box-shadow: inset 0 -1px 0 0 $c-blue;
+				color: white;
+			}
+		}
+		&submit{
+			box-sizing: border-box;
+			min-size: 11rem 2.5rem;
+			margin: 2.25rem;
+
+			box-shadow: inset 0 0 0 .125rem currentColor;
+			color: currentColor;
+
+			transition: ;
+
+			// mods
+			&:hover{
+				background: $c-blue;
+				box-shadow: none;
+
+				cursor: pointer;
+			}
+			&:disabled{
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
+		&thanks{
+			display: none;
+			margin: 5.5rem * *;
+
+			text-align: center;
+
+			// mods
+			&._sent{
+				display: block;
+			}
+
+			// subelements
+			&-{
+				&check{
+					width: 5.938rem;
+					height: 4.313rem;
+
+					background-color: $c-primary--bright;
+				}
+				&note{
+					margin: 5.5rem * *;
+				}
+			}
+		}
 	}
 }

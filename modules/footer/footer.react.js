@@ -59,7 +59,7 @@ export default class Footer extends Component {
 					<div className="footer__copyright">
 						Группа компаний
 						<span className="footer__logo">
-							<icon className="footer__logo-icon">siyanie-mono</icon>
+							<Icon className="footer__logo-icon" icon="siyanie-mono" />
 						</span>
 					</div>
 					<div className="footer__dev">
