@@ -11,6 +11,9 @@ import Section from '../modules/section/section.react'
 import Callback from '../modules/callback/callback.react'
 import Project from '../modules/project/project.react'
 import Projects from '../modules/projects/projects.react'
+import ErrorPage from '../modules/error/error.react'
+
+console.log(ErrorPage)
 
 render(
 	<Router history={hashHistory}>
@@ -21,10 +24,12 @@ render(
 			<Route path="projects" component={Projects} />
 			<Route path="project/:project" component={Project} />
 
-			<Redirect from="/section/about" to="/section/about/onas" />
-			<Redirect from="/section/services" to="/section/services/gen" />
-			<Redirect from="/section/press-center" to="/section/press-center/news" />
+			<Route path="*" component={ErrorPage} />
 		</Route>
+
+		<Redirect from="/section/about" to="/section/about/onas" />
+		<Redirect from="/section/services" to="/section/services/gen" />
+		<Redirect from="/section/press-center" to="/section/press-center/news" />
 	</Router>,
 	document.getElementById('root')
 )

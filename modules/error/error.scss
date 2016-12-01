@@ -1,0 +1,50 @@
+.error{
+	@extend .section;
+
+	background: $c-primary;
+
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	// elements
+	&__{
+		&bg{
+			position: absolute 50% * * 50%;
+			transform: translate(-50%, -50%);
+			size: 1100px 590px; // magic of 404 icon size
+
+			background: url('//placehold.alanev.ru/1920x1080') center / cover no-repeat;
+			clip-path: url(#icon--error);
+		}
+		&info{
+			@extend .quote__content;
+			position: relative;
+			z-index: $z-higher;
+
+			display: block;
+			align-self: flex-end;
+			margin: 10vh *;
+
+			font-size: 1.75rem;
+
+			text-align: center;
+
+			// subelements
+			&::before{
+				@extend .quote__text::before;
+			}
+		}
+		&link{
+			@extend .link;
+
+			text-decoration: underline;
+
+			// mods
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+}
