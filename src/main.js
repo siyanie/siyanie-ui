@@ -1,6 +1,6 @@
-import preloader from '../modules/preloader/preloader.js'
+// import preloader from '../modules/preloader/preloader.js'
 
-preloader.init()
+// preloader.init()
 
 import { render } from 'react-dom'
 import { Router, Route, IndexRoute, hashHistory, Redirect } from 'react-router'
@@ -9,6 +9,8 @@ import Page from '../modules/g-page/g-page.react.js'
 import Video from '../modules/video/video.react'
 import Section from '../modules/section/section.react'
 import Callback from '../modules/callback/callback.react'
+import Project from '../modules/project/project.react'
+import Projects from '../modules/projects/projects.react'
 
 render(
 	<Router history={hashHistory}>
@@ -16,6 +18,8 @@ render(
 			<IndexRoute component={Video} />
 			<Route path="section/:section/:subsection" component={Section} />
 			<Route path="callback" component={Callback} />
+			<Route path="projects" component={Projects} />
+			<Route path="project/:project" component={Project} />
 
 			<Redirect from="/section/about" to="/section/about/onas" />
 			<Redirect from="/section/services" to="/section/services/gen" />
@@ -24,5 +28,3 @@ render(
 	</Router>,
 	document.getElementById('root')
 )
-
-module.hot.accept()
