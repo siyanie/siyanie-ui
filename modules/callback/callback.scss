@@ -1,3 +1,26 @@
+/* body{
+	transition: 5s;
+
+	position: relative;
+
+	// elems
+	&::after{
+		content: '';
+		position: fixed 0;
+		z-index: 9999999999999999;
+		border: 0 solid red;
+
+		animation: an 1s forwards;
+	}
+}
+@keyframes an{
+	from{
+		border-width: * 50vw;
+	}
+	to{
+		visibility: hidden;
+	}
+} */
 .callback{
 
 	position: fixed 0;
@@ -6,6 +29,7 @@
 	font-size: 1.125rem;
 
 	background: $c-primary;
+
 	color: white;
 
 	display: flex;
@@ -27,6 +51,13 @@
 	}
 
 	// elements
+	&::after{
+		content: '';
+		position: absolute 0;
+		z-index: $z-under;
+		background: url(assets/images/callback.png) center / cover no-repeat;
+		opacity: .25;
+	}
 	&__{
 		&content{
 			margin: auto;

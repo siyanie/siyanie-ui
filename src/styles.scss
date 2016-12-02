@@ -1,4 +1,5 @@
 @import '../modules/u-vars/colors.scss';
+@import '../modules/u-vars/size.scss';
 @import '../modules/u-vars/fonts.scss';
 @import '../modules/u-vars/props.scss';
 @import '../modules/u-vars/z-index.scss';
@@ -24,4 +25,7 @@
 @import '../modules/social/social.scss';
 @import '../modules/video/video.scss';
 @import '../modules/quote/quote.scss';
-@import '../modules/callback/callback.scss'
+@import '../modules/callback/callback.scss';
+@import '../modules/error/error.scss';
+@import '../modules/projects/projects.scss';
+@import '../modules/project/project.scss';

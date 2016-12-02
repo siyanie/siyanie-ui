@@ -13,16 +13,14 @@ import Project from '../modules/project/project.react'
 import Projects from '../modules/projects/projects.react'
 import ErrorPage from '../modules/error/error.react'
 
-console.log(ErrorPage)
-
 render(
 	<Router history={hashHistory}>
 		<Route path="/" component={Page}>
 			<IndexRoute component={Video} />
 			<Route path="section/:section/:subsection" component={Section} />
 			<Route path="callback" component={Callback} />
-			<Route path="projects" component={Projects} />
-			<Route path="project/:project" component={Project} />
+			<Route path="projects" component={Projects}  />
+			<Route path="project/:project" component={Project} footer={false} foo="bar" />
 
 			<Route path="*" component={ErrorPage} />
 		</Route>

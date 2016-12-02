@@ -1,5 +1,7 @@
 .footer{
 
+	box-sizing: border-box;
+	min-height: $footer__height;
 	padding: 5vh *;
 
 	font-size: $font-size--secondary;
@@ -23,6 +25,11 @@
 			color: white;
 
 			// subelements
+			&,
+			&-arrow{
+				animation-name: footerItem;
+				animation-duration: $transition;
+			}
 			&-{
 				&arrow{
 					size: 1rem .5rem;
@@ -41,6 +48,33 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+		}
+		&subsection{
+			animation-name: footerItem;
+			animation-duration: $transition;
+			animation-fill-mode: forwards;
+
+			opacity: 0;
+
+			// mods
+			&:nth-of-type(1){
+				animation-delay: calc($transition * 1);
+			}
+			&:nth-of-type(2){
+				animation-delay: calc($transition * 2);
+			}
+			&:nth-of-type(3){
+				animation-delay: calc($transition * 3);
+			}
+			&:nth-of-type(4){
+				animation-delay: calc($transition * 4);
+			}
+			&:nth-of-type(5){
+				animation-delay: calc($transition * 5);
+			}
+			&:nth-of-type(6){
+				animation-delay: calc($transition * 6);
+			}
 		}
 		&link{
 			@extend .link;
@@ -85,7 +119,6 @@
 			}
 		}
 		&dev{
-
 			// subelements
 			&-{
 				&name{
@@ -96,5 +129,14 @@
 				}
 			}
 		}
+	}
+}
+
+@keyframes footerItem{
+	from{
+		transform: translateY(100%);
+	}
+	to{
+		opacity: 1;
 	}
 }

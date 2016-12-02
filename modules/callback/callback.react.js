@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { findDOMNode } from 'react-dom'
 
 import Icon from '../icon/icon.react'
 import { Link } from 'react-router'
@@ -26,6 +27,9 @@ export default class Callback extends Component {
 			sent: true
 		})
 	}
+	componentDidMount () {
+		this.refs.inputName.focus()
+	}
 	render () {
 		const { name, tel, email, sent } = this.state
 		const changeInput = this._changeInput.bind(this)
@@ -49,6 +53,7 @@ export default class Callback extends Component {
 							name="name"
 							value={name}
 							onChange={changeInput}
+							ref="inputName"
 							className={`callback__field ${name ? '_filled' : '_empty'}`}
 							placeholder="Ваше имя"
 							required

@@ -1,5 +1,8 @@
 .header{
 
+	box-sizing: border-box;
+	min-height: $header__height;
+
 	color: $c-primary-text;
 
 	// elements

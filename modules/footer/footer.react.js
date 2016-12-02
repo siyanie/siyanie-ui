@@ -41,13 +41,13 @@ export default class Footer extends Component {
 							))
 
 							return (
-								<div key={index} className="footer__subsection">
+								<span key={index} className="footer__subsection">
 									<Link
 										to={`/section/${sectionKey}/${key}`}
 										className="footer__link"
 										activeClassName="_active">{subsection.name}</Link>
 									{subsection.content.length > 1 ? (<div className="footer__dots">{Dots}</div>) : ''}
-								</div>
+								</span>
 							)
 						})}
 					</menu>

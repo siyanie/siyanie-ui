@@ -7,21 +7,28 @@
 
 	display: flex;
 
-	/*transition:
-		opacity $transition__preloader,
-		visibility 0s $transition__preloader;*/
+	animation-name: preloaderFade;
+	animation-delay: 0s; //$transition__preloader;
+	animation-duration: 0s; //$transition__preloader;
+	animation-fill-mode: forwards;
+
+	/* --- Transition
+	transition:
+		opacity calc($transition__preloader * .5) $transition__preloader,
+		visibility 0s calc($transition__preloader * 1.5);
 
 	// mods
 	&._hidden{
 		opacity: 0;
 		visibility: hidden;
 
-	// elements
+		// elements
 		path{
 			transform: none !important;
 			opacity: 1;
 		}
 	}
+	*/
 
 	// elements
 	svg{
@@ -29,6 +36,22 @@
 	}
 	path{
 		animation-duration: $transition__preloader;
+
+		&:first-child{
+			transform-origin: right bottom;
+			animation-name: logoFade, logoFirst;
+		}
+		&:nth-child(2){
+			transform-origin: left top;
+			animation-name: logoFade, logoSecond;
+
+		}
+		&:last-child{
+			transform-origin: right top;
+			animation-name: logoFade, logoThird;
+		}
+
+		/* --- Transition
 		transition: $transition__preloader;
 		opacity: .2;
 
@@ -38,7 +61,7 @@
 			transform:
 				rotate(80deg)
 				translate(-30%, -15%);
-	}
+		}
 		&:nth-child(2){
 			transform-origin: left top;
 			transform:
@@ -52,7 +75,8 @@
 				rotate(85deg)
 				translate(30%, 100%);
 		}
-		}
+		*/
+	}
 	&__{
 		&content{
 			margin: auto;
@@ -63,16 +87,21 @@
 	}
 }
 
-@keyframes hidePrelaoder{
+@keyframes preloaderFade{
 	to{
 		opacity: 0;
 		visibility: hidden;
 	}
 }
 
-@keyframes logoFirst{
+@keyframes logoFade{
 	from{
 		opacity: .2;
+	}
+}
+
+@keyframes logoFirst{
+	from{
 		transform:
 			rotate(80deg)
 			translate(-30%, -15%);
@@ -81,7 +110,6 @@
 
 @keyframes logoSecond{
 	from{
-		opacity: .2;
 		transform:
 			rotate(65deg)
 			translate(70%, -35%);
@@ -90,7 +118,6 @@
 
 @keyframes logoThird{
 	from{
-		opacity: .2;
 		transform:
 			rotate(85deg)
 			translate(30%, 100%);

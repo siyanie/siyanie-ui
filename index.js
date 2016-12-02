@@ -1,16 +1,5 @@
-const glob = require('glob')
-const { rename } = require('fs')
+const exec = require('./tasks/utils/exec')
 
-glob('data/images/uslugi*.jpg', (err, files) => {
-	if (!err) {
-		files.forEach(file => {
-			rename(file, file.replace('uslugi', 'services'), err => {
-				if (err) {
-					console.error('Smth wrong: ', err)
-				} else {
-					console.info('Done: ', file)
-				}
-			})
-		})
-	}
-})
+exec('npm run watch')
+	.then(console.info)
+	.catch(console.error)

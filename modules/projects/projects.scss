@@ -1,10 +1,104 @@
-/* stylelint-disable */
 .projects{
+
+	flex: 1;
+
+	fill: currentColor;
+
+	display: flex;
+	flex-direction: column;
 
 	// mods
 
 	// elements
 	&__{
+		&list{
+			flex: 1;
+			display: flex;
+			align-items: stretch;
+			flex-wrap: wrap;
+		}
+		&project{
+			@extend .link;
 
+			box-sizing: border-box;
+			width: 25%;
+			min-height: calc((100vh - $header__height - $footer__height) / 2);
+			padding: * 4rem;
+
+			overflow: hidden;
+			position: relative;
+			display: flex;
+			align-items: center;
+		}
+		&bg{
+			position: absolute -.5rem;
+
+			background-position: center;
+			background-size: cover;
+			filter: blur(4px);
+
+			&::after{
+				content: '';
+				position: absolute 0;
+
+				background: $c-primary;
+				opacity: .5;
+			}
+		}
+		&logo,
+		&loop{
+			z-index: $z-higher;
+		}
+		&logo{
+			max-width: 100%;
+			height: auto;
+		}
+		&loop{
+			position: absolute 50% * * 50%;
+			transform: translate(-50%, -50%);
+			size: 5rem;
+
+			border-radius: 50%;
+			background: color($c-bg a(.7));
+			opacity: 0;
+
+			display: flex;
+		}
+		&icon{
+			max-size: 2rem;
+			margin: auto;
+		}
+		&more{
+			margin: 1rem * -calc(1rem + .875rem);
+
+			font-size: .875rem;
+			font-weight: 700;
+			line-height: 1;
+
+			text-align: center;
+			text-transform: uppercase;
+
+			color: $c-primary-text;
+			cursor: pointer;
+		}
+		// hover
+		&bg,
+		&bg::after,
+		&logo,
+		&loop{
+			transition-duration: calc($transition * 4);
+		}
+		&project:hover &{
+			&bg{
+				filter: none;
+			}
+			&logo,
+			&bg::after{
+				opacity: 0;
+			}
+			&loop{
+				opacity: 1;
+			}
+		}
 	}
 }
