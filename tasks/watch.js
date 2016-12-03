@@ -4,8 +4,6 @@ const watchOptions = {
 }
 
 // tasks
-const webpack = require('webpack')
-const webpackOptions = require('../webpack.config.js')
 const styles = require('./styles')
 const templates = require('./templates')
 const images = require('./images')
@@ -17,14 +15,6 @@ watch(['modules/*/*.scss', 'src/*.scss'], watchOptions)
 	.on('all', (e, path) => {
 		styles(undefined, undefined, () => {
 			console.log(e, path, 'done')
-		})
-	})
-
-watch(['modules/*/*.js', 'src/*.js'], watchOptions)
-	.on('all', (e, path) => {
-		webpack(webpackOptions, function (err) {
-			if (err) throw new Error(err)
-			console.log(e, path, ' done')
 		})
 	})
 

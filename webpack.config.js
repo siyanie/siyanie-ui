@@ -1,25 +1,31 @@
 const webpack = require('webpack')
+const path = require('path')
 
 module.exports = {
-	entry: {
-		defer: './src/defer.js',
-		main: './src/main.js'
-	},
+	entry: [
+		'webpack/hot/dev-server',
+		'webpack-hot-middleware/client',
+		'./src/main.js'
+	],
 	output: {
-		path: './build',
-		filename: '[name].js',
+		path: path.join(__dirname, 'build'),
+		publicPath: '/static/',
+		filename: 'main.js',
 	},
 	module: {
+		preLoaders: [{
+			test: /\.js$/,
+			exclude: /node_modules/,
+			loaders: [
+				'eslint'
+			]
+		}],
 		loaders: [{
 			test: /\.js$/,
 			exclude: /node_modules/,
-			loader: 'babel',
-			query: {
-				presets: [
-					'react',
-					'es2015'
-				]
-			}
+			loaders: [
+				'babel'
+			]
 		},
 		{
 			test: /\.svg$/,

@@ -12,22 +12,32 @@ import Callback from '../modules/callback/callback.react'
 import Project from '../modules/project/project.react'
 import Projects from '../modules/projects/projects.react'
 import ErrorPage from '../modules/error/error.react'
+import Footer from '../modules/footer/footer.react'
+import FooterInner from '../modules/footer/footer.inner.react'
+
+const Root = ({ children }) => children
 
 render(
-	<Router history={hashHistory}>
-		<Route path="/" component={Page}>
-			<IndexRoute component={Video} />
-			<Route path="section/:section/:subsection" component={Section} />
-			<Route path="callback" component={Callback} />
-			<Route path="projects" component={Projects}  />
-			<Route path="project/:project" component={Project} footer={false} foo="bar" />
+	<Root>
+		<Router history={hashHistory}>
+			<Route path="/" component={Page}>
+				<IndexRoute components={{ content: Video, footer: Footer }} />
+				<Route path="section/:section/:subsection" components={{ content: Section, footer: FooterInner}} />
+				<Route path="callback" components={{ content: Callback }} />
+				<Route path="projects" components={{ content: Projects, footer: Footer }}  />
+				<Route path="project/:project" components={{ content: Project }} />
 
-			<Route path="*" component={ErrorPage} />
-		</Route>
+				<Redirect from="/section/about" to="/section/about/onas" />
+				<Redirect from="/section/services" to="/section/services/gen" />
+				<Redirect from="/section/press-center" to="/section/press-center/news" />
 
-		<Redirect from="/section/about" to="/section/about/onas" />
-		<Redirect from="/section/services" to="/section/services/gen" />
-		<Redirect from="/section/press-center" to="/section/press-center/news" />
-	</Router>,
+				<Route path="*" components={{ content: ErrorPage}} />
+			</Route>
+		</Router>
+	</Root>,
 	document.getElementById('root')
 )
+
+if (module.hot) {
+	module.hot.accept()
+}

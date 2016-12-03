@@ -5,12 +5,15 @@
     "commonjs": true,
     "es6": true
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
-        "jsx": true
+      "jsx": true
     }
   },
   "plugins": [
@@ -33,6 +36,8 @@
     "semi": [
       "error",
       "never"
-    ]
+    ],
+    "react/react-in-jsx-scope": 0,
+    "react/prop-types": 0
   }
 }
