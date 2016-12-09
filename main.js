@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3f58e7e41f105f0a26a0"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "71325419065f5a363137"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -37845,50 +37845,50 @@
 								"docs": [
 									{
 										"previews": [
-											"//placehold.alanev.ru/205x290",
-											"//placehold.alanev.ru/205x290",
-											"//placehold.alanev.ru/205x290"
+											"http://placehold.alanev.ru/205x290",
+											"http://placehold.alanev.ru/205x290",
+											"http://placehold.alanev.ru/205x290"
 										],
 										"images": [
-											"//placehold.alanev.ru/550x770",
-											"//placehold.alanev.ru/550x770",
-											"//placehold.alanev.ru/550x770"
+											"http://placehold.alanev.ru/550x770",
+											"http://placehold.alanev.ru/550x770",
+											"http://placehold.alanev.ru/550x770"
 										]
 									},
 									{
 										"previews": [
-											"//placehold.alanev.ru/205x290",
-											"//placehold.alanev.ru/205x290",
-											"//placehold.alanev.ru/205x290"
+											"http://placehold.alanev.ru/205x290",
+											"http://placehold.alanev.ru/205x290",
+											"http://placehold.alanev.ru/205x290"
 										],
 										"images": [
-											"//placehold.alanev.ru/550x770",
-											"//placehold.alanev.ru/550x770",
-											"//placehold.alanev.ru/550x770"
+											"http://placehold.alanev.ru/550x770",
+											"http://placehold.alanev.ru/550x770",
+											"http://placehold.alanev.ru/550x770"
 										]
 									},
 									{
 										"previews": [
-											"//placehold.alanev.ru/205x290",
-											"//placehold.alanev.ru/205x290",
-											"//placehold.alanev.ru/205x290"
+											"http://placehold.alanev.ru/205x290",
+											"http://placehold.alanev.ru/205x290",
+											"http://placehold.alanev.ru/205x290"
 										],
 										"images": [
-											"//placehold.alanev.ru/550x770",
-											"//placehold.alanev.ru/550x770",
-											"//placehold.alanev.ru/550x770"
+											"http://placehold.alanev.ru/550x770",
+											"http://placehold.alanev.ru/550x770",
+											"http://placehold.alanev.ru/550x770"
 										]
 									},
 									{
 										"previews": [
-											"//placehold.alanev.ru/205x290",
-											"//placehold.alanev.ru/205x290",
-											"//placehold.alanev.ru/205x290"
+											"http://placehold.alanev.ru/205x290",
+											"http://placehold.alanev.ru/205x290",
+											"http://placehold.alanev.ru/205x290"
 										],
 										"images": [
-											"//placehold.alanev.ru/550x770",
-											"//placehold.alanev.ru/550x770",
-											"//placehold.alanev.ru/550x770"
+											"http://placehold.alanev.ru/550x770",
+											"http://placehold.alanev.ru/550x770",
+											"http://placehold.alanev.ru/550x770"
 										]
 									}
 								]
@@ -37913,92 +37913,92 @@
 									{
 										"name": "Свидетельство СРО",
 										"previews": [
-											"//placehold.alanev.ru/205x290",
-											"//placehold.alanev.ru/205x290/123",
-											"//placehold.alanev.ru/205x290/234"
+											"http://placehold.alanev.ru/205x290",
+											"http://placehold.alanev.ru/205x290/123",
+											"http://placehold.alanev.ru/205x290/234"
 										],
 										"images": [
-											"//placehold.alanev.ru/550x770",
-											"//placehold.alanev.ru/550x770/123",
-											"//placehold.alanev.ru/550x770/234"
+											"http://placehold.alanev.ru/550x770",
+											"http://placehold.alanev.ru/550x770/123",
+											"http://placehold.alanev.ru/550x770/234"
 										]
 									},
 									{
 										"name": "Лицензия на \nстроительные работы",
 										"previews": [
-											"//placehold.alanev.ru/205x290/345",
-											"//placehold.alanev.ru/205x290/456",
-											"//placehold.alanev.ru/205x290/567"
+											"http://placehold.alanev.ru/205x290/345",
+											"http://placehold.alanev.ru/205x290/456",
+											"http://placehold.alanev.ru/205x290/567"
 										],
 										"images": [
-											"//placehold.alanev.ru/550x770/345",
-											"//placehold.alanev.ru/550x770/456",
-											"//placehold.alanev.ru/550x770/567"
+											"http://placehold.alanev.ru/550x770/345",
+											"http://placehold.alanev.ru/550x770/456",
+											"http://placehold.alanev.ru/550x770/567"
 										]
 									},
 									{
 										"name": "Свидетельство СРО",
 										"previews": [
-											"//placehold.alanev.ru/205x290/678",
-											"//placehold.alanev.ru/205x290/789",
-											"//placehold.alanev.ru/205x290/89a"
+											"http://placehold.alanev.ru/205x290/678",
+											"http://placehold.alanev.ru/205x290/789",
+											"http://placehold.alanev.ru/205x290/89a"
 										],
 										"images": [
-											"//placehold.alanev.ru/550x770/678",
-											"//placehold.alanev.ru/550x770/789",
-											"//placehold.alanev.ru/550x770/89a"
+											"http://placehold.alanev.ru/550x770/678",
+											"http://placehold.alanev.ru/550x770/789",
+											"http://placehold.alanev.ru/550x770/89a"
 										]
 									},
 									{
 										"name": "Лицензия на \nстроительные работы",
 										"previews": [
-											"//placehold.alanev.ru/205x290/9ab",
-											"//placehold.alanev.ru/205x290/abc",
-											"//placehold.alanev.ru/205x290/bcf"
+											"http://placehold.alanev.ru/205x290/9ab",
+											"http://placehold.alanev.ru/205x290/abc",
+											"http://placehold.alanev.ru/205x290/bcf"
 										],
 										"images": [
-											"//placehold.alanev.ru/550x770/9ab",
-											"//placehold.alanev.ru/550x770/abc",
-											"//placehold.alanev.ru/550x770/bcf"
+											"http://placehold.alanev.ru/550x770/9ab",
+											"http://placehold.alanev.ru/550x770/abc",
+											"http://placehold.alanev.ru/550x770/bcf"
 										]
 									},
 									{
 										"name": "Лицензия на \nстроительные работы",
 										"previews": [
-											"//placehold.alanev.ru/205x290/9ab",
-											"//placehold.alanev.ru/205x290/abc",
-											"//placehold.alanev.ru/205x290/bcf"
+											"http://placehold.alanev.ru/205x290/9ab",
+											"http://placehold.alanev.ru/205x290/abc",
+											"http://placehold.alanev.ru/205x290/bcf"
 										],
 										"images": [
-											"//placehold.alanev.ru/550x770/9ab",
-											"//placehold.alanev.ru/550x770/abc",
-											"//placehold.alanev.ru/550x770/bcf"
+											"http://placehold.alanev.ru/550x770/9ab",
+											"http://placehold.alanev.ru/550x770/abc",
+											"http://placehold.alanev.ru/550x770/bcf"
 										]
 									},
 									{
 										"name": "Лицензия на \nстроительные работы",
 										"previews": [
-											"//placehold.alanev.ru/205x290/9ab",
-											"//placehold.alanev.ru/205x290/abc",
-											"//placehold.alanev.ru/205x290/bcf"
+											"http://placehold.alanev.ru/205x290/9ab",
+											"http://placehold.alanev.ru/205x290/abc",
+											"http://placehold.alanev.ru/205x290/bcf"
 										],
 										"images": [
-											"//placehold.alanev.ru/550x770/9ab",
-											"//placehold.alanev.ru/550x770/abc",
-											"//placehold.alanev.ru/550x770/bcf"
+											"http://placehold.alanev.ru/550x770/9ab",
+											"http://placehold.alanev.ru/550x770/abc",
+											"http://placehold.alanev.ru/550x770/bcf"
 										]
 									},
 									{
 										"name": "Лицензия на \nстроительные работы",
 										"previews": [
-											"//placehold.alanev.ru/205x290/9ab",
-											"//placehold.alanev.ru/205x290/abc",
-											"//placehold.alanev.ru/205x290/bcf"
+											"http://placehold.alanev.ru/205x290/9ab",
+											"http://placehold.alanev.ru/205x290/abc",
+											"http://placehold.alanev.ru/205x290/bcf"
 										],
 										"images": [
-											"//placehold.alanev.ru/550x770/9ab",
-											"//placehold.alanev.ru/550x770/abc",
-											"//placehold.alanev.ru/550x770/bcf"
+											"http://placehold.alanev.ru/550x770/9ab",
+											"http://placehold.alanev.ru/550x770/abc",
+											"http://placehold.alanev.ru/550x770/bcf"
 										]
 									}
 								]
@@ -38021,93 +38021,93 @@
 							"content": {
 								"items": [
 									{
-										"image": "//placehold.alanev.ru/160x50",
+										"image": "http://placehold.alanev.ru/160x50",
 										"links": [
 											{
 												"name": "png",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											},
 											{
 												"name": "ai",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											}
 										]
 									},
 									{
-										"image": "//placehold.alanev.ru/160x50",
+										"image": "http://placehold.alanev.ru/160x50",
 										"links": [
 											{
 												"name": "png",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											},
 											{
 												"name": "ai",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											}
 										]
 									},
 									{
-										"image": "//placehold.alanev.ru/160x50",
+										"image": "http://placehold.alanev.ru/160x50",
 										"links": [
 											{
 												"name": "png",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											},
 											{
 												"name": "ai",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											}
 										]
 									},
 									{
-										"image": "//placehold.alanev.ru/160x50",
+										"image": "http://placehold.alanev.ru/160x50",
 										"links": [
 											{
 												"name": "png",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											},
 											{
 												"name": "ai",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											}
 										]
 									},
 									{
-										"image": "//placehold.alanev.ru/160x50",
+										"image": "http://placehold.alanev.ru/160x50",
 										"links": [
 											{
 												"name": "png",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											},
 											{
 												"name": "ai",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											}
 										]
 									},
 									{
-										"image": "//placehold.alanev.ru/160x50",
+										"image": "http://placehold.alanev.ru/160x50",
 										"links": [
 											{
 												"name": "png",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											},
 											{
 												"name": "ai",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											}
 										]
 									},
 									{
-										"image": "//placehold.alanev.ru/160x50",
+										"image": "http://placehold.alanev.ru/160x50",
 										"links": [
 											{
 												"name": "png",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											},
 											{
 												"name": "ai",
-												"url": "//placehold.alanev.ru/160x50"
+												"url": "http://placehold.alanev.ru/160x50"
 											}
 										]
 									}
