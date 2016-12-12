@@ -19,15 +19,23 @@ const sections = [{
 	url: '/projects'
 }]
 
-export default ({ params }) => (
-	<menu className="menu">
-		{sections.map(({id, text, url}) => (
-			<Link
-				key={id}
-				to={url ? url : `/section/${id}`}
-				target={/^http/.test(url) ? '_blank' : null}
-				className={`menu__link ${params && params.section === id ? '_active' : ''}`}
-			>{text}</Link>
-		))}
-	</menu>
-)
+export default function Menu ({ params }) {
+	return (
+		<menu className="menu">
+			{sections.map(({id, text, url}) => {
+
+				const isRemote = /^http/.test(url)
+
+				return (
+					<Link
+						key={id}
+						to={isRemote ? null : url ? url : `/section/${id}`}
+						href={isRemote ? url : null}
+						target={isRemote ? '_blank' : null}
+						className={`menu__link ${params && params.section === id ? '_active' : ''}`}
+					>{text}</Link>
+				)
+			})}
+		</menu>
+	)
+}

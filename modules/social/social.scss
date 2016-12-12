@@ -5,10 +5,12 @@
 	// elements
 	&__{
 		&link{
+			$social__link-width: 2.125rem;
+
 			@extend .link;
 
 			box-sizing: ;
-			size: 2.125rem;
+			size: $social__link-width;
 			padding: .5rem;
 
 			background: currentColor;
@@ -21,11 +23,28 @@
 
 			// pseudoclasses
 			&:hover{
-				background: $c-secondary;
+				box-shadow: inset $social__link-width 0 0 $c-secondary;
 			}
+		}
+		&link:hover &icon{
+			animation-name: socialIcon;
+			animation-duration: $transition;
+			will-change: transform;
 		}
 		&icon{
 			max-size: 100%;
 		}
+	}
+}
+
+@keyframes socialIcon{
+	0%{
+		transform: none;
+	}
+	50%{
+		transform: translateX(1px);
+	}
+	100%{
+		transform: none;
 	}
 }

@@ -1,42 +1,96 @@
+@keyframes preloaderFade{
+	to{
+		visibility: hidden;
+	}
+}
+
+@keyframes preloaderLogo{
+	to{
+		opacity: 0;
+	}
+}
+
+@keyframes preloaderBg{
+	to{
+		border-width: 0;
+	}
+}
+
+@keyframes logoFade{
+	from{
+		opacity: .2;
+	}
+}
+
+@keyframes logoFirst{
+	from{
+		transform:
+			rotate(80deg)
+			translate(-30%, -15%);
+	}
+}
+
+@keyframes logoSecond{
+	from{
+		transform:
+			rotate(65deg)
+			translate(70%, -35%);
+	}
+}
+
+@keyframes logoThird{
+	from{
+		transform:
+			rotate(85deg)
+			translate(30%, 100%);
+	}
+}
+
+// Component
 .preloader{
 
 	position: fixed 0;
 	z-index: $z-over-everything;
 
-	background: $c-primary;
-
 	display: flex;
 
+	// display: none !important;
+
 	animation-name: preloaderFade;
-	animation-delay: 0s; //$transition__preloader;
-	animation-duration: 0s; //$transition__preloader;
+	animation-delay: calc($transition__preloader * 1.5 + calc($transition * 2));
 	animation-fill-mode: forwards;
 
-	/* --- Transition
-	transition:
-		opacity calc($transition__preloader * .5) $transition__preloader,
-		visibility 0s calc($transition__preloader * 1.5);
-
-	// mods
-	&._hidden{
-		opacity: 0;
-		visibility: hidden;
-
-		// elements
-		path{
-			transform: none !important;
-			opacity: 1;
-		}
-	}
-	*/
-
 	// elements
+	&::after{
+		content: '';
+		position: absolute 0;
+		z-index: $z-under;
+
+		border-color: $c-primary;
+		border-style: solid;
+		border-width: 51vh *;
+
+		animation-name: preloaderBg;
+		animation-delay: calc($transition__preloader + calc($transition * 1));
+		animation-duration: calc($transition__preloader / 2);
+		animation-fill-mode: forwards;
+		will-change: border;
+	}
 	svg{
+		animation-name: preloaderLogo;
+		animation-delay: $transition__preloader;
+		animation-duration: calc($transition * 1);
+		animation-fill-mode: forwards;
+		will-change: opacity;
+
 		overflow: visible;
 	}
 	path{
 		animation-duration: $transition__preloader;
+		animation-timing-function: ease-in-out;
+		will-change: transform, opacity;
 
+		// mods
 		&:first-child{
 			transform-origin: right bottom;
 			animation-name: logoFade, logoFirst;
@@ -44,7 +98,6 @@
 		&:nth-child(2){
 			transform-origin: left top;
 			animation-name: logoFade, logoSecond;
-
 		}
 		&:last-child{
 			transform-origin: right top;
@@ -84,42 +137,5 @@
 		&logo{
 			max-size: 3.75rem 3.25rem;
 		}
-	}
-}
-
-@keyframes preloaderFade{
-	to{
-		opacity: 0;
-		visibility: hidden;
-	}
-}
-
-@keyframes logoFade{
-	from{
-		opacity: .2;
-	}
-}
-
-@keyframes logoFirst{
-	from{
-		transform:
-			rotate(80deg)
-			translate(-30%, -15%);
-	}
-}
-
-@keyframes logoSecond{
-	from{
-		transform:
-			rotate(65deg)
-			translate(70%, -35%);
-	}
-}
-
-@keyframes logoThird{
-	from{
-		transform:
-			rotate(85deg)
-			translate(30%, 100%);
 	}
 }

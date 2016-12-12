@@ -1,2 +1,3 @@
 $header__height: 150px;
 $footer__height: 130px;
+$content__height: calc(99vh - $header__height - $footer__height);

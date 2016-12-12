@@ -3,6 +3,8 @@
 @import '../modules/u-vars/fonts.scss';
 @import '../modules/u-vars/props.scss';
 @import '../modules/u-vars/z-index.scss';
+@import '../modules/u-vars/animations.scss';
+@import '../modules/u-vars/extends.scss';
 
 @import '../modules/g-doc/g-doc.scss';
 @import '../modules/g-fonts/g-fonts.scss';
@@ -29,3 +31,14 @@
 @import '../modules/error/error.scss';
 @import '../modules/projects/projects.scss';
 @import '../modules/project/project.scss';
+@import '../modules/arrow/arrow.scss';
+@import '../modules/slick/slick.scss';
+@import '../modules/slide/slide.scss';
+@import '../modules/numbers/numbers.scss';
+@import '../modules/clients/clients.scss';
+@import '../modules/person/person.scss';
+@import '../modules/gallery/gallery.scss';
+@import '../modules/mediacenter/mediacenter.scss';
+@import '../modules/loupe/loupe.scss';
+
+// @import '../node_modules/slick-carousel/slick/slick.css'

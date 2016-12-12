@@ -1,0 +1,23 @@
+.numbers{
+
+	display: flex;
+	justify-content: center;
+
+	// elements
+	&__{
+		&number{
+
+			// mods
+			&:not(:last-child){
+				margin-right: 5rem;
+			}
+		}
+		&value{
+			font-size: 10rem;
+			font-family: $font-family--title;
+		}
+		&label{
+			margin: -2rem * *;
+		}
+	}
+}

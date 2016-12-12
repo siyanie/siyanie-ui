@@ -1,3 +1,4 @@
+$footer__subsection-factor: .75;
 .footer{
 
 	box-sizing: border-box;
@@ -58,22 +59,22 @@
 
 			// mods
 			&:nth-of-type(1){
-				animation-delay: calc($transition * 1);
+				animation-delay: calc($transition * $footer__subsection-factor * 1);
 			}
 			&:nth-of-type(2){
-				animation-delay: calc($transition * 2);
+				animation-delay: calc($transition * $footer__subsection-factor * 2);
 			}
 			&:nth-of-type(3){
-				animation-delay: calc($transition * 3);
+				animation-delay: calc($transition * $footer__subsection-factor * 3);
 			}
 			&:nth-of-type(4){
-				animation-delay: calc($transition * 4);
+				animation-delay: calc($transition * $footer__subsection-factor * 4);
 			}
 			&:nth-of-type(5){
-				animation-delay: calc($transition * 5);
+				animation-delay: calc($transition * $footer__subsection-factor * 5);
 			}
 			&:nth-of-type(6){
-				animation-delay: calc($transition * 6);
+				animation-delay: calc($transition * $footer__subsection-factor * 6);
 			}
 		}
 		&link{
@@ -85,8 +86,12 @@
 				color: white;
 			}
 		}
+		&link._active + &dots{
+			visibility: visible;
+		}
 		&dots{
 			margin: .75rem * -.95rem;
+			visibility: hidden;
 
 			display: flex;
 			justify-content: center;
@@ -94,10 +99,15 @@
 		&dot{
 			@extend .section__dot;
 
-			size: .2rem;
+			size: .125rem;
 			margin: 0 .125rem;
 
 			cursor: default;
+
+			// mods
+			&:not(._active){
+				opacity: .3;
+			}
 		}
 		&copyright{
 			display: flex;

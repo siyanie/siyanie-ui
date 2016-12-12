@@ -1,3 +1,10 @@
+@keyframes projectsShowItem{
+	from{
+		opacity: .3;
+		transform: scale(.9);
+	}
+}
+$project__height: $content__height;
 .projects{
 
 	flex: 1;
@@ -8,6 +15,9 @@
 	flex-direction: column;
 
 	// mods
+	&._small &__project{
+		min-height: calc($project__height / 2);
+	}
 
 	// elements
 	&__{
@@ -16,27 +26,49 @@
 			display: flex;
 			align-items: stretch;
 			flex-wrap: wrap;
+			overflow: hidden;
 		}
 		&project{
 			@extend .link;
 
-			box-sizing: border-box;
+			float: left;
+
 			width: 25%;
-			min-height: calc((100vh - $header__height - $footer__height) / 2);
-			padding: * 4rem;
+			margin: * -.1px;
+
+			animation-name: projectsShowItem;
+			animation-fill-mode: forwards;
+			animation-duration: 1s;
+			transition: 1s;
+			will-change: min-height, transform, opacity;
 
 			overflow: hidden;
 			position: relative;
 			display: flex;
 			align-items: center;
+
+			// mods
+			&._carousel{
+				min-height: $project__height;
+
+				// mods
+				// &:hover{
+				// 	transform: scaleX(1.2);
+				// }
+			}
+			&._square{
+				min-height: calc($project__height / 2);
+			}
 		}
 		&bg{
 			position: absolute -.5rem;
 
 			background-position: center;
 			background-size: cover;
-			filter: blur(4px);
+			filter: blur(10px);
+			will-change: filter, transform;
 
+			// subelements
 			&::after{
 				content: '';
 				position: absolute 0;
@@ -46,27 +78,24 @@
 			}
 		}
 		&logo,
-		&loop{
+		&loupe{
 			z-index: $z-higher;
 		}
-		&logo{
-			max-width: 100%;
-			height: auto;
+		&logo,
+		&loupe,
+		&bg::after{
+			will-change: opacity;
 		}
-		&loop{
-			position: absolute 50% * * 50%;
-			transform: translate(-50%, -50%);
-			size: 5rem;
-
-			border-radius: 50%;
-			background: color($c-bg a(.7));
-			opacity: 0;
-
-			display: flex;
+		&logo{
+			max-width: 70%;
+			height: auto;
+			margin: * auto;
+		}
+		&loupe{
+			@extend .loupe;
 		}
 		&icon{
-			max-size: 2rem;
-			margin: auto;
+			@extend .loupe__icon;
 		}
 		&more{
 			margin: 1rem * -calc(1rem + .875rem);
@@ -76,6 +105,7 @@
 			line-height: 1;
 
 			text-align: center;
+			text-decoration: none;
 			text-transform: uppercase;
 
 			color: $c-primary-text;
@@ -84,20 +114,20 @@
 		// hover
 		&bg,
 		&bg::after,
-		&logo,
-		&loop{
-			transition-duration: calc($transition * 4);
+		&logo{
+			transition: ;
 		}
 		&project:hover &{
 			&bg{
 				filter: none;
+				transform: scale(1.05);
 			}
 			&logo,
 			&bg::after{
 				opacity: 0;
 			}
-			&loop{
-				opacity: 1;
+			&loupe{
+				@extend .loupe--hover;
 			}
 		}
 	}

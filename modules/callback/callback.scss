@@ -1,26 +1,13 @@
-/* body{
-	transition: 5s;
-
-	position: relative;
-
-	// elems
-	&::after{
-		content: '';
-		position: fixed 0;
-		z-index: 9999999999999999;
-		border: 0 solid red;
-
-		animation: an 1s forwards;
-	}
-}
-@keyframes an{
+@keyframes callbackCheck{
 	from{
-		border-width: * 50vw;
+		max-width: 0;
+		margin-left: -6rem;
 	}
 	to{
-		visibility: hidden;
+		max-width: 6rem;
+		margin-left: 0;
 	}
-} */
+}
 .callback{
 
 	position: fixed 0;
@@ -52,6 +39,8 @@
 
 	// elements
 	&::after{
+		@extend %shakeBg;
+
 		content: '';
 		position: absolute 0;
 		z-index: $z-under;
@@ -83,7 +72,17 @@
 
 			margin: * * 2rem;
 		}
+		&form,
+		&thanks{
+			overflow: hidden;
+		}
 		&form{
+			max-height: 50vh;
+
+			text-align: center;
+
+			transition: ;
+
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -106,27 +105,40 @@
 		}
 		&field{
 			box-sizing: border-box;
-			max-width: 4.5rem;
+			max-width: 24rem;
+			width: 100%;
 			padding: 1rem *;
 
-			line-height: 1;
+			line-height: 1.1;
 
 			opacity: 1;
-			box-shadow: inset 0 -1px 0 0 currentColor;
 			color: $c-primary-text;
 
 			transition: ;
 
 			// mods
-			&:not(:last-of-type){
-				margin: * * 1.5rem;
-			}
 			&._filled,
 			&:focus{
-				max-width: 24rem;
 
-				box-shadow: inset 0 -1px 0 0 $c-blue;
 				color: white;
+			}
+			&:focus + &-line{
+				width: 24rem;
+				background: $c-blue;
+			}
+			// subelements
+			&-line{
+				size: 4.5rem 1px;
+
+				background: $c-primary-text;
+
+				transition: ;
+				will-change: width, background;
+
+				// mods
+				&:not(:last-of-type){
+					margin: * * 1.5rem;
+				}
 			}
 		}
 		&submit{
@@ -153,25 +165,50 @@
 		}
 		&thanks{
 			display: none;
-			margin: 5.5rem * *;
+			margin: 6rem * 2.5rem;
 
 			text-align: center;
 
+			transition: ;
+
+			flex-direction: column;
+			align-items: center;
+
 			// mods
 			&._sent{
-				display: block;
+				display: flex;
+			}
+			&._sent &-{
+				&check{
+					animation-name: callbackCheck;
+				}
+				&note{
+					opacity: 1;
+				}
 			}
 
 			// subelements
 			&-{
 				&check{
-					width: 5.938rem;
-					height: 4.313rem;
+					animation-duration: calc($transition * 2);
+					animation-fill-mode: forwards;
+					animation-timing-function: ease-in;
+					will-change: margin-left, max-width;
 
-					background-color: $c-primary--bright;
+					overflow: hidden;
+				}
+				&icon{
+					width: 6rem;
+					height: 4.5rem;
+
+					fill: $c-primary--bright;
 				}
 				&note{
 					margin: 5.5rem * *;
+
+					opacity: 0;
+
+					transition: ;
 				}
 			}
 		}

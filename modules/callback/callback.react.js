@@ -1,5 +1,4 @@
 import { Component } from 'react'
-import { findDOMNode } from 'react-dom'
 
 import Icon from '../icon/icon.react'
 import { Link } from 'react-router'
@@ -58,6 +57,7 @@ export default class Callback extends Component {
 							placeholder="Ваше имя"
 							required
 						/>
+						<div className="callback__field-line"></div>
 						<InputElement
 							type="tel"
 							name="tel"
@@ -67,7 +67,9 @@ export default class Callback extends Component {
 							placeholder="Телефон"
 							required
 							mask="+7 (999) 999-99-99"
+							maskChar="_"
 						/>
+						<div className="callback__field-line"></div>
 						<input
 							type="email"
 							name="email"
@@ -76,6 +78,7 @@ export default class Callback extends Component {
 							className={`callback__field ${email ? '_filled' : '_empty'}`}
 							placeholder="e-mail"
 						/>
+						<div className="callback__field-line"></div>
 						<button
 							className="callback__submit"
 							disabled={!name || !/\+7 \(\d{3}\) \d{3}(-\d{2}){2}/.test(tel)}
@@ -84,7 +87,12 @@ export default class Callback extends Component {
 					<div
 						className={`callback__thanks ${sent ? '_sent' : ''}`}
 					>
-						<Icon className="callback__thanks-check" />
+						<div className="callback__thanks-check">
+							<Icon
+								className="callback__thanks-icon"
+								icon="check"
+							/>
+						</div>
 						<div className="callback__thanks-note">Спасибо за проявленный интерес. <br/>Мы перезвоним Вам в скором времени.</div>
 					</div>
 				</div>

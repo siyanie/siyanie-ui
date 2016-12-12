@@ -23,16 +23,16 @@ export default class Video extends Component {
 		this.setState({
 			paused: !this.state.paused
 		})
-		if (this.video.paused) {
+		if (this.refs.video.paused) {
 			setTimeout(() => {
-				this.video.play()
+				this.refs.video.play()
 			}, videoDelay)
 		} else {
-			this.video.pause()
+			this.refs.video.pause()
 		}
 	}
 	_videoSize () {
-		const { clientWidth: width, clientHeight: height } = this.wrap
+		const { clientWidth: width, clientHeight: height } = this.refs.wrap
 		let size = {}
 
 		if (height / videoRect.height > width / videoRect.width) {
@@ -42,26 +42,32 @@ export default class Video extends Component {
 			size.width = '100%',
 			size.height = 'auto'
 		}
-		Object.assign(this.video.style, size)
+		Object.assign(this.refs.video.style, size)
 	}
 	componentDidMount () {
 		this._videoSize()
 
-		window.addEventListener('resize', () => this._videoSize())
+		window.addEventListener('resize', ::this._videoSize())
+	}
+	componentWillUnmount () {
+		window.removeEventListener('resize', ::this._videoSize())
 	}
 	render () {
 		const { paused } = this.state
 
 		return (
 			<div
-				ref={wrap => this.wrap = wrap}
+				ref="wrap"
 				className={`video section _active ${paused ? 'video--paused' : 'video--played'}`}
 			>
 				<video
 					className="video__source"
 					width="1280"
 					height="506"
-					ref={video => this.video = video}
+					loop
+					muted
+					autoPlay
+					ref="video"
 					onClick={this._toggle.bind(this)}
 				>
 					<source src="assets/video/siyanie.mp4" type="video/mp4" />

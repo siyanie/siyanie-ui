@@ -1,0 +1,51 @@
+.person{
+
+	position: relative;
+
+	// elements
+	&__{
+		&quote{
+			@extend .quote__content;
+
+			max-width: 50rem;
+			margin: * auto;
+
+			// pseudoelements
+			&::before{
+				@extend .quote__text::before;
+			}
+		}
+		&name{
+			line-height: 2;
+		}
+		&post{
+			font-size: 1rem;
+			font-weight: 700;
+
+			opacity: .3;
+		}
+		&button{
+			position: absolute * 5% 0 *;
+
+			box-sizing: border-box;
+			padding: .875rem 2.125rem;
+			border: 1px solid currentColor;
+
+			font-size: .875rem;
+			font-weight: 700;
+			line-height: 1;
+
+			text-transform: uppercase;
+
+			opacity: .3;
+
+			transition: ;
+
+			// mods
+			&:hover{
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+	}
+}

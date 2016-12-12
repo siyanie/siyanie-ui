@@ -24,7 +24,7 @@
 	&--paused{
 		&::before,
 		&::after{
-			min-height: 10vh;
+			min-height: 5vh;
 		}
 	}
 	&--played &__{

@@ -1,0 +1,21 @@
+.clients{
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	// elements
+	&__{
+		&client{
+			fill: currentColor;
+
+			// pseudosectors
+			&:not(:last-child):not(:nth-child(5n)){
+				margin-right: 5rem;
+			}
+		}
+		&logo{
+			max-size: 10rem 6rem;
+		}
+	}
+}
