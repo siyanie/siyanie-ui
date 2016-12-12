@@ -36,7 +36,7 @@ const callback = {
 }
 
 const task = (
-	paths = ['modules/**/*.{png,jpg}'],
+	paths = ['data/images/**/*.{png,jpg}'],
 	outputDir = 'build/assets/images'
 ) => {
 	imagemin(
