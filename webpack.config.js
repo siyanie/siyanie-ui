@@ -37,6 +37,12 @@ module.exports = {
 				'json',
 				'yaml'
 			]
+		},
+		{
+			test: /\.json$/,
+			loaders: [
+				'json'
+			]
 		}]
 	},
 	plugins: [
