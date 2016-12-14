@@ -98,7 +98,7 @@
 			"name": "Руководство",
 			"content": [
 				{
-					"bg": "Название файла фона",
+					"bg": "about_rukovodstvo_savin.jpg",
           "main": {
             "component": "Person",
             "content": {
@@ -109,7 +109,7 @@
           }
 				},
 				{
-					"bg": "Название файла фона",
+					"bg": "about_rukovodstvo_montyan.jpg",
           "main": {
             "component": "Person",
             "content": {
@@ -120,7 +120,7 @@
           }
 				},
 				{
-					"bg": "Название файла фона",
+					"bg": "about_rukovodstvo_bezborodov.jpg",
           "main": {
             "component": "Person",
             "content": {
@@ -131,7 +131,7 @@
           }
 				},
 				{
-					"bg": "Название файла фона",
+					"bg": "about_rukovodstvo_zyablickaya.jpg",
           "main": {
             "component": "Person",
             "content": {
@@ -285,7 +285,7 @@
 			"name": "Работа в сиянии",
 			"content": [
 				{
-					"bg": "Название файла фона",
+					"bg": "about_rabota_burluckaya.jpg",
           "main": {
             "component": "Person",
             "content": {
@@ -296,7 +296,7 @@
           }
 				},
 				{
-					"bg": "Название файла фона",
+					"bg": "about_rabota_rygov.jpg",
           "main": {
             "component": "Person",
             "content": {
@@ -307,7 +307,7 @@
           }
 				},
 				{
-					"bg": "Название файла фона",
+					"bg": "about_rabota_dianov.jpg",
           "main": {
             "component": "Person",
             "content": {
@@ -318,7 +318,7 @@
           }
 				},
 				{
-					"bg": "Название файла фона",
+					"bg": "about_rabota_saranchuk.jpg",
           "main": {
             "component": "Person",
             "content": {
@@ -329,7 +329,7 @@
           }
 				},
 				{
-					"bg": "Название файла фона",
+					"bg": "about_rabota_korolev.jpg",
           "main": {
             "component": "Person",
             "content": {
@@ -340,7 +340,7 @@
           }
 				},
 				{
-					"bg": "Название файла фона",
+					"bg": "about_rabota_bulanov.jpg",
           "main": {
             "component": "Person",
             "content": {

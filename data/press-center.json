@@ -300,28 +300,67 @@
                   ]
                 },
                 {
-                  "image": "http://placehold.alanev.ru/160x50",
+                  "image": "http://placehold.alanev.ru/100x100",
                   "links": [
                     {
                       "name": "png",
-                      "url": "http://placehold.alanev.ru/160x50"
+                      "url": "http://placehold.alanev.ru/100x100"
                     },
                     {
                       "name": "ai",
-                      "url": "http://placehold.alanev.ru/160x50"
+                      "url": "http://placehold.alanev.ru/100x100"
                     }
                   ]
                 },
                 {
-                  "image": "http://placehold.alanev.ru/160x50",
+                  "image": "http://placehold.alanev.ru/100x100",
                   "links": [
                     {
                       "name": "png",
-                      "url": "http://placehold.alanev.ru/160x50"
+                      "url": "http://placehold.alanev.ru/100x100"
                     },
                     {
                       "name": "ai",
-                      "url": "http://placehold.alanev.ru/160x50"
+                      "url": "http://placehold.alanev.ru/100x100"
+                    }
+                  ]
+                },
+                {
+                  "image": "http://placehold.alanev.ru/100x100",
+                  "links": [
+                    {
+                      "name": "png",
+                      "url": "http://placehold.alanev.ru/100x100"
+                    },
+                    {
+                      "name": "ai",
+                      "url": "http://placehold.alanev.ru/100x100"
+                    }
+                  ]
+                },
+                {
+                  "image": "http://placehold.alanev.ru/100x100",
+                  "links": [
+                    {
+                      "name": "png",
+                      "url": "http://placehold.alanev.ru/100x100"
+                    },
+                    {
+                      "name": "ai",
+                      "url": "http://placehold.alanev.ru/100x100"
+                    }
+                  ]
+                },
+                {
+                  "image": "http://placehold.alanev.ru/100x100",
+                  "links": [
+                    {
+                      "name": "png",
+                      "url": "http://placehold.alanev.ru/100x100"
+                    },
+                    {
+                      "name": "ai",
+                      "url": "http://placehold.alanev.ru/100x100"
                     }
                   ]
                 }
