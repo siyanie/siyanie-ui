@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ea7eeed0b8307d3b092f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9d3b06ca99a39296dd10"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -1880,9 +1880,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// import preloader from '../modules/preloader/preloader.js'
-
-	// preloader.init()
+	__webpack_require__(436).polyfill();
 
 	var Root = function Root(_ref) {
 		var children = _ref.children;
@@ -28320,18 +28318,6 @@
 					key = pathname.split('/')[1] || 'root';
 				}
 
-				var Content = _react2.default.createElement(
-					_reactAddonsCssTransitionGroup2.default,
-					{
-						component: 'div',
-						className: 'g-page__main',
-						transitionName: 'anim',
-						transitionLeaveTimeout: _config2.default.trs * 2,
-						transitionEnterTimeout: _config2.default.trs * 2
-					},
-					_react2.default.cloneElement(content || _react2.default.createElement('div', null), { key: key })
-				);
-
 				return _react2.default.createElement(
 					'div',
 					{ className: 'g-page__content ' + (preloading ? '_preloading' : 'preloaded') },
@@ -28340,9 +28326,29 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'g-page__main' },
-						Content
+						_react2.default.createElement(
+							_reactAddonsCssTransitionGroup2.default,
+							{
+								component: 'div',
+								className: 'g-page__main',
+								transitionName: 'anim',
+								transitionLeaveTimeout: _config2.default.trs * 2,
+								transitionEnterTimeout: _config2.default.trs * 2
+							},
+							_react2.default.cloneElement(content || _react2.default.createElement('div', null), { key: key })
+						)
 					),
-					footer
+					_react2.default.createElement(
+						_reactAddonsCssTransitionGroup2.default,
+						{
+							component: 'div',
+							className: 'footer__wrap',
+							transitionName: 'anim',
+							transitionLeaveTimeout: _config2.default.trs * 2,
+							transitionEnterTimeout: _config2.default.trs * 2
+						},
+						_react2.default.cloneElement(footer || _react2.default.createElement('div', null), { key: footer ? 'footer' : 'nofooter' })
+					)
 				);
 			}
 		}]);
@@ -32298,6 +32304,7 @@
 			var symbol = document.getElementById('icon--' + icon);
 			return React.createElement('svg', {
 				className: className,
+				'data-icon': icon,
 				width: width,
 				height: height,
 				viewBox: symbol.getAttribute('viewBox'),
@@ -32306,7 +32313,7 @@
 		}() : function () {
 			return React.createElement(
 				'svg',
-				{ className: className },
+				{ className: className, 'data-icon': icon },
 				React.createElement('use', { xlinkHref: '#icon--' + icon })
 			);
 		}();
@@ -37609,6 +37616,10 @@
 					{
 						"title": "Профессионализм",
 						"bg": "Название файла фона",
+						"quote": {
+							"text": "Один человек не может найти решение, но сотня —\nи каждый со своей долей идей — могут что-нибудь придумать.",
+							"author": "Йонг"
+						},
 						"main": {
 							"component": "Text",
 							"content": "Мы растим профессионалов с нуля!\nСпециалисты компании ежегодно проходят специальные\nкурсы повышения квалификации, посещают семинары,\nездят на стажировку,участвуют в конференциях.\nСловом у нас высококвалифицированный персонал,\nи с каждым годом мы совершенствуемся."
@@ -37617,6 +37628,10 @@
 					{
 						"title": "Репутация",
 						"bg": "Название файла фона",
+						"quote": {
+							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
+							"author": "Дейл Карнеги"
+						},
 						"main": {
 							"component": "Text",
 							"content": "Это то, чем мы гордимся и поддерживаем.\nНачиная со дня основания, репутация компании ежегодно\nповышается за счет: оптимизации производства,\nроста числа клиентов, удешевления услуг,\nповышения качества производства работ."
@@ -37625,6 +37640,10 @@
 					{
 						"title": "Корпоративный дух",
 						"bg": "Название файла фона",
+						"quote": {
+							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
+							"author": "Уинстон Черчилль"
+						},
 						"main": {
 							"component": "Text",
 							"content": "Мы не боимся поставленных задач,\nкоторые порой бывают трудными.\nНаше кредо: когда одни видят препятствия,\nмы видим возможности."
@@ -37633,6 +37652,10 @@
 					{
 						"title": "Ноу-хау",
 						"bg": "Название файла фона",
+						"quote": {
+							"text": "Один человек не может найти решение, но сотня —\nи каждый со своей долей идей — могут что-нибудь придумать.",
+							"author": "Йонг"
+						},
 						"main": {
 							"component": "Text",
 							"content": "Всегда и везде есть место инновациям.\nМы гордимся своими инновациями и стремимся\nсделать мир лучше с помощью них.\nМы ставим перед собой долгосрочные\nстратегические цели и четко определяем\nвектор развития компании."
@@ -37641,6 +37664,10 @@
 					{
 						"title": "Партнерство",
 						"bg": "Название файла фона",
+						"quote": {
+							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
+							"author": "Дейл Карнеги"
+						},
 						"main": {
 							"component": "Text",
 							"content": "Благодаря нашему партнерству с поставщиками\nи заказчиками, мы всегда можем предложить\nконкурентоспособную цену. Наша цель в работе\nс партнерами – это долгосрочное сотрудничество\nи создание надежных взаимоотношений. Вместе мы\nспособны сделать жизнь людей лучше."
@@ -37649,6 +37676,10 @@
 					{
 						"title": "Команда",
 						"bg": "Название файла фона",
+						"quote": {
+							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
+							"author": "Уинстон Черчилль"
+						},
 						"main": {
 							"component": "Text",
 							"content": "Наша команда - это группа единомышленников,\nкоторая способна работать в многозадачном режиме;\nк решению стандартных вопросов мы ищем\nнестандартные решения."
@@ -37657,6 +37688,10 @@
 					{
 						"title": "Индивидуальность",
 						"bg": "Название файла фона",
+						"quote": {
+							"text": "Один человек не может найти решение, но сотня —\nи каждый со своей долей идей — могут что-нибудь придумать.",
+							"author": "Йонг"
+						},
 						"main": {
 							"component": "Text",
 							"content": "Неповторимый стиль и нестандартный подход\nв компании выражается в желании сотрудников\nпроявить себя, железной хваткой, так сказать, любым\nнестандартным методом добиться поставленной цели\nбыстро и качественно. При этом качество совсем\nне страдает, а наоборот рождаются новые\nкреативные решения."
@@ -39737,9 +39772,10 @@
 
 			var _this = (0, _possibleConstructorReturn3.default)(this, (Project.__proto__ || (0, _getPrototypeOf2.default)(Project)).call(this, props));
 
+			var projectId = props.id || props.params.project;
 			var project = projects.find(function (_ref) {
 				var id = _ref.id;
-				return id === props.params.project;
+				return id === projectId;
 			});
 			_this.state = {
 				bgIndex: 0,
@@ -39783,6 +39819,7 @@
 					current: index,
 					bgIndex: 0
 				});
+				this._setBgs();
 			}
 		}, {
 			key: '_next',
@@ -39803,14 +39840,14 @@
 				}
 			}
 		}, {
-			key: 'componentDidUpdate',
-			value: function componentDidUpdate() {
+			key: 'componentDidMount',
+			value: function componentDidMount() {
 				this._setBgs();
-			}
-		}, {
-			key: 'componentWillMount',
-			value: function componentWillMount() {
-				this._setBgs();
+				window.scroll({
+					top: 0,
+					left: 0,
+					behavior: 'smooth'
+				});
 			}
 		}, {
 			key: 'render',
@@ -39835,7 +39872,7 @@
 					_reactAddonsCssTransitionGroup2.default,
 					{
 						component: 'div',
-						className: 'g-page__main',
+						className: 'project__wrap',
 						transitionName: 'anim',
 						transitionLeaveTimeout: _config2.default.trs * 2,
 						transitionEnterTimeout: _config2.default.trs * 2
@@ -40741,6 +40778,303 @@
 
 	exports.default = FooterInner;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
+
+/***/ },
+/* 436 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	 * smoothscroll polyfill - v0.3.4
+	 * https://iamdustan.github.io/smoothscroll
+	 * 2016 (c) Dustan Kasten, Jeremias Menichelli - MIT License
+	 */
+
+	(function(w, d, undefined) {
+	  'use strict';
+
+	  /*
+	   * aliases
+	   * w: window global object
+	   * d: document
+	   * undefined: undefined
+	   */
+
+	  // polyfill
+	  function polyfill() {
+	    // return when scrollBehavior interface is supported
+	    if ('scrollBehavior' in d.documentElement.style) {
+	      return;
+	    }
+
+	    /*
+	     * globals
+	     */
+	    var Element = w.HTMLElement || w.Element;
+	    var SCROLL_TIME = 468;
+
+	    /*
+	     * object gathering original scroll methods
+	     */
+	    var original = {
+	      scroll: w.scroll || w.scrollTo,
+	      scrollBy: w.scrollBy,
+	      scrollIntoView: Element.prototype.scrollIntoView
+	    };
+
+	    /*
+	     * define timing method
+	     */
+	    var now = w.performance && w.performance.now
+	      ? w.performance.now.bind(w.performance) : Date.now;
+
+	    /**
+	     * changes scroll position inside an element
+	     * @method scrollElement
+	     * @param {Number} x
+	     * @param {Number} y
+	     */
+	    function scrollElement(x, y) {
+	      this.scrollLeft = x;
+	      this.scrollTop = y;
+	    }
+
+	    /**
+	     * returns result of applying ease math function to a number
+	     * @method ease
+	     * @param {Number} k
+	     * @returns {Number}
+	     */
+	    function ease(k) {
+	      return 0.5 * (1 - Math.cos(Math.PI * k));
+	    }
+
+	    /**
+	     * indicates if a smooth behavior should be applied
+	     * @method shouldBailOut
+	     * @param {Number|Object} x
+	     * @returns {Boolean}
+	     */
+	    function shouldBailOut(x) {
+	      if (typeof x !== 'object'
+	            || x === null
+	            || x.behavior === undefined
+	            || x.behavior === 'auto'
+	            || x.behavior === 'instant') {
+	        // first arg not an object/null
+	        // or behavior is auto, instant or undefined
+	        return true;
+	      }
+
+	      if (typeof x === 'object'
+	            && x.behavior === 'smooth') {
+	        // first argument is an object and behavior is smooth
+	        return false;
+	      }
+
+	      // throw error when behavior is not supported
+	      throw new TypeError('behavior not valid');
+	    }
+
+	    /**
+	     * finds scrollable parent of an element
+	     * @method findScrollableParent
+	     * @param {Node} el
+	     * @returns {Node} el
+	     */
+	    function findScrollableParent(el) {
+	      var isBody;
+	      var hasScrollableSpace;
+	      var hasVisibleOverflow;
+
+	      do {
+	        el = el.parentNode;
+
+	        // set condition variables
+	        isBody = el === d.body;
+	        hasScrollableSpace =
+	          el.clientHeight < el.scrollHeight ||
+	          el.clientWidth < el.scrollWidth;
+	        hasVisibleOverflow =
+	          w.getComputedStyle(el, null).overflow === 'visible';
+	      } while (!isBody && !(hasScrollableSpace && !hasVisibleOverflow));
+
+	      isBody = hasScrollableSpace = hasVisibleOverflow = null;
+
+	      return el;
+	    }
+
+	    /**
+	     * self invoked function that, given a context, steps through scrolling
+	     * @method step
+	     * @param {Object} context
+	     */
+	    function step(context) {
+	      // call method again on next available frame
+	      context.frame = w.requestAnimationFrame(step.bind(w, context));
+
+	      var time = now();
+	      var value;
+	      var currentX;
+	      var currentY;
+	      var elapsed = (time - context.startTime) / SCROLL_TIME;
+
+	      // avoid elapsed times higher than one
+	      elapsed = elapsed > 1 ? 1 : elapsed;
+
+	      // apply easing to elapsed time
+	      value = ease(elapsed);
+
+	      currentX = context.startX + (context.x - context.startX) * value;
+	      currentY = context.startY + (context.y - context.startY) * value;
+
+	      context.method.call(context.scrollable, currentX, currentY);
+
+	      // return when end points have been reached
+	      if (currentX === context.x && currentY === context.y) {
+	        w.cancelAnimationFrame(context.frame);
+	        return;
+	      }
+	    }
+
+	    /**
+	     * scrolls window with a smooth behavior
+	     * @method smoothScroll
+	     * @param {Object|Node} el
+	     * @param {Number} x
+	     * @param {Number} y
+	     */
+	    function smoothScroll(el, x, y) {
+	      var scrollable;
+	      var startX;
+	      var startY;
+	      var method;
+	      var startTime = now();
+	      var frame;
+
+	      // define scroll context
+	      if (el === d.body) {
+	        scrollable = w;
+	        startX = w.scrollX || w.pageXOffset;
+	        startY = w.scrollY || w.pageYOffset;
+	        method = original.scroll;
+	      } else {
+	        scrollable = el;
+	        startX = el.scrollLeft;
+	        startY = el.scrollTop;
+	        method = scrollElement;
+	      }
+
+	      // cancel frame when a scroll event's happening
+	      if (frame) {
+	        w.cancelAnimationFrame(frame);
+	      }
+
+	      // scroll looping over a frame
+	      step({
+	        scrollable: scrollable,
+	        method: method,
+	        startTime: startTime,
+	        startX: startX,
+	        startY: startY,
+	        x: x,
+	        y: y,
+	        frame: frame
+	      });
+	    }
+
+	    /*
+	     * ORIGINAL METHODS OVERRIDES
+	     */
+
+	    // w.scroll and w.scrollTo
+	    w.scroll = w.scrollTo = function() {
+	      // avoid smooth behavior if not required
+	      if (shouldBailOut(arguments[0])) {
+	        original.scroll.call(
+	          w,
+	          arguments[0].left || arguments[0],
+	          arguments[0].top || arguments[1]
+	        );
+	        return;
+	      }
+
+	      // LET THE SMOOTHNESS BEGIN!
+	      smoothScroll.call(
+	        w,
+	        d.body,
+	        ~~arguments[0].left,
+	        ~~arguments[0].top
+	      );
+	    };
+
+	    // w.scrollBy
+	    w.scrollBy = function() {
+	      // avoid smooth behavior if not required
+	      if (shouldBailOut(arguments[0])) {
+	        original.scrollBy.call(
+	          w,
+	          arguments[0].left || arguments[0],
+	          arguments[0].top || arguments[1]
+	        );
+	        return;
+	      }
+
+	      // LET THE SMOOTHNESS BEGIN!
+	      smoothScroll.call(
+	        w,
+	        d.body,
+	        ~~arguments[0].left + (w.scrollX || w.pageXOffset),
+	        ~~arguments[0].top + (w.scrollY || w.pageYOffset)
+	      );
+	    };
+
+	    // Element.prototype.scrollIntoView
+	    Element.prototype.scrollIntoView = function() {
+	      // avoid smooth behavior if not required
+	      if (shouldBailOut(arguments[0])) {
+	        original.scrollIntoView.call(this, arguments[0] || true);
+	        return;
+	      }
+
+	      // LET THE SMOOTHNESS BEGIN!
+	      var scrollableParent = findScrollableParent(this);
+	      var parentRects = scrollableParent.getBoundingClientRect();
+	      var clientRects = this.getBoundingClientRect();
+
+	      if (scrollableParent !== d.body) {
+	        // reveal element inside parent
+	        smoothScroll.call(
+	          this,
+	          scrollableParent,
+	          scrollableParent.scrollLeft + clientRects.left - parentRects.left,
+	          scrollableParent.scrollTop + clientRects.top - parentRects.top
+	        );
+	        // reveal parent in viewport
+	        w.scrollBy({
+	          left: parentRects.left,
+	          top: parentRects.top,
+	          behavior: 'smooth'
+	        });
+	      } else {
+	        // reveal element in viewport
+	        w.scrollBy({
+	          left: clientRects.left,
+	          top: clientRects.top,
+	          behavior: 'smooth'
+	        });
+	      }
+	    };
+	  }
+
+	  if (true) {
+	    // commonjs
+	    module.exports = { polyfill: polyfill };
+	  } else {
+	    // global
+	    polyfill();
+	  }
+	})(window, document);
+
 
 /***/ }
 /******/ ]);
