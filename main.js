@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "cf5ba3e398f742df647d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "dfc1443aae37e20da1ca"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -1911,18 +1911,6 @@
 			)
 		)
 	), document.getElementById('root'));
-
-	if ('serviceWorker' in navigator) {
-		window.addEventListener('load', function () {
-			navigator.serviceWorker.register('/sw.js').then(function (registration) {
-				// Registration was successful
-				console.log('ServiceWorker registration successful with scope: ', registration.scope);
-			}).catch(function (err) {
-				// registration failed :(
-				console.log('ServiceWorker registration failed: ', err);
-			});
-		});
-	}
 
 	if (true) {
 		module.hot.accept();
