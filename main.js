@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a95fea49613fe59c1b60"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "cf5ba3e398f742df647d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -1911,6 +1911,18 @@
 			)
 		)
 	), document.getElementById('root'));
+
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load', function () {
+			navigator.serviceWorker.register('/sw.js').then(function (registration) {
+				// Registration was successful
+				console.log('ServiceWorker registration successful with scope: ', registration.scope);
+			}).catch(function (err) {
+				// registration failed :(
+				console.log('ServiceWorker registration failed: ', err);
+			});
+		});
+	}
 
 	if (true) {
 		module.hot.accept();
@@ -28280,12 +28292,25 @@
 	var Page = function (_Component) {
 		(0, _inherits3.default)(Page, _Component);
 
-		function Page(props) {
+		function Page() {
 			(0, _classCallCheck3.default)(this, Page);
-			return (0, _possibleConstructorReturn3.default)(this, (Page.__proto__ || (0, _getPrototypeOf2.default)(Page)).call(this, props));
+
+			var _this = (0, _possibleConstructorReturn3.default)(this, (Page.__proto__ || (0, _getPrototypeOf2.default)(Page)).call(this));
+
+			_this.state = {
+				preloading: true
+			};
+			return _this;
 		}
 
 		(0, _createClass3.default)(Page, [{
+			key: '_preloaded',
+			value: function _preloaded() {
+				this.setState({
+					preloading: false
+				});
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				var _props = this.props,
@@ -28293,6 +28318,7 @@
 				    content = _props.content,
 				    footer = _props.footer,
 				    pathname = _props.location.pathname;
+				var preloading = this.state.preloading;
 
 				var key = void 0;
 
@@ -28316,8 +28342,8 @@
 
 				return _react2.default.createElement(
 					'div',
-					{ className: 'g-page__content' },
-					_react2.default.createElement(_preloader2.default, null),
+					{ className: 'g-page__content ' + (preloading ? '_preloading' : 'preloaded') },
+					_react2.default.createElement(_preloader2.default, { preloaded: this._preloaded.bind(this) }),
 					_react2.default.createElement(_header2.default, { params: this.props.params }),
 					_react2.default.createElement(
 						'div',
@@ -32291,12 +32317,35 @@
 /* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.default = Preloader;
+
+	var _getPrototypeOf = __webpack_require__(248);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(274);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(275);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(279);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(326);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(15);
+
+	var _react2 = _interopRequireDefault(_react);
 
 	var _icon = __webpack_require__(350);
 
@@ -32304,25 +32353,62 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function Preloader() {
-		return React.createElement(
-			"div",
-			{ className: "preloader" },
-			React.createElement(
-				"div",
-				{ className: "preloader__content" },
-				React.createElement(_icon2.default, {
-					className: "preloader__logo",
-					width: "60",
-					height: "52",
-					viewBox: "0 0 102.284 87.324",
-					icon: "siyanie",
-					inline: true
-				})
-			)
-		);
-	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
+	var events = ['transitionend', 'animationend'];
+
+	var Preloader = function (_Component) {
+		(0, _inherits3.default)(Preloader, _Component);
+
+		function Preloader() {
+			(0, _classCallCheck3.default)(this, Preloader);
+			return (0, _possibleConstructorReturn3.default)(this, (Preloader.__proto__ || (0, _getPrototypeOf2.default)(Preloader)).apply(this, arguments));
+		}
+
+		(0, _createClass3.default)(Preloader, [{
+			key: '_handle',
+			value: function _handle(action) {
+				var _this2 = this;
+
+				var preloader = this.refs.preloader;
+
+				events.forEach(function (event) {
+					return preloader[action + 'EventListener'](event, _this2.props.preloaded);
+				});
+			}
+		}, {
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				this._handle('add');
+			}
+		}, {
+			key: 'componentWillUnmount',
+			value: function componentWillUnmount() {
+				this._handle('remove');
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'preloader', ref: 'preloader' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'preloader__content' },
+						_react2.default.createElement(_icon2.default, {
+							className: 'preloader__logo',
+							width: '60',
+							height: '52',
+							viewBox: '0 0 102.284 87.324',
+							icon: 'siyanie',
+							inline: true
+						})
+					)
+				);
+			}
+		}]);
+		return Preloader;
+	}(_react.Component);
+
+	exports.default = Preloader;
 
 /***/ },
 /* 352 */
@@ -32693,7 +32779,7 @@
 
 				// Хак для позионирования точек
 				// пришлось использовать, т.к. не смог подключиться к событиям анимации (
-				setTimeout(this._footer.bind(this), _config2.default.transition);
+				setTimeout(this._footer.bind(this), _config2.default.trs);
 			}
 		}, {
 			key: 'componentDidMount',
@@ -32794,11 +32880,8 @@
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.default = {
-		transition: 1000
+	module.exports = {
+		trs: 1000
 	};
 
 /***/ },
