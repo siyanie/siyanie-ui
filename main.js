@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6c9790618d311ca8da38"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "295f9c0ee22a793eff1c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -32397,6 +32397,11 @@
 					{ className: 'preloader', ref: 'preloader' },
 					_react2.default.createElement(
 						'div',
+						{ className: 'preloader__blick' },
+						_react2.default.createElement(_icon2.default, { className: 'preloader__blick-icon', icon: 'blick' })
+					),
+					_react2.default.createElement(
+						'div',
 						{ className: 'preloader__content' },
 						_react2.default.createElement(_icon2.default, {
 							className: 'preloader__logo',
@@ -32822,8 +32827,8 @@
 							component: 'div',
 							className: 'g-page__wrapper',
 							transitionName: 'anim',
-							transitionEnterTimeout: 2000,
-							transitionLeaveTimeout: 2000
+							transitionEnterTimeout: _config2.default.trs,
+							transitionLeaveTimeout: _config2.default.trs
 						},
 						React.createElement(_slides2.default, {
 							ref: 'slides',
@@ -33096,7 +33101,6 @@
 				if (!data.bg && data.bg != '') {
 					data.bg = section + '_' + subsection + '_' + (slideIndex + 1) + '.jpg';
 				}
-				console.log(window.devicePixelRatio);
 
 				// Detect WEBP
 				if (data.bg) {
@@ -33515,6 +33519,14 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var remote = function remote(src) {
+		return (/^(https?:)?(\/\/)/.test(src)
+		);
+	};
+	var getImage = function getImage(src) {
+		return remote(src) ? src : 'assets/images/' + src;
+	};
+
 	var GalleryItem = function (_Component) {
 		(0, _inherits3.default)(GalleryItem, _Component);
 
@@ -33594,7 +33606,7 @@
 								return _react2.default.createElement('img', {
 									key: 'gallery__image--' + index,
 									className: 'gallery__image ' + (index === currentImage ? '_active' : ''),
-									src: preview,
+									src: getImage(preview),
 									alt: name + ' | \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430 ' + index
 								});
 							}),
@@ -33609,7 +33621,7 @@
 							{ className: 'gallery__label' },
 							name
 						),
-						_react2.default.createElement(
+						previews.length > 1 ? _react2.default.createElement(
 							'div',
 							{ className: 'gallery__dots' },
 							previews.map(function (preview, index) {
@@ -33619,11 +33631,11 @@
 									onClick: _this3._handleDot.call(_this3, index)
 								});
 							})
-						),
+						) : null,
 						_react2.default.createElement(_reactImages2.default, {
 							images: images.map(function (image) {
 								return {
-									src: image
+									src: getImage(image)
 								};
 							}),
 							backdropClosesModal: true,
@@ -38135,7 +38147,7 @@
 				"name": "Благодарственные письма",
 				"content": [
 					{
-						"bg": "",
+						"bg": "about_onas_1.jpg",
 						"quote": {
 							"text": "Если судьба преподносит тебе лимон, \nсделай из него лимонад.",
 							"author": "Дейл Карнеги"
@@ -38145,27 +38157,21 @@
 							"content": {
 								"docs": [
 									{
+										"name": "Клип компании в Ночи\n пожирателей рекламы",
 										"previews": [
-											"http://placehold.alanev.ru/205x290",
-											"http://placehold.alanev.ru/205x290",
-											"http://placehold.alanev.ru/205x290"
+											"doc_night_sm.jpg"
 										],
 										"images": [
-											"http://placehold.alanev.ru/550x770",
-											"http://placehold.alanev.ru/550x770",
-											"http://placehold.alanev.ru/550x770"
+											"doc_night_big.jpg"
 										]
 									},
 									{
+										"name": "Диплом Заботливый\n работодатель 2016",
 										"previews": [
-											"http://placehold.alanev.ru/205x290",
-											"http://placehold.alanev.ru/205x290",
-											"http://placehold.alanev.ru/205x290"
+											"doc_rabotodatel_sm.jpg"
 										],
 										"images": [
-											"http://placehold.alanev.ru/550x770",
-											"http://placehold.alanev.ru/550x770",
-											"http://placehold.alanev.ru/550x770"
+											"doc_rabotodatel_big.jpg"
 										]
 									},
 									{
@@ -38202,7 +38208,7 @@
 				"name": "Сертификаты",
 				"content": [
 					{
-						"bg": "",
+						"bg": "about_onas_1.jpg",
 						"quote": {
 							"text": "Никогда не поднимайте свои принципы так высоко, \nчто их нельзя будет приспособить к обстоятельствам.",
 							"author": "Уинстон Черчилль"
@@ -38214,18 +38220,23 @@
 									{
 										"name": "Свидетельство СРО",
 										"previews": [
-											"http://placehold.alanev.ru/205x290",
-											"http://placehold.alanev.ru/205x290/123",
-											"http://placehold.alanev.ru/205x290/234"
+											"doc_sro_1_sm.jpg",
+											"doc_sro_2_sm.jpg",
+											"doc_sro_3_sm.jpg",
+											"doc_sro_4_sm.jpg",
+											"doc_sro_5_sm.jpg",
+											"doc_sro_6_sm.jpg"
 										],
 										"images": [
-											"http://placehold.alanev.ru/550x770",
-											"http://placehold.alanev.ru/550x770/123",
-											"http://placehold.alanev.ru/550x770/234"
+											"doc_sro_1_big.jpg",
+											"doc_sro_2_big.jpg",
+											"doc_sro_3_big.jpg",
+											"doc_sro_4_big.jpg",
+											"doc_sro_5_big.jpg",
+											"doc_sro_6_big.jpg"
 										]
 									},
 									{
-										"name": "Лицензия на \nстроительные работы",
 										"previews": [
 											"http://placehold.alanev.ru/205x290/345",
 											"http://placehold.alanev.ru/205x290/456",
@@ -38238,7 +38249,6 @@
 										]
 									},
 									{
-										"name": "Свидетельство СРО",
 										"previews": [
 											"http://placehold.alanev.ru/205x290/678",
 											"http://placehold.alanev.ru/205x290/789",
@@ -38251,7 +38261,6 @@
 										]
 									},
 									{
-										"name": "Лицензия на \nстроительные работы",
 										"previews": [
 											"http://placehold.alanev.ru/205x290/9ab",
 											"http://placehold.alanev.ru/205x290/abc",
@@ -38264,7 +38273,6 @@
 										]
 									},
 									{
-										"name": "Лицензия на \nстроительные работы",
 										"previews": [
 											"http://placehold.alanev.ru/205x290/9ab",
 											"http://placehold.alanev.ru/205x290/abc",
@@ -38277,7 +38285,6 @@
 										]
 									},
 									{
-										"name": "Лицензия на \nстроительные работы",
 										"previews": [
 											"http://placehold.alanev.ru/205x290/9ab",
 											"http://placehold.alanev.ru/205x290/abc",
@@ -38290,7 +38297,6 @@
 										]
 									},
 									{
-										"name": "Лицензия на \nстроительные работы",
 										"previews": [
 											"http://placehold.alanev.ru/205x290/9ab",
 											"http://placehold.alanev.ru/205x290/abc",
@@ -38312,7 +38318,7 @@
 				"name": "Медиацентр",
 				"content": [
 					{
-						"bg": "",
+						"bg": "about_onas_1.jpg",
 						"quote": {
 							"text": "Изменяться — значит совершенствоваться. \nЧтобы стать совершенным, нужно изменяться часто.",
 							"author": "Уинстон Черчилль"
