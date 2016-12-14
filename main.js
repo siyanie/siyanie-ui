@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9b436e1debb51bb0accd"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "439f2415c32cb05fad38"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -1842,11 +1842,11 @@
 
 	var _gPageReact2 = _interopRequireDefault(_gPageReact);
 
-	var _video = __webpack_require__(352);
+	var _video = __webpack_require__(353);
 
 	var _video2 = _interopRequireDefault(_video);
 
-	var _section = __webpack_require__(357);
+	var _section = __webpack_require__(358);
 
 	var _section2 = _interopRequireDefault(_section);
 
@@ -28267,11 +28267,15 @@
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
-	var _header = __webpack_require__(347);
+	var _config = __webpack_require__(347);
+
+	var _config2 = _interopRequireDefault(_config);
+
+	var _header = __webpack_require__(348);
 
 	var _header2 = _interopRequireDefault(_header);
 
-	var _preloader = __webpack_require__(351);
+	var _preloader = __webpack_require__(352);
 
 	var _preloader2 = _interopRequireDefault(_preloader);
 
@@ -28322,8 +28326,8 @@
 						component: 'div',
 						className: 'g-page__main',
 						transitionName: 'anim',
-						transitionLeaveTimeout: 2000,
-						transitionEnterTimeout: 2000
+						transitionLeaveTimeout: _config2.default.trs * 2,
+						transitionEnterTimeout: _config2.default.trs * 2
 					},
 					_react2.default.cloneElement(content || _react2.default.createElement('div', null), { key: key })
 				);
@@ -32013,6 +32017,16 @@
 
 /***/ },
 /* 347 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = {
+		trs: 1000
+	};
+
+/***/ },
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -32043,15 +32057,15 @@
 
 	var _react = __webpack_require__(15);
 
-	var _menuReact = __webpack_require__(348);
+	var _menuReact = __webpack_require__(349);
 
 	var _menuReact2 = _interopRequireDefault(_menuReact);
 
-	var _phoneReact = __webpack_require__(349);
+	var _phoneReact = __webpack_require__(350);
 
 	var _phoneReact2 = _interopRequireDefault(_phoneReact);
 
-	var _iconReact = __webpack_require__(350);
+	var _iconReact = __webpack_require__(351);
 
 	var _iconReact2 = _interopRequireDefault(_iconReact);
 
@@ -32106,7 +32120,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 348 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -32168,7 +32182,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 349 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -32199,7 +32213,7 @@
 
 	var _react = __webpack_require__(15);
 
-	var _iconReact = __webpack_require__(350);
+	var _iconReact = __webpack_require__(351);
 
 	var _iconReact2 = _interopRequireDefault(_iconReact);
 
@@ -32264,7 +32278,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 350 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -32302,7 +32316,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 351 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32335,7 +32349,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _icon = __webpack_require__(350);
+	var _icon = __webpack_require__(351);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
@@ -32399,7 +32413,7 @@
 	exports.default = Preloader;
 
 /***/ },
-/* 352 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32408,7 +32422,7 @@
 		value: true
 	});
 
-	var _assign = __webpack_require__(353);
+	var _assign = __webpack_require__(354);
 
 	var _assign2 = _interopRequireDefault(_assign);
 
@@ -32436,7 +32450,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _icon = __webpack_require__(350);
+	var _icon = __webpack_require__(351);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
@@ -32579,29 +32593,29 @@
 	exports.default = Video;
 
 /***/ },
-/* 353 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(354), __esModule: true };
-
-/***/ },
 /* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(355);
-	module.exports = __webpack_require__(261).Object.assign;
+	module.exports = { "default": __webpack_require__(355), __esModule: true };
 
 /***/ },
 /* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(260);
-
-	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(356)});
+	__webpack_require__(356);
+	module.exports = __webpack_require__(261).Object.assign;
 
 /***/ },
 /* 356 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(260);
+
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(357)});
+
+/***/ },
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32639,7 +32653,7 @@
 	} : $assign;
 
 /***/ },
-/* 357 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -32674,7 +32688,7 @@
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
-	var _config = __webpack_require__(358);
+	var _config = __webpack_require__(347);
 
 	var _config2 = _interopRequireDefault(_config);
 
@@ -32860,16 +32874,6 @@
 
 	exports.default = Section;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
-
-/***/ },
-/* 358 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	module.exports = {
-		trs: 1000
-	};
 
 /***/ },
 /* 359 */
@@ -33443,7 +33447,7 @@
 
 	exports.__esModule = true;
 
-	var _assign = __webpack_require__(353);
+	var _assign = __webpack_require__(354);
 
 	var _assign2 = _interopRequireDefault(_assign);
 
@@ -33501,7 +33505,7 @@
 
 	var _reactImages2 = _interopRequireDefault(_reactImages);
 
-	var _icon = __webpack_require__(350);
+	var _icon = __webpack_require__(351);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
@@ -36975,7 +36979,7 @@
 		value: true
 	});
 
-	var _assign = __webpack_require__(353);
+	var _assign = __webpack_require__(354);
 
 	var _assign2 = _interopRequireDefault(_assign);
 
@@ -37003,7 +37007,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _icon = __webpack_require__(350);
+	var _icon = __webpack_require__(351);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
@@ -37157,7 +37161,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _icon = __webpack_require__(350);
+	var _icon = __webpack_require__(351);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
@@ -38642,7 +38646,7 @@
 
 	var _react = __webpack_require__(15);
 
-	var _icon = __webpack_require__(350);
+	var _icon = __webpack_require__(351);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
@@ -39703,13 +39707,21 @@
 
 	var _react = __webpack_require__(15);
 
+	var _reactAddonsCssTransitionGroup = __webpack_require__(334);
+
+	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
 	var _reactRouter = __webpack_require__(192);
+
+	var _config = __webpack_require__(347);
+
+	var _config2 = _interopRequireDefault(_config);
 
 	var _store = __webpack_require__(420);
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _icon = __webpack_require__(350);
+	var _icon = __webpack_require__(351);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
@@ -39725,14 +39737,14 @@
 
 			var _this = (0, _possibleConstructorReturn3.default)(this, (Project.__proto__ || (0, _getPrototypeOf2.default)(Project)).call(this, props));
 
-			_this.data = projects.find(function (_ref) {
+			var project = projects.find(function (_ref) {
 				var id = _ref.id;
-
 				return id === props.params.project;
 			});
 			_this.state = {
 				bgIndex: 0,
-				bgs: null
+				bgs: null,
+				current: projects.indexOf(project)
 			};
 			return _this;
 		}
@@ -39749,12 +39761,12 @@
 				};
 			}
 		}, {
-			key: 'componentWillMount',
-			value: function componentWillMount() {
+			key: '_setBgs',
+			value: function _setBgs() {
 				var _this3 = this;
 
 				window.Modernizr.on('webp', function (result) {
-					var bgs = _this3.data.bgs;
+					var bgs = projects[_this3.state.current].bgs;
 					if ((0, _keys2.default)(result).length > 0) bgs = bgs.map(function (bg) {
 						return bg.replace(/(jpg|jpeg|png)$/, 'webp');
 					});
@@ -39765,106 +39777,164 @@
 				});
 			}
 		}, {
+			key: '_next',
+			value: function _next() {
+				var current = this.state.current;
+
+				if (++current <= projects.length) {
+					this.setState({
+						current: current
+					});
+				}
+			}
+		}, {
+			key: '_prev',
+			value: function _prev() {
+				var current = this.state.current;
+
+				if (--current >= 0) {
+					this.setState({
+						current: current
+					});
+				}
+			}
+		}, {
+			key: 'componentDidUpdate',
+			value: function componentDidUpdate() {
+				this._setBgs();
+			}
+		}, {
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				this._setBgs();
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				var _this4 = this;
 
-				var _data = this.data,
-				    id = _data.id,
-				    square = _data.square,
-				    date = _data.date,
-				    text = _data.text,
-				    address = _data.address,
-				    title = _data.title;
 				var _state = this.state,
 				    loaded = _state.loaded,
 				    bgIndex = _state.bgIndex,
-				    bgs = _state.bgs;
+				    bgs = _state.bgs,
+				    current = _state.current;
+				var _projects$current = projects[current],
+				    id = _projects$current.id,
+				    square = _projects$current.square,
+				    date = _projects$current.date,
+				    text = _projects$current.text,
+				    address = _projects$current.address,
+				    title = _projects$current.title;
 
 
 				return React.createElement(
-					'div',
+					_reactAddonsCssTransitionGroup2.default,
 					{
-						className: 'project ' + (loaded ? '_loaded' : '_no_loaded')
+						component: 'div',
+						className: 'g-page__main',
+						transitionName: 'anim',
+						transitionLeaveTimeout: _config2.default.trs * 2,
+						transitionEnterTimeout: _config2.default.trs * 2
 					},
-					bgs ? bgs.map(function (bg, index) {
-						return React.createElement('div', {
-							className: 'project__bg ' + (index === bgIndex ? '_active' : ''),
-							key: 'project__bg--' + index,
-							style: {
-								backgroundImage: 'url(assets/images/' + bg + ')'
-							}
-						});
-					}) : null,
 					React.createElement(
 						'div',
-						{ className: 'project__content' },
+						{
+							key: 'project--' + id,
+							className: 'project ' + (loaded ? '_loaded' : '_no_loaded')
+						},
+						bgs ? bgs.map(function (bg, index) {
+							return React.createElement('div', {
+								className: 'project__bg ' + (index === bgIndex ? '_active' : ''),
+								key: 'project__bg--' + index,
+								style: {
+									backgroundImage: 'url(assets/images/' + bg + ')'
+								}
+							});
+						}) : null,
 						React.createElement(
 							'div',
-							{ className: 'project__info' },
-							React.createElement(_icon2.default, {
-								className: 'project__logo',
-								icon: 'logo-' + id
-							}),
+							{ className: 'project__content' },
 							React.createElement(
 								'div',
-								{ className: 'project__square' },
-								square
-							),
-							React.createElement(
-								'div',
-								{ className: 'project__date' },
-								date
-							),
-							React.createElement(
-								'div',
-								{ className: 'project__text' },
-								text
-							),
-							React.createElement(
-								'div',
-								{ className: 'project__address' },
-								address
-							)
-						),
-						React.createElement(
-							'div',
-							{ className: 'project__footer' },
-							React.createElement(
-								'div',
-								{ className: 'project__slogan' },
-								title
-							),
-							React.createElement(
-								'div',
-								{ className: 'project__dots' },
-								bgs ? bgs.map(function (url, index) {
-									return React.createElement('div', {
-										key: 'project__dot' + index,
-										className: 'project__dot ' + (index === bgIndex ? '_active' : ''),
-										onClick: _this4._handleDot.call(_this4, index)
-									});
-								}) : null
-							),
-							React.createElement(
-								'div',
-								{ className: 'project__nav' },
+								{ className: 'project__info' },
 								React.createElement(_icon2.default, {
-									className: 'project__arrow _prev',
-									icon: 'arrow'
+									className: 'project__logo',
+									icon: 'logo-' + id
 								}),
 								React.createElement(
-									_reactRouter.Link,
-									{
-										to: '/projectsAll',
-										className: 'project__all'
-									},
-									'\u0412\u0441\u0435 \u043F\u0440\u043E\u0435\u043A\u0442\u044B'
+									'div',
+									{ className: 'project__square' },
+									square
 								),
-								React.createElement(_icon2.default, {
-									className: 'project__arrow _next',
-									icon: 'arrow'
-								})
+								React.createElement(
+									'div',
+									{ className: 'project__date' },
+									date
+								),
+								React.createElement(
+									'div',
+									{ className: 'project__text' },
+									text
+								),
+								React.createElement(
+									'div',
+									{ className: 'project__address' },
+									address
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'project__footer' },
+								React.createElement(
+									'div',
+									{ className: 'project__slogan' },
+									title
+								),
+								React.createElement(
+									'div',
+									{ className: 'project__dots' },
+									bgs ? bgs.map(function (url, index) {
+										return React.createElement('div', {
+											key: 'project__dot' + index,
+											className: 'project__dot ' + (index === bgIndex ? '_active' : ''),
+											onClick: _this4._handleDot.call(_this4, index)
+										});
+									}) : null
+								),
+								React.createElement(
+									'div',
+									{ className: 'project__nav' },
+									React.createElement(
+										'div',
+										{
+											className: 'project__arrow _prev ' + (current === 0 ? '_disabled' : ''),
+											onClick: this._prev.bind(this)
+										},
+										React.createElement(_icon2.default, {
+											className: 'project__icon',
+											icon: 'arrow'
+										})
+									),
+									React.createElement(
+										_reactRouter.Link,
+										{
+											to: '/projectsAll',
+											className: 'project__all'
+										},
+										'\u0412\u0441\u0435 \u043F\u0440\u043E\u0435\u043A\u0442\u044B'
+									),
+									React.createElement(
+										'div',
+										{
+											className: 'project__arrow _next ' + (current === projects.length ? '_disabled' : ''),
+											onClick: this._next.bind(this)
+										},
+										React.createElement(_icon2.default, {
+											className: 'project__icon',
+											icon: 'arrow'
+										})
+									)
+								)
 							)
 						)
 					)
@@ -40079,7 +40149,7 @@
 
 	var _reactRouter = __webpack_require__(192);
 
-	var _icon = __webpack_require__(350);
+	var _icon = __webpack_require__(351);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
@@ -40380,7 +40450,7 @@
 
 	var _social2 = _interopRequireDefault(_social);
 
-	var _icon = __webpack_require__(350);
+	var _icon = __webpack_require__(351);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
@@ -40470,7 +40540,7 @@
 
 	var _react = __webpack_require__(15);
 
-	var _iconReact = __webpack_require__(350);
+	var _iconReact = __webpack_require__(351);
 
 	var _iconReact2 = _interopRequireDefault(_iconReact);
 
@@ -40558,7 +40628,7 @@
 
 	var _react = __webpack_require__(15);
 
-	var _icon = __webpack_require__(350);
+	var _icon = __webpack_require__(351);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
