@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "439f2415c32cb05fad38"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "214f956db079896a3206"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -32560,7 +32560,7 @@
 								ref: 'video',
 								className: 'video__source'
 							},
-							_react2.default.createElement('source', { src: 'assets/video/siyanie.mp4', type: 'video/mp4' })
+							_react2.default.createElement('source', { src: 'assets/video/fullvideo.mp4', type: 'video/mp4' })
 						)
 					),
 					_react2.default.createElement(
