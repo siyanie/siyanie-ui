@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "214f956db079896a3206"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ea7eeed0b8307d3b092f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -39777,14 +39777,20 @@
 				});
 			}
 		}, {
+			key: '_toggle',
+			value: function _toggle(index) {
+				this.setState({
+					current: index,
+					bgIndex: 0
+				});
+			}
+		}, {
 			key: '_next',
 			value: function _next() {
 				var current = this.state.current;
 
 				if (++current <= projects.length) {
-					this.setState({
-						current: current
-					});
+					this._toggle(current);
 				}
 			}
 		}, {
@@ -39793,9 +39799,7 @@
 				var current = this.state.current;
 
 				if (--current >= 0) {
-					this.setState({
-						current: current
-					});
+					this._toggle(current);
 				}
 			}
 		}, {
