@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9d3b06ca99a39296dd10"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "6c9790618d311ca8da38"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -28304,7 +28304,7 @@
 			key: 'render',
 			value: function render() {
 				var _props = this.props,
-				    params = _props.params,
+				    section = _props.params.section,
 				    content = _props.content,
 				    footer = _props.footer,
 				    pathname = _props.location.pathname;
@@ -28312,11 +28312,7 @@
 
 				var key = void 0;
 
-				if (params.section) {
-					key = params.section;
-				} else {
-					key = pathname.split('/')[1] || 'root';
-				}
+				if (section) key = section;else key = pathname.split('/')[1] || 'root';
 
 				return _react2.default.createElement(
 					'div',
@@ -28342,12 +28338,12 @@
 						_reactAddonsCssTransitionGroup2.default,
 						{
 							component: 'div',
-							className: 'footer__wrap',
+							className: 'footer__wrap ' + (!footer ? '_hidden' : ''),
 							transitionName: 'anim',
 							transitionLeaveTimeout: _config2.default.trs * 2,
 							transitionEnterTimeout: _config2.default.trs * 2
 						},
-						_react2.default.cloneElement(footer || _react2.default.createElement('div', null), { key: footer ? 'footer' : 'nofooter' })
+						_react2.default.cloneElement(footer || _react2.default.createElement('div', null), { key: footer ? key : 'hidden' })
 					)
 				);
 			}
@@ -33100,6 +33096,7 @@
 				if (!data.bg && data.bg != '') {
 					data.bg = section + '_' + subsection + '_' + (slideIndex + 1) + '.jpg';
 				}
+				console.log(window.devicePixelRatio);
 
 				// Detect WEBP
 				if (data.bg) {
@@ -37542,7 +37539,7 @@
 							"text": "Если захочется переделывать людей — начни с себя.\nЭто и полезнее, и безопаснее.",
 							"author": "Дейл Карнеги"
 						},
-						"bg": "Название файла фона",
+						"bg": null,
 						"main": {
 							"component": "Text",
 							"content": "Человек, который решает абсолютно все вопросы,\n– от общения с Заказчиком до контроля над закупкой гвоздей.\nПомимо опыта в строительстве наш Руководитель проекта\nобязательно имеет управленческий опыт, в его подчинении\nнаходится вся проектная команда."
@@ -37554,7 +37551,7 @@
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
 						},
-						"bg": "Название файла фона",
+						"bg": null,
 						"main": {
 							"component": "Text",
 							"content": "Каждый работник на площадке должен знать, что, когда и как ему\nделать. Последовательность и своевременность выполнения работ\nопределяет и контролирует наш Начальник строительства.\nЕго функции: координация и управление всеми подрядными\nорганизациями на площадке, проведение еженедельных\nсовещаний и, конечно, первичный контроль качества\nнад выполняемыми подрядчиками работами."
@@ -37566,7 +37563,7 @@
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
 						},
-						"bg": "Название файла фона",
+						"bg": null,
 						"main": {
 							"component": "Text",
 							"content": "Основная функция — контроль качества выполняемых работ.\nКаждое направление курирует свой инженер.\nКаждый пишет свою программу индивидуальных\nиспытаний. При этом каждый, отвечая за свое направление,\nработает в команде."
@@ -37578,7 +37575,7 @@
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
 						},
-						"bg": "Название файла фона",
+						"bg": null,
 						"main": {
 							"component": "Text",
 							"content": "На всех наших объектах строго соблюдается охрана\nтруда и техника безопасности. Инженер по ОТ и ТБ четко\nконтролирует соблюдение всех норм и правил."
@@ -37590,7 +37587,7 @@
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
 						},
-						"bg": "Название файла фона",
+						"bg": null,
 						"main": {
 							"component": "Text",
 							"content": "Весь процесс строительства проходит под постоянным\nконтролем сотрудников отдела контроля качества.\nОтдел контроля качества работает независимо\nот проектной команды, обеспечивает контроль качества\nстроительных работ, а также ведет мониторинг\nтехнического состояния строительной площадки."
@@ -37602,7 +37599,7 @@
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
 						},
-						"bg": "Название файла фона",
+						"bg": null,
 						"main": {
 							"component": "Text",
 							"content": "Мы еженедельно отправляем Заказчику подробный фотоотчет,\nкоторый отражает текущее положение дел на объекте.\nМы — генподрядная организация, которая снимает с Заказчика\nвсе вопросы, связанные со строительством объекта и вводом\nего в эксплуатацию."
@@ -37615,7 +37612,7 @@
 				"content": [
 					{
 						"title": "Профессионализм",
-						"bg": "Название файла фона",
+						"bg": null,
 						"quote": {
 							"text": "Один человек не может найти решение, но сотня —\nи каждый со своей долей идей — могут что-нибудь придумать.",
 							"author": "Йонг"
@@ -37627,7 +37624,7 @@
 					},
 					{
 						"title": "Репутация",
-						"bg": "Название файла фона",
+						"bg": null,
 						"quote": {
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
@@ -37639,7 +37636,7 @@
 					},
 					{
 						"title": "Корпоративный дух",
-						"bg": "Название файла фона",
+						"bg": null,
 						"quote": {
 							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
 							"author": "Уинстон Черчилль"
@@ -37651,7 +37648,7 @@
 					},
 					{
 						"title": "Ноу-хау",
-						"bg": "Название файла фона",
+						"bg": null,
 						"quote": {
 							"text": "Один человек не может найти решение, но сотня —\nи каждый со своей долей идей — могут что-нибудь придумать.",
 							"author": "Йонг"
@@ -37663,7 +37660,7 @@
 					},
 					{
 						"title": "Партнерство",
-						"bg": "Название файла фона",
+						"bg": null,
 						"quote": {
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
@@ -37675,7 +37672,7 @@
 					},
 					{
 						"title": "Команда",
-						"bg": "Название файла фона",
+						"bg": null,
 						"quote": {
 							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
 							"author": "Уинстон Черчилль"
@@ -37687,7 +37684,7 @@
 					},
 					{
 						"title": "Индивидуальность",
-						"bg": "Название файла фона",
+						"bg": null,
 						"quote": {
 							"text": "Один человек не может найти решение, но сотня —\nи каждый со своей долей идей — могут что-нибудь придумать.",
 							"author": "Йонг"
@@ -39898,10 +39895,14 @@
 							React.createElement(
 								'div',
 								{ className: 'project__info' },
-								React.createElement(_icon2.default, {
-									className: 'project__logo',
-									icon: 'logo-' + id
-								}),
+								React.createElement(
+									'div',
+									{ className: 'project__logotype' },
+									React.createElement(_icon2.default, {
+										className: 'project__logo',
+										icon: 'logo-' + id
+									})
+								),
 								React.createElement(
 									'div',
 									{ className: 'project__square' },
@@ -39952,7 +39953,7 @@
 											onClick: this._prev.bind(this)
 										},
 										React.createElement(_icon2.default, {
-											className: 'project__icon',
+											className: 'project__arrow',
 											icon: 'arrow'
 										})
 									),
@@ -39971,7 +39972,7 @@
 											onClick: this._next.bind(this)
 										},
 										React.createElement(_icon2.default, {
-											className: 'project__icon',
+											className: 'project__arrow',
 											icon: 'arrow'
 										})
 									)
