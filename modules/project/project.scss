@@ -18,26 +18,34 @@
 
 // Component
 .project{
+	@extend %section;
 
 	flex: 1;
+	height: 100%;
 
 	background-position: center;
 	background-size: cover;
 
 	fill: currentColor;
 
-	position: relative;
 	display: flex;
 	align-items: stretch;
-	overflow: hidden;
 
 	// elements
 	&__{
+		&wrap{
+			@extend %section;
+
+			height: calc(100vh - $header__height);
+			overflow: hidden;
+		}
 		&bg{
 			@extend %shakeBg;
 
 			position: absolute 0;
 			z-index: $z-under;
+
+			background-size: cover;
 
 			transition: 1s;
 
@@ -48,6 +56,7 @@
 				opacity: 0;
 				visibility: hidden;
 			}
+
 			// subelements
 			&::after{
 				position: relative;
@@ -69,7 +78,7 @@
 			box-sizing: border-box;
 			width: 25vw;
 			min-width: 25rem;
-			min-height: 100%;
+			height: 100%;
 			padding: * 2rem 5vh calc(2rem + 2vw);
 
 			font-size: 1rem;
@@ -117,6 +126,7 @@
 
 			font-size: 1.875rem;
 			font-weight: 700;
+			letter-spacing: .05em;
 
 			text-transform: uppercase;
 		}
@@ -157,27 +167,34 @@
 			transition: ;
 
 			// mods
-			&:hover{
+			&:not(._disabled):hover{
 				opacity: 1;
+				cursor: pointer;
 			}
 		}
 		&all{
 			@extend .link;
 
 			font-weight: 700;
+			letter-spacing: .1em;
 
 			text-transform: uppercase;
 		}
 		&arrow{
-			size: 1rem .5rem;
-
-			cursor: pointer;
 
 			transition: ;
+
+			display: flex;
+			align-items: center;
 
 			// mods
 			&._prev{
 				transform: rotate(180deg);
+			}
+
+			// subelements
+			&-icon{
+				size: 1rem .5rem;
 			}
 		}
 	}

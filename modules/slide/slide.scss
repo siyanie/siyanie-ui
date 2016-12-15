@@ -9,7 +9,38 @@ $slide-transition: 1s;
 	display: flex;
 	flex-direction: column;
 
-	// animation-fill-mode:
+	// MODS START
+	//
+
+	// animation
+	// animation for subsection change
+	// &s.anim-leave{
+	// 	opacity: 1;
+	// 	transition: 1s;
+	// }
+	// &s.anim-leave-active{
+	// 	opacity: 0;
+	// }
+	// &s.anim-enter{
+	// 	// opacity: 0;
+	// }
+	// &s.anim-enter &._active &__{
+	// 	&bg{
+	// 		filter: blur(4px);
+	// 		transform: none;
+	// 		transition: 0;
+	// 	}
+	// }
+	// &s.anim-enter-active &__{
+	// 	&bg{
+	// 		transition: 1s;
+	// 		transform: scale(1.1);
+	// 		filter: none;
+	// 	}
+	// }
+
+	// animation
+	// animation for slide change
 	&._active &__{
 		&bg{
 			transform: scale(1.1);
@@ -30,6 +61,9 @@ $slide-transition: 1s;
 			opacity: 0;
 			transform: translateX(calc(-50vw - 50%));
 		}
+		&text{
+			transform: translateX(-100%);
+		}
 		&footer{
 			transform: translateY(100%);
 		}
@@ -38,17 +72,37 @@ $slide-transition: 1s;
 		&info{
 			transform: translateX(calc(50vw + 50%));
 		}
+		&text{
+			transform: translateX(100%);
+		}
 	}
 
-	// mods
+	// types
 	&--person{
 		justify-content: flex-end;
 
 		padding-bottom: 4rem;
 	}
+	&&--person{
+		&::before{
+			@mixin bg-lines .2;
+		}
+		&::after{
+			opacity: .75;
+		}
+	}
 	&--person &__{
+		&bg{
+			background-position: center 40%;
+
+			@media (--wides){
+				background-position: center 30%;
+			}
+		}
 		&info{
-			flex: 0;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
 		}
 	}
 	&--gallery &__{
@@ -57,11 +111,14 @@ $slide-transition: 1s;
 		}
 	}
 
+	//
+	// MODS END
+
 	// pseudoelements
 	&::before,
 	&::after{
 		content: '';
-		position: absolute 0;
+		position: absolute -1px 0;
 	}
 	&::before{
 		@extend %bg-lines;
@@ -77,7 +134,8 @@ $slide-transition: 1s;
 	// elements
 	&__{
 		&bg,
-		&info{
+		&info,
+		&text{
 			transition: $slide-transition;
 		}
 		&footer{
@@ -103,6 +161,11 @@ $slide-transition: 1s;
 			text-align: center;
 
 			will-change: transform, opacity;
+
+			@media (--low){
+				margin-top: 5vh;
+				white-space: normal;
+			}
 		}
 		&text{
 			max-width: 40rem;

@@ -15,7 +15,7 @@ export default class Footer extends Component {
 					</div>
 					<div className="footer__dev">
 						Свет на компанию пролила студия
-						<a href="http://magicdesign.ru/" className="footer__dev-name">MAGIC design &amp; digital</a>
+						<a href="http://magicdesign.ru/" className="footer__dev-name"> MAGIC design &amp; digital</a>
 					</div>
 					<div className="footer__social">
 						<Social />

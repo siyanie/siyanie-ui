@@ -25,16 +25,19 @@
 	&.anim-enter{
 		opacity: .01;
 	}
-	&.anim-enter.anim-enter-active{
+	&.anim-enter-active{
 		opacity: 1;
-		transition: opacity calc($transition * 3) ease-in;
+		transition-delay: 1s;
 	}
 	&.anim-leave{
 		opacity: 1;
 	}
-	&.anim-leave.anim-leave-active{
+	&.anim-leave-active{
 		opacity: .01;
-		transition: opacity calc($transition * 2) ease-in;
+	}
+	&.anim-enter-active,
+	&.anim-leave-active{
+		transition-duration: 1s;
 	}
 
 	// elements

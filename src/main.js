@@ -1,6 +1,4 @@
-// import preloader from '../modules/preloader/preloader.js'
-
-// preloader.init()
+require('smoothscroll-polyfill').polyfill()
 
 import { render } from 'react-dom'
 import { Router, Route, IndexRoute, hashHistory, Redirect } from 'react-router'

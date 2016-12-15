@@ -6,14 +6,7 @@ class Text extends Component {
 			data
 		} = this.props
 		return (
-			<div
-				className="slide__text"
-				dangerouslySetInnerHTML={
-					{
-						__html: data
-					}
-				}
-			></div>
+			<div className="slide__text">{data}</div>
 		)
 	}
 }

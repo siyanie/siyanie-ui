@@ -1,10 +1,33 @@
-/* stylelint-disable */
-.media{
+.mediacenter{
 
-	// mods
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 
 	// elements
 	&__{
+		&item{
+			margin: 2rem;
+		}
+		&image{
+			vertical-align: bottom;
+		}
+		&label{
+			margin: 1rem * *;
+		}
+		&link{
 
+			// mods
+			&:not(:last-child)::after{
+				content: ',';
+				display: inline-block;
+				margin: * .25em * *;
+
+				text-decoration: none;
+			}
+			&:hover{
+				text-decoration: none;
+			}
+		}
 	}
 }

@@ -1,12 +1,15 @@
 import { Component } from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
-import Slide from '../slide/slide.react'
+import config from '../config/config.react'
+import Slides from '../slide/slides.react'
 import Arrow from '../arrow/arrow.react'
 
 import store from '../store/store.react'
 
 const defaultState = {
-	activeSlide: 0
+	activeSlide: 0,
+	footerHeight: null
 }
 
 export default class Section extends Component {
@@ -40,16 +43,11 @@ export default class Section extends Component {
 		this._select(activeSlide)()
 	}
 	_footer () {
-		const footer = this.refs.section.querySelector('.slide__footer')
-		let offset = null
-		if (footer) {
-			offset = `translateY(-${footer.clientHeight}px)`
-		}
-		if (this.refs.pag) {
-			Object.assign(this.refs.pag.style, {
-				transform: offset
-			})
-		}
+		const footer = document.querySelector('.slides.anim-enter .slide__footer')
+		const unicFooter = document.querySelector('.slides:only-child .slide__footer')
+		this.setState({
+			footerHeight: footer ? footer.clientHeight : unicFooter ? unicFooter.clientHeight: 0
+		})
 	}
 	componentWillReceiveProps (nextProps) {
 		const { section, subsection } = nextProps.params
@@ -58,23 +56,31 @@ export default class Section extends Component {
 			this.section && this.section !== section ||
 			this.subsection && this.subsection !== subsection
 		) {
-			this.setState(defaultState)
+			this._select(defaultState.activeSlide)()
 		}
 
-		this._footer()
-
+		// Хак для позионирования точек
+		// пришлось использовать, т.к. не смог подключиться к событиям анимации (
+		setTimeout(::this._footer, config.trs)
 	}
-	componentDidMount () {
+	componentDidMount() {
 		this._footer()
 	}
 	render () {
-		const { section, subsection } = this.props.params
+		const {
+			params,
+			params: {
+				section,
+				subsection
+			}
+		} = this.props
 		this.section = section
 		this.subsection = subsection
 		this.slides = store.sections[section].subsections[subsection].content
 		// const slide = this.slides[this.state.activeSlide]
 		const {
-			activeSlide
+			activeSlide,
+			footerHeight
 		} = this.state
 
 		return (
@@ -82,24 +88,35 @@ export default class Section extends Component {
 				className="section _active"
 				ref="section"
 			>
-				<div className="section__wrapper">
-				{
-					this.slides.map((slide, index) => (
-						<Slide
-							key={`section__slide--${subsection}-${index}`}
-							data={slide}
-							slideIndex={index}
-							params={this.props.params}
-							active={activeSlide === index}
-						/>
-					))
-				}
-				</div>
+				<ReactCSSTransitionGroup
+					component="div"
+					className="g-page__wrapper"
+					transitionName="anim"
+					transitionEnterTimeout={config.trs * 2}
+					transitionLeaveTimeout={config.trs * 2}
+				>
+					<Slides
+						ref="slides"
+						key={`slides--${subsection}`}
+						slides={this.slides}
+						activeSlide={activeSlide}
+						params={params}
+					/>
+				</ReactCSSTransitionGroup>
 				{
 					this.slides.length > 1
 						? (
 							<div className="section__nav">
-								<div className="section__pag" ref="pag">
+								<div
+									className="section__pag"
+									style={
+										footerHeight
+										? {
+											transform: `translateY(-${footerHeight}px)`
+										}
+										: null
+									}
+								>
 								{
 									this.slides.map((item, index) => {
 										let activeClass = ''

@@ -1,14 +1,13 @@
 import { Component } from 'react'
-import { Link } from 'react-router'
 
-import Icon from '../icon/icon.react'
+import ProjectsProject from './projects.project.react'
 
 import store from '../store/store.react'
 const {
-	initialProjects,
-	moreProjects,
-	allProjects
-} = store.projects
+	projects: {
+		content: initialProjects
+	}
+} = store
 
 class Projects extends Component {
 	constructor () {
@@ -17,49 +16,28 @@ class Projects extends Component {
 		this.more = this.more.bind(this)
 		this.state = {
 			title: 'все проекты',
-			projects: initialProjects.concat(moreProjects)
+			projects: initialProjects.slice(0, 8)
 		}
 	}
 	more () {
-		const { projects } = this.state
-
 		this.setState({
 			title: '',
-			projects: projects.concat(allProjects)
+			projects: initialProjects
 		})
 	}
 	render () {
 		const { projects, title } = this.state
 
 		return (
-			<div className="projects">
-				<div className="projects__list">
+			<div className="projects _grid">
+				<div className="projects__list _grid">
 				{
-					projects.map(({ name, preview }) => (
-						<Link
-							className="projects__project _square"
-							to={`/project/${name}`}
-							key={`project-${name}`}
-						>
-							<div
-								className="projects__bg"
-								style={
-									{
-										backgroundImage: `url(${preview})`
-									}
-								}
-							></div>
-							<Icon
-								className="projects__logo"
-								icon={`logo-${name}`}
-							/>
-							<div className="projects__loupe">
-								<Icon
-									className="projects__icon"
-									icon="search"
-								/>
-							</div>
-						</Link>
+					projects.map(({ id, preview_sm: preview }) => (
+						<ProjectsProject
+							id={id}
+							preview={preview}
+							key={`project--${id}`}
+						/>
 					))
 				}
 				</div>
@@ -71,7 +49,6 @@ class Projects extends Component {
 							>{title}</div>)
 						: ''
 				}
-
 			</div>
 		)
 	}

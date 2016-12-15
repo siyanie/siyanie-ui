@@ -1,7 +1,6 @@
 import { Component } from 'react'
 
 import Icon from '../icon/icon.react'
-import { Link } from 'react-router'
 import InputElement from 'react-input-mask'
 
 export default class Callback extends Component {
@@ -26,6 +25,9 @@ export default class Callback extends Component {
 			sent: true
 		})
 	}
+	_close () {
+		history.back()
+	}
 	componentDidMount () {
 		this.refs.inputName.focus()
 	}
@@ -36,11 +38,11 @@ export default class Callback extends Component {
 		return (
 			<div className="callback">
 				<div className="callback__content">
-					<Link to="/">
+					<div onClick={::this._close}>
 						<Icon
 							className="callback__close"
 							icon="cross" />
-					</Link>
+					</div>
 					<div className="callback__title">Разговор с пользой</div>
 					<form
 						method="post"

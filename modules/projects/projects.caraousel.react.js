@@ -1,74 +1,88 @@
 import { Component } from 'react'
 import { Link } from 'react-router'
-import Carousel from 'react-slick'
 
-import Icon from '../icon/icon.react'
 import Arrow from '../arrow/arrow.react'
+import ProjectsProject from './projects.project.react'
 
 import store from '../store/store.react'
-const {
-	initialProjects,
-	moreProjects
-} = store.projects
+const { projects: { content: initialProjects } } = store
 
 class Projects extends Component {
 	constructor () {
 		super()
 
 		this.state = {
-			projects: initialProjects.concat(moreProjects)
+			current: 0,
+			shift: 0,
+			items: 4,
+			projects: initialProjects.slice(0, 8)
+		}
+	}
+	_next () {
+		let { current } = this.state
+		if (++current <= this.state.projects.length - this.state.items) {
+			this.setState({
+				current
+			})
+		}
+	}
+	_prev () {
+		let { current } = this.state
+		if (--current >= 0) {
+			this.setState({
+				current
+			})
 		}
 	}
 	componentDidMount() {
-		console.log('Mounted')
+		const item = this.refs.projects.querySelector('.projects__project')
+		if (item) {
+			this.setState({
+				shift: item.offsetWidth
+			})
+		}
 	}
-
 	render () {
-		const { projects } = this.state
+		const {
+			current,
+			shift,
+			items,
+			projects
+		} = this.state
 
 		return (
-			<div className="projects">
-				<Carousel
-					className="projects__list"
-					slidesToShow={4}
-					slidesToScroll={1}
-					initialSlide={0}
-					speed={500}
-					infinite={false}
-					dots={false}
-					swipe={false}
-					nextArrow={<Arrow />}
-					prevArrow={<Arrow />}
-				>
-				{
-					projects.map(({ name, preview }) => (
-						<Link
-							className="projects__project _carousel"
-							to={`/project/${name}`}
-							key={`project-${name}`}
-						>
-							<div
-								className="projects__bg"
-								style={
-									{
-										backgroundImage: `url(${preview})`
-									}
-								}
-							></div>
-							<Icon
-								className="projects__logo"
-								icon={`logo-${name}`}
+			<div
+				className="projects _carousel"
+				ref="projects"
+			>
+				<div className="projects__wrap">
+					<Arrow
+						className={`slick-prev ${current === 0 ? 'slick-disabled' : ''}`}
+						onClick={::this._prev}
+					/>
+					<div
+						className="projects__list _carousel"
+						style={
+							{
+								transform: `translateX(-${current * shift}px)`
+							}
+						}
+					>
+					{
+						projects.map(({ id, preview_mid: preview }) => (
+							<ProjectsProject
+								id={id}
+								preview={preview}
+								key={`project--${id}`}
 							/>
-							<div className="projects__loupe">
-								<Icon
-									className="projects__icon"
-									icon="search"
-								/>
-							</div>
-						</Link>
-					))
-				}
-				</Carousel>
+						))
+					}
+					</div>
+					<Arrow
+						className={`slick-next ${current === projects.length - items ? 'slick-disabled' : ''}`}
+						onClick={::this._next}
+					/>
+				</div>
 				<Link
 					className="projects__more"
 					to="/projectsAll"

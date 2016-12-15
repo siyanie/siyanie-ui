@@ -8,6 +8,10 @@
 		&button{
 			background: $c-primary--bright;
 			box-shadow: 0 0 0 .5rem $c-primary--bright;
+
+			transition:
+				background $transition,
+				box-shadow calc($transition * 3);
 		}
 		&note{
 			opacity: 1;
@@ -16,18 +20,16 @@
 
 	// elementsb
 	&__{
-		&link{
+		&value{
 			@extend .link;
 		}
 		&button{
 			size: 1.5rem;
-			margin: * .5rem * *;
+			transform: translate(-50%, 10%);
 
 			border-radius: ;
 
-			transition:
-				background $transition,
-				box-shadow calc($transition * 3);
+			transition: calc($transition * 3);
 
 			display: inline-flex;
 			align-items: center;
@@ -53,6 +55,8 @@
 
 			font-size: $font-size--secondary;
 			font-weight: 700;
+			line-height: 1;
+			letter-spacing: .05em;
 
 			text-decoration: none;
 

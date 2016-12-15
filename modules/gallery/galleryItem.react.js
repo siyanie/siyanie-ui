@@ -3,6 +3,13 @@ import Lightbox from 'react-images'
 
 import Icon from '../icon/icon.react'
 
+const remote = (src) => {
+	return /^(https?:)?(\/\/)/.test(src)
+}
+const getImage = (src) => {
+	return remote(src) ? src : `assets/images/${src}`
+}
+
 class GalleryItem extends Component {
 	constructor () {
 		super()
@@ -58,7 +65,7 @@ class GalleryItem extends Component {
 							<img
 								key={`gallery__image--${index}`}
 								className={`gallery__image ${index === currentImage ? '_active' : ''}`}
-								src={preview}
+								src={getImage(preview)}
 								alt={`${name} | страница ${index}`}
 							/>
 						))
@@ -68,22 +75,28 @@ class GalleryItem extends Component {
 						</div>
 					</div>
 					<div className="gallery__label">{name}</div>
-					<div className="gallery__dots">
 					{
-						previews.map((preview, index) => (
-							<div
-								key={`gallery__dot--${index}`}
-								className={`gallery__dot ${index === currentImage ? '_active' : ''}`}
-								onClick={::this._handleDot(index)}
-							/>
-						))
+						previews.length > 1
+						? (
+							<div className="gallery__dots">
+							{
+								previews.map((preview, index) => (
+									<div
+										key={`gallery__dot--${index}`}
+										className={`gallery__dot ${index === currentImage ? '_active' : ''}`}
+										onClick={::this._handleDot(index)}
+									/>
+								))
+							}
+							</div>
+						)
+						: null
 					}
-					</div>
 					<Lightbox
 						images={
 							images.map(image => {
 								return {
-									src: image
+									src: getImage(image)
 								}
 							})
 						}

@@ -1,13 +1,34 @@
 .video{
+	@extend %section;
 
-	position: relative;
+	// animation
+
+	// mods
+	&--closed &__{
+		&full{
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+	&--open &__{
+		&preview{
+			opacity: 0;
+			visibility: hidden;
+		}
+		&title,
+		&button{
+			transform: scale(.8);
+		}
+	}
 
 	// pseudoelements
 	&::before,
 	&::after{
 		content: '';
 		position: absolute * 0;
-		z-index: $z-higher;
+		z-index: calc($z-higher * 10);
+
+		min-height: 5vh;
 
 		background: $c-primary;
 
@@ -21,21 +42,6 @@
 	}
 
 	// mods
-	&--paused{
-		&::before,
-		&::after{
-			min-height: 5vh;
-		}
-	}
-	&--played &__{
-		&preview{
-			opacity: 0;
-			visibility: hidden;
-		}
-		&info{
-			transform: scale(.8);
-		}
-	}
 	&:hover{
 		&::before,
 		&::after{
@@ -48,19 +54,33 @@
 
 	// elements
 	&__{
+		&bg{
+			@extend %center-abs;
+		}
+		&full{
+			position: fixed 0;
+			z-index: $z-over-everything;
+
+			background: $c-primary;
+
+			transition: 1s;
+
+			display: flex;
+			align-items: center;
+		}
 		&source{
-			position: absolute 50% * * 50%;
-			transform: translate(-50%, -50%);
+			width: 100%;
+			height: auto;
 		}
 		&preview{
+			@extend %bg-lines;
+
 			flex: 1;
 
 			position: relative;
 			z-index: $z-higher;
 
 			min-height: 100%;
-
-			background: color($c-primary a(.4));
 
 			cursor: pointer;
 
@@ -69,7 +89,8 @@
 			justify-content: center;
 		}
 		&preview,
-		&info{
+		&title,
+		&button{
 			transition: ;
 		}
 		&title{
@@ -81,7 +102,7 @@
 
 			border-radius: ;
 
-			transition: calc($transition * 2);
+			transition-delay: $transition;
 
 			background: color(white a(.1));
 			fill: currentColor;

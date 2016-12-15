@@ -36,3 +36,27 @@
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
+$trsn: $(trs)ms;
+
+// react anim
+.anim-{
+	&enter,
+	&leave{
+		will-change: opacity;
+	}
+	&enter{
+		opacity: 0;
+	}
+	&enter-active{
+		opacity: 1;
+		transition: opacity $(trs)ms $(trs)ms ease-in;
+	}
+	&leave{
+		z-index: 1;
+		opacity: 1;
+	}
+	&leave-active{
+		opacity: 0;
+		transition: opacity $(trs)ms ease-in;
+	}
+}

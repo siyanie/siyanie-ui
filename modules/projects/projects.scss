@@ -8,56 +8,91 @@ $project__height: $content__height;
 .projects{
 
 	flex: 1;
+	max-width: 100%;
+	width: 100%;
 
 	fill: currentColor;
 
 	display: flex;
 	flex-direction: column;
 
-	// mods
-	&._small &__project{
+	// MODS
+	//
+
+	// Carousel
+	&._carousel{
+		@extend %section;
+
+		overflow: visible;
+	}
+	// animation
+	// &._carousel.anim-enter &__{
+	// 	&project{
+	// 		transform: scale(.8);
+	// 	}
+	// }
+	// &._carousel.anim-enter-active &__{
+	// 	&project{
+	// 		transform: scale(1);
+
+	// 		transition-delay: 2s;
+	// 		transition-duration: 2s;
+	// 	}
+	// }
+
+	// Projects height
+	&._grid &__project{
 		min-height: calc($project__height / 2);
 	}
+	&._carousel &__project{
+		min-height: $project__height;
+	}
+
+	//
+	// MODS END
 
 	// elements
 	&__{
+		&wrap{
+			overflow: hidden;
+		}
 		&list{
 			flex: 1;
 			display: flex;
 			align-items: stretch;
-			flex-wrap: wrap;
-			overflow: hidden;
+
+			// mods
+			&._grid{
+				flex-wrap: wrap;
+			}
+			&._carousel{
+				transition: ;
+			}
 		}
 		&project{
 			@extend .link;
 
 			float: left;
 
-			width: 25%;
+			min-width: 25%;
 			margin: * -.1px;
+			transition: 1s;
 
 			animation-name: projectsShowItem;
 			animation-fill-mode: forwards;
 			animation-duration: 1s;
-			transition: 1s;
+			animation-delay: 1s;
 			will-change: min-height, transform, opacity;
 
 			overflow: hidden;
 			position: relative;
 			display: flex;
 			align-items: center;
+			justify-content: center;
 
 			// mods
-			&._carousel{
-				min-height: $project__height;
-
-				// mods
-				// &:hover{
-				// 	transform: scaleX(1.2);
-				// }
-			}
-			&._square{
-				min-height: calc($project__height / 2);
+			&:nth-child(8) ~ &{
+				animation-delay: 0s;
 			}
 		}
 		&bg{
@@ -65,7 +100,6 @@ $project__height: $content__height;
 
 			background-position: center;
 			background-size: cover;
-			filter: blur(10px);
 			will-change: filter, transform;
 
 			// subelements
@@ -77,6 +111,9 @@ $project__height: $content__height;
 				opacity: .5;
 			}
 		}
+		&project:nth-child(odd) &bg{
+			filter: blur(5px);
+		}
 		&logo,
 		&loupe{
 			z-index: $z-higher;
@@ -87,9 +124,19 @@ $project__height: $content__height;
 			will-change: opacity;
 		}
 		&logo{
-			max-width: 70%;
+			width: 60%;
 			height: auto;
-			margin: * auto;
+
+			fill: currentColor;
+
+			// mods
+			&[data-icon='logo-gazprom']{
+				margin: -20% * *;
+			}
+			&[data-icon='logo-nokia'],
+			&[data-icon='logo-bork']{
+				width: 50%;
+			}
 		}
 		&loupe{
 			@extend .loupe;
@@ -98,11 +145,15 @@ $project__height: $content__height;
 			@extend .loupe__icon;
 		}
 		&more{
+			position: relative;
+			z-index: $z-higher;
+
 			margin: 1rem * -calc(1rem + .875rem);
 
 			font-size: .875rem;
 			font-weight: 700;
 			line-height: 1;
+			letter-spacing: .1em;
 
 			text-align: center;
 			text-decoration: none;

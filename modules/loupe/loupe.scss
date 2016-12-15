@@ -1,11 +1,9 @@
 .loupe{
+	@extend %center-abs;
 
-	position: absolute 50% * * 50%;
-	transform: translate(-50%, -50%);
 	size: 3rem;
 
 	border-radius: 50%;
-	background: currentColor;
 	background-clip: content-box;
 	opacity: 0;
 	color: color($c-bg a(.7));
@@ -18,11 +16,29 @@
 	&--{
 		&hover{
 			opacity: 1;
-			border: 1rem solid currentColor;
+
+			// elements
+			&::after{
+				size: 5rem;
+			}
 		}
 	}
 
 	// elements
+	&::after{
+		@extend %center-abs;
+
+		z-index: $z-under;
+
+		content: '';
+		size: inherit;
+
+		background: currentColor;
+		border-radius: inherit;
+
+		transition: inherit;
+		will-change: width, height;
+	}
 	&__{
 		&icon{
 			max-size: 2rem;

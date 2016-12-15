@@ -12,7 +12,25 @@
 
 @keyframes preloaderBg{
 	to{
-		border-width: 0;
+		min-height: 0;
+	}
+}
+
+@keyframes preloaderBlick{
+	0%{
+		opacity: 0;
+		transform:
+			rotate(-2deg)
+			scale(.95);
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+		transform:
+			rotate(2deg)
+			scale(1.05);
 	}
 }
 
@@ -57,78 +75,31 @@
 	// display: none !important;
 
 	animation-name: preloaderFade;
-	animation-delay: calc($transition__preloader * 1.5 + calc($transition * 2));
+	animation-delay: calc($trsn * 4.5);
 	animation-fill-mode: forwards;
 
 	// elements
+	&::before,
 	&::after{
 		content: '';
-		position: absolute 0;
+		position: absolute * 0;
 		z-index: $z-under;
 
-		border-color: $c-primary;
-		border-style: solid;
-		border-width: 51vh *;
+		min-height: 51vh;
+
+		background: $c-primary;
 
 		animation-name: preloaderBg;
-		animation-delay: calc($transition__preloader + calc($transition * 1));
-		animation-duration: calc($transition__preloader / 2);
+		animation-delay: calc($trsn * 3.5);
+		animation-duration: calc($trsn);
 		animation-fill-mode: forwards;
-		will-change: border;
+		will-change: min-height;
 	}
-	svg{
-		animation-name: preloaderLogo;
-		animation-delay: $transition__preloader;
-		animation-duration: calc($transition * 1);
-		animation-fill-mode: forwards;
-		will-change: opacity;
-
-		overflow: visible;
+	&::before{
+		top: 0;
 	}
-	path{
-		animation-duration: $transition__preloader;
-		animation-timing-function: ease-in-out;
-		will-change: transform, opacity;
-
-		// mods
-		&:first-child{
-			transform-origin: right bottom;
-			animation-name: logoFade, logoFirst;
-		}
-		&:nth-child(2){
-			transform-origin: left top;
-			animation-name: logoFade, logoSecond;
-		}
-		&:last-child{
-			transform-origin: right top;
-			animation-name: logoFade, logoThird;
-		}
-
-		/* --- Transition
-		transition: $transition__preloader;
-		opacity: .2;
-
-		// pseudoselectors
-		&:first-child{
-			transform-origin: right bottom;
-			transform:
-				rotate(80deg)
-				translate(-30%, -15%);
-		}
-		&:nth-child(2){
-			transform-origin: left top;
-			transform:
-				rotate(65deg)
-				translate(70%, -35%);
-
-		}
-		&:last-child{
-			transform-origin: right top;
-			transform:
-				rotate(85deg)
-				translate(30%, 100%);
-		}
-		*/
+	&::after{
+		bottom: 0;
 	}
 	&__{
 		&content{
@@ -136,6 +107,49 @@
 		}
 		&logo{
 			max-size: 3.75rem 3.25rem;
+
+			animation-name: preloaderLogo;
+			animation-delay: calc($trsn * 1.5);
+			animation-duration: calc($trsn * .5);
+			animation-fill-mode: forwards;
+			will-change: opacity;
+
+			overflow: visible;
+
+			// elements
+			path{
+				animation-duration: calc($trsn * 1.5);
+				animation-timing-function: ease-in-out;
+				will-change: transform, opacity;
+
+				// mods
+				&:first-child{
+					transform-origin: right bottom;
+					animation-name: logoFade, logoFirst;
+				}
+				&:nth-child(2){
+					transform-origin: left top;
+					animation-name: logoFade, logoSecond;
+				}
+				&:last-child{
+					transform-origin: right top;
+					animation-name: logoFade, logoThird;
+				}
+			}
+		}
+		&blick{
+			position: absolute 0;
+			z-index: $z-higher;
+
+			animation-name: preloaderBlick;
+			animation-duration: calc($trsn * 4);
+			animation-fill-mode: forwards;
+			will-change: opacity, transform;
+
+			// elements
+			&-icon{
+				size: 100%;
+			}
 		}
 	}
 }

@@ -1,74 +1,24 @@
 import { Component } from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { Link } from 'react-router'
 
+import config from '../config/config.react'
+import store from '../store/store.react'
 import Icon from '../icon/icon.react'
 
+const projects = store.projects.content
+
 class Project extends Component {
-	constructor () {
-		super()
+	constructor (props) {
+		super(props)
 
-		// this._loadImage = this._loadImage.bind(this)
-		this._handleDot = this._handleDot.bind(this)
-		this.data = {
-			bg: [
-				'//placeimg.com/1920/1080/any',
-				'//placeimg.com/1920/1080/animals',
-				'//placeimg.com/1920/1080/arch',
-				'//placeimg.com/1920/1080/nature',
-				'//placeimg.com/1920/1080/people',
-				'//placeimg.com/1920/1080/tech'
-			],
-			logo: 'rzhd',
-			square: '1100 кв.м.',
-			date: 'май 2009 - сентябрь 2009',
-			text: 'Проектные   работы систем: холодоснабжения прецизионных кондиционеров, системы вентиляции. Монтажные работы по прокладке трубопроводов системы холодоснабжения, монтаж прецизионных кондиционеров, монтаж сухих охладителей. Монтажные работы  системы вентиляции. Пусконаладочные работы.',
-			address: 'г. Москва, ул. 8 Марта, д. 14 . стр. 1. , Центр обработки данных.',
-			slogan: 'Блеск профессионализма'
-		}
+		const projectId = props.id || props.params.project
+		const project = projects.find(({ id }) => id === projectId)
 		this.state = {
-			loaded: false,
-			bgIndex: 0
+			bgIndex: 0,
+			bgs: null,
+			current: projects.indexOf(project)
 		}
-	}
-	_loadImage (index = this.state.bgIndex) {
-		const newUrl = this.data.bg[index]
-		const oldUrl = this.data.bg[this.state.bgIndex]
-
-		this.refs.bgNew.classList.remove('_active')
-		this.refs.bgOld.classList.remove('_active')
-
-		const images = this.data.bg.map(bg => {
-			const image = new Image()
-			image.src = bg
-			return image
-		})
-		images[0].addEventListener('load', () => {
-			this.setState({
-				loaded: true,
-				bgIndex: index
-			})
-			Object.assign(this.refs.bgNew.style, {
-				backgroundImage: `url(${newUrl})`
-			})
-			Object.assign(this.refs.bgOld.style, {
-				backgroundImage: `url(${oldUrl})`
-			})
-			this.refs.bgNew.classList.add('_active')
-			this.refs.bgOld.classList.add('_active')
-		})
-	}
-	_loadImages () {
-		console.log('loaded')
-		const image = new Image()
-		image.src = this.data.bg[0]
-
-		image.addEventListener('load', () => {
-			this.setState({
-				loaded: true,
-				bgIndex: 0
-			})
-			this.refs.bg.style.backgroundImage = `url(${image.src})`
-		})
 	}
 	_handleDot (index) {
 		return () => {
@@ -77,79 +27,143 @@ class Project extends Component {
 			})
 		}
 	}
+	_setBgs () {
+		window.Modernizr.on('webp', result => {
+			let bgs = projects[this.state.current].bgs
+			if (Object.keys(result).length > 0)
+				bgs = bgs.map(bg => bg.replace(/(jpg|jpeg|png)$/, 'webp'))
+
+			this.setState({
+				bgs
+			})
+		})
+	}
+	_toggle(index) {
+		this.setState({
+			current: index,
+			bgIndex: 0
+		})
+		this._setBgs()
+	}
+	_next () {
+		let { current } = this.state
+		if (++current <= projects.length) {
+			this._toggle(current)
+		}
+	}
+	_prev () {
+		let { current } = this.state
+		if (--current >= 0) {
+			this._toggle(current)
+		}
+	}
+	componentDidMount() {
+		this._setBgs()
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth'
+		})
+	}
 	render () {
 		const {
-			bg,
-			logo,
+			loaded,
+			bgIndex,
+			bgs,
+			current
+		} = this.state
+		const {
+			id,
 			square,
 			date,
 			text,
 			address,
-			slogan
-		} = this.data
-		const {
-			loaded,
-			bgIndex
-		} = this.state
+			title
+		} = projects[current]
 
 		return (
-			<div
-				className={`project ${loaded ? '_loaded' : '_no_loaded' }`}
+			<ReactCSSTransitionGroup
+				component="div"
+				className="project__wrap"
+				transitionName="anim"
+				transitionLeaveTimeout={config.trs * 2}
+				transitionEnterTimeout={config.trs * 2}
 			>
-				{
-					bg.map((bg, index) => (
-						<div
-							className={`project__bg ${index === bgIndex ? '_active' : ''}`}
-							key={`project__bg--${index}`}
-							style={
-								{
-									backgroundImage: `url(${bg})`
+				<div
+					key={`project--${id}`}
+					className={`project ${loaded ? '_loaded' : '_no_loaded' }`}
+				>
+					{
+						bgs
+						? bgs.map((bg, index) => (
+							<div
+								className={`project__bg ${index === bgIndex ? '_active' : ''}`}
+								key={`project__bg--${index}`}
+								style={
+									{
+										backgroundImage: `url(assets/images/${bg})`
+									}
 								}
-							}
-						></div>
-					))
-				}
-				<div className="project__content">
-					<div className="project__info">
-						<Icon
-							className="project__logo"
-							icon={`logo-${logo}`}
-						/>
-						<div className="project__square">{square}</div>
-						<div className="project__date">{date}</div>
-						<div className="project__text">{text}</div>
-						<div className="project__address">{address}</div>
-					</div>
-					<div className="project__footer">
-						<div className="project__slogan">{slogan}</div>
-						<div className="project__dots">
-							{
-								bg.map((url, index) =>
-									<div
-										key={`project__dot${index}`}
-										className={`project__dot ${index === bgIndex ? '_active' : ''}`}
-										onClick={this._handleDot(index)}
-									></div>
-								)
-							}
+							></div>
+						))
+						: null
+					}
+					<div className="project__content">
+						<div className="project__info">
+							<div className="project__logotype">
+								<Icon
+									className="project__logo"
+									icon={`logo-${id}`}
+								/>
+							</div>
+							<div className="project__square">{square}</div>
+							<div className="project__date">{date}</div>
+							<div className="project__text">{text}</div>
+							<div className="project__address">{address}</div>
 						</div>
-						<div className="project__nav">
-							<Icon
-								className="project__arrow _prev"
-								icon="arrow"
-							/>
-							<Link
-								to="/projectsAll"
-								className="project__all"
-							>Все проекты</Link>
-							<Icon
-								className="project__arrow _next"
-								icon="arrow"
-							/>
+						<div className="project__footer">
+							<div className="project__slogan">{title}</div>
+							<div className="project__dots">
+								{
+									bgs
+									? bgs.map((url, index) =>
+										<div
+											key={`project__dot${index}`}
+											className={`project__dot ${index === bgIndex ? '_active' : ''}`}
+											onClick={::this._handleDot(index)}
+										></div>
+									)
+									: null
+								}
+							</div>
+							<div className="project__nav">
+								<div
+									className={`project__arrow _prev ${current === 0 ? '_disabled' : ''}`}
+									onClick={::this._prev}
+								>
+									<Icon
+										className="project__arrow-icon"
+										icon="arrow"
+									/>
+								</div>
+								<Link
+									to="/projectsAll"
+									className="project__all"
+								>Все проекты</Link>
+								<div
+									className={`project__arrow _next ${current === projects.length ? '_disabled' : ''}`}
+									onClick={::this._next}
+								>
+									<Icon
+										className="project__arrow-icon"
+										icon="arrow"
+									/>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</ReactCSSTransitionGroup>
 		)
 	}
 }

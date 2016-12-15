@@ -25,7 +25,9 @@
 			opacity: .3;
 		}
 		&button{
-			position: absolute * 5% 0 *;
+			@extend .link;
+
+			position: absolute * 5% 4rem *;
 
 			box-sizing: border-box;
 			padding: .875rem 2.125rem;

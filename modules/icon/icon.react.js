@@ -12,6 +12,7 @@ export default (props) => {
 			return (
 				<svg
 					className={className}
+					data-icon={icon}
 					width={width}
 					height={height}
 					viewBox={symbol.getAttribute('viewBox')}
@@ -21,7 +22,7 @@ export default (props) => {
 		})()
 		: (() => {
 			return (
-				<svg className={className}>
+				<svg className={className} data-icon={icon}>
 					<use xlinkHref={`#icon--${icon}`}></use>
 				</svg>
 			)
