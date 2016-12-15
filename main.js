@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "295f9c0ee22a793eff1c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ed5f8d87b31acba671d4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -32917,6 +32917,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(192);
+
 	var _slide = __webpack_require__(360);
 
 	var _slide2 = _interopRequireDefault(_slide);
@@ -32956,8 +32958,8 @@
 						});
 					}),
 					subsection === 'work' ? _react2.default.createElement(
-						'div',
-						{ className: 'person__button' },
+						_reactRouter.Link,
+						{ to: '/callback', className: 'person__button' },
 						'\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0440\u0435\u0437\u044E\u043C\u0435'
 					) : null
 				);
@@ -38688,8 +38690,6 @@
 
 	var _icon2 = _interopRequireDefault(_icon);
 
-	var _reactRouter = __webpack_require__(192);
-
 	var _reactInputMask = __webpack_require__(427);
 
 	var _reactInputMask2 = _interopRequireDefault(_reactInputMask);
@@ -38729,6 +38729,11 @@
 				});
 			}
 		}, {
+			key: '_close',
+			value: function _close() {
+				history.back();
+			}
+		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				this.refs.inputName.focus();
@@ -38751,8 +38756,8 @@
 						'div',
 						{ className: 'callback__content' },
 						React.createElement(
-							_reactRouter.Link,
-							{ to: '/' },
+							'div',
+							{ onClick: this._close.bind(this) },
 							React.createElement(_icon2.default, {
 								className: 'callback__close',
 								icon: 'cross' })
