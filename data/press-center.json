@@ -48,7 +48,7 @@
       "name": "Благодарственные письма",
       "content": [
         {
-          "bg": "",
+          "bg": "about_onas_1.jpg",
           "quote": {
             "text": "Если судьба преподносит тебе лимон, \nсделай из него лимонад.",
             "author": "Дейл Карнеги"
@@ -58,27 +58,21 @@
             "content": {
               "docs": [
                 {
+                  "name": "Клип компании в Ночи\n пожирателей рекламы",
                   "previews": [
-                    "http://placehold.alanev.ru/205x290",
-                    "http://placehold.alanev.ru/205x290",
-                    "http://placehold.alanev.ru/205x290"
+                    "doc_night_sm.jpg"
                   ],
                   "images": [
-                    "http://placehold.alanev.ru/550x770",
-                    "http://placehold.alanev.ru/550x770",
-                    "http://placehold.alanev.ru/550x770"
+                    "doc_night_big.jpg"
                   ]
                 },
                 {
+                  "name": "Диплом Заботливый\n работодатель 2016",
                   "previews": [
-                    "http://placehold.alanev.ru/205x290",
-                    "http://placehold.alanev.ru/205x290",
-                    "http://placehold.alanev.ru/205x290"
+                    "doc_rabotodatel_sm.jpg"
                   ],
                   "images": [
-                    "http://placehold.alanev.ru/550x770",
-                    "http://placehold.alanev.ru/550x770",
-                    "http://placehold.alanev.ru/550x770"
+                    "doc_rabotodatel_big.jpg"
                   ]
                 },
                 {
@@ -115,7 +109,7 @@
       "name": "Сертификаты",
       "content": [
         {
-          "bg": "",
+          "bg": "about_onas_1.jpg",
           "quote": {
             "text": "Никогда не поднимайте свои принципы так высоко, \nчто их нельзя будет приспособить к обстоятельствам.",
             "author": "Уинстон Черчилль"
@@ -127,18 +121,23 @@
                 {
                   "name": "Свидетельство СРО",
                   "previews": [
-                    "http://placehold.alanev.ru/205x290",
-                    "http://placehold.alanev.ru/205x290/123",
-                    "http://placehold.alanev.ru/205x290/234"
+                    "doc_sro_1_sm.jpg",
+                    "doc_sro_2_sm.jpg",
+                    "doc_sro_3_sm.jpg",
+                    "doc_sro_4_sm.jpg",
+                    "doc_sro_5_sm.jpg",
+                    "doc_sro_6_sm.jpg"
                   ],
                   "images": [
-                    "http://placehold.alanev.ru/550x770",
-                    "http://placehold.alanev.ru/550x770/123",
-                    "http://placehold.alanev.ru/550x770/234"
+                    "doc_sro_1_big.jpg",
+                    "doc_sro_2_big.jpg",
+                    "doc_sro_3_big.jpg",
+                    "doc_sro_4_big.jpg",
+                    "doc_sro_5_big.jpg",
+                    "doc_sro_6_big.jpg"
                   ]
                 },
                 {
-                  "name": "Лицензия на \nстроительные работы",
                   "previews": [
                     "http://placehold.alanev.ru/205x290/345",
                     "http://placehold.alanev.ru/205x290/456",
@@ -151,7 +150,6 @@
                   ]
                 },
                 {
-                  "name": "Свидетельство СРО",
                   "previews": [
                     "http://placehold.alanev.ru/205x290/678",
                     "http://placehold.alanev.ru/205x290/789",
@@ -164,7 +162,6 @@
                   ]
                 },
                 {
-                  "name": "Лицензия на \nстроительные работы",
                   "previews": [
                     "http://placehold.alanev.ru/205x290/9ab",
                     "http://placehold.alanev.ru/205x290/abc",
@@ -177,7 +174,6 @@
                   ]
                 },
                 {
-                  "name": "Лицензия на \nстроительные работы",
                   "previews": [
                     "http://placehold.alanev.ru/205x290/9ab",
                     "http://placehold.alanev.ru/205x290/abc",
@@ -190,7 +186,6 @@
                   ]
                 },
                 {
-                  "name": "Лицензия на \nстроительные работы",
                   "previews": [
                     "http://placehold.alanev.ru/205x290/9ab",
                     "http://placehold.alanev.ru/205x290/abc",
@@ -203,7 +198,6 @@
                   ]
                 },
                 {
-                  "name": "Лицензия на \nстроительные работы",
                   "previews": [
                     "http://placehold.alanev.ru/205x290/9ab",
                     "http://placehold.alanev.ru/205x290/abc",
@@ -225,7 +219,7 @@
       "name": "Медиацентр",
       "content": [
         {
-          "bg": "",
+          "bg": "about_onas_1.jpg",
           "quote": {
             "text": "Изменяться — значит совершенствоваться. \nЧтобы стать совершенным, нужно изменяться часто.",
             "author": "Уинстон Черчилль"
