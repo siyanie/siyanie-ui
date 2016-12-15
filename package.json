@@ -17,6 +17,7 @@
     "test:styles": "stylelint '{modules,src}/**/*.scss'",
     "test:html": "htmlhint '{modules,src,build}/**/*.html'",
     "posttest": "npm run test:scripts && npm run test:html && npm run test:styles",
+    "favicon": "npm run tasks/favicon",
     "deploy": "gh-pages -d build",
     "surge": "surge ./build siyanie.project.alanev.ru"
   },
@@ -51,6 +52,7 @@
     "eslint": "^3.9.1",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-react": "^6.7.1",
+    "favicons": "^4.8.3",
     "gh-pages": "^0.11.0",
     "glob": "^7.1.1",
     "htmlhint": "^0.9.13",
