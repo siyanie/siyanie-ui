@@ -1,23 +1,131 @@
+$footer__subsection-factor: .75;
 .footer{
 
-	padding: 5vh *;
-
-	font-size: $font-size--secondary;
-	letter-spacing: .05em;
-
-	background: $c-primary;
-	color: $c-primary-text;
-
-	// mods
+	// animation
+	& + &{
+		position: absolute 5vh 0 *;
+	}
 
 	// elements
 	&__{
+		&wrap{
+			box-sizing: border-box;
+			min-height: $footer__height;
+
+			padding: 5vh *;
+
+			font-size: $font-size--secondary;
+			letter-spacing: .05em;
+
+			background: $c-primary;
+			color: $c-primary-text;
+
+			position: relative;
+
+			// mods
+			&._hidden{
+				visibility: hidden;
+
+				transition-delay: $(trs)ms;
+			}
+		}
 		&content{
 			@extend .section__content;
 
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+		}
+		&section{
+			color: white;
+
+			// subelements
+			&,
+			&-arrow{
+				animation-name: footerItem;
+				animation-duration: $transition;
+			}
+			&-{
+				&arrow{
+					size: 1rem .5rem;
+
+					fill: currentColor;
+				}
+			}
+		}
+		&menu{
+			@extend .menu;
+
+			width: 100%;
+
+			text-align: center;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		&subsection{
+			animation-name: footerItem;
+			animation-duration: $transition;
+			animation-fill-mode: forwards;
+
+			opacity: 0;
+
+			// mods
+			&:nth-of-type(1){
+				animation-delay: calc($transition * $footer__subsection-factor * 1);
+			}
+			&:nth-of-type(2){
+				animation-delay: calc($transition * $footer__subsection-factor * 2);
+			}
+			&:nth-of-type(3){
+				animation-delay: calc($transition * $footer__subsection-factor * 3);
+			}
+			&:nth-of-type(4){
+				animation-delay: calc($transition * $footer__subsection-factor * 4);
+			}
+			&:nth-of-type(5){
+				animation-delay: calc($transition * $footer__subsection-factor * 5);
+			}
+			&:nth-of-type(6){
+				animation-delay: calc($transition * $footer__subsection-factor * 6);
+			}
+		}
+		&link{
+			@extend .link;
+
+			// mods
+			&._active,
+			&:hover{
+				color: white;
+			}
+		}
+		&link._active + &dots{
+			visibility: visible;
+		}
+		&dots{
+			margin: .75rem * -.95rem;
+			visibility: hidden;
+
+			display: flex;
+			justify-content: center;
+		}
+		&dot{
+			@extend .section__dot;
+
+			size: .125rem;
+			margin: 0 .125rem;
+
+			cursor: default;
+
+			// mods
+			&:not(._active){
+				opacity: .3;
+			}
+		}
+		&copyright,
+		&social{
+			flex: 1;
 		}
 		&copyright{
 			display: flex;
@@ -34,12 +142,11 @@
 			&-{
 				&icon{
 					max-size: 6.25rem 2rem;
-					margin: * * * 1rem;
+					margin: * * * .5rem;
 				}
 			}
 		}
 		&dev{
-
 			// subelements
 			&-{
 				&name{
@@ -50,5 +157,18 @@
 				}
 			}
 		}
+		&social{
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+}
+
+@keyframes footerItem{
+	from{
+		transform: translateY(100%);
+	}
+	to{
+		opacity: 1;
 	}
 }

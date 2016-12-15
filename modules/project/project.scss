@@ -1,10 +1,201 @@
-/* stylelint-disable */
-.project{
+@keyframes projectContent{
+	from{
+		transform: translateX(-100%);
+	}
+}
 
-	// mods
+@keyframes projectBg{
+	to{
+		opacity: 1;
+	}
+}
+
+@keyframes rotate{
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+// Component
+.project{
+	@extend %section;
+
+	flex: 1;
+	height: 100%;
+
+	background-position: center;
+	background-size: cover;
+
+	fill: currentColor;
+
+	display: flex;
+	align-items: stretch;
 
 	// elements
 	&__{
+		&wrap{
+			@extend %section;
 
+			height: calc(100vh - $header__height);
+			overflow: hidden;
+		}
+		&bg{
+			@extend %shakeBg;
+
+			position: absolute 0;
+			z-index: $z-under;
+
+			background-size: cover;
+
+			transition: 1s;
+
+			display: flex;
+
+			// mods
+			&:not(._active){
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			// subelements
+			&::after{
+				position: relative;
+				z-index: $z-under;
+				size: 3rem;
+				margin: auto;
+				border: .25rem solid;
+				border-color: $c-secondary color($c-secondary a(.2));
+
+				border-radius: 50%;
+
+				animation-name: rotate;
+				animation-duration: calc($transition * 10);
+				animation-iteration-count: infinite;
+			}
+		}
+		&content{
+			position: relative;
+			box-sizing: border-box;
+			width: 25vw;
+			min-width: 25rem;
+			height: 100%;
+			padding: * 2rem 5vh calc(2rem + 2vw);
+
+			font-size: 1rem;
+
+			background: color($c-bg a(.4));
+
+			animation-fill-mode: forwards;
+			animation-name: projectContent;
+			animation-duration: 1s;
+			transition: ;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		&logo{
+			box-sizing: border-box;
+			width: 100%;
+			padding: * 25%;
+		}
+		&square{
+			font-weight: 700;
+		}
+		&text{
+			margin: 1em *;
+		}
+		&square,
+		&date,
+		&address,
+		&text{
+			opacity: .4;
+
+			transition: ;
+		}
+		&content:hover &{
+			&square,
+			&date,
+			&address,
+			&text{
+				opacity: 1;
+			}
+		}
+		&slogan{
+			margin: 2rem *;
+
+			font-size: 1.875rem;
+			font-weight: 700;
+			letter-spacing: .05em;
+
+			text-transform: uppercase;
+		}
+		&dots{
+			display: flex;
+		}
+		&dot{
+			size: .5rem;
+
+			border-radius: 50%;
+			background: white;
+			opacity: .4;
+
+			cursor: pointer;
+
+			transition: 1s;
+
+			// mods
+			&:not(:first-child){
+				margin-left: 1rem;
+			}
+			&._active,
+			&:hover{
+				opacity: 1;
+			}
+		}
+		&nav{
+			margin: 3.75rem 4rem * *;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		&arrow,
+		&all{
+			opacity: .4;
+
+			transition: ;
+
+			// mods
+			&:not(._disabled):hover{
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+		&all{
+			@extend .link;
+
+			font-weight: 700;
+			letter-spacing: .1em;
+
+			text-transform: uppercase;
+		}
+		&arrow{
+
+			transition: ;
+
+			display: flex;
+			align-items: center;
+
+			// mods
+			&._prev{
+				transform: rotate(180deg);
+			}
+
+			// subelements
+			&-icon{
+				size: 1rem .5rem;
+			}
+		}
 	}
 }

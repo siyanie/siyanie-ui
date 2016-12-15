@@ -1,10 +1,84 @@
-/* stylelint-disable */
 .gallery{
 
-	// mods
+	position: relative;
 
 	// elements
 	&__{
+		&list{
+			@extend .slide__info;
+			margin: 0 *;
 
+			display: flex;
+			justify-content: space-between;
+		}
+		&slide{
+			min-width: 25%;
+		}
+		&item{
+			display: inline-block;
+		}
+		&images{
+			position: relative;
+
+			// mods
+			&:hover{
+				cursor: pointer;
+			}
+			&:hover::before{
+				background: none;
+			}
+
+			// elements
+			&::before{
+				content: '';
+				position: absolute 0;
+				z-index: $z-higher;
+
+				background: color($c-primary a(.4));
+
+				transition: ;
+			}
+		}
+		&image{
+			vertical-align: bottom;
+
+			transition: ;
+
+			// mods
+			&:not(._active){
+				opacity: 0;
+				visibility: hidden;
+			}
+			&:not(:first-child){
+				position: absolute 0;
+			}
+		}
+		&loupe{
+			@extend .loupe;
+
+			// subelements
+			&-icon{
+				@extend .loupe__icon;
+			}
+		}
+		&images:hover &loupe{
+			@extend .loupe--hover;
+		}
+		&label{
+			margin: .5rem * *;
+
+			font-size: 1rem;
+
+			opacity: .3;
+		}
+		&dots{
+			margin: 1rem * *;
+
+			display: flex;
+			justify-content: center;
+		}
+		&dot{
+			@extend .section__dot;
+		}
 	}
 }

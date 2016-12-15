@@ -1,5 +1,8 @@
 .header{
 
+	box-sizing: border-box;
+	min-height: $header__height;
+
 	color: $c-primary-text;
 
 	// elements
@@ -29,7 +32,7 @@
 			align-items: center;
 		}
 		&phone{
-			margin-left: 6.25rem;
+			margin-left: 5vw;
 		}
 	}
 }

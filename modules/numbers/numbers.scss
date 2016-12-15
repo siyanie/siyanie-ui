@@ -1,0 +1,49 @@
+.numbers{
+
+	display: flex;
+	justify-content: center;
+
+	// elements
+	&__{
+		&number{
+			transform: translateX(-100%);
+			transition: $transition;
+
+			// mods
+			&:not(:last-child){
+				margin-right: 5rem;
+			}
+
+			// animation
+			&:nth-child(3){
+				transition-delay: calc($transition * 2);
+			}
+			&:nth-child(2){
+				transition-delay: calc($transition * 1.5);
+			}
+			&:nth-child(1){
+				transition-delay: calc($transition * 1);
+			}
+			.slide._active &{
+				transform: none;
+			}
+			.slide:not(._active) &{
+				transform: translate(100%, 25%);
+			}
+		}
+		&value{
+			font-size: 10rem;
+			font-family: $font-family--title;
+		}
+		&label{
+			margin: -2rem * *;
+
+			transition: 1s .5s;
+
+			// mods
+			.slide:not(._active) &{
+				opacity: 0;
+			}
+		}
+	}
+}

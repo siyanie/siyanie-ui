@@ -1,0 +1,211 @@
+$slide-transition: 1s;
+.slide{
+
+	position: absolute 0;
+	flex: 1;
+	height: auto;
+
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+	// MODS START
+	//
+
+	// animation
+	// animation for subsection change
+	// &s.anim-leave{
+	// 	opacity: 1;
+	// 	transition: 1s;
+	// }
+	// &s.anim-leave-active{
+	// 	opacity: 0;
+	// }
+	// &s.anim-enter{
+	// 	// opacity: 0;
+	// }
+	// &s.anim-enter &._active &__{
+	// 	&bg{
+	// 		filter: blur(4px);
+	// 		transform: none;
+	// 		transition: 0;
+	// 	}
+	// }
+	// &s.anim-enter-active &__{
+	// 	&bg{
+	// 		transition: 1s;
+	// 		transform: scale(1.1);
+	// 		filter: none;
+	// 	}
+	// }
+
+	// animation
+	// animation for slide change
+	&._active &__{
+		&bg{
+			transform: scale(1.1);
+		}
+		&footer{
+			transition-delay: calc($slide-transition / 2);
+		}
+	}
+	&:not(._active){
+		visibility: hidden;
+	}
+	&:not(._active) &__{
+		&bg{
+			opacity: 0;
+			filter: blur(2px);
+		}
+		&info{
+			opacity: 0;
+			transform: translateX(calc(-50vw - 50%));
+		}
+		&text{
+			transform: translateX(-100%);
+		}
+		&footer{
+			transform: translateY(100%);
+		}
+	}
+	&._active ~ & &__{
+		&info{
+			transform: translateX(calc(50vw + 50%));
+		}
+		&text{
+			transform: translateX(100%);
+		}
+	}
+
+	// types
+	&--person{
+		justify-content: flex-end;
+
+		padding-bottom: 4rem;
+	}
+	&&--person{
+		&::before{
+			@mixin bg-lines .2;
+		}
+		&::after{
+			opacity: .75;
+		}
+	}
+	&--person &__{
+		&bg{
+			background-position: center 40%;
+
+			@media (--wides){
+				background-position: center 30%;
+			}
+		}
+		&info{
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+		}
+	}
+	&--gallery &__{
+		&info{
+			max-width: none;
+		}
+	}
+
+	//
+	// MODS END
+
+	// pseudoelements
+	&::before,
+	&::after{
+		content: '';
+		position: absolute -1px 0;
+	}
+	&::before{
+		@extend %bg-lines;
+
+		z-index: $z-under;
+	}
+	&::after{
+		z-index: calc($z-under * 2);
+
+		background: color($c-bg--secondary a(.2));
+	}
+
+	// elements
+	&__{
+		&bg,
+		&info,
+		&text{
+			transition: $slide-transition;
+		}
+		&footer{
+			transition: calc($slide-transition / 2);
+		}
+		&bg{
+			position: absolute 0;
+			z-index: calc($z-under * 3);
+
+			background: url(http://placehold.alanev.ru/1920x1080/666) center / cover;
+
+			will-change: opacity, filter;
+		}
+		&info{
+			flex: 1;
+			max-width: 80rem;
+			width: 100%;
+			margin: 10vh auto 1rem;
+
+			letter-spacing: .05em;
+			white-space: pre-wrap;
+
+			text-align: center;
+
+			will-change: transform, opacity;
+
+			@media (--low){
+				margin-top: 5vh;
+				white-space: normal;
+			}
+		}
+		&text{
+			max-width: 40rem;
+			margin: * auto;
+		}
+		&title{
+			@extend .title;
+
+			margin: * * 3rem;
+
+			line-height: 1;
+		}
+		&date{
+			margin: * * 1rem;
+
+			font-weight: bold;
+
+			text-transform: uppercase;
+			color: color(white a(.3));
+		}
+		&footer{
+			box-sizing: border-box;
+			min-height: 8rem;
+			padding: 1rem *;
+
+			background: color($c-primary a(.3));
+
+			will-change: transform;
+
+			display: flex;
+			flex-direction: column;
+
+			// subelement
+			&-{
+				&content{
+					flex: 1;
+					max-width: 50rem;
+					margin: auto;
+				}
+			}
+		}
+	}
+}

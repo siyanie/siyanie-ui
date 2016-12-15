@@ -1,10 +1,185 @@
-/* stylelint-disable */
+@keyframes projectsShowItem{
+	from{
+		opacity: .3;
+		transform: scale(.9);
+	}
+}
+$project__height: $content__height;
 .projects{
 
-	// mods
+	flex: 1;
+	max-width: 100%;
+	width: 100%;
+
+	fill: currentColor;
+
+	display: flex;
+	flex-direction: column;
+
+	// MODS
+	//
+
+	// Carousel
+	&._carousel{
+		@extend %section;
+
+		overflow: visible;
+	}
+	// animation
+	// &._carousel.anim-enter &__{
+	// 	&project{
+	// 		transform: scale(.8);
+	// 	}
+	// }
+	// &._carousel.anim-enter-active &__{
+	// 	&project{
+	// 		transform: scale(1);
+
+	// 		transition-delay: 2s;
+	// 		transition-duration: 2s;
+	// 	}
+	// }
+
+	// Projects height
+	&._grid &__project{
+		min-height: calc($project__height / 2);
+	}
+	&._carousel &__project{
+		min-height: $project__height;
+	}
+
+	//
+	// MODS END
 
 	// elements
 	&__{
+		&wrap{
+			overflow: hidden;
+		}
+		&list{
+			flex: 1;
+			display: flex;
+			align-items: stretch;
 
+			// mods
+			&._grid{
+				flex-wrap: wrap;
+			}
+			&._carousel{
+				transition: ;
+			}
+		}
+		&project{
+			@extend .link;
+
+			float: left;
+
+			min-width: 25%;
+			margin: * -.1px;
+			transition: 1s;
+
+			animation-name: projectsShowItem;
+			animation-fill-mode: forwards;
+			animation-duration: 1s;
+			animation-delay: 1s;
+			will-change: min-height, transform, opacity;
+
+			overflow: hidden;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			// mods
+			&:nth-child(8) ~ &{
+				animation-delay: 0s;
+			}
+		}
+		&bg{
+			position: absolute -.5rem;
+
+			background-position: center;
+			background-size: cover;
+			will-change: filter, transform;
+
+			// subelements
+			&::after{
+				content: '';
+				position: absolute 0;
+
+				background: $c-primary;
+				opacity: .5;
+			}
+		}
+		&project:nth-child(odd) &bg{
+			filter: blur(5px);
+		}
+		&logo,
+		&loupe{
+			z-index: $z-higher;
+		}
+		&logo,
+		&loupe,
+		&bg::after{
+			will-change: opacity;
+		}
+		&logo{
+			width: 60%;
+			height: auto;
+
+			fill: currentColor;
+
+			// mods
+			&[data-icon='logo-gazprom']{
+				margin: -20% * *;
+			}
+			&[data-icon='logo-nokia'],
+			&[data-icon='logo-bork']{
+				width: 50%;
+			}
+		}
+		&loupe{
+			@extend .loupe;
+		}
+		&icon{
+			@extend .loupe__icon;
+		}
+		&more{
+			position: relative;
+			z-index: $z-higher;
+
+			margin: 1rem * -calc(1rem + .875rem);
+
+			font-size: .875rem;
+			font-weight: 700;
+			line-height: 1;
+			letter-spacing: .1em;
+
+			text-align: center;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			color: $c-primary-text;
+			cursor: pointer;
+		}
+		// hover
+		&bg,
+		&bg::after,
+		&logo{
+			transition: ;
+		}
+		&project:hover &{
+			&bg{
+				filter: none;
+				transform: scale(1.05);
+			}
+			&logo,
+			&bg::after{
+				opacity: 0;
+			}
+			&loupe{
+				@extend .loupe--hover;
+			}
+		}
 	}
 }

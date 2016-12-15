@@ -1,37 +1,25 @@
 .section{
+	position: absolute 0;
+
 	flex: 1;
 	max-width: 100%;
+	width: 100%;
 
-	position: relative;
 	overflow: hidden;
-
-	transition: opacity $transition--long;
 
 	display: flex;
 	flex-direction: column;
 
-	// mods
-	&._active &__{
-		&bg{
-			transform: scale(1.05);
-		}
-	}
-	&:not(._active){
-		opacity: 0;
-		max-height: 0;
-		max-width: 0;
-	}
-	&:not(._active) &__{
-		&info,
-		&pag,
-		&footer{
-			opacity: 0;
-		}
-		&bg{
-			transform: none;
-			filter: blur(3px);
-		}
-	}
+	// animation
+	// &.anim-enter{
+	// 	opacity: 0;
+	// }
+	// &.anim-enter.anim-enter-active{
+	// 	opacity: 1;
+	// }
+	// &.anim-leave{
+	// 	display: none;
+	// }
 
 	// elements
 	&__{
@@ -41,110 +29,18 @@
 			padding: * 3rem;
 			margin: * auto;
 		}
-		&slide{
-			height: auto;
-
-			background-image: linear-gradient(transparent 50%, color(black a(.1)) 50%);
-			background-size: 100% .25rem;
-			background-repeat: repeat-y;
-			background-color: color($c-bg a(.6));
-
-			position: relative;
-			overflow: hidden;
+		&wrapper{
+			flex: 1;
 			display: flex;
 			flex-direction: column;
-
-			// pseudoelements
-			&::after{
-				content: '';
-				position: absolute 0;
-				z-index: $z-under;
-
-				background: color($c-bg--secondary a(.3));
-			}
-		}
-		&bg{
-			position: absolute 0;
-			z-index: -1;
-
-			background: url(http://placehold.alanev.ru/1920x1080/666) center / cover;
-
-			transition: filter $transition--long;
-		}
-		&info,
-		&pag,
-		&footer{
-			transition: opacity $transition--long calc($transition--long / 4);
-		}
-		&info{
-			flex: 1;
-			max-width: 40rem;
-			margin: 10vh auto 1rem;
-
-			letter-spacing: .05em;
-
-			text-align: center;
-
-			// mods
-			&--{
-				&large{
-					max-width: 80rem;
-				}
-			}
-		}
-		&date{
-			margin: * * 1rem;
-
-			font-weight: bold;
-
-			text-transform: uppercase;
-			color: color(white a(.3));
-		}
-		&title{
-			@extend .title;
-
-			margin: * * 3rem;
-
-			line-height: 1;
-		}
-		&button{
-			position: absolute calc(50% - 1.5rem) * * *;
-
-			size: 3rem;
-
-			background-image: initial;
-			fill: currentColor;
-
-			transition: $transition;
-
-			display: flex;
-
-			// pseudoclasses
-			&:hover{
-				background: color($c-primary a(.4));
-				cursor: pointer;
-			}
-
-			// mods
-			&--{
-				&prev{
-					left: 0;
-					transform: rotateY(180deg);
-				}
-				&next{
-					right: 0;
-				}
-			}
-
-			// subelement
-			&-{
-				&icon{
-					size: 1rem .5rem;
-					margin: auto;
-				}
-			}
 		}
 		&pag{
+			transform: translateY(-1rem);
+
+			transition: opacity $transition--long calc($transition--long / 4);
+		}
+		&pag{
+			position: absolute * 0 0;
 			margin: 1rem *;
 
 			transition:
@@ -153,86 +49,22 @@
 
 			display: flex;
 			justify-content: center;
-
-			// subelement
-			.swiper-pagination-bullet{
-				size: .5rem;
-				margin: * .5rem;
-
-				background: white;
-				border-radius: ;
-
-				// mods
-				&:not(&-active){
-					opacity: .5;
-				}
-				&:hover{
-					cursor: pointer;
-				}
-			}
 		}
-		&footer{
-			box-sizing: border-box;
-			min-height: 8rem;
-			padding: 1rem *;
+		&dot{
+			size: .5rem;
+			margin: * .5rem;
 
-			background: color($c-primary a(.3));
+			background: white;
+			border-radius: ;
 
-			display: flex;
-			flex-direction: column;
-
-			// subelement
-			&-{
-				&content{
-					flex: 1;
-					max-width: 50rem;
-					margin: auto;
-				}
-			}
-		}
-		&numb{
+			transition: 1s;
 
 			// mods
-			&:not(:last-child){
-				margin-right: 5rem;
+			&:not(._active){
+				opacity: .5;
 			}
-
-			// wrapper
-			&s{
-				display: flex;
-				justify-content: center;
-			}
-
-			// subelements
-			&-{
-				&value{
-					font-size: 10rem;
-					font-family: $font-family--title;
-				}
-				&name{
-					margin: -2rem * *;
-				}
-			}
-		}
-		&client{
-
-			fill: currentColor;
-
-			// pseudosectors
-			&:not(:last-child):not(:nth-child(5n)){
-				margin-right: 5rem;
-			}
-
-			// wrapper
-			&s{
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-			}
-
-			// subelements
-			&-logo{
-				max-size: 10rem 6rem;
+			&:hover{
+				cursor: pointer;
 			}
 		}
 	}

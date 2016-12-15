@@ -1,0 +1,19 @@
+%bg-lines{
+	@mixin bg-lines .6;
+}
+%section{
+	position: absolute 0;
+
+	flex: 1;
+	max-width: 100%;
+	width: 100%;
+
+	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+}
+%center-abs{
+	position: absolute 50% * * 50%;
+	transform: translate(-50%, -50%);
+}

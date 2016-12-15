@@ -1,15 +1,6 @@
-const { readFileSync, readFile } = require('fs')
-const yaml = require('js-yaml')
+const { readFile } = require('fs')
 const postxml = require('postxml')
-let plugins = require('postxml-pack-alanev')
-
-const { subsections: dataServices } = yaml.safeLoad(readFileSync('data/services.yml').toString())
-const { subsections: dataPressCenter } = yaml.safeLoad(readFileSync('data/press-center.yml').toString())
-
-plugins = plugins.concat([
-	require('./plugins/load-services.js')(dataServices),
-	require('./plugins/load-press-center.js')(dataPressCenter)
-])
+const plugins = require('postxml-pack-alanev')
 
 const writeFile = require('./utils/writeFile')
 

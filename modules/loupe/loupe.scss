@@ -1,0 +1,50 @@
+.loupe{
+	@extend %center-abs;
+
+	size: 3rem;
+
+	border-radius: 50%;
+	background-clip: content-box;
+	opacity: 0;
+	color: color($c-bg a(.7));
+
+	transition: ;
+
+	display: flex;
+
+	// mods
+	&--{
+		&hover{
+			opacity: 1;
+
+			// elements
+			&::after{
+				size: 5rem;
+			}
+		}
+	}
+
+	// elements
+	&::after{
+		@extend %center-abs;
+
+		z-index: $z-under;
+
+		content: '';
+		size: inherit;
+
+		background: currentColor;
+		border-radius: inherit;
+
+		transition: inherit;
+		will-change: width, height;
+	}
+	&__{
+		&icon{
+			max-size: 2rem;
+			margin: auto;
+
+			fill: white;
+		}
+	}
+}
