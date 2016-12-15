@@ -10,7 +10,8 @@
     "images": "node tasks/npm/images",
     "watch": "node tasks/watch",
     "dev": "webpack-dev-server --content-base build/ --port 8181 --hot --inline",
-    "build": "npm run images && npm run modernizr && npm run styles && npm run templates && npm run scripts && npm run scripts",
+    "build": "npm run images && npm run modernizr && npm run build:light",
+    "build:light": "npm run styles && npm run templates && npm run scripts",
     "modernizr": "modernizr -c .modernizr.json -d build/",
     "test": "ava test/*.js",
     "test:scripts": "eslint '{modules,src,tasks,test}/**/*.js'",
@@ -18,6 +19,7 @@
     "test:html": "htmlhint '{modules,src,build}/**/*.html'",
     "posttest": "npm run test:scripts && npm run test:html && npm run test:styles",
     "favicon": "npm run tasks/favicon",
+    "predeploy": "npm run build:light",
     "deploy": "gh-pages -d build",
     "surge": "surge ./build siyanie.project.alanev.ru"
   },
@@ -85,6 +87,22 @@
     "linux"
   ],
   "dependencies": {
+    "css-mqpacker": "^5.0.1",
+    "cssnano": "^3.9.1",
+    "lost": "^7.1.1",
+    "postcss-animation": "0.0.11",
+    "postcss-brand-colors": "^0.4.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-each": "^0.9.3",
+    "postcss-extend": "^1.0.5",
+    "postcss-focus": "^1.0.0",
+    "postcss-if-media": "^1.0.2",
+    "postcss-import": "^9.0.0",
+    "postcss-mixins": "^5.4.0",
+    "postcss-nested": "^1.0.0",
+    "postcss-property-shorthand": "^1.0.0",
+    "postcss-short": "^3.0.0",
+    "postcss-simple-vars": "^3.0.0",
     "react": "^15.4.1",
     "react-addons-css-transition-group": "^15.4.1",
     "react-dom": "^15.4.1",
@@ -92,5 +110,7 @@
     "react-input-mask": "^0.7.5",
     "react-router": "^3.0.0",
     "react-slick": "^0.14.5"
+    "smoothscroll-polyfill": "^0.3.4",
+    "webpcss": "^1.1.3"
   }
 }

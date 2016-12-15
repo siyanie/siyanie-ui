@@ -2,7 +2,7 @@ const {readFile} = require('fs')
 
 const postcss = require('postcss')
 const parser = require('postcss-scss')
-const plugins = require('postcss-pack-alanev')
+const plugins = require('./plugins/postcss')
 const writeFile = require('./utils/writeFile')
 
 const callback = () => console.log('Styles processed')

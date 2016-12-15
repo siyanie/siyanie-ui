@@ -21,6 +21,7 @@ module.exports = () => {
 		files: [
 			'build/*.html',
 			'build/*.css'
-		]
+		],
+		browser: 'chromium-browser'
 	})
 }
