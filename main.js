@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ed5f8d87b31acba671d4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "feb7404448e69f7497e5"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -32827,8 +32827,8 @@
 							component: 'div',
 							className: 'g-page__wrapper',
 							transitionName: 'anim',
-							transitionEnterTimeout: _config2.default.trs,
-							transitionLeaveTimeout: _config2.default.trs
+							transitionEnterTimeout: _config2.default.trs * 2,
+							transitionLeaveTimeout: _config2.default.trs * 2
 						},
 						React.createElement(_slides2.default, {
 							ref: 'slides',
@@ -37937,7 +37937,7 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Мы предоставляем полный спектр услуг по созданию внутренних сетей отопления, в том числе \nсистем водяного и воздушного отопления, индивидуальных тепловых пунктов (ИТП)."
+							"content": "Мы предоставляем полный спектр услуг по созданию внутренних сетей отопления, \nв том числе систем водяного и воздушного отопления, индивидуальных тепловых пунктов (ИТП)."
 						}
 					},
 					{
@@ -39964,7 +39964,7 @@
 											onClick: this._prev.bind(this)
 										},
 										React.createElement(_icon2.default, {
-											className: 'project__arrow',
+											className: 'project__arrow-icon',
 											icon: 'arrow'
 										})
 									),
@@ -39983,7 +39983,7 @@
 											onClick: this._next.bind(this)
 										},
 										React.createElement(_icon2.default, {
-											className: 'project__arrow',
+											className: 'project__arrow-icon',
 											icon: 'arrow'
 										})
 									)
