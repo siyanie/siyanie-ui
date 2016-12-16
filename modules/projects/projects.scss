@@ -98,8 +98,10 @@ $project__height: $content__height;
 		&bg{
 			position: absolute -.5rem;
 
+			filter: blur(5px);
 			background-position: center;
 			background-size: cover;
+
 			will-change: filter, transform;
 
 			// subelements
@@ -110,9 +112,6 @@ $project__height: $content__height;
 				background: $c-primary;
 				opacity: .5;
 			}
-		}
-		&project:nth-child(odd) &bg{
-			filter: blur(5px);
 		}
 		&logo,
 		&loupe{
