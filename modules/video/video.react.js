@@ -2,23 +2,6 @@ import React, { Component } from 'react'
 
 import Icon from '../icon/icon.react'
 
-const videoRect = {
-	width: 1280,
-	height: 500
-}
-const getSize = (fullSize, videoSize) => {
-	if (fullSize.height / videoSize.height > fullSize.width / videoSize.width) {
-		return {
-			width: 'auto',
-			height: '100%'
-		}
-	}
-	return {
-		width: '100%',
-		height: 'auto'
-	}
-}
-
 export default class Video extends Component {
 	constructor () {
 		super()
@@ -40,23 +23,6 @@ export default class Video extends Component {
 			open: !this.state.open
 		})
 	}
-	_videoSize () {
-		Object.assign(
-			this.refs.bg.style,
-			getSize({
-				width: this.refs.wrap.clientWidth,
-				height: this.refs.wrap.clientHeight,
-			}, videoRect)
-		)
-	}
-	componentDidMount () {
-		this._videoSize()
-
-		window.addEventListener('resize', ::this._videoSize())
-	}
-	componentWillUnmount () {
-		window.removeEventListener('resize', ::this._videoSize())
-	}
 	render () {
 		const { open } = this.state
 
@@ -72,7 +38,6 @@ export default class Video extends Component {
 					loop
 					muted
 					autoPlay
-					ref="bg"
 				>
 					<source src="assets/video/siyanie.mp4" type="video/mp4" />
 				</video>
