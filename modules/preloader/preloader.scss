@@ -110,7 +110,7 @@
 
 			animation-name: preloaderLogo;
 			animation-delay: calc($trsn * 1.5);
-			animation-duration: calc($trsn * .5);
+			animation-duration: calc($trsn * 1.5);
 			animation-fill-mode: forwards;
 			will-change: opacity;
 
