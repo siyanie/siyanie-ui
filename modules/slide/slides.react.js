@@ -29,7 +29,7 @@ class Slides extends Component {
 			}
 			{
 				subsection === 'work'
-					? <Link to="/callback" className="person__button">Отправить резюме</Link>
+					? <Link to="/callback?resume=true" className="person__button">Отправить резюме</Link>
 					: null
 			}
 			</div>

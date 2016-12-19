@@ -11,12 +11,18 @@ export default class Callback extends Component {
 			name: '',
 			tel: '',
 			email: '',
+			file: '',
 			sent: false
 		}
 	}
 	_changeInput ({ target: input}) {
 		this.setState({
 			[input.name]: input.value
+		})
+	}
+	_file ({ target: { value: file } }) {
+		this.setState({
+			file
 		})
 	}
 	_submit (e) {
@@ -32,8 +38,22 @@ export default class Callback extends Component {
 		this.refs.inputName.focus()
 	}
 	render () {
-		const { name, tel, email, sent } = this.state
-		const changeInput = this._changeInput.bind(this)
+		const {
+			state: {
+				name,
+				tel,
+				email,
+				file,
+				sent
+			},
+			props: {
+				location: {
+					query: {
+						resume
+					}
+				}
+			}
+		} = this
 
 		return (
 			<div className="callback">
@@ -53,7 +73,7 @@ export default class Callback extends Component {
 							type="text"
 							name="name"
 							value={name}
-							onChange={changeInput}
+							onChange={::this._changeInput}
 							ref="inputName"
 							className={`callback__field ${name ? '_filled' : '_empty'}`}
 							placeholder="Ваше имя"
@@ -64,7 +84,7 @@ export default class Callback extends Component {
 							type="tel"
 							name="tel"
 							value={tel}
-							onChange={changeInput}
+							onChange={::this._changeInput}
 							className={`callback__field ${tel ? '_filled' : '_empty'}`}
 							placeholder="Телефон"
 							required
@@ -76,11 +96,36 @@ export default class Callback extends Component {
 							type="email"
 							name="email"
 							value={email}
-							onChange={changeInput}
+							onChange={::this._changeInput}
 							className={`callback__field ${email ? '_filled' : '_empty'}`}
 							placeholder="e-mail"
 						/>
 						<div className="callback__field-line"></div>
+						{
+							resume
+								? (
+									<div className="callback__file">
+										<input
+											className="callback__file-input"
+											type="file"
+											name="resume"
+											id="file"
+											onChange={::this._file}
+											required
+										/>
+										<label
+											ref="file"
+											className={`callback__file-label ${file ? '_selected' : null}`}
+											htmlFor="file"
+										>
+										{
+											file ? file : 'Выберите файл'
+										}
+										</label>
+									</div>
+								)
+								: null
+						}
 						<button
 							className="callback__submit"
 							disabled={!name || !/\+7 \(\d{3}\) \d{3}(-\d{2}){2}/.test(tel)}

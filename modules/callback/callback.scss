@@ -144,6 +144,36 @@
 				}
 			}
 		}
+		&file{
+
+			// subelements
+			&-{
+				&input{
+					display: none;
+				}
+				&label{
+					display: inline-block;
+					border: 1px solid $c-primary-text;
+					padding: .25rem 1rem;
+					margin-top: 1rem;
+
+					font-style: italic;
+
+					color: color(white a(.5));
+
+					cursor: pointer;
+
+					transition: ;
+
+					// mods
+					&._selected,
+					&:hover{
+						background: white;
+						color: $c-primary;
+					}
+				}
+			}
+		}
 		&submit{
 			box-sizing: border-box;
 			min-size: 11rem 2.5rem;
