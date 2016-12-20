@@ -5,6 +5,7 @@ import { Link } from 'react-router'
 import config from '../config/config.react'
 import store from '../store/store.react'
 import Icon from '../icon/icon.react'
+import Arrow from '../arrow/arrow.react'
 
 const projects = store.projects.content
 
@@ -25,6 +26,13 @@ class Project extends Component {
 			this.setState({
 				bgIndex: index
 			})
+		}
+	}
+	_nextBg () {
+		if (this.state.bgIndex >= this.state.bgs.length - 1) {
+			this._handleDot(0)()
+		} else {
+			this._handleDot(this.state.bgIndex + 1)()
 		}
 	}
 	_setBgs () {
@@ -108,6 +116,10 @@ class Project extends Component {
 						))
 						: null
 					}
+					<Arrow
+						className="slick-next project__nextBg"
+						onClick={::this._nextBg}
+					/>
 					<div className="project__content">
 						<div className="project__info">
 							<div className="project__logotype">
