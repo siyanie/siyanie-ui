@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "515fc5512a761243f1f3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1a02d33c338651f9fb4e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -38993,7 +38993,7 @@
 										className: 'callback__file-label ' + (file ? '_selected' : null),
 										htmlFor: 'file'
 									},
-									file ? file : 'Выберите файл'
+									file ? file.replace(/^.*[\\\/]/, '') : 'Выберите файл'
 								)
 							) : null,
 							React.createElement(
@@ -40178,7 +40178,7 @@
 									React.createElement(
 										_reactRouter.Link,
 										{
-											to: '/projectsAll',
+											to: '/projects?all=true',
 											className: 'project__all'
 										},
 										'\u0412\u0441\u0435 \u043F\u0440\u043E\u0435\u043A\u0442\u044B'
@@ -40245,6 +40245,10 @@
 
 	var _reactCustomScrollbars = __webpack_require__(432);
 
+	var _config = __webpack_require__(347);
+
+	var _config2 = _interopRequireDefault(_config);
+
 	var _projectsCaraousel = __webpack_require__(449);
 
 	var _projectsCaraousel2 = _interopRequireDefault(_projectsCaraousel);
@@ -40277,11 +40281,18 @@
 			key: '_isAll',
 			value: function _isAll() {
 				var all = this.props.location.query.all;
-				var scrollbars = this.refs.scrollbars;
+				var projects = this.refs.projects;
 
-				var shift = all ? scrollbars.getClientHeight() : 0;
 
-				scrollbars.scrollTop(shift);
+				if (all) {
+					(function () {
+						var grid = projects.querySelector('.projects._grid');
+
+						setTimeout(function () {
+							grid.scrollIntoView({ behavior: 'smooth' });
+						}, _config2.default.trs / 2);
+					})();
+				}
 			}
 		}, {
 			key: '_renderThumb',
@@ -40298,7 +40309,10 @@
 
 				return _react2.default.createElement(
 					'div',
-					{ className: 'projects__underscroll' },
+					{
+						className: 'projects__underscroll',
+						ref: 'projects'
+					},
 					_react2.default.createElement(
 						_reactCustomScrollbars.Scrollbars,
 						{
@@ -41776,15 +41790,6 @@
 				}
 			}
 		}, {
-			key: 'componentDidUpdate',
-			value: function componentDidUpdate() {
-				var all = this.props.all;
-
-				if (!all) return;else {
-					console.log(all);
-				}
-			}
-		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				this._setShift();
@@ -41820,7 +41825,7 @@
 							{
 								className: 'projects__list _carousel',
 								style: {
-									transform: 'translateX(-' + current * shift + 'px)'
+									transform: 'translateX(-' + (all ? 0 : current * shift) + 'px)'
 								}
 							},
 							projects.map(function (_ref) {
