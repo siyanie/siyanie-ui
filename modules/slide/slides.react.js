@@ -2,17 +2,23 @@ import React, {Component} from 'react'
 import { Link } from 'react-router'
 
 import Slide from './slide.react'
+import Timeline from '../timeline/timeline.react'
 
 class Slides extends Component {
 	render() {
 		const {
-			slides,
-			activeSlide,
-			params,
-			params: {
-				subsection
+			props: {
+				video,
+				slides,
+				activeSlide,
+				params,
+				params: {
+					section,
+					subsection
+				},
+				selectSlide
 			}
-		} = this.props
+		} = this
 
 		return (
 			<div className="slides section__wrapper" ref="slides">
@@ -28,8 +34,28 @@ class Slides extends Component {
 				))
 			}
 			{
-				subsection === 'work'
+				section === 'about' && subsection === 'work'
 					? <Link to="/callback?resume=true" className="person__button">Отправить резюме</Link>
+					: null
+			}
+			{
+				section === 'about' && subsection === 'history'
+					? <Timeline
+						selectSlide={selectSlide}
+					/>
+					: null
+			}
+			{
+				video
+					? (
+						<video
+							src={`assets/video/${video}.mp4`}
+							className="slides__video"
+							autoPlay
+							loop
+							muted
+						></video>
+					)
 					: null
 			}
 			</div>

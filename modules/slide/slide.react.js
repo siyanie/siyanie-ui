@@ -1,18 +1,22 @@
 import React, {Component} from 'react'
 
 import Text from '../text/text.react'
+import News from '../news/news.react'
 import Person from '../person/person.react'
 import Gallery from '../gallery/gallery.react'
 import Numbers from '../numbers/numbers.react'
 import Clients from '../clients/clients.react'
+import History from '../history/history.react'
 import MediaCenter from '../mediacenter/mediacenter.react'
 
 const components = {
 	Text,
+	News,
 	Person,
 	Numbers,
 	Clients,
 	Gallery,
+	History,
 	MediaCenter
 }
 
@@ -21,11 +25,6 @@ class Slide extends Component {
 		const {
 			data,
 			params,
-			params: {
-				section,
-				subsection
-			},
-			slideIndex,
 			active
 		} = this.props
 		const componentName = data.main.component
@@ -60,9 +59,6 @@ class Slide extends Component {
 				/>
 			)
 		}
-		if (!data.bg && data.bg != '') {
-			data.bg = `${section}_${subsection}_${slideIndex + 1}.jpg`
-		}
 
 		// Detect WEBP
 		if (data.bg) {
@@ -75,16 +71,22 @@ class Slide extends Component {
 
 		return (
 			<div className={`slide slide--${componentName.toLowerCase()} ${active ? '_active' : ''}`}>
-				<div
-					className="slide__bg"
-					style={
-						data.bg
-						? {
-							backgroundImage: `url(assets/images/${data.bg})`
-						}
+				{
+					data.bg
+						? (
+							<div
+								className="slide__bg"
+								style={
+									data.bg
+									? {
+										backgroundImage: `url(assets/images/${data.bg})`
+									}
+									: null
+								}
+							></div>
+						)
 						: null
-					}
-				></div>
+				}
 				<div className="slide__info">
 					{Title}
 					<Content

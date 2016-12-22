@@ -1,3 +1,5 @@
-$header__height: 150px;
-$footer__height: 130px;
+$header__height: calc(3.25rem + 10vh);
+$header__height--lower: calc(3.25rem + 6vh);
+$footer__height: calc(2.875rem + 10vh);
+$footer__height--lower: calc(2.875rem + 6vh);
 $content__height: calc(100vh - $header__height - $footer__height - 1px);

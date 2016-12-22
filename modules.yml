@@ -21,7 +21,6 @@ phone:
 projects:
 project:
 news:
-history:
 quote:
 section:
 carousel:
@@ -42,6 +41,7 @@ numbers:
 clients:
 person:
 mediacenter:
+timeline:
 loop:
 events:
 error:

@@ -38,7 +38,9 @@ export default class Page extends Component {
 		else key = pathname.split('/')[1] || 'root'
 
 		return (
-			<div className={`g-page__content ${preloading ? '_preloading' : 'preloaded'}`}>
+			<div
+				className={`g-page__content ${preloading ? '_preloading' : 'preloaded'}`}
+			>
 				<Preloader preloaded={::this._preloaded} />
 				<Header params={this.props.params} />
 				<div className="g-page__main">

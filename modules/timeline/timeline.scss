@@ -1,0 +1,87 @@
+.timeline{
+
+	// test
+	position: absolute calc(15rem + 10vh) 0 * 0;
+	z-index: $z-higher;
+
+	margin-top: 3rem;
+
+	font-family: $font-family--serif;
+	font-size: 1.45rem;
+	font-weight: 300;
+
+	transition-property: transform, left;
+	transition-duration: $trsn, $transition;
+
+	display: flex;
+	align-items: center;
+
+	@media (--lower){
+		margin-top: -5rem;
+	}
+
+	// elements
+	&__{
+		&year{
+			min-width: 7.625rem;
+
+			text-align: center;
+
+			opacity: .2;
+
+			transition: ;
+
+			position: relative;
+
+			// mods
+			&._preactive{
+				opacity: .6;
+			}
+			&._prepreactive{
+				opacity: .4;
+			}
+			&._active{
+				opacity: 1;
+
+				// subelements
+				&::before{
+					min-height: 3.25rem;
+
+					transition-delay: calc($trsn / 2);
+					transition-duration: $trsn;
+
+					@media (--lower){
+						min-height: 2rem;
+					}
+				}
+			}
+			&:hover{
+				opacity: .8;
+				cursor: pointer;
+			}
+
+			// subelements
+			&::before{
+				content: '';
+				position: absolute * * 100% 50%;
+
+				width: 1px;
+				min-height: 0;
+				margin: 1rem auto;
+
+				background: currentColor;
+
+				transition-duration: calc($trsn / 2);
+			}
+		}
+		&continue{
+			@extend %flash;
+
+			margin: * 3rem;
+
+			white-space: nowrap;
+
+			animation-delay: .3s;
+		}
+	}
+}

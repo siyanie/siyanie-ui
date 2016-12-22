@@ -1,10 +1,48 @@
-/* stylelint-disable */
 .news{
 
 	// mods
+	.slide:last-child &{
+		min-height: 100%;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 
 	// elements
 	&__{
+		&link{
+			@extend .link;
 
+			margin-top: 1rem;
+
+			text-decoration: underline;
+
+			display: inline-flex;
+			align-items: center;
+
+			// mods
+			&:hover{
+				text-decoration: none;
+			}
+		}
+		&arrow{
+			size: 1rem .5rem;
+			margin: * .5rem;
+
+			fill: currentColor;
+		}
+		&social{
+			@extend .social__link;
+
+			background: $c-blue;
+
+			// subelements
+			&-icon{
+				@extend .social__icon;
+
+				fill: currentColor;
+			}
+		}
 	}
 }

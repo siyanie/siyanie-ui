@@ -1,5 +1,4 @@
 import { Component } from 'react'
-import { Link } from 'react-router'
 
 import Arrow from '../arrow/arrow.react'
 import ProjectsProject from './projects.project.react'
@@ -7,7 +6,7 @@ import ProjectsProject from './projects.project.react'
 import store from '../store/store.react'
 const { projects: { content: initialProjects } } = store
 
-class Projects extends Component {
+class ProjectsCarousel extends Component {
 	constructor () {
 		super()
 
@@ -34,13 +33,20 @@ class Projects extends Component {
 			})
 		}
 	}
-	componentDidMount() {
+	_setShift () {
 		const item = this.refs.projects.querySelector('.projects__project')
 		if (item) {
 			this.setState({
 				shift: item.offsetWidth
 			})
 		}
+	}
+	componentDidMount() {
+		this._setShift()
+		window.addEventListener('resize', ::this._setShift)
+	}
+	componentWillUnmount() {
+		window.removeEventListener('resize', ::this._setShift)
 	}
 	render () {
 		const {
@@ -49,6 +55,7 @@ class Projects extends Component {
 			items,
 			projects
 		} = this.state
+		const { all } = this.props
 
 		return (
 			<div
@@ -56,15 +63,11 @@ class Projects extends Component {
 				ref="projects"
 			>
 				<div className="projects__wrap">
-					<Arrow
-						className={`slick-prev ${current === 0 ? 'slick-disabled' : ''}`}
-						onClick={::this._prev}
-					/>
 					<div
 						className="projects__list _carousel"
 						style={
 							{
-								transform: `translateX(-${current * shift}px)`
+								transform: `translateX(-${all ? 0 : current * shift}px)`
 							}
 						}
 					>
@@ -78,19 +81,26 @@ class Projects extends Component {
 						))
 					}
 					</div>
-					<Arrow
-						className={`slick-next ${current === projects.length - items ? 'slick-disabled' : ''}`}
-						onClick={::this._next}
-					/>
+					{
+						!all
+							? (
+								<div className="projects__nav">
+									<Arrow
+										className={`slick-prev ${current === 0 ? 'slick-disabled' : ''}`}
+										onClick={::this._prev}
+									/>
+									<Arrow
+										className={`slick-next ${current === projects.length - items ? 'slick-disabled' : ''}`}
+										onClick={::this._next}
+									/>
+								</div>
+							)
+							: null
+					}
 				</div>
-				<Link
-					className="projects__more"
-					to="/projectsAll"
-				>Еще проекты</Link>
-
 			</div>
 		)
 	}
 }
 
-export default Projects
+export default ProjectsCarousel

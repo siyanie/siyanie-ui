@@ -159,7 +159,7 @@ class Project extends Component {
 									/>
 								</div>
 								<Link
-									to="/projectsAll"
+									to="/projects?all=true"
 									className="project__all"
 								>Все проекты</Link>
 								<div

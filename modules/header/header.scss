@@ -1,8 +1,5 @@
 .header{
 
-	box-sizing: border-box;
-	min-height: $header__height;
-
 	color: $c-primary-text;
 
 	// elements
@@ -10,11 +7,17 @@
 		&content{
 			@extend .section__content;
 
+			box-sizing: border-box;
 			padding: 5vh *;
 
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+
+			@media (--lower){
+				min-height: $header__height--lower;
+				padding: 3vh *;
+			}
 		}
 		&logo{
 

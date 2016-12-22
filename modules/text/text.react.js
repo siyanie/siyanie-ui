@@ -3,10 +3,12 @@ import React, {Component} from 'react'
 class Text extends Component {
 	render() {
 		const {
-			data
+			data: {
+				text
+			}
 		} = this.props
 		return (
-			<div className="slide__text">{data}</div>
+			<div className="slide__text">{text}</div>
 		)
 	}
 }

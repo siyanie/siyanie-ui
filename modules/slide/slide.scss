@@ -2,6 +2,7 @@ $slide-transition: 1s;
 .slide{
 
 	position: absolute 0;
+	z-index: $z-higher;
 	flex: 1;
 	height: auto;
 
@@ -53,6 +54,11 @@ $slide-transition: 1s;
 		visibility: hidden;
 	}
 	&:not(._active) &__{
+		&footer{
+			transform: translateY(100%);
+		}
+	}
+	&:not(._active):not(&--history) &__{
 		&bg{
 			opacity: 0;
 			filter: blur(2px);
@@ -64,15 +70,23 @@ $slide-transition: 1s;
 		&text{
 			transform: translateX(-100%);
 		}
-		&footer{
-			transform: translateY(100%);
+	}
+	&--history:not(._active) &__{
+		&info{
+			opacity: 0;
+			transform: translateX(-100%);
 		}
 	}
-	&._active ~ & &__{
+	&._active:not(&--history) ~ & &__{
 		&info{
 			transform: translateX(calc(50vw + 50%));
 		}
 		&text{
+			transform: translateX(100%);
+		}
+	}
+	&--history._active ~ & &__{
+		&info{
 			transform: translateX(100%);
 		}
 	}
@@ -108,11 +122,25 @@ $slide-transition: 1s;
 	&--gallery &__{
 		&info{
 			max-width: none;
+			width: 100%;
 		}
 	}
 
 	//
 	// MODS END
+
+	// wrapper
+	&s{
+		&__{
+			&video{
+				@extend %center-abs;
+
+				z-index: $z-under;
+
+				min-size: 100%;
+			}
+		}
+	}
 
 	// pseudoelements
 	&::before,
@@ -152,7 +180,7 @@ $slide-transition: 1s;
 		&info{
 			flex: 1;
 			max-width: 80rem;
-			width: 100%;
+			// width: 100%;
 			margin: 10vh auto 1rem;
 
 			letter-spacing: .05em;
@@ -162,9 +190,8 @@ $slide-transition: 1s;
 
 			will-change: transform, opacity;
 
-			@media (--low){
-				margin-top: 5vh;
-				white-space: normal;
+			@media (--lower){
+				margin-top: 1rem;
 			}
 		}
 		&text{
@@ -174,9 +201,15 @@ $slide-transition: 1s;
 		&title{
 			@extend .title;
 
-			margin: * * 3rem;
-
 			line-height: 1;
+
+			@media (--desktops) and (--higher){
+				margin-bottom: 3rem;
+			}
+
+			@media (--tablets) or (--lower){
+				margin-bottom: 1rem;
+			}
 		}
 		&date{
 			margin: * * 1rem;
@@ -188,8 +221,7 @@ $slide-transition: 1s;
 		}
 		&footer{
 			box-sizing: border-box;
-			min-height: 8rem;
-			padding: 1rem *;
+			width: 100%;
 
 			background: color($c-primary a(.3));
 
@@ -198,12 +230,29 @@ $slide-transition: 1s;
 			display: flex;
 			flex-direction: column;
 
+			@media (--desktops) and (--higher){
+				min-height: 8rem;
+				padding: 1rem *;
+			}
+
+			@media (--tablets) or (--lower){
+				min-height: 1.5rem;
+				padding: .5rem *;
+			}
+
 			// subelement
 			&-{
 				&content{
-					flex: 1;
-					max-width: 50rem;
-					margin: auto;
+
+					@media (--desktops) and (--higher){
+						flex: 1;
+						max-width: 50rem;
+						margin: auto;
+					}
+
+					@media (--tablets) or (--lower){
+						padding: * .5rem;
+					}
 				}
 			}
 		}

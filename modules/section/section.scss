@@ -35,12 +35,8 @@
 			flex-direction: column;
 		}
 		&pag{
-			transform: translateY(-1rem);
-
-			transition: opacity $transition--long calc($transition--long / 4);
-		}
-		&pag{
 			position: absolute * 0 0;
+			z-index: $z-higher;
 			margin: 1rem *;
 
 			transition:

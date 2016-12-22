@@ -115,11 +115,11 @@ export default class Callback extends Component {
 										/>
 										<label
 											ref="file"
-											className={`callback__file-label ${file ? '_selected' : null}`}
+											className={`callback__file-label ${file ? '_selected' : ''}`}
 											htmlFor="file"
 										>
 										{
-											file ? file : 'Выберите файл'
+											file ? file.replace(/^.*[\\\/]/, '') : 'Выберите файл'
 										}
 										</label>
 									</div>

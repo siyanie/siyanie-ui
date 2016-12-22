@@ -76,8 +76,10 @@ export default class Section extends Component {
 		} = this.props
 		this.section = section
 		this.subsection = subsection
-		this.slides = store.sections[section].subsections[subsection].content
-		// const slide = this.slides[this.state.activeSlide]
+		this.subsectionData = store.sections[section].subsections[subsection]
+		this.slides = this.subsectionData.content
+
+		const video = this.subsectionData.videoBg
 		const {
 			activeSlide,
 			footerHeight
@@ -99,8 +101,10 @@ export default class Section extends Component {
 						ref="slides"
 						key={`slides--${subsection}`}
 						slides={this.slides}
+						video={video}
 						activeSlide={activeSlide}
 						params={params}
+						selectSlide={::this._select}
 					/>
 				</ReactCSSTransitionGroup>
 				{
@@ -133,16 +137,22 @@ export default class Section extends Component {
 									})
 								}
 								</div>
-								<div className="section__arrows">
-									<Arrow
-										className={`_prev ${activeSlide === 0 ? '_disabled' : ''}`}
-										onClick={this._prev.bind(this)}
-									/>
-									<Arrow
-										className={`_next ${activeSlide === this.slides.length - 1 ? '_disabled' : ''}`}
-										onClick={this._next.bind(this)}
-								/>
-								</div>
+								{
+									section != 'about' && subsection != 'history'
+										? (
+											<div className="section__arrows">
+												<Arrow
+													className={`_prev ${activeSlide === 0 ? '_disabled' : ''}`}
+													onClick={this._prev.bind(this)}
+												/>
+												<Arrow
+													className={`_next ${activeSlide === this.slides.length - 1 ? '_disabled' : ''}`}
+													onClick={this._next.bind(this)}
+											/>
+											</div>
+										)
+										: null
+								}
 							</div>
 						)
 						: null

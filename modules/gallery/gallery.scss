@@ -10,6 +10,10 @@
 
 			display: flex;
 			justify-content: space-between;
+
+			@media (--lower){
+				margin-top: 0;
+			}
 		}
 		&slide{
 			min-width: 25%;
@@ -72,10 +76,14 @@
 			opacity: .3;
 		}
 		&dots{
-			margin: 1rem * *;
+			margin-top: 1rem;
 
 			display: flex;
 			justify-content: center;
+
+			@media (--lower){
+				margin-top: .5rem;
+			}
 		}
 		&dot{
 			@extend .section__dot;

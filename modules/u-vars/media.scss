@@ -1,4 +1,5 @@
 @custom-media --wides (width >= 1440px);
 @custom-media --desktops (width >= 1280px);
 @custom-media --tablets (width < 1280px) and (width >= 1024px);
-@custom-media --low (height <= 800px);
+@custom-media --lower (height <= 800px);
+@custom-media --higher (height > 800px);

@@ -21,6 +21,8 @@
 				visibility 0s $transition__preloader,
 				opacity $transition__preloader $transition__preloader;*/
 
+			overflow-x: hidden;
+
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
@@ -30,6 +32,12 @@
 				visibility: hidden;
 				opacity: 0;
 			}
+		}
+		&view{
+			flex: 1;
+
+			display: flex;
+			flex-direction: column;
 		}
 		&main{
 			flex: 1;
@@ -41,5 +49,14 @@
 
 			position: relative;
 		}
+		&thumb{
+			background: white;
+		}
 	}
+}
+::-webkit-scrollbar{
+	width: 2px;
+}
+::-webkit-scrollbar-thumb{
+	background: white;
 }

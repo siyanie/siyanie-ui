@@ -29,13 +29,15 @@ class componentName extends Component {
 			})
 		}
 	}
+	_setShift () {
+		console.log(this)
+	}
 	componentDidMount() {
-		const item = this.refs.gallery.querySelector('.gallery__slide')
-		if (item) {
-			this.setState({
-				shift: item.offsetWidth
-			})
-		}
+		this._setShift()
+		window.addEventListener('resize', ::this._setShift)
+	}
+	componentWillUnmount() {
+		window.removeEventListener('resize', ::this._setShift)
 	}
 	render () {
 		const {

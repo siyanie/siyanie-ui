@@ -15,8 +15,7 @@ class Projects extends Component {
 
 		this.more = this.more.bind(this)
 		this.state = {
-			title: 'все проекты',
-			projects: initialProjects.slice(0, 8)
+			projects: initialProjects.slice(4, initialProjects.length)
 		}
 	}
 	more () {
@@ -26,7 +25,7 @@ class Projects extends Component {
 		})
 	}
 	render () {
-		const { projects, title } = this.state
+		const { projects } = this.state
 
 		return (
 			<div className="projects _grid">
@@ -41,14 +40,6 @@ class Projects extends Component {
 					))
 				}
 				</div>
-				{
-					title
-						? (<div
-								className="projects__more"
-								onClick={this.more}
-							>{title}</div>)
-						: ''
-				}
 			</div>
 		)
 	}

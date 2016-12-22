@@ -8,8 +8,7 @@ import Video from '../modules/video/video.react'
 import Section from '../modules/section/section.react'
 import Callback from '../modules/callback/callback.react'
 import Project from '../modules/project/project.react'
-import ProjectsCarousel from '../modules/projects/projects.caraousel.react'
-import ProjectsGrid from '../modules/projects/projects.grid.react'
+import Projects from '../modules/projects/projects.react'
 import ErrorPage from '../modules/error/error.react'
 import Footer from '../modules/footer/footer.react'
 import FooterInner from '../modules/footer/footer.inner.react'
@@ -23,8 +22,7 @@ render(
 				<IndexRoute components={{ content: Video, footer: Footer }} />
 				<Route path="section/:section/:subsection" components={{ content: Section, footer: FooterInner}} />
 				<Route path="callback" components={{ content: Callback }} />
-				<Route path="projects" components={{ content: ProjectsCarousel, footer: Footer }}  />
-				<Route path="projectsAll" components={{ content: ProjectsGrid, footer: Footer }}  />
+				<Route path="projects" components={{ content: Projects, footer: Footer }}  />
 				<Route path="project/:project" components={{ content: Project }} />
 
 				<Redirect from="/section/about" to="/section/about/onas" />

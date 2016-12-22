@@ -22,7 +22,13 @@ class ProjectsProject extends Component {
 			})
 		})
 	}
-
+	_handleClick() {
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth'
+		})
+	}
 	render() {
 		const {
 			id
@@ -35,6 +41,7 @@ class ProjectsProject extends Component {
 			<Link
 				className="projects__project"
 				to={`/project/${id}`}
+				onClick={::this._handleClick}
 			>
 				<div
 					className="projects__bg"

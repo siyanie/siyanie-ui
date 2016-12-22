@@ -38,6 +38,10 @@
 
 			height: calc(100vh - $header__height);
 			overflow: hidden;
+
+			@media (--lower){
+				height: calc(100vh - $header__height--lower);
+			}
 		}
 		&bg{
 			@extend %shakeBg;
@@ -87,7 +91,8 @@
 
 			animation-fill-mode: forwards;
 			animation-name: projectContent;
-			animation-duration: 1s;
+			animation-delay: $trsn;
+			animation-duration: $trsn;
 			transition: ;
 
 			display: flex;
