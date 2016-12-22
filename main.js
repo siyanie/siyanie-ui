@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1a02d33c338651f9fb4e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "6184859f8b57cda5c45b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -1850,33 +1850,33 @@
 
 	var _section2 = _interopRequireDefault(_section);
 
-	var _callback = __webpack_require__(427);
+	var _callback = __webpack_require__(428);
 
 	var _callback2 = _interopRequireDefault(_callback);
 
-	var _project = __webpack_require__(430);
+	var _project = __webpack_require__(431);
 
 	var _project2 = _interopRequireDefault(_project);
 
-	var _projects = __webpack_require__(431);
+	var _projects = __webpack_require__(432);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
-	var _error = __webpack_require__(452);
+	var _error = __webpack_require__(453);
 
 	var _error2 = _interopRequireDefault(_error);
 
-	var _footer = __webpack_require__(453);
+	var _footer = __webpack_require__(454);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
-	var _footerInner = __webpack_require__(455);
+	var _footerInner = __webpack_require__(456);
 
 	var _footerInner2 = _interopRequireDefault(_footerInner);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(456).polyfill();
+	__webpack_require__(457).polyfill();
 
 	var Root = function Root(_ref) {
 		var children = _ref.children;
@@ -32601,7 +32601,7 @@
 
 	var _arrow2 = _interopRequireDefault(_arrow);
 
-	var _store = __webpack_require__(422);
+	var _store = __webpack_require__(423);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -32731,7 +32731,8 @@
 							slides: this.slides,
 							video: video,
 							activeSlide: activeSlide,
-							params: params
+							params: params,
+							selectSlide: this._select.bind(this)
 						})
 					),
 					this.slides.length > 1 ? React.createElement(
@@ -32757,7 +32758,7 @@
 								});
 							})
 						),
-						React.createElement(
+						section != 'about' && subsection != 'history' ? React.createElement(
 							'div',
 							{ className: 'section__arrows' },
 							React.createElement(_arrow2.default, {
@@ -32768,7 +32769,7 @@
 								className: '_next ' + (activeSlide === this.slides.length - 1 ? '_disabled' : ''),
 								onClick: this._next.bind(this)
 							})
-						)
+						) : null
 					) : null
 				);
 			}
@@ -32819,6 +32820,10 @@
 
 	var _slide2 = _interopRequireDefault(_slide);
 
+	var _timeline = __webpack_require__(422);
+
+	var _timeline2 = _interopRequireDefault(_timeline);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Slides = function (_Component) {
@@ -32839,7 +32844,10 @@
 				    slides = _props.slides,
 				    activeSlide = _props.activeSlide,
 				    params = _props.params,
-				    subsection = _props.params.subsection;
+				    _props$params = _props.params,
+				    section = _props$params.section,
+				    subsection = _props$params.subsection,
+				    selectSlide = _props.selectSlide;
 
 
 				return _react2.default.createElement(
@@ -32854,11 +32862,14 @@
 							active: activeSlide === index
 						});
 					}),
-					subsection === 'work' ? _react2.default.createElement(
+					section === 'about' && subsection === 'work' ? _react2.default.createElement(
 						_reactRouter.Link,
 						{ to: '/callback?resume=true', className: 'person__button' },
 						'\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0440\u0435\u0437\u044E\u043C\u0435'
 					) : null,
+					section === 'about' && subsection === 'history' ? _react2.default.createElement(_timeline2.default, {
+						selectSlide: selectSlide
+					}) : null,
 					video ? _react2.default.createElement('video', {
 						src: 'assets/video/' + video + '.mp4',
 						className: 'slides__video',
@@ -33128,12 +33139,12 @@
 		(0, _createClass3.default)(Text, [{
 			key: "render",
 			value: function render() {
-				var data = this.props.data;
+				var text = this.props.data.text;
 
 				return _react2.default.createElement(
 					"div",
 					{ className: "slide__text" },
-					data
+					text
 				);
 			}
 		}]);
@@ -37334,9 +37345,7 @@
 		(0, _createClass3.default)(History, [{
 			key: "render",
 			value: function render() {
-				var _props$data = this.props.data,
-				    text = _props$data.text,
-				    years = _props$data.years;
+				var text = this.props.data.text;
 
 
 				return _react2.default.createElement(
@@ -37346,21 +37355,6 @@
 						"div",
 						{ className: "history__text slide__text" },
 						text
-					),
-					_react2.default.createElement("div", { className: "history__line" }),
-					_react2.default.createElement(
-						"div",
-						{ className: "history__timeline" },
-						years.map(function (year) {
-							return _react2.default.createElement(
-								"div",
-								{
-									key: "history__year--" + year,
-									className: "history__year"
-								},
-								year
-							);
-						})
 					)
 				);
 			}
@@ -37464,25 +37458,178 @@
 /* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(248);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(274);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(275);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(279);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(326);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(15);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var settings = {
+		start: 1999,
+		end: 2015,
+		shift: 122
+	};
+
+	var Timeline = function (_Component) {
+		(0, _inherits3.default)(Timeline, _Component);
+
+		function Timeline() {
+			(0, _classCallCheck3.default)(this, Timeline);
+
+			var _this = (0, _possibleConstructorReturn3.default)(this, (Timeline.__proto__ || (0, _getPrototypeOf2.default)(Timeline)).call(this));
+
+			_this.state = {
+				current: settings.start,
+				move: 0
+			};
+			return _this;
+		}
+
+		(0, _createClass3.default)(Timeline, [{
+			key: "_move",
+			value: function _move(_ref) {
+				var x = _ref.nativeEvent.x;
+				var _window = window,
+				    vw = _window.innerWidth;
+
+				this.setState({
+					move: (x / vw - .5) * settings.shift
+				});
+			}
+		}, {
+			key: "_unmove",
+			value: function _unmove() {
+				this.setState({
+					move: 0
+				});
+			}
+		}, {
+			key: "_setYear",
+			value: function _setYear(year) {
+				var _this2 = this;
+
+				return function () {
+					_this2.setState({
+						current: year
+					});
+					var moveToSlide = _this2._getSlideIndex(year, settings.start);
+					_this2.props.selectSlide(moveToSlide)();
+				};
+			}
+		}, {
+			key: "_getSlideIndex",
+			value: function _getSlideIndex(current, start) {
+				var index = Math.floor((current - start - 1) / 5);
+
+				return index < 0 ? 0 : index;
+			}
+		}, {
+			key: "render",
+			value: function render() {
+				var _this3 = this;
+
+				var years = [];
+				var start = settings.start,
+				    end = settings.end,
+				    shift = settings.shift;
+				var _state = this.state,
+				    current = _state.current,
+				    move = _state.move;
+
+				var currentIndex = current - start;
+
+				for (var i = start; i <= end; i++) {
+					years.push(i);
+				}
+
+				return _react2.default.createElement(
+					"div",
+					{
+						className: "timeline",
+						ref: "timeline",
+						style: {
+							transform: "translateX(calc(50% - " + (shift * currentIndex + shift / 2) + "px))",
+							left: move * -1 + "px"
+						},
+						onMouseOver: this._move.bind(this),
+						onMouseMove: this._move.bind(this),
+						onMouseLeave: this._unmove.bind(this)
+					},
+					years.map(function (year) {
+						var className = current == year ? '_active' : current - 1 == year || current + 1 == year ? '_preactive' : current - 2 == year || current + 2 == year ? '_prepreactive' : '';
+
+						return _react2.default.createElement(
+							"div",
+							{
+								key: "timeline__year--" + year,
+								className: "timeline__year " + className,
+								onClick: _this3._setYear.call(_this3, year)
+							},
+							year
+						);
+					}),
+					_react2.default.createElement(
+						"div",
+						{ className: "timeline__continue" },
+						"\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435 \u0441\u043B\u0435\u0434\u0443\u0435\u0442..."
+					)
+				);
+			}
+		}]);
+		return Timeline;
+	}(_react.Component);
+
+	exports.default = Timeline;
+
+/***/ },
+/* 423 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
-	var _about = __webpack_require__(423);
+	var _about = __webpack_require__(424);
 
 	var _about2 = _interopRequireDefault(_about);
 
-	var _services = __webpack_require__(424);
+	var _services = __webpack_require__(425);
 
 	var _services2 = _interopRequireDefault(_services);
 
-	var _pressCenter = __webpack_require__(425);
+	var _pressCenter = __webpack_require__(426);
 
 	var _pressCenter2 = _interopRequireDefault(_pressCenter);
 
-	var _projects = __webpack_require__(426);
+	var _projects = __webpack_require__(427);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
@@ -37498,7 +37645,7 @@
 	};
 
 /***/ },
-/* 423 */
+/* 424 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -37516,7 +37663,9 @@
 						"bg": "about_onas_1.jpg",
 						"main": {
 							"component": "Text",
-							"content": "Компания Сияние основана в 1999 году. На сегодняшний день\nдеятельность компании сосредоточена на рынке FIT-OUT.\nВ рамках реализуемых проектов мы осуществляем работы по\nпроектированию, строительству, отделке, инженерному\nоснащению внутренних помещений коммерческой\nнедвижимости, а также выполняем функции генерального\nподрядчика и генерального проектировщика."
+							"content": {
+								"text": "Компания Сияние основана в 1999 году. На сегодняшний день\nдеятельность компании сосредоточена на рынке FIT-OUT.\nВ рамках реализуемых проектов мы осуществляем работы по\nпроектированию, строительству, отделке, инженерному\nоснащению внутренних помещений коммерческой\nнедвижимости, а также выполняем функции генерального\nподрядчика и генерального проектировщика."
+							}
 						}
 					},
 					{
@@ -37528,7 +37677,9 @@
 						"bg": "about_onas_2.jpg",
 						"main": {
 							"component": "Text",
-							"content": "Компания Сияние позиционирует себя, как предприятие, которое\nполностью снимает с Заказчика проблемы по реализации и вводу\nв эксплуатацию объектов любой сложности. Мы жестко подходим\nк отбору компаний, которые будут реализовывать Ваш проект.\nМы снимаем с Заказчика заботы и находим возможность сэкономить\nсредства не в ущерб качеству. Мы выполняем работы\nза разумные деньги и в срок."
+							"content": {
+								"text": "Компания Сияние позиционирует себя, как предприятие, которое\nполностью снимает с Заказчика проблемы по реализации и вводу\nв эксплуатацию объектов любой сложности. Мы жестко подходим\nк отбору компаний, которые будут реализовывать Ваш проект.\nМы снимаем с Заказчика заботы и находим возможность сэкономить\nсредства не в ущерб качеству. Мы выполняем работы\nза разумные деньги и в срок."
+							}
 						}
 					},
 					{
@@ -37540,7 +37691,9 @@
 						"bg": "about_onas_3.jpg",
 						"main": {
 							"component": "Text",
-							"content": "Каким образом реализуется такой подход?\nПрежде всего — проектная команда. Под каждый объект формируется своя проектная\nкоманда, исходя из особенностей проекта. Структура нашей компании построена таким\nобразом, что замена любого члена проектной команды, включая руководителя проекта,\nне сможет негативно повлиять на конечный результат. У каждого сотрудника имеются четкие\nдолжностные инструкции, а также существуют четкие проектные инструции. Поэтому у нас\nкаждый на своем месте и каждый знает, что он обязан делать."
+							"content": {
+								"text": "Каким образом реализуется такой подход?\nПрежде всего — проектная команда. Под каждый объект формируется своя проектная\nкоманда, исходя из особенностей проекта. Структура нашей компании построена таким\nобразом, что замена любого члена проектной команды, включая руководителя проекта,\nне сможет негативно повлиять на конечный результат. У каждого сотрудника имеются четкие\nдолжностные инструкции, а также существуют четкие проектные инструции. Поэтому у нас\nкаждый на своем месте и каждый знает, что он обязан делать."
+							}
 						}
 					},
 					{
@@ -37658,7 +37811,9 @@
 						"bg": null,
 						"main": {
 							"component": "Text",
-							"content": "Человек, который решает абсолютно все вопросы,\n– от общения с Заказчиком до контроля над закупкой гвоздей.\nПомимо опыта в строительстве наш Руководитель проекта\nобязательно имеет управленческий опыт, в его подчинении\nнаходится вся проектная команда."
+							"content": {
+								"text": "Человек, который решает абсолютно все вопросы,\n– от общения с Заказчиком до контроля над закупкой гвоздей.\nПомимо опыта в строительстве наш Руководитель проекта\nобязательно имеет управленческий опыт, в его подчинении\nнаходится вся проектная команда."
+							}
 						}
 					},
 					{
@@ -37670,7 +37825,9 @@
 						"bg": null,
 						"main": {
 							"component": "Text",
-							"content": "Каждый работник на площадке должен знать, что, когда и как ему\nделать. Последовательность и своевременность выполнения работ\nопределяет и контролирует наш Начальник строительства.\nЕго функции: координация и управление всеми подрядными\nорганизациями на площадке, проведение еженедельных\nсовещаний и, конечно, первичный контроль качества\nнад выполняемыми подрядчиками работами."
+							"content": {
+								"text": "Каждый работник на площадке должен знать, что, когда и как ему\nделать. Последовательность и своевременность выполнения работ\nопределяет и контролирует наш Начальник строительства.\nЕго функции: координация и управление всеми подрядными\nорганизациями на площадке, проведение еженедельных\nсовещаний и, конечно, первичный контроль качества\nнад выполняемыми подрядчиками работами."
+							}
 						}
 					},
 					{
@@ -37682,7 +37839,9 @@
 						"bg": null,
 						"main": {
 							"component": "Text",
-							"content": "Основная функция — контроль качества выполняемых работ.\nКаждое направление курирует свой инженер.\nКаждый пишет свою программу индивидуальных\nиспытаний. При этом каждый, отвечая за свое направление,\nработает в команде."
+							"content": {
+								"text": "Основная функция — контроль качества выполняемых работ.\nКаждое направление курирует свой инженер.\nКаждый пишет свою программу индивидуальных\nиспытаний. При этом каждый, отвечая за свое направление,\nработает в команде."
+							}
 						}
 					},
 					{
@@ -37694,7 +37853,9 @@
 						"bg": null,
 						"main": {
 							"component": "Text",
-							"content": "На всех наших объектах строго соблюдается охрана\nтруда и техника безопасности. Инженер по ОТ и ТБ четко\nконтролирует соблюдение всех норм и правил."
+							"content": {
+								"text": "На всех наших объектах строго соблюдается охрана\nтруда и техника безопасности. Инженер по ОТ и ТБ четко\nконтролирует соблюдение всех норм и правил."
+							}
 						}
 					},
 					{
@@ -37706,7 +37867,9 @@
 						"bg": null,
 						"main": {
 							"component": "Text",
-							"content": "Весь процесс строительства проходит под постоянным\nконтролем сотрудников отдела контроля качества.\nОтдел контроля качества работает независимо\nот проектной команды, обеспечивает контроль качества\nстроительных работ, а также ведет мониторинг\nтехнического состояния строительной площадки."
+							"content": {
+								"text": "Весь процесс строительства проходит под постоянным\nконтролем сотрудников отдела контроля качества.\nОтдел контроля качества работает независимо\nот проектной команды, обеспечивает контроль качества\nстроительных работ, а также ведет мониторинг\nтехнического состояния строительной площадки."
+							}
 						}
 					},
 					{
@@ -37718,7 +37881,9 @@
 						"bg": null,
 						"main": {
 							"component": "Text",
-							"content": "Мы еженедельно отправляем Заказчику подробный фотоотчет,\nкоторый отражает текущее положение дел на объекте.\nМы — генподрядная организация, которая снимает с Заказчика\nвсе вопросы, связанные со строительством объекта и вводом\nего в эксплуатацию."
+							"content": {
+								"text": "Мы еженедельно отправляем Заказчику подробный фотоотчет,\nкоторый отражает текущее положение дел на объекте.\nМы — генподрядная организация, которая снимает с Заказчика\nвсе вопросы, связанные со строительством объекта и вводом\nего в эксплуатацию."
+							}
 						}
 					}
 				]
@@ -37735,7 +37900,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Мы растим профессионалов с нуля!\nСпециалисты компании ежегодно проходят специальные\nкурсы повышения квалификации, посещают семинары,\nездят на стажировку,участвуют в конференциях.\nСловом у нас высококвалифицированный персонал,\nи с каждым годом мы совершенствуемся."
+							"content": {
+								"text": "Мы растим профессионалов с нуля!\nСпециалисты компании ежегодно проходят специальные\nкурсы повышения квалификации, посещают семинары,\nездят на стажировку,участвуют в конференциях.\nСловом у нас высококвалифицированный персонал,\nи с каждым годом мы совершенствуемся."
+							}
 						}
 					},
 					{
@@ -37747,7 +37914,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Это то, чем мы гордимся и поддерживаем.\nНачиная со дня основания, репутация компании ежегодно\nповышается за счет: оптимизации производства,\nроста числа клиентов, удешевления услуг,\nповышения качества производства работ."
+							"content": {
+								"text": "Это то, чем мы гордимся и поддерживаем.\nНачиная со дня основания, репутация компании ежегодно\nповышается за счет: оптимизации производства,\nроста числа клиентов, удешевления услуг,\nповышения качества производства работ."
+							}
 						}
 					},
 					{
@@ -37759,7 +37928,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Мы не боимся поставленных задач,\nкоторые порой бывают трудными.\nНаше кредо: когда одни видят препятствия,\nмы видим возможности."
+							"content": {
+								"text": "Мы не боимся поставленных задач,\nкоторые порой бывают трудными.\nНаше кредо: когда одни видят препятствия,\nмы видим возможности."
+							}
 						}
 					},
 					{
@@ -37771,7 +37942,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Всегда и везде есть место инновациям.\nМы гордимся своими инновациями и стремимся\nсделать мир лучше с помощью них.\nМы ставим перед собой долгосрочные\nстратегические цели и четко определяем\nвектор развития компании."
+							"content": {
+								"text": "Всегда и везде есть место инновациям.\nМы гордимся своими инновациями и стремимся\nсделать мир лучше с помощью них.\nМы ставим перед собой долгосрочные\nстратегические цели и четко определяем\nвектор развития компании."
+							}
 						}
 					},
 					{
@@ -37783,7 +37956,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Благодаря нашему партнерству с поставщиками\nи заказчиками, мы всегда можем предложить\nконкурентоспособную цену. Наша цель в работе\nс партнерами – это долгосрочное сотрудничество\nи создание надежных взаимоотношений. Вместе мы\nспособны сделать жизнь людей лучше."
+							"content": {
+								"text": "Благодаря нашему партнерству с поставщиками\nи заказчиками, мы всегда можем предложить\nконкурентоспособную цену. Наша цель в работе\nс партнерами – это долгосрочное сотрудничество\nи создание надежных взаимоотношений. Вместе мы\nспособны сделать жизнь людей лучше."
+							}
 						}
 					},
 					{
@@ -37795,7 +37970,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Наша команда - это группа единомышленников,\nкоторая способна работать в многозадачном режиме;\nк решению стандартных вопросов мы ищем\nнестандартные решения."
+							"content": {
+								"text": "Наша команда - это группа единомышленников,\nкоторая способна работать в многозадачном режиме;\nк решению стандартных вопросов мы ищем\nнестандартные решения."
+							}
 						}
 					},
 					{
@@ -37807,7 +37984,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Неповторимый стиль и нестандартный подход\nв компании выражается в желании сотрудников\nпроявить себя, железной хваткой, так сказать, любым\nнестандартным методом добиться поставленной цели\nбыстро и качественно. При этом качество совсем\nне страдает, а наоборот рождаются новые\nкреативные решения."
+							"content": {
+								"text": "Неповторимый стиль и нестандартный подход\nв компании выражается в желании сотрудников\nпроявить себя, железной хваткой, так сказать, любым\nнестандартным методом добиться поставленной цели\nбыстро и качественно. При этом качество совсем\nне страдает, а наоборот рождаются новые\nкреативные решения."
+							}
 						}
 					}
 				]
@@ -37890,7 +38069,7 @@
 					{
 						"title": "РАССВЕТ",
 						"main": {
-							"component": "History",
+							"component": "Text",
 							"content": {
 								"year": "1999",
 								"years": [
@@ -37909,7 +38088,7 @@
 					{
 						"title": "ВОСХОД",
 						"main": {
-							"component": "History",
+							"component": "Text",
 							"content": {
 								"year": "2007",
 								"years": [
@@ -37930,7 +38109,7 @@
 					{
 						"title": "ЯРЧЕ!",
 						"main": {
-							"component": "History",
+							"component": "Text",
 							"content": {
 								"year": "2012",
 								"years": [
@@ -37951,7 +38130,7 @@
 					{
 						"title": "СО СКОРОСТЬЮ СВЕТА",
 						"main": {
-							"component": "History",
+							"component": "Text",
 							"content": {
 								"year": "2015",
 								"years": [
@@ -37975,7 +38154,7 @@
 	};
 
 /***/ },
-/* 424 */
+/* 425 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -38232,7 +38411,7 @@
 	};
 
 /***/ },
-/* 425 */
+/* 426 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -38627,7 +38806,7 @@
 	};
 
 /***/ },
-/* 426 */
+/* 427 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -38809,7 +38988,7 @@
 	};
 
 /***/ },
-/* 427 */
+/* 428 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -38818,7 +38997,7 @@
 		value: true
 	});
 
-	var _defineProperty2 = __webpack_require__(428);
+	var _defineProperty2 = __webpack_require__(429);
 
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -38848,7 +39027,7 @@
 
 	var _icon2 = _interopRequireDefault(_icon);
 
-	var _reactInputMask = __webpack_require__(429);
+	var _reactInputMask = __webpack_require__(430);
 
 	var _reactInputMask2 = _interopRequireDefault(_reactInputMask);
 
@@ -39037,7 +39216,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 428 */
+/* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39066,7 +39245,7 @@
 	};
 
 /***/ },
-/* 429 */
+/* 430 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// https://github.com/sanniassin/react-input-mask
@@ -39905,7 +40084,7 @@
 	module.exports = InputElement;
 
 /***/ },
-/* 430 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -39950,7 +40129,7 @@
 
 	var _config2 = _interopRequireDefault(_config);
 
-	var _store = __webpack_require__(422);
+	var _store = __webpack_require__(423);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -40208,7 +40387,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 431 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40243,17 +40422,17 @@
 
 	var _reactRouter = __webpack_require__(192);
 
-	var _reactCustomScrollbars = __webpack_require__(432);
+	var _reactCustomScrollbars = __webpack_require__(433);
 
 	var _config = __webpack_require__(347);
 
 	var _config2 = _interopRequireDefault(_config);
 
-	var _projectsCaraousel = __webpack_require__(449);
+	var _projectsCaraousel = __webpack_require__(450);
 
 	var _projectsCaraousel2 = _interopRequireDefault(_projectsCaraousel);
 
-	var _projectsGrid = __webpack_require__(451);
+	var _projectsGrid = __webpack_require__(452);
 
 	var _projectsGrid2 = _interopRequireDefault(_projectsGrid);
 
@@ -40344,7 +40523,7 @@
 	exports.default = Projects;
 
 /***/ },
-/* 432 */
+/* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40354,7 +40533,7 @@
 	});
 	exports.Scrollbars = undefined;
 
-	var _Scrollbars = __webpack_require__(433);
+	var _Scrollbars = __webpack_require__(434);
 
 	var _Scrollbars2 = _interopRequireDefault(_Scrollbars);
 
@@ -40364,7 +40543,7 @@
 	exports.Scrollbars = _Scrollbars2["default"];
 
 /***/ },
-/* 433 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40375,39 +40554,39 @@
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _raf2 = __webpack_require__(434);
+	var _raf2 = __webpack_require__(435);
 
 	var _raf3 = _interopRequireDefault(_raf2);
 
-	var _domCss = __webpack_require__(436);
+	var _domCss = __webpack_require__(437);
 
 	var _domCss2 = _interopRequireDefault(_domCss);
 
 	var _react = __webpack_require__(15);
 
-	var _isString = __webpack_require__(442);
+	var _isString = __webpack_require__(443);
 
 	var _isString2 = _interopRequireDefault(_isString);
 
-	var _getScrollbarWidth = __webpack_require__(443);
+	var _getScrollbarWidth = __webpack_require__(444);
 
 	var _getScrollbarWidth2 = _interopRequireDefault(_getScrollbarWidth);
 
-	var _returnFalse = __webpack_require__(444);
+	var _returnFalse = __webpack_require__(445);
 
 	var _returnFalse2 = _interopRequireDefault(_returnFalse);
 
-	var _getInnerWidth = __webpack_require__(445);
+	var _getInnerWidth = __webpack_require__(446);
 
 	var _getInnerWidth2 = _interopRequireDefault(_getInnerWidth);
 
-	var _getInnerHeight = __webpack_require__(446);
+	var _getInnerHeight = __webpack_require__(447);
 
 	var _getInnerHeight2 = _interopRequireDefault(_getInnerHeight);
 
-	var _styles = __webpack_require__(447);
+	var _styles = __webpack_require__(448);
 
-	var _defaultRenderElements = __webpack_require__(448);
+	var _defaultRenderElements = __webpack_require__(449);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -41026,10 +41205,10 @@
 	});
 
 /***/ },
-/* 434 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {var now = __webpack_require__(435)
+	/* WEBPACK VAR INJECTION */(function(global) {var now = __webpack_require__(436)
 	  , root = typeof window === 'undefined' ? global : window
 	  , vendors = ['moz', 'webkit']
 	  , suffix = 'AnimationFrame'
@@ -41105,7 +41284,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 435 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {// Generated by CoffeeScript 1.7.1
@@ -41144,13 +41323,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
 
 /***/ },
-/* 436 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var prefix = __webpack_require__(437)
-	var toCamelCase = __webpack_require__(438)
+	var prefix = __webpack_require__(438)
+	var toCamelCase = __webpack_require__(439)
 	var cache = { 'float': 'cssFloat' }
-	var addPxToStyle = __webpack_require__(441)
+	var addPxToStyle = __webpack_require__(442)
 
 	function style (element, property, value) {
 	  var camel = cache[property]
@@ -41211,7 +41390,7 @@
 
 
 /***/ },
-/* 437 */
+/* 438 */
 /***/ function(module, exports) {
 
 	var div = null
@@ -41247,11 +41426,11 @@
 
 
 /***/ },
-/* 438 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	var space = __webpack_require__(439)
+	var space = __webpack_require__(440)
 
 	/**
 	 * Export.
@@ -41274,11 +41453,11 @@
 
 
 /***/ },
-/* 439 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	var clean = __webpack_require__(440)
+	var clean = __webpack_require__(441)
 
 	/**
 	 * Export.
@@ -41301,7 +41480,7 @@
 
 
 /***/ },
-/* 440 */
+/* 441 */
 /***/ function(module, exports) {
 
 	
@@ -41374,7 +41553,7 @@
 
 
 /***/ },
-/* 441 */
+/* 442 */
 /***/ function(module, exports) {
 
 	/* The following list is defined in React's core */
@@ -41420,7 +41599,7 @@
 	};
 
 /***/ },
-/* 442 */
+/* 443 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -41434,7 +41613,7 @@
 	}
 
 /***/ },
-/* 443 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41444,7 +41623,7 @@
 	});
 	exports["default"] = getScrollbarWidth;
 
-	var _domCss = __webpack_require__(436);
+	var _domCss = __webpack_require__(437);
 
 	var _domCss2 = _interopRequireDefault(_domCss);
 
@@ -41475,7 +41654,7 @@
 	}
 
 /***/ },
-/* 444 */
+/* 445 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -41489,7 +41668,7 @@
 	}
 
 /***/ },
-/* 445 */
+/* 446 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -41510,7 +41689,7 @@
 	}
 
 /***/ },
-/* 446 */
+/* 447 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -41531,7 +41710,7 @@
 	}
 
 /***/ },
-/* 447 */
+/* 448 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -41607,7 +41786,7 @@
 	};
 
 /***/ },
-/* 448 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41693,7 +41872,7 @@
 	}
 
 /***/ },
-/* 449 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -41728,11 +41907,11 @@
 
 	var _arrow2 = _interopRequireDefault(_arrow);
 
-	var _projectsProject = __webpack_require__(450);
+	var _projectsProject = __webpack_require__(451);
 
 	var _projectsProject2 = _interopRequireDefault(_projectsProject);
 
-	var _store = __webpack_require__(422);
+	var _store = __webpack_require__(423);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -41861,7 +42040,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 450 */
+/* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41974,7 +42153,7 @@
 	exports.default = ProjectsProject;
 
 /***/ },
-/* 451 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42005,11 +42184,11 @@
 
 	var _react = __webpack_require__(15);
 
-	var _projectsProject = __webpack_require__(450);
+	var _projectsProject = __webpack_require__(451);
 
 	var _projectsProject2 = _interopRequireDefault(_projectsProject);
 
-	var _store = __webpack_require__(422);
+	var _store = __webpack_require__(423);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -42072,7 +42251,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 452 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42155,7 +42334,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 453 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42186,7 +42365,7 @@
 
 	var _react = __webpack_require__(15);
 
-	var _social = __webpack_require__(454);
+	var _social = __webpack_require__(455);
 
 	var _social2 = _interopRequireDefault(_social);
 
@@ -42253,7 +42432,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 454 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42337,7 +42516,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 455 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42378,7 +42557,7 @@
 
 	var _reactRouter = __webpack_require__(192);
 
-	var _store = __webpack_require__(422);
+	var _store = __webpack_require__(423);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -42483,7 +42662,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 456 */
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
