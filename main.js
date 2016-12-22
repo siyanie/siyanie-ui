@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6184859f8b57cda5c45b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "38bd25115546187e9bad"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -38452,7 +38452,7 @@
 						}
 					},
 					{
-						"bg": "press-center_news_3_football.jpg",
+						"bg": "press-center_news_all.jpg",
 						"title": "В борьбе за «Кубок Климата»",
 						"quote": {
 							"text": "Никогда не поднимайте свои принципы так высоко, \nчто их нельзя будет приспособить к обстоятельствам.",
