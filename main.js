@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "38bd25115546187e9bad"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "db2f67b1e36f7f72743e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -1850,33 +1850,33 @@
 
 	var _section2 = _interopRequireDefault(_section);
 
-	var _callback = __webpack_require__(428);
+	var _callback = __webpack_require__(427);
 
 	var _callback2 = _interopRequireDefault(_callback);
 
-	var _project = __webpack_require__(431);
+	var _project = __webpack_require__(430);
 
 	var _project2 = _interopRequireDefault(_project);
 
-	var _projects = __webpack_require__(432);
+	var _projects = __webpack_require__(431);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
-	var _error = __webpack_require__(453);
+	var _error = __webpack_require__(435);
 
 	var _error2 = _interopRequireDefault(_error);
 
-	var _footer = __webpack_require__(454);
+	var _footer = __webpack_require__(436);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
-	var _footerInner = __webpack_require__(456);
+	var _footerInner = __webpack_require__(438);
 
 	var _footerInner2 = _interopRequireDefault(_footerInner);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(457).polyfill();
+	__webpack_require__(439).polyfill();
 
 	var Root = function Root(_ref) {
 		var children = _ref.children;
@@ -28311,7 +28311,9 @@
 
 				return _react2.default.createElement(
 					'div',
-					{ className: 'g-page__content ' + (preloading ? '_preloading' : 'preloaded') },
+					{
+						className: 'g-page__content ' + (preloading ? '_preloading' : 'preloaded')
+					},
 					_react2.default.createElement(_preloader2.default, { preloaded: this._preloaded.bind(this) }),
 					_react2.default.createElement(_header2.default, { params: this.props.params }),
 					_react2.default.createElement(
@@ -32601,7 +32603,7 @@
 
 	var _arrow2 = _interopRequireDefault(_arrow);
 
-	var _store = __webpack_require__(423);
+	var _store = __webpack_require__(422);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -32820,7 +32822,7 @@
 
 	var _slide2 = _interopRequireDefault(_slide);
 
-	var _timeline = __webpack_require__(422);
+	var _timeline = __webpack_require__(421);
 
 	var _timeline2 = _interopRequireDefault(_timeline);
 
@@ -32947,11 +32949,7 @@
 
 	var _clients2 = _interopRequireDefault(_clients);
 
-	var _history = __webpack_require__(420);
-
-	var _history2 = _interopRequireDefault(_history);
-
-	var _mediacenter = __webpack_require__(421);
+	var _mediacenter = __webpack_require__(420);
 
 	var _mediacenter2 = _interopRequireDefault(_mediacenter);
 
@@ -32964,7 +32962,6 @@
 		Numbers: _numbers2.default,
 		Clients: _clients2.default,
 		Gallery: _gallery2.default,
-		History: _history2.default,
 		MediaCenter: _mediacenter2.default
 	};
 
@@ -32982,10 +32979,6 @@
 				var _props = this.props,
 				    data = _props.data,
 				    params = _props.params,
-				    _props$params = _props.params,
-				    section = _props$params.section,
-				    subsection = _props$params.subsection,
-				    slideIndex = _props.slideIndex,
 				    active = _props.active;
 
 				var componentName = data.main.component;
@@ -33025,9 +33018,6 @@
 						}
 					});
 				}
-				if (!data.bg && data.bg != '') {
-					data.bg = section + '_' + subsection + '_' + (slideIndex + 1) + '.jpg';
-				}
 
 				// Detect WEBP
 				if (data.bg) {
@@ -33041,12 +33031,12 @@
 				return _react2.default.createElement(
 					'div',
 					{ className: 'slide slide--' + componentName.toLowerCase() + ' ' + (active ? '_active' : '') },
-					_react2.default.createElement('div', {
+					data.bg ? _react2.default.createElement('div', {
 						className: 'slide__bg',
 						style: data.bg ? {
 							backgroundImage: 'url(assets/images/' + data.bg + ')'
 						} : null
-					}),
+					}) : null,
 					_react2.default.createElement(
 						'div',
 						{ className: 'slide__info' },
@@ -37334,72 +37324,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var History = function (_Component) {
-		(0, _inherits3.default)(History, _Component);
-
-		function History() {
-			(0, _classCallCheck3.default)(this, History);
-			return (0, _possibleConstructorReturn3.default)(this, (History.__proto__ || (0, _getPrototypeOf2.default)(History)).apply(this, arguments));
-		}
-
-		(0, _createClass3.default)(History, [{
-			key: "render",
-			value: function render() {
-				var text = this.props.data.text;
-
-
-				return _react2.default.createElement(
-					"div",
-					{ className: "history" },
-					_react2.default.createElement(
-						"div",
-						{ className: "history__text slide__text" },
-						text
-					)
-				);
-			}
-		}]);
-		return History;
-	}(_react.Component);
-
-	exports.default = History;
-
-/***/ },
-/* 421 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _getPrototypeOf = __webpack_require__(248);
-
-	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-	var _classCallCheck2 = __webpack_require__(274);
-
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-	var _createClass2 = __webpack_require__(275);
-
-	var _createClass3 = _interopRequireDefault(_createClass2);
-
-	var _possibleConstructorReturn2 = __webpack_require__(279);
-
-	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-	var _inherits2 = __webpack_require__(326);
-
-	var _inherits3 = _interopRequireDefault(_inherits2);
-
-	var _react = __webpack_require__(15);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	var MediaCenter = function (_Component) {
 		(0, _inherits3.default)(MediaCenter, _Component);
 
@@ -37455,7 +37379,7 @@
 	exports.default = MediaCenter;
 
 /***/ },
-/* 422 */
+/* 421 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -37608,7 +37532,7 @@
 	exports.default = Timeline;
 
 /***/ },
-/* 423 */
+/* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37617,19 +37541,19 @@
 		value: true
 	});
 
-	var _about = __webpack_require__(424);
+	var _about = __webpack_require__(423);
 
 	var _about2 = _interopRequireDefault(_about);
 
-	var _services = __webpack_require__(425);
+	var _services = __webpack_require__(424);
 
 	var _services2 = _interopRequireDefault(_services);
 
-	var _pressCenter = __webpack_require__(426);
+	var _pressCenter = __webpack_require__(425);
 
 	var _pressCenter2 = _interopRequireDefault(_pressCenter);
 
-	var _projects = __webpack_require__(427);
+	var _projects = __webpack_require__(426);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
@@ -37645,7 +37569,7 @@
 	};
 
 /***/ },
-/* 424 */
+/* 423 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -37808,7 +37732,7 @@
 							"text": "Если захочется переделывать людей — начни с себя.\nЭто и полезнее, и безопаснее.",
 							"author": "Дейл Карнеги"
 						},
-						"bg": null,
+						"bg": "about_team_1.jpg",
 						"main": {
 							"component": "Text",
 							"content": {
@@ -37822,7 +37746,7 @@
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
 						},
-						"bg": null,
+						"bg": "about_team_2.jpg",
 						"main": {
 							"component": "Text",
 							"content": {
@@ -37836,7 +37760,7 @@
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
 						},
-						"bg": null,
+						"bg": "about_team_3.jpg",
 						"main": {
 							"component": "Text",
 							"content": {
@@ -37850,7 +37774,7 @@
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
 						},
-						"bg": null,
+						"bg": "about_team_4.jpg",
 						"main": {
 							"component": "Text",
 							"content": {
@@ -37864,7 +37788,7 @@
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
 						},
-						"bg": null,
+						"bg": "about_team_5.jpg",
 						"main": {
 							"component": "Text",
 							"content": {
@@ -37878,7 +37802,7 @@
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
 						},
-						"bg": null,
+						"bg": "about_team_6.jpg",
 						"main": {
 							"component": "Text",
 							"content": {
@@ -37893,7 +37817,7 @@
 				"content": [
 					{
 						"title": "Профессионализм",
-						"bg": null,
+						"bg": "about_principles_1.jpg",
 						"quote": {
 							"text": "Один человек не может найти решение, но сотня —\nи каждый со своей долей идей — могут что-нибудь придумать.",
 							"author": "Йонг"
@@ -37907,7 +37831,7 @@
 					},
 					{
 						"title": "Репутация",
-						"bg": null,
+						"bg": "about_principles_2.jpg",
 						"quote": {
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
@@ -37921,7 +37845,7 @@
 					},
 					{
 						"title": "Корпоративный дух",
-						"bg": null,
+						"bg": "about_principles_3.jpg",
 						"quote": {
 							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
 							"author": "Уинстон Черчилль"
@@ -37935,7 +37859,7 @@
 					},
 					{
 						"title": "Ноу-хау",
-						"bg": null,
+						"bg": "about_principles_4.jpg",
 						"quote": {
 							"text": "Один человек не может найти решение, но сотня —\nи каждый со своей долей идей — могут что-нибудь придумать.",
 							"author": "Йонг"
@@ -37949,7 +37873,7 @@
 					},
 					{
 						"title": "Партнерство",
-						"bg": null,
+						"bg": "about_principles_5.jpg",
 						"quote": {
 							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
 							"author": "Дейл Карнеги"
@@ -37963,7 +37887,7 @@
 					},
 					{
 						"title": "Команда",
-						"bg": null,
+						"bg": "about_principles_6.jpg",
 						"quote": {
 							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
 							"author": "Уинстон Черчилль"
@@ -37977,7 +37901,7 @@
 					},
 					{
 						"title": "Индивидуальность",
-						"bg": null,
+						"bg": "about_principles_7.jpg",
 						"quote": {
 							"text": "Один человек не может найти решение, но сотня —\nи каждый со своей долей идей — могут что-нибудь придумать.",
 							"author": "Йонг"
@@ -38154,7 +38078,7 @@
 	};
 
 /***/ },
-/* 425 */
+/* 424 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -38172,7 +38096,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Мы жестко подойдем к отбору компаний, которые будут реализовывать Ваш проект, отбор будет производиться только среди опытнейших организаций, хорошо зарекомендовавших себя на рынке."
-						}
+						},
+						"bg": "services_gen_1.jpg"
 					},
 					{
 						"title": "ГЕНЕРАЛЬНЫЙ ПРОЕКТИРОВЩИК",
@@ -38183,7 +38108,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Каждый исполнитель пройдет через \"мелкое сито\" тендеров и конкурсов, к работам на объекте будут допущены только те, кто делом доказал свою состоятельность."
-						}
+						},
+						"bg": "services_gen_2.jpg"
 					},
 					{
 						"title": "ЗАКАЗЧИК-ЗАСТРОЙЩИК",
@@ -38193,7 +38119,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Мы снимем с Вас заботы и найдем возможность сэкономить Ваши средства не в ущерб качеству. Мы не можем реализовать проект дешево и быстро! Мы можем выполнить работы за разумные деньги и в срок!"
-						}
+						},
+						"bg": "services_gen_3.jpg"
 					}
 				]
 			},
@@ -38208,7 +38135,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Электромонтажным работам в обязательном порядке предшествует поэтапная разработка проекта с учетом специфики объекта. Поэтапный план предполагает четкую последовательность действий при электромонтаже, что позволяет комфортно и безопасно эксплуатировать электрооборудование."
-						}
+						},
+						"bg": "services_eom_1.jpg"
 					},
 					{
 						"title": "ЭОМ",
@@ -38218,7 +38146,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Электромонтажные работы включают в себя: прокладку кабельных и воздушных линий электропередач; сборку и установку щитов; монтаж розеток, выключателей, электросчетчиков; монтаж внутреннего, наружного и других видов освещения; прокладку распределительных сетей."
-						}
+						},
+						"bg": "services_eom_2.jpg"
 					}
 				]
 			},
@@ -38233,7 +38162,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Мы имеем многолетний опыт работы в проектировании систем кондиционирования для торговых комплексов, медицинских учреждений, центров обработки данных и других аналогичных помещений."
-						}
+						},
+						"bg": "services_meh_1.jpg"
 					},
 					{
 						"title": "Вентиляция",
@@ -38243,7 +38173,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Мы осуществляем проекты по созданию приточно-вытяжных систем вентиляции, противодымных систем в общественных и промышленных зданиях в полном соответствии с требованиями российских и международных строительных и санитарных норм."
-						}
+						},
+						"bg": "services_meh_2.jpg"
 					},
 					{
 						"title": "Отопление",
@@ -38253,7 +38184,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Мы предоставляем полный спектр услуг по созданию внутренних сетей отопления, \nв том числе систем водяного и воздушного отопления, индивидуальных тепловых пунктов (ИТП)."
-						}
+						},
+						"bg": "services_meh_3.jpg"
 					},
 					{
 						"title": "Водоснабжение",
@@ -38263,7 +38195,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Наши специалисты предлагают широкий спектр услуг по созданию разнообразных систем водоснабжения, в том числе: хозяйственно-питьевой холодной воды, питьевой горячей воды (циркуляционный, а также подающий виды водопроводов), объединенный противопожарный и хозяйственно-питьевой водопровод."
-						}
+						},
+						"bg": "services_meh_4.jpg"
 					},
 					{
 						"title": "Канализация",
@@ -38273,7 +38206,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Компания «Сияние Генподряд» – это профессиональные услуги по проектированию различных систем канализации, в числе которых: производственная канализация (щелочной воды, жиросодержащих вод, химически и механически загрязненной воды, кислотощелочных и кислых вод), бытовая канализация, дождевая канализация (так называемая «ливневка»), дренажная канализация (удаляет и аварийно сбрасывает воды из технических помещений в дренажный колодец)."
-						}
+						},
+						"bg": "services_meh_5.jpg"
 					}
 				]
 			},
@@ -38289,7 +38223,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Комплекс работ по возведению здания. Общестроительные работы одновременно включают в себя различные организационные мероприятия, в том числе, разработку и утверждение проектно-технической документации для строительства и подготовку площадки для возведения здания."
-						}
+						},
+						"bg": "services_obshestroit_1.jpg"
 					}
 				]
 			},
@@ -38304,7 +38239,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Гарант стабильности бизнес-процессов, ведь работа современного офиса невозможна без электронного документооборота. Наша компания оказывает услуги по разработке проектов и монтажу сетей ЛВС, позволяющих создать телекоммуникационную инфраструктуру и обеспечить эффективное решение задач предприятия."
-						}
+						},
+						"bg": "services_sks_1.jpg"
 					},
 					{
 						"title": "Видеонаблюдение",
@@ -38314,7 +38250,8 @@
 						"main": {
 							"component": "Text",
 							"content": "позволяет обеспечить безопасность объектов, территории и людей путем круглосуточного визуального контроля. Наши специалисты выполнят монтаж систем для офиса, частного дома или любых других объектов в соответствии с проектной документацией."
-						}
+						},
+						"bg": "services_sks_2.jpg"
 					},
 					{
 						"title": "СКУД",
@@ -38324,7 +38261,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Системы контроля управлением доступом являются эффективным средством защиты от незаконного проникновения даже самых крупных объектов, гарантируя безопасность находящихся в нем людей. Наши квалифицированные специалисты осуществляют качественную установку и обслуживание систем в соответствии \nс рекомендациями и нормами."
-						}
+						},
+						"bg": "services_sks_3.jpg"
 					},
 					{
 						"title": "ОПС",
@@ -38334,7 +38272,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Монтаж пожарной сигнализации следует выполнять в соответствии с утвержденными нормами, иначе оборудование не сможет выполнить свою основную функцию – предупредить о возгорании. Наши специалисты выполнят установку сигнализации, соблюдая все требования безопасности."
-						}
+						},
+						"bg": "services_sks_4.jpg"
 					},
 					{
 						"title": "СКС",
@@ -38344,7 +38283,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Структурированная кабельная система (СКС) является элементом модернизации цифровой инфраструктуры, инструментом, повышающим рентабельность предприятия и эффективность производственных процессов. Наша компания предлагает услуги по созданию СКС в соответствии с утвержденными нормами."
-						}
+						},
+						"bg": "services_sks_5.jpg"
 					},
 					{
 						"title": "Телефония",
@@ -38354,7 +38294,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Одним из основных способов коммуникации, позволяющих значительно повысить производительность труда на любом предприятии, будь это офис или торговый центр, является телефонизация. Мы предлагаем услуги по созданию телефонной сети, включая разработку проектов, монтаж и обслуживание."
-						}
+						},
+						"bg": "services_sks_6.jpg"
 					}
 				]
 			},
@@ -38370,7 +38311,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Интерьер помещения является визитной карточкой своего владельца и нередко может отражать характер и жизненное кредо; поэтому в любом проекте отделочным работам уделяется особое внимание, а современное многообразие отделочных материалов позволяет воплотить в жизнь самые искушенные пожелания заказчика."
-						}
+						},
+						"bg": "services_otdelka_1.jpg"
 					},
 					{
 						"title": "Отделочные работы",
@@ -38381,7 +38323,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Отделочные работы – подразделяют на внешние и внутренние. Под внешней отделкой понимают: гидроизоляционные работы, теплоизоляцию зданий, отделку внешних стен. Внешние отделочные работы подразумевают применение специализированных материалов и выполняются высокопрофессиональными специалистами."
-						}
+						},
+						"bg": "services_otdelka_2.jpg"
 					},
 					{
 						"title": "Отделочные работы",
@@ -38392,7 +38335,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Внутренние отделочные работы фактически можно назвать ремонтом помещения. Ремонт может быть «черновым» - внутренние поверхности только готовятся к последующей отделке, и полным – с укладкой напольных покрытий, устройством потолка, интерьерной обработкой стен и установкой декоративных элементов."
-						}
+						},
+						"bg": "services_otdelka_3.jpg"
 					},
 					{
 						"title": "Отделочные работы",
@@ -38403,7 +38347,8 @@
 						"main": {
 							"component": "Text",
 							"content": "Процесс реализации комплекса отделочных работ был бы неполным без создания дизайн-проекта, поэтому для детальной проработки интерьеров помещений и в дальнейшем осуществления авторского надзора к сотрудничеству приглашаются дизайнеры."
-						}
+						},
+						"bg": "services_otdelka_4.jpg"
 					}
 				]
 			}
@@ -38411,7 +38356,7 @@
 	};
 
 /***/ },
-/* 426 */
+/* 425 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -38806,7 +38751,7 @@
 	};
 
 /***/ },
-/* 427 */
+/* 426 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -38988,7 +38933,7 @@
 	};
 
 /***/ },
-/* 428 */
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -38997,7 +38942,7 @@
 		value: true
 	});
 
-	var _defineProperty2 = __webpack_require__(429);
+	var _defineProperty2 = __webpack_require__(428);
 
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -39027,7 +38972,7 @@
 
 	var _icon2 = _interopRequireDefault(_icon);
 
-	var _reactInputMask = __webpack_require__(430);
+	var _reactInputMask = __webpack_require__(429);
 
 	var _reactInputMask2 = _interopRequireDefault(_reactInputMask);
 
@@ -39169,7 +39114,7 @@
 									'label',
 									{
 										ref: 'file',
-										className: 'callback__file-label ' + (file ? '_selected' : null),
+										className: 'callback__file-label ' + (file ? '_selected' : ''),
 										htmlFor: 'file'
 									},
 									file ? file.replace(/^.*[\\\/]/, '') : 'Выберите файл'
@@ -39216,7 +39161,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 429 */
+/* 428 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39245,7 +39190,7 @@
 	};
 
 /***/ },
-/* 430 */
+/* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// https://github.com/sanniassin/react-input-mask
@@ -40084,7 +40029,7 @@
 	module.exports = InputElement;
 
 /***/ },
-/* 431 */
+/* 430 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -40129,7 +40074,7 @@
 
 	var _config2 = _interopRequireDefault(_config);
 
-	var _store = __webpack_require__(423);
+	var _store = __webpack_require__(422);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -40387,7 +40332,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 432 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40422,17 +40367,11 @@
 
 	var _reactRouter = __webpack_require__(192);
 
-	var _reactCustomScrollbars = __webpack_require__(433);
-
-	var _config = __webpack_require__(347);
-
-	var _config2 = _interopRequireDefault(_config);
-
-	var _projectsCaraousel = __webpack_require__(450);
+	var _projectsCaraousel = __webpack_require__(432);
 
 	var _projectsCaraousel2 = _interopRequireDefault(_projectsCaraousel);
 
-	var _projectsGrid = __webpack_require__(452);
+	var _projectsGrid = __webpack_require__(434);
 
 	var _projectsGrid2 = _interopRequireDefault(_projectsGrid);
 
@@ -40447,40 +40386,6 @@
 		}
 
 		(0, _createClass3.default)(Projects, [{
-			key: 'componentDidMount',
-			value: function componentDidMount() {
-				this._isAll();
-			}
-		}, {
-			key: 'componentDidUpdate',
-			value: function componentDidUpdate() {
-				this._isAll();
-			}
-		}, {
-			key: '_isAll',
-			value: function _isAll() {
-				var all = this.props.location.query.all;
-				var projects = this.refs.projects;
-
-
-				if (all) {
-					(function () {
-						var grid = projects.querySelector('.projects._grid');
-
-						setTimeout(function () {
-							grid.scrollIntoView({ behavior: 'smooth' });
-						}, _config2.default.trs / 2);
-					})();
-				}
-			}
-		}, {
-			key: '_renderThumb',
-			value: function _renderThumb() {
-				return _react2.default.createElement('div', {
-					className: 'projects__thumb'
-				});
-			}
-		}, {
 			key: 'render',
 			value: function render() {
 				var all = this.props.location.query.all;
@@ -40488,28 +40393,16 @@
 
 				return _react2.default.createElement(
 					'div',
-					{
-						className: 'projects__underscroll',
-						ref: 'projects'
-					},
-					_react2.default.createElement(
-						_reactCustomScrollbars.Scrollbars,
-						{
-							className: 'projects__scroll',
-							ref: 'scrollbars',
-							renderThumbHorizontal: this._renderThumb,
-							renderThumbVertical: this._renderThumb
-						},
-						_react2.default.createElement(_projectsCaraousel2.default, {
-							all: all,
-							ref: 'carousel'
-						}),
-						all ? _react2.default.createElement(_projectsGrid2.default, null) : null
-					),
+					{ className: 'projects__underscroll' },
+					_react2.default.createElement(_projectsCaraousel2.default, {
+						all: all,
+						ref: 'carousel'
+					}),
+					all ? _react2.default.createElement(_projectsGrid2.default, null) : null,
 					_react2.default.createElement(
 						_reactRouter.Link,
 						{
-							className: 'projects__more ' + (all ? '_hidden' : null),
+							className: 'projects__more ' + (all ? '_hidden' : ''),
 							to: '/projects?all=true'
 						},
 						'\u0415\u0449\u0435 \u043F\u0440\u043E\u0435\u043A\u0442\u044B'
@@ -40523,1356 +40416,7 @@
 	exports.default = Projects;
 
 /***/ },
-/* 433 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.Scrollbars = undefined;
-
-	var _Scrollbars = __webpack_require__(434);
-
-	var _Scrollbars2 = _interopRequireDefault(_Scrollbars);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-	exports["default"] = _Scrollbars2["default"];
-	exports.Scrollbars = _Scrollbars2["default"];
-
-/***/ },
-/* 434 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _raf2 = __webpack_require__(435);
-
-	var _raf3 = _interopRequireDefault(_raf2);
-
-	var _domCss = __webpack_require__(437);
-
-	var _domCss2 = _interopRequireDefault(_domCss);
-
-	var _react = __webpack_require__(15);
-
-	var _isString = __webpack_require__(443);
-
-	var _isString2 = _interopRequireDefault(_isString);
-
-	var _getScrollbarWidth = __webpack_require__(444);
-
-	var _getScrollbarWidth2 = _interopRequireDefault(_getScrollbarWidth);
-
-	var _returnFalse = __webpack_require__(445);
-
-	var _returnFalse2 = _interopRequireDefault(_returnFalse);
-
-	var _getInnerWidth = __webpack_require__(446);
-
-	var _getInnerWidth2 = _interopRequireDefault(_getInnerWidth);
-
-	var _getInnerHeight = __webpack_require__(447);
-
-	var _getInnerHeight2 = _interopRequireDefault(_getInnerHeight);
-
-	var _styles = __webpack_require__(448);
-
-	var _defaultRenderElements = __webpack_require__(449);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-	exports["default"] = (0, _react.createClass)({
-
-	    displayName: 'Scrollbars',
-
-	    propTypes: {
-	        onScroll: _react.PropTypes.func,
-	        onScrollFrame: _react.PropTypes.func,
-	        onScrollStart: _react.PropTypes.func,
-	        onScrollStop: _react.PropTypes.func,
-	        onUpdate: _react.PropTypes.func,
-	        renderView: _react.PropTypes.func,
-	        renderTrackHorizontal: _react.PropTypes.func,
-	        renderTrackVertical: _react.PropTypes.func,
-	        renderThumbHorizontal: _react.PropTypes.func,
-	        renderThumbVertical: _react.PropTypes.func,
-	        tagName: _react.PropTypes.string,
-	        thumbSize: _react.PropTypes.number,
-	        thumbMinSize: _react.PropTypes.number,
-	        hideTracksWhenNotNeeded: _react.PropTypes.bool,
-	        autoHide: _react.PropTypes.bool,
-	        autoHideTimeout: _react.PropTypes.number,
-	        autoHideDuration: _react.PropTypes.number,
-	        autoHeight: _react.PropTypes.bool,
-	        autoHeightMin: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
-	        autoHeightMax: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
-	        universal: _react.PropTypes.bool,
-	        style: _react.PropTypes.object,
-	        children: _react.PropTypes.node
-	    },
-
-	    getDefaultProps: function getDefaultProps() {
-	        return {
-	            renderView: _defaultRenderElements.renderViewDefault,
-	            renderTrackHorizontal: _defaultRenderElements.renderTrackHorizontalDefault,
-	            renderTrackVertical: _defaultRenderElements.renderTrackVerticalDefault,
-	            renderThumbHorizontal: _defaultRenderElements.renderThumbHorizontalDefault,
-	            renderThumbVertical: _defaultRenderElements.renderThumbVerticalDefault,
-	            tagName: 'div',
-	            thumbMinSize: 30,
-	            hideTracksWhenNotNeeded: false,
-	            autoHide: false,
-	            autoHideTimeout: 1000,
-	            autoHideDuration: 200,
-	            autoHeight: false,
-	            autoHeightMin: 0,
-	            autoHeightMax: 200,
-	            universal: false
-	        };
-	    },
-	    getInitialState: function getInitialState() {
-	        return {
-	            didMountUniversal: false
-	        };
-	    },
-	    componentDidMount: function componentDidMount() {
-	        this.addListeners();
-	        this.update();
-	        this.componentDidMountUniversal();
-	    },
-	    componentDidMountUniversal: function componentDidMountUniversal() {
-	        // eslint-disable-line react/sort-comp
-	        var universal = this.props.universal;
-
-	        if (!universal) return;
-	        this.setState({ didMountUniversal: true });
-	    },
-	    componentDidUpdate: function componentDidUpdate() {
-	        this.update();
-	    },
-	    componentWillUnmount: function componentWillUnmount() {
-	        this.removeListeners();
-	        (0, _raf2.cancel)(this.requestFrame);
-	        clearTimeout(this.hideTracksTimeout);
-	        clearInterval(this.detectScrollingInterval);
-	    },
-	    getScrollLeft: function getScrollLeft() {
-	        var view = this.refs.view;
-
-	        return view.scrollLeft;
-	    },
-	    getScrollTop: function getScrollTop() {
-	        var view = this.refs.view;
-
-	        return view.scrollTop;
-	    },
-	    getScrollWidth: function getScrollWidth() {
-	        var view = this.refs.view;
-
-	        return view.scrollWidth;
-	    },
-	    getScrollHeight: function getScrollHeight() {
-	        var view = this.refs.view;
-
-	        return view.scrollHeight;
-	    },
-	    getClientWidth: function getClientWidth() {
-	        var view = this.refs.view;
-
-	        return view.clientWidth;
-	    },
-	    getClientHeight: function getClientHeight() {
-	        var view = this.refs.view;
-
-	        return view.clientHeight;
-	    },
-	    getValues: function getValues() {
-	        var view = this.refs.view;
-	        var scrollLeft = view.scrollLeft;
-	        var scrollTop = view.scrollTop;
-	        var scrollWidth = view.scrollWidth;
-	        var scrollHeight = view.scrollHeight;
-	        var clientWidth = view.clientWidth;
-	        var clientHeight = view.clientHeight;
-
-
-	        return {
-	            left: scrollLeft / (scrollWidth - clientWidth) || 0,
-	            top: scrollTop / (scrollHeight - clientHeight) || 0,
-	            scrollLeft: scrollLeft,
-	            scrollTop: scrollTop,
-	            scrollWidth: scrollWidth,
-	            scrollHeight: scrollHeight,
-	            clientWidth: clientWidth,
-	            clientHeight: clientHeight
-	        };
-	    },
-	    getThumbHorizontalWidth: function getThumbHorizontalWidth() {
-	        var _props = this.props;
-	        var thumbSize = _props.thumbSize;
-	        var thumbMinSize = _props.thumbMinSize;
-	        var _refs = this.refs;
-	        var view = _refs.view;
-	        var trackHorizontal = _refs.trackHorizontal;
-	        var scrollWidth = view.scrollWidth;
-	        var clientWidth = view.clientWidth;
-
-	        var trackWidth = (0, _getInnerWidth2["default"])(trackHorizontal);
-	        var width = clientWidth / scrollWidth * trackWidth;
-	        if (trackWidth === width) return 0;
-	        if (thumbSize) return thumbSize;
-	        return Math.max(width, thumbMinSize);
-	    },
-	    getThumbVerticalHeight: function getThumbVerticalHeight() {
-	        var _props2 = this.props;
-	        var thumbSize = _props2.thumbSize;
-	        var thumbMinSize = _props2.thumbMinSize;
-	        var _refs2 = this.refs;
-	        var view = _refs2.view;
-	        var trackVertical = _refs2.trackVertical;
-	        var scrollHeight = view.scrollHeight;
-	        var clientHeight = view.clientHeight;
-
-	        var trackHeight = (0, _getInnerHeight2["default"])(trackVertical);
-	        var height = clientHeight / scrollHeight * trackHeight;
-	        if (trackHeight === height) return 0;
-	        if (thumbSize) return thumbSize;
-	        return Math.max(height, thumbMinSize);
-	    },
-	    getScrollLeftForOffset: function getScrollLeftForOffset(offset) {
-	        var _refs3 = this.refs;
-	        var view = _refs3.view;
-	        var trackHorizontal = _refs3.trackHorizontal;
-	        var scrollWidth = view.scrollWidth;
-	        var clientWidth = view.clientWidth;
-
-	        var trackWidth = (0, _getInnerWidth2["default"])(trackHorizontal);
-	        var thumbWidth = this.getThumbHorizontalWidth();
-	        return offset / (trackWidth - thumbWidth) * (scrollWidth - clientWidth);
-	    },
-	    getScrollTopForOffset: function getScrollTopForOffset(offset) {
-	        var _refs4 = this.refs;
-	        var view = _refs4.view;
-	        var trackVertical = _refs4.trackVertical;
-	        var scrollHeight = view.scrollHeight;
-	        var clientHeight = view.clientHeight;
-
-	        var trackHeight = (0, _getInnerHeight2["default"])(trackVertical);
-	        var thumbHeight = this.getThumbVerticalHeight();
-	        return offset / (trackHeight - thumbHeight) * (scrollHeight - clientHeight);
-	    },
-	    scrollLeft: function scrollLeft() {
-	        var left = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
-	        var view = this.refs.view;
-
-	        view.scrollLeft = left;
-	    },
-	    scrollTop: function scrollTop() {
-	        var top = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
-	        var view = this.refs.view;
-
-	        view.scrollTop = top;
-	    },
-	    scrollToLeft: function scrollToLeft() {
-	        var view = this.refs.view;
-
-	        view.scrollLeft = 0;
-	    },
-	    scrollToTop: function scrollToTop() {
-	        var view = this.refs.view;
-
-	        view.scrollTop = 0;
-	    },
-	    scrollToRight: function scrollToRight() {
-	        var view = this.refs.view;
-
-	        view.scrollLeft = view.scrollWidth;
-	    },
-	    scrollToBottom: function scrollToBottom() {
-	        var view = this.refs.view;
-
-	        view.scrollTop = view.scrollHeight;
-	    },
-	    addListeners: function addListeners() {
-	        /* istanbul ignore if */
-	        if (typeof document === 'undefined') return;
-	        var _refs5 = this.refs;
-	        var view = _refs5.view;
-	        var trackHorizontal = _refs5.trackHorizontal;
-	        var trackVertical = _refs5.trackVertical;
-	        var thumbHorizontal = _refs5.thumbHorizontal;
-	        var thumbVertical = _refs5.thumbVertical;
-
-	        view.addEventListener('scroll', this.handleScroll);
-	        if (!(0, _getScrollbarWidth2["default"])()) return;
-	        trackHorizontal.addEventListener('mouseenter', this.handleTrackMouseEnter);
-	        trackHorizontal.addEventListener('mouseleave', this.handleTrackMouseLeave);
-	        trackHorizontal.addEventListener('mousedown', this.handleHorizontalTrackMouseDown);
-	        trackVertical.addEventListener('mouseenter', this.handleTrackMouseEnter);
-	        trackVertical.addEventListener('mouseleave', this.handleTrackMouseLeave);
-	        trackVertical.addEventListener('mousedown', this.handleVerticalTrackMouseDown);
-	        thumbHorizontal.addEventListener('mousedown', this.handleHorizontalThumbMouseDown);
-	        thumbVertical.addEventListener('mousedown', this.handleVerticalThumbMouseDown);
-	        window.addEventListener('resize', this.handleWindowResize);
-	    },
-	    removeListeners: function removeListeners() {
-	        /* istanbul ignore if */
-	        if (typeof document === 'undefined') return;
-	        var _refs6 = this.refs;
-	        var view = _refs6.view;
-	        var trackHorizontal = _refs6.trackHorizontal;
-	        var trackVertical = _refs6.trackVertical;
-	        var thumbHorizontal = _refs6.thumbHorizontal;
-	        var thumbVertical = _refs6.thumbVertical;
-
-	        view.removeEventListener('scroll', this.handleScroll);
-	        if (!(0, _getScrollbarWidth2["default"])()) return;
-	        trackHorizontal.removeEventListener('mouseenter', this.handleTrackMouseEnter);
-	        trackHorizontal.removeEventListener('mouseleave', this.handleTrackMouseLeave);
-	        trackHorizontal.removeEventListener('mousedown', this.handleHorizontalTrackMouseDown);
-	        trackVertical.removeEventListener('mouseenter', this.handleTrackMouseEnter);
-	        trackVertical.removeEventListener('mouseleave', this.handleTrackMouseLeave);
-	        trackVertical.removeEventListener('mousedown', this.handleVerticalTrackMouseDown);
-	        thumbHorizontal.removeEventListener('mousedown', this.handleHorizontalThumbMouseDown);
-	        thumbVertical.removeEventListener('mousedown', this.handleVerticalThumbMouseDown);
-	        window.removeEventListener('resize', this.handleWindowResize);
-	        // Possibly setup by `handleDragStart`
-	        this.teardownDragging();
-	    },
-	    handleScroll: function handleScroll(event) {
-	        var _this = this;
-
-	        var _props3 = this.props;
-	        var onScroll = _props3.onScroll;
-	        var onScrollFrame = _props3.onScrollFrame;
-
-	        if (onScroll) onScroll(event);
-	        this.update(function (values) {
-	            var scrollLeft = values.scrollLeft;
-	            var scrollTop = values.scrollTop;
-
-	            _this.viewScrollLeft = scrollLeft;
-	            _this.viewScrollTop = scrollTop;
-	            if (onScrollFrame) onScrollFrame(values);
-	        });
-	        this.detectScrolling();
-	    },
-	    handleScrollStart: function handleScrollStart() {
-	        var onScrollStart = this.props.onScrollStart;
-
-	        if (onScrollStart) onScrollStart();
-	        this.handleScrollStartAutoHide();
-	    },
-	    handleScrollStartAutoHide: function handleScrollStartAutoHide() {
-	        var autoHide = this.props.autoHide;
-
-	        if (!autoHide) return;
-	        this.showTracks();
-	    },
-	    handleScrollStop: function handleScrollStop() {
-	        var onScrollStop = this.props.onScrollStop;
-
-	        if (onScrollStop) onScrollStop();
-	        this.handleScrollStopAutoHide();
-	    },
-	    handleScrollStopAutoHide: function handleScrollStopAutoHide() {
-	        var autoHide = this.props.autoHide;
-
-	        if (!autoHide) return;
-	        this.hideTracks();
-	    },
-	    handleWindowResize: function handleWindowResize() {
-	        this.update();
-	    },
-	    handleHorizontalTrackMouseDown: function handleHorizontalTrackMouseDown() {
-	        var view = this.refs.view;
-	        var _event = event;
-	        var target = _event.target;
-	        var clientX = _event.clientX;
-
-	        var _target$getBoundingCl = target.getBoundingClientRect();
-
-	        var targetLeft = _target$getBoundingCl.left;
-
-	        var thumbWidth = this.getThumbHorizontalWidth();
-	        var offset = Math.abs(targetLeft - clientX) - thumbWidth / 2;
-	        view.scrollLeft = this.getScrollLeftForOffset(offset);
-	    },
-	    handleVerticalTrackMouseDown: function handleVerticalTrackMouseDown(event) {
-	        var view = this.refs.view;
-	        var target = event.target;
-	        var clientY = event.clientY;
-
-	        var _target$getBoundingCl2 = target.getBoundingClientRect();
-
-	        var targetTop = _target$getBoundingCl2.top;
-
-	        var thumbHeight = this.getThumbVerticalHeight();
-	        var offset = Math.abs(targetTop - clientY) - thumbHeight / 2;
-	        view.scrollTop = this.getScrollTopForOffset(offset);
-	    },
-	    handleHorizontalThumbMouseDown: function handleHorizontalThumbMouseDown(event) {
-	        this.handleDragStart(event);
-	        var target = event.target;
-	        var clientX = event.clientX;
-	        var offsetWidth = target.offsetWidth;
-
-	        var _target$getBoundingCl3 = target.getBoundingClientRect();
-
-	        var left = _target$getBoundingCl3.left;
-
-	        this.prevPageX = offsetWidth - (clientX - left);
-	    },
-	    handleVerticalThumbMouseDown: function handleVerticalThumbMouseDown(event) {
-	        this.handleDragStart(event);
-	        var target = event.target;
-	        var clientY = event.clientY;
-	        var offsetHeight = target.offsetHeight;
-
-	        var _target$getBoundingCl4 = target.getBoundingClientRect();
-
-	        var top = _target$getBoundingCl4.top;
-
-	        this.prevPageY = offsetHeight - (clientY - top);
-	    },
-	    setupDragging: function setupDragging() {
-	        (0, _domCss2["default"])(document.body, _styles.disableSelectStyle);
-	        document.addEventListener('mousemove', this.handleDrag);
-	        document.addEventListener('mouseup', this.handleDragEnd);
-	        document.onselectstart = _returnFalse2["default"];
-	    },
-	    teardownDragging: function teardownDragging() {
-	        (0, _domCss2["default"])(document.body, _styles.disableSelectStyleReset);
-	        document.removeEventListener('mousemove', this.handleDrag);
-	        document.removeEventListener('mouseup', this.handleDragEnd);
-	        document.onselectstart = undefined;
-	    },
-	    handleDragStart: function handleDragStart(event) {
-	        this.dragging = true;
-	        event.stopImmediatePropagation();
-	        this.setupDragging();
-	    },
-	    handleDrag: function handleDrag(event) {
-	        if (this.prevPageX) {
-	            var clientX = event.clientX;
-	            var _refs7 = this.refs;
-	            var view = _refs7.view;
-	            var trackHorizontal = _refs7.trackHorizontal;
-
-	            var _trackHorizontal$getB = trackHorizontal.getBoundingClientRect();
-
-	            var trackLeft = _trackHorizontal$getB.left;
-
-	            var thumbWidth = this.getThumbHorizontalWidth();
-	            var clickPosition = thumbWidth - this.prevPageX;
-	            var offset = -trackLeft + clientX - clickPosition;
-	            view.scrollLeft = this.getScrollLeftForOffset(offset);
-	        }
-	        if (this.prevPageY) {
-	            var clientY = event.clientY;
-	            var _refs8 = this.refs;
-	            var _view = _refs8.view;
-	            var trackVertical = _refs8.trackVertical;
-
-	            var _trackVertical$getBou = trackVertical.getBoundingClientRect();
-
-	            var trackTop = _trackVertical$getBou.top;
-
-	            var thumbHeight = this.getThumbVerticalHeight();
-	            var _clickPosition = thumbHeight - this.prevPageY;
-	            var _offset = -trackTop + clientY - _clickPosition;
-	            _view.scrollTop = this.getScrollTopForOffset(_offset);
-	        }
-	        return false;
-	    },
-	    handleDragEnd: function handleDragEnd() {
-	        this.dragging = false;
-	        this.prevPageX = this.prevPageY = 0;
-	        this.teardownDragging();
-	        this.handleDragEndAutoHide();
-	    },
-	    handleDragEndAutoHide: function handleDragEndAutoHide() {
-	        var autoHide = this.props.autoHide;
-
-	        if (!autoHide) return;
-	        this.hideTracks();
-	    },
-	    handleTrackMouseEnter: function handleTrackMouseEnter() {
-	        this.trackMouseOver = true;
-	        this.handleTrackMouseEnterAutoHide();
-	    },
-	    handleTrackMouseEnterAutoHide: function handleTrackMouseEnterAutoHide() {
-	        var autoHide = this.props.autoHide;
-
-	        if (!autoHide) return;
-	        this.showTracks();
-	    },
-	    handleTrackMouseLeave: function handleTrackMouseLeave() {
-	        this.trackMouseOver = false;
-	        this.handleTrackMouseLeaveAutoHide();
-	    },
-	    handleTrackMouseLeaveAutoHide: function handleTrackMouseLeaveAutoHide() {
-	        var autoHide = this.props.autoHide;
-
-	        if (!autoHide) return;
-	        this.hideTracks();
-	    },
-	    showTracks: function showTracks() {
-	        var _refs9 = this.refs;
-	        var trackHorizontal = _refs9.trackHorizontal;
-	        var trackVertical = _refs9.trackVertical;
-
-	        clearTimeout(this.hideTracksTimeout);
-	        (0, _domCss2["default"])(trackHorizontal, { opacity: 1 });
-	        (0, _domCss2["default"])(trackVertical, { opacity: 1 });
-	    },
-	    hideTracks: function hideTracks() {
-	        if (this.dragging) return;
-	        if (this.scrolling) return;
-	        if (this.trackMouseOver) return;
-	        var autoHideTimeout = this.props.autoHideTimeout;
-	        var _refs10 = this.refs;
-	        var trackHorizontal = _refs10.trackHorizontal;
-	        var trackVertical = _refs10.trackVertical;
-
-	        clearTimeout(this.hideTracksTimeout);
-	        this.hideTracksTimeout = setTimeout(function () {
-	            (0, _domCss2["default"])(trackHorizontal, { opacity: 0 });
-	            (0, _domCss2["default"])(trackVertical, { opacity: 0 });
-	        }, autoHideTimeout);
-	    },
-	    detectScrolling: function detectScrolling() {
-	        var _this2 = this;
-
-	        if (this.scrolling) return;
-	        this.scrolling = true;
-	        this.handleScrollStart();
-	        this.detectScrollingInterval = setInterval(function () {
-	            if (_this2.lastViewScrollLeft === _this2.viewScrollLeft && _this2.lastViewScrollTop === _this2.viewScrollTop) {
-	                clearInterval(_this2.detectScrollingInterval);
-	                _this2.scrolling = false;
-	                _this2.handleScrollStop();
-	            }
-	            _this2.lastViewScrollLeft = _this2.viewScrollLeft;
-	            _this2.lastViewScrollTop = _this2.viewScrollTop;
-	        }, 100);
-	    },
-	    raf: function raf(callback) {
-	        var _this3 = this;
-
-	        if (this.requestFrame) _raf3["default"].cancel(this.requestFrame);
-	        this.requestFrame = (0, _raf3["default"])(function () {
-	            _this3.requestFrame = undefined;
-	            callback();
-	        });
-	    },
-	    update: function update(callback) {
-	        var _this4 = this;
-
-	        this.raf(function () {
-	            return _this4._update(callback);
-	        });
-	    },
-	    _update: function _update(callback) {
-	        var _props4 = this.props;
-	        var onUpdate = _props4.onUpdate;
-	        var hideTracksWhenNotNeeded = _props4.hideTracksWhenNotNeeded;
-
-	        var values = this.getValues();
-	        if ((0, _getScrollbarWidth2["default"])()) {
-	            var _refs11 = this.refs;
-	            var thumbHorizontal = _refs11.thumbHorizontal;
-	            var thumbVertical = _refs11.thumbVertical;
-	            var trackHorizontal = _refs11.trackHorizontal;
-	            var trackVertical = _refs11.trackVertical;
-	            var scrollLeft = values.scrollLeft;
-	            var clientWidth = values.clientWidth;
-	            var scrollWidth = values.scrollWidth;
-
-	            var trackHorizontalWidth = (0, _getInnerWidth2["default"])(trackHorizontal);
-	            var thumbHorizontalWidth = this.getThumbHorizontalWidth();
-	            var thumbHorizontalX = scrollLeft / (scrollWidth - clientWidth) * (trackHorizontalWidth - thumbHorizontalWidth);
-	            var thumbHorizontalStyle = {
-	                width: thumbHorizontalWidth,
-	                transform: 'translateX(' + thumbHorizontalX + 'px)'
-	            };
-	            var scrollTop = values.scrollTop;
-	            var clientHeight = values.clientHeight;
-	            var scrollHeight = values.scrollHeight;
-
-	            var trackVerticalHeight = (0, _getInnerHeight2["default"])(trackVertical);
-	            var thumbVerticalHeight = this.getThumbVerticalHeight();
-	            var thumbVerticalY = scrollTop / (scrollHeight - clientHeight) * (trackVerticalHeight - thumbVerticalHeight);
-	            var thumbVerticalStyle = {
-	                height: thumbVerticalHeight,
-	                transform: 'translateY(' + thumbVerticalY + 'px)'
-	            };
-	            if (hideTracksWhenNotNeeded) {
-	                var trackHorizontalStyle = {
-	                    visibility: scrollWidth > clientWidth ? 'visible' : 'hidden'
-	                };
-	                var trackVerticalStyle = {
-	                    visibility: scrollHeight > clientHeight ? 'visible' : 'hidden'
-	                };
-	                (0, _domCss2["default"])(trackHorizontal, trackHorizontalStyle);
-	                (0, _domCss2["default"])(trackVertical, trackVerticalStyle);
-	            }
-	            (0, _domCss2["default"])(thumbHorizontal, thumbHorizontalStyle);
-	            (0, _domCss2["default"])(thumbVertical, thumbVerticalStyle);
-	        }
-	        if (onUpdate) onUpdate(values);
-	        if (typeof callback !== 'function') return;
-	        callback(values);
-	    },
-	    render: function render() {
-	        var scrollbarWidth = (0, _getScrollbarWidth2["default"])();
-	        /* eslint-disable no-unused-vars */
-	        var _props5 = this.props;
-	        var onScroll = _props5.onScroll;
-	        var onScrollFrame = _props5.onScrollFrame;
-	        var onScrollStart = _props5.onScrollStart;
-	        var onScrollStop = _props5.onScrollStop;
-	        var onUpdate = _props5.onUpdate;
-	        var renderView = _props5.renderView;
-	        var renderTrackHorizontal = _props5.renderTrackHorizontal;
-	        var renderTrackVertical = _props5.renderTrackVertical;
-	        var renderThumbHorizontal = _props5.renderThumbHorizontal;
-	        var renderThumbVertical = _props5.renderThumbVertical;
-	        var tagName = _props5.tagName;
-	        var hideTracksWhenNotNeeded = _props5.hideTracksWhenNotNeeded;
-	        var autoHide = _props5.autoHide;
-	        var autoHideTimeout = _props5.autoHideTimeout;
-	        var autoHideDuration = _props5.autoHideDuration;
-	        var thumbSize = _props5.thumbSize;
-	        var thumbMinSize = _props5.thumbMinSize;
-	        var universal = _props5.universal;
-	        var autoHeight = _props5.autoHeight;
-	        var autoHeightMin = _props5.autoHeightMin;
-	        var autoHeightMax = _props5.autoHeightMax;
-	        var style = _props5.style;
-	        var children = _props5.children;
-
-	        var props = _objectWithoutProperties(_props5, ['onScroll', 'onScrollFrame', 'onScrollStart', 'onScrollStop', 'onUpdate', 'renderView', 'renderTrackHorizontal', 'renderTrackVertical', 'renderThumbHorizontal', 'renderThumbVertical', 'tagName', 'hideTracksWhenNotNeeded', 'autoHide', 'autoHideTimeout', 'autoHideDuration', 'thumbSize', 'thumbMinSize', 'universal', 'autoHeight', 'autoHeightMin', 'autoHeightMax', 'style', 'children']);
-	        /* eslint-enable no-unused-vars */
-
-	        var didMountUniversal = this.state.didMountUniversal;
-
-
-	        var containerStyle = _extends({}, _styles.containerStyleDefault, autoHeight && _extends({}, _styles.containerStyleAutoHeight, {
-	            minHeight: autoHeightMin,
-	            maxHeight: autoHeightMax
-	        }), style);
-
-	        var viewStyle = _extends({}, _styles.viewStyleDefault, {
-	            // Hide scrollbars by setting a negative margin
-	            marginRight: scrollbarWidth ? -scrollbarWidth : 0,
-	            marginBottom: scrollbarWidth ? -scrollbarWidth : 0
-	        }, autoHeight && _extends({}, _styles.viewStyleAutoHeight, {
-	            // Add scrollbarWidth to autoHeight in order to compensate negative margins
-	            minHeight: (0, _isString2["default"])(autoHeightMin) ? 'calc(' + autoHeightMin + ' + ' + scrollbarWidth + 'px)' : autoHeightMin + scrollbarWidth,
-	            maxHeight: (0, _isString2["default"])(autoHeightMax) ? 'calc(' + autoHeightMax + ' + ' + scrollbarWidth + 'px)' : autoHeightMax + scrollbarWidth
-	        }), autoHeight && universal && !didMountUniversal && {
-	            minHeight: autoHeightMin,
-	            maxHeight: autoHeightMax
-	        }, universal && !didMountUniversal && _styles.viewStyleUniversalInitial);
-
-	        var trackAutoHeightStyle = {
-	            transition: 'opacity ' + autoHideDuration + 'ms',
-	            opacity: 0
-	        };
-
-	        var trackHorizontalStyle = _extends({}, _styles.trackHorizontalStyleDefault, autoHide && trackAutoHeightStyle, (!scrollbarWidth || universal && !didMountUniversal) && {
-	            display: 'none'
-	        });
-
-	        var trackVerticalStyle = _extends({}, _styles.trackVerticalStyleDefault, autoHide && trackAutoHeightStyle, (!scrollbarWidth || universal && !didMountUniversal) && {
-	            display: 'none'
-	        });
-
-	        return (0, _react.createElement)(tagName, _extends({}, props, { style: containerStyle, ref: 'container' }), [(0, _react.cloneElement)(renderView({ style: viewStyle }), { key: 'view', ref: 'view' }, children), (0, _react.cloneElement)(renderTrackHorizontal({ style: trackHorizontalStyle }), { key: 'trackHorizontal', ref: 'trackHorizontal' }, (0, _react.cloneElement)(renderThumbHorizontal({ style: _styles.thumbHorizontalStyleDefault }), { ref: 'thumbHorizontal' })), (0, _react.cloneElement)(renderTrackVertical({ style: trackVerticalStyle }), { key: 'trackVertical', ref: 'trackVertical' }, (0, _react.cloneElement)(renderThumbVertical({ style: _styles.thumbVerticalStyleDefault }), { ref: 'thumbVertical' }))]);
-	    }
-	});
-
-/***/ },
-/* 435 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {var now = __webpack_require__(436)
-	  , root = typeof window === 'undefined' ? global : window
-	  , vendors = ['moz', 'webkit']
-	  , suffix = 'AnimationFrame'
-	  , raf = root['request' + suffix]
-	  , caf = root['cancel' + suffix] || root['cancelRequest' + suffix]
-
-	for(var i = 0; !raf && i < vendors.length; i++) {
-	  raf = root[vendors[i] + 'Request' + suffix]
-	  caf = root[vendors[i] + 'Cancel' + suffix]
-	      || root[vendors[i] + 'CancelRequest' + suffix]
-	}
-
-	// Some versions of FF have rAF but not cAF
-	if(!raf || !caf) {
-	  var last = 0
-	    , id = 0
-	    , queue = []
-	    , frameDuration = 1000 / 60
-
-	  raf = function(callback) {
-	    if(queue.length === 0) {
-	      var _now = now()
-	        , next = Math.max(0, frameDuration - (_now - last))
-	      last = next + _now
-	      setTimeout(function() {
-	        var cp = queue.slice(0)
-	        // Clear queue here to prevent
-	        // callbacks from appending listeners
-	        // to the current frame's queue
-	        queue.length = 0
-	        for(var i = 0; i < cp.length; i++) {
-	          if(!cp[i].cancelled) {
-	            try{
-	              cp[i].callback(last)
-	            } catch(e) {
-	              setTimeout(function() { throw e }, 0)
-	            }
-	          }
-	        }
-	      }, Math.round(next))
-	    }
-	    queue.push({
-	      handle: ++id,
-	      callback: callback,
-	      cancelled: false
-	    })
-	    return id
-	  }
-
-	  caf = function(handle) {
-	    for(var i = 0; i < queue.length; i++) {
-	      if(queue[i].handle === handle) {
-	        queue[i].cancelled = true
-	      }
-	    }
-	  }
-	}
-
-	module.exports = function(fn) {
-	  // Wrap in a new function to prevent
-	  // `cancel` potentially being assigned
-	  // to the native rAF function
-	  return raf.call(root, fn)
-	}
-	module.exports.cancel = function() {
-	  caf.apply(root, arguments)
-	}
-	module.exports.polyfill = function() {
-	  root.requestAnimationFrame = raf
-	  root.cancelAnimationFrame = caf
-	}
-
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
-/* 436 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {// Generated by CoffeeScript 1.7.1
-	(function() {
-	  var getNanoSeconds, hrtime, loadTime;
-
-	  if ((typeof performance !== "undefined" && performance !== null) && performance.now) {
-	    module.exports = function() {
-	      return performance.now();
-	    };
-	  } else if ((typeof process !== "undefined" && process !== null) && process.hrtime) {
-	    module.exports = function() {
-	      return (getNanoSeconds() - loadTime) / 1e6;
-	    };
-	    hrtime = process.hrtime;
-	    getNanoSeconds = function() {
-	      var hr;
-	      hr = hrtime();
-	      return hr[0] * 1e9 + hr[1];
-	    };
-	    loadTime = getNanoSeconds();
-	  } else if (Date.now) {
-	    module.exports = function() {
-	      return Date.now() - loadTime;
-	    };
-	    loadTime = Date.now();
-	  } else {
-	    module.exports = function() {
-	      return new Date().getTime() - loadTime;
-	    };
-	    loadTime = new Date().getTime();
-	  }
-
-	}).call(this);
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
-
-/***/ },
-/* 437 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var prefix = __webpack_require__(438)
-	var toCamelCase = __webpack_require__(439)
-	var cache = { 'float': 'cssFloat' }
-	var addPxToStyle = __webpack_require__(442)
-
-	function style (element, property, value) {
-	  var camel = cache[property]
-	  if (typeof camel === 'undefined') {
-	    camel = detect(property)
-	  }
-
-	  // may be false if CSS prop is unsupported
-	  if (camel) {
-	    if (value === undefined) {
-	      return element.style[camel]
-	    }
-
-	    element.style[camel] = addPxToStyle(camel, value)
-	  }
-	}
-
-	function each (element, properties) {
-	  for (var k in properties) {
-	    if (properties.hasOwnProperty(k)) {
-	      style(element, k, properties[k])
-	    }
-	  }
-	}
-
-	function detect (cssProp) {
-	  var camel = toCamelCase(cssProp)
-	  var result = prefix(camel)
-	  cache[camel] = cache[cssProp] = cache[result] = result
-	  return result
-	}
-
-	function set () {
-	  if (arguments.length === 2) {
-	    if (typeof arguments[1] === 'string') {
-	      arguments[0].style.cssText = arguments[1]
-	    } else {
-	      each(arguments[0], arguments[1])
-	    }
-	  } else {
-	    style(arguments[0], arguments[1], arguments[2])
-	  }
-	}
-
-	module.exports = set
-	module.exports.set = set
-
-	module.exports.get = function (element, properties) {
-	  if (Array.isArray(properties)) {
-	    return properties.reduce(function (obj, prop) {
-	      obj[prop] = style(element, prop || '')
-	      return obj
-	    }, {})
-	  } else {
-	    return style(element, properties || '')
-	  }
-	}
-
-
-/***/ },
-/* 438 */
-/***/ function(module, exports) {
-
-	var div = null
-	var prefixes = [ 'Webkit', 'Moz', 'O', 'ms' ]
-
-	module.exports = function prefixStyle (prop) {
-	  // re-use a dummy div
-	  if (!div) {
-	    div = document.createElement('div')
-	  }
-
-	  var style = div.style
-
-	  // prop exists without prefix
-	  if (prop in style) {
-	    return prop
-	  }
-
-	  // borderRadius -> BorderRadius
-	  var titleCase = prop.charAt(0).toUpperCase() + prop.slice(1)
-
-	  // find the vendor-prefixed prop
-	  for (var i = prefixes.length; i >= 0; i--) {
-	    var name = prefixes[i] + titleCase
-	    // e.g. WebkitBorderRadius or webkitBorderRadius
-	    if (name in style) {
-	      return name
-	    }
-	  }
-
-	  return false
-	}
-
-
-/***/ },
-/* 439 */
-/***/ function(module, exports, __webpack_require__) {
-
-	
-	var space = __webpack_require__(440)
-
-	/**
-	 * Export.
-	 */
-
-	module.exports = toCamelCase
-
-	/**
-	 * Convert a `string` to camel case.
-	 *
-	 * @param {String} string
-	 * @return {String}
-	 */
-
-	function toCamelCase(string) {
-	  return space(string).replace(/\s(\w)/g, function (matches, letter) {
-	    return letter.toUpperCase()
-	  })
-	}
-
-
-/***/ },
-/* 440 */
-/***/ function(module, exports, __webpack_require__) {
-
-	
-	var clean = __webpack_require__(441)
-
-	/**
-	 * Export.
-	 */
-
-	module.exports = toSpaceCase
-
-	/**
-	 * Convert a `string` to space case.
-	 *
-	 * @param {String} string
-	 * @return {String}
-	 */
-
-	function toSpaceCase(string) {
-	  return clean(string).replace(/[\W_]+(.|$)/g, function (matches, match) {
-	    return match ? ' ' + match : ''
-	  }).trim()
-	}
-
-
-/***/ },
-/* 441 */
-/***/ function(module, exports) {
-
-	
-	/**
-	 * Export.
-	 */
-
-	module.exports = toNoCase
-
-	/**
-	 * Test whether a string is camel-case.
-	 */
-
-	var hasSpace = /\s/
-	var hasSeparator = /(_|-|\.|:)/
-	var hasCamel = /([a-z][A-Z]|[A-Z][a-z])/
-
-	/**
-	 * Remove any starting case from a `string`, like camel or snake, but keep
-	 * spaces and punctuation that may be important otherwise.
-	 *
-	 * @param {String} string
-	 * @return {String}
-	 */
-
-	function toNoCase(string) {
-	  if (hasSpace.test(string)) return string.toLowerCase()
-	  if (hasSeparator.test(string)) return (unseparate(string) || string).toLowerCase()
-	  if (hasCamel.test(string)) return uncamelize(string).toLowerCase()
-	  return string.toLowerCase()
-	}
-
-	/**
-	 * Separator splitter.
-	 */
-
-	var separatorSplitter = /[\W_]+(.|$)/g
-
-	/**
-	 * Un-separate a `string`.
-	 *
-	 * @param {String} string
-	 * @return {String}
-	 */
-
-	function unseparate(string) {
-	  return string.replace(separatorSplitter, function (m, next) {
-	    return next ? ' ' + next : ''
-	  })
-	}
-
-	/**
-	 * Camelcase splitter.
-	 */
-
-	var camelSplitter = /(.)([A-Z]+)/g
-
-	/**
-	 * Un-camelcase a `string`.
-	 *
-	 * @param {String} string
-	 * @return {String}
-	 */
-
-	function uncamelize(string) {
-	  return string.replace(camelSplitter, function (m, previous, uppers) {
-	    return previous + ' ' + uppers.toLowerCase().split('').join(' ')
-	  })
-	}
-
-
-/***/ },
-/* 442 */
-/***/ function(module, exports) {
-
-	/* The following list is defined in React's core */
-	var IS_UNITLESS = {
-	  animationIterationCount: true,
-	  boxFlex: true,
-	  boxFlexGroup: true,
-	  boxOrdinalGroup: true,
-	  columnCount: true,
-	  flex: true,
-	  flexGrow: true,
-	  flexPositive: true,
-	  flexShrink: true,
-	  flexNegative: true,
-	  flexOrder: true,
-	  gridRow: true,
-	  gridColumn: true,
-	  fontWeight: true,
-	  lineClamp: true,
-	  lineHeight: true,
-	  opacity: true,
-	  order: true,
-	  orphans: true,
-	  tabSize: true,
-	  widows: true,
-	  zIndex: true,
-	  zoom: true,
-
-	  // SVG-related properties
-	  fillOpacity: true,
-	  stopOpacity: true,
-	  strokeDashoffset: true,
-	  strokeOpacity: true,
-	  strokeWidth: true
-	};
-
-	module.exports = function(name, value) {
-	  if(typeof value === 'number' && !IS_UNITLESS[ name ]) {
-	    return value + 'px';
-	  } else {
-	    return value;
-	  }
-	};
-
-/***/ },
-/* 443 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports["default"] = isString;
-	function isString(maybe) {
-	    return typeof maybe === 'string';
-	}
-
-/***/ },
-/* 444 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports["default"] = getScrollbarWidth;
-
-	var _domCss = __webpack_require__(437);
-
-	var _domCss2 = _interopRequireDefault(_domCss);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-	var scrollbarWidth = false;
-
-	function getScrollbarWidth() {
-	    if (scrollbarWidth !== false) return scrollbarWidth;
-	    /* istanbul ignore else */
-	    if (typeof document !== 'undefined') {
-	        var div = document.createElement('div');
-	        (0, _domCss2["default"])(div, {
-	            width: 100,
-	            height: 100,
-	            position: 'absolute',
-	            top: -9999,
-	            overflow: 'scroll',
-	            MsOverflowStyle: 'scrollbar'
-	        });
-	        document.body.appendChild(div);
-	        scrollbarWidth = div.offsetWidth - div.clientWidth;
-	        document.body.removeChild(div);
-	    } else {
-	        scrollbarWidth = 0;
-	    }
-	    return scrollbarWidth;
-	}
-
-/***/ },
-/* 445 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports["default"] = returnFalse;
-	function returnFalse() {
-	    return false;
-	}
-
-/***/ },
-/* 446 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports["default"] = getInnerWidth;
-	function getInnerWidth(el) {
-	    var clientWidth = el.clientWidth;
-
-	    var _getComputedStyle = getComputedStyle(el);
-
-	    var paddingLeft = _getComputedStyle.paddingLeft;
-	    var paddingRight = _getComputedStyle.paddingRight;
-
-	    return clientWidth - parseFloat(paddingLeft) - parseFloat(paddingRight);
-	}
-
-/***/ },
-/* 447 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports["default"] = getInnerHeight;
-	function getInnerHeight(el) {
-	    var clientHeight = el.clientHeight;
-
-	    var _getComputedStyle = getComputedStyle(el);
-
-	    var paddingTop = _getComputedStyle.paddingTop;
-	    var paddingBottom = _getComputedStyle.paddingBottom;
-
-	    return clientHeight - parseFloat(paddingTop) - parseFloat(paddingBottom);
-	}
-
-/***/ },
-/* 448 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	var containerStyleDefault = exports.containerStyleDefault = {
-	    position: 'relative',
-	    overflow: 'hidden',
-	    width: '100%',
-	    height: '100%'
-	};
-
-	// Overrides containerStyleDefault properties
-	var containerStyleAutoHeight = exports.containerStyleAutoHeight = {
-	    height: 'auto'
-	};
-
-	var viewStyleDefault = exports.viewStyleDefault = {
-	    position: 'absolute',
-	    top: 0,
-	    left: 0,
-	    right: 0,
-	    bottom: 0,
-	    overflow: 'scroll',
-	    WebkitOverflowScrolling: 'touch'
-	};
-
-	// Overrides viewStyleDefault properties
-	var viewStyleAutoHeight = exports.viewStyleAutoHeight = {
-	    position: 'relative',
-	    top: undefined,
-	    left: undefined,
-	    right: undefined,
-	    bottom: undefined
-	};
-
-	var viewStyleUniversalInitial = exports.viewStyleUniversalInitial = {
-	    overflow: 'hidden',
-	    marginRight: 0,
-	    marginBottom: 0
-	};
-
-	var trackHorizontalStyleDefault = exports.trackHorizontalStyleDefault = {
-	    position: 'absolute',
-	    height: 6
-	};
-
-	var trackVerticalStyleDefault = exports.trackVerticalStyleDefault = {
-	    position: 'absolute',
-	    width: 6
-	};
-
-	var thumbHorizontalStyleDefault = exports.thumbHorizontalStyleDefault = {
-	    position: 'relative',
-	    display: 'block',
-	    height: '100%'
-	};
-
-	var thumbVerticalStyleDefault = exports.thumbVerticalStyleDefault = {
-	    position: 'relative',
-	    display: 'block',
-	    width: '100%'
-	};
-
-	var disableSelectStyle = exports.disableSelectStyle = {
-	    userSelect: 'none'
-	};
-
-	var disableSelectStyleReset = exports.disableSelectStyleReset = {
-	    userSelect: ''
-	};
-
-/***/ },
-/* 449 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	exports.renderViewDefault = renderViewDefault;
-	exports.renderTrackHorizontalDefault = renderTrackHorizontalDefault;
-	exports.renderTrackVerticalDefault = renderTrackVerticalDefault;
-	exports.renderThumbHorizontalDefault = renderThumbHorizontalDefault;
-	exports.renderThumbVerticalDefault = renderThumbVerticalDefault;
-
-	var _react = __webpack_require__(15);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-	/* eslint-disable react/prop-types */
-
-	function renderViewDefault(props) {
-	    return _react2["default"].createElement('div', props);
-	}
-
-	function renderTrackHorizontalDefault(_ref) {
-	    var style = _ref.style;
-
-	    var props = _objectWithoutProperties(_ref, ['style']);
-
-	    var finalStyle = _extends({}, style, {
-	        right: 2,
-	        bottom: 2,
-	        left: 2,
-	        borderRadius: 3
-	    });
-	    return _react2["default"].createElement('div', _extends({ style: finalStyle }, props));
-	}
-
-	function renderTrackVerticalDefault(_ref2) {
-	    var style = _ref2.style;
-
-	    var props = _objectWithoutProperties(_ref2, ['style']);
-
-	    var finalStyle = _extends({}, style, {
-	        right: 2,
-	        bottom: 2,
-	        top: 2,
-	        borderRadius: 3
-	    });
-	    return _react2["default"].createElement('div', _extends({ style: finalStyle }, props));
-	}
-
-	function renderThumbHorizontalDefault(_ref3) {
-	    var style = _ref3.style;
-
-	    var props = _objectWithoutProperties(_ref3, ['style']);
-
-	    var finalStyle = _extends({}, style, {
-	        cursor: 'pointer',
-	        borderRadius: 'inherit',
-	        backgroundColor: 'rgba(0,0,0,.2)'
-	    });
-	    return _react2["default"].createElement('div', _extends({ style: finalStyle }, props));
-	}
-
-	function renderThumbVerticalDefault(_ref4) {
-	    var style = _ref4.style;
-
-	    var props = _objectWithoutProperties(_ref4, ['style']);
-
-	    var finalStyle = _extends({}, style, {
-	        cursor: 'pointer',
-	        borderRadius: 'inherit',
-	        backgroundColor: 'rgba(0,0,0,.2)'
-	    });
-	    return _react2["default"].createElement('div', _extends({ style: finalStyle }, props));
-	}
-
-/***/ },
-/* 450 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -41907,11 +40451,11 @@
 
 	var _arrow2 = _interopRequireDefault(_arrow);
 
-	var _projectsProject = __webpack_require__(451);
+	var _projectsProject = __webpack_require__(433);
 
 	var _projectsProject2 = _interopRequireDefault(_projectsProject);
 
-	var _store = __webpack_require__(423);
+	var _store = __webpack_require__(422);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -42040,7 +40584,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 451 */
+/* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42114,6 +40658,15 @@
 				});
 			}
 		}, {
+			key: '_handleClick',
+			value: function _handleClick() {
+				window.scroll({
+					top: 0,
+					left: 0,
+					behavior: 'smooth'
+				});
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				var id = this.props.id;
@@ -42124,7 +40677,8 @@
 					_reactRouter.Link,
 					{
 						className: 'projects__project',
-						to: '/project/' + id
+						to: '/project/' + id,
+						onClick: this._handleClick.bind(this)
 					},
 					_react2.default.createElement('div', {
 						className: 'projects__bg',
@@ -42153,7 +40707,7 @@
 	exports.default = ProjectsProject;
 
 /***/ },
-/* 452 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42184,11 +40738,11 @@
 
 	var _react = __webpack_require__(15);
 
-	var _projectsProject = __webpack_require__(451);
+	var _projectsProject = __webpack_require__(433);
 
 	var _projectsProject2 = _interopRequireDefault(_projectsProject);
 
-	var _store = __webpack_require__(423);
+	var _store = __webpack_require__(422);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -42251,7 +40805,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 453 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42334,7 +40888,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 454 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42365,7 +40919,7 @@
 
 	var _react = __webpack_require__(15);
 
-	var _social = __webpack_require__(455);
+	var _social = __webpack_require__(437);
 
 	var _social2 = _interopRequireDefault(_social);
 
@@ -42432,7 +40986,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 455 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42516,7 +41070,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 456 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42557,7 +41111,7 @@
 
 	var _reactRouter = __webpack_require__(192);
 
-	var _store = __webpack_require__(423);
+	var _store = __webpack_require__(422);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -42662,7 +41216,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 457 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
