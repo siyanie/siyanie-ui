@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "67e91ad67985a8bb87f4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "81272fbd4103729f4ffb"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -32739,7 +32739,7 @@
 							selectSlide: this._select.bind(this)
 						})
 					),
-					this.slides.length > 1 ? React.createElement(
+					this.slides.length > 1 && !(section == 'about' && subsection == 'history') ? React.createElement(
 						'div',
 						{ className: 'section__nav' },
 						React.createElement(
@@ -32762,7 +32762,7 @@
 								});
 							})
 						),
-						!(section == 'about' && subsection == 'history') ? React.createElement(
+						React.createElement(
 							'div',
 							{ className: 'section__arrows' },
 							React.createElement(_arrow2.default, {
@@ -32773,7 +32773,7 @@
 								className: '_next ' + (activeSlide === this.slides.length - 1 ? '_disabled' : ''),
 								onClick: this._next.bind(this)
 							})
-						) : null
+						)
 					) : null
 				);
 			}
@@ -37725,7 +37725,7 @@
 	var settings = {
 		start: 1999,
 		end: 2015,
-		shift: 122
+		shift: 16 * 8
 	};
 
 	var Timeline = function (_Component) {
@@ -37747,8 +37747,7 @@
 			key: "_move",
 			value: function _move(_ref) {
 				var x = _ref.nativeEvent.x;
-				var _window = window,
-				    vw = _window.innerWidth;
+				var vw = this.refs.timeline.offsetWidth;
 
 				this.setState({
 					move: (x / vw - .5) * settings.shift
@@ -37777,9 +37776,7 @@
 		}, {
 			key: "_getSlideIndex",
 			value: function _getSlideIndex(current, start) {
-				var index = Math.floor((current - start - 1) / 5);
-
-				return index < 0 ? 0 : index;
+				return current - start;
 			}
 		}, {
 			key: "render",
@@ -37803,33 +37800,48 @@
 				return _react2.default.createElement(
 					"div",
 					{
-						className: "timeline",
-						ref: "timeline",
-						style: {
-							transform: "translateX(calc(50% - " + (shift * currentIndex + shift / 2) + "px))",
-							left: move * -1 + "px"
-						},
-						onMouseOver: this._move.bind(this),
-						onMouseMove: this._move.bind(this),
-						onMouseLeave: this._unmove.bind(this)
+						className: "timeline"
 					},
-					years.map(function (year) {
-						var className = current == year ? '_active' : current - 1 == year || current + 1 == year ? '_preactive' : current - 2 == year || current + 2 == year ? '_prepreactive' : '';
-
-						return _react2.default.createElement(
-							"div",
-							{
-								key: "timeline__year--" + year,
-								className: "timeline__year " + className,
-								onClick: _this3._setYear.call(_this3, year)
-							},
-							year
-						);
-					}),
 					_react2.default.createElement(
 						"div",
-						{ className: "timeline__continue" },
-						"\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435 \u0441\u043B\u0435\u0434\u0443\u0435\u0442..."
+						{ className: "timeline__label" },
+						"\u041D\u0430\u0448\u0430 \u0438\u0441\u0442\u043E\u0440\u0438\u044F:"
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "timeline__wrap" },
+						_react2.default.createElement(
+							"div",
+							{
+								className: "timeline__list",
+								ref: "timeline",
+								style: {
+									transform: "translateX(calc(50% - " + (shift * currentIndex + shift / 2) + "px))",
+									left: move * -1 + "px"
+								},
+								onMouseOver: this._move.bind(this),
+								onMouseMove: this._move.bind(this),
+								onMouseLeave: this._unmove.bind(this)
+							},
+							years.map(function (year) {
+								var className = current == year ? '_active' : current - 1 == year || current + 1 == year ? '_preactive' : current - 2 == year || current + 2 == year ? '_prepreactive' : '';
+
+								return _react2.default.createElement(
+									"div",
+									{
+										key: "timeline__year--" + year,
+										className: "timeline__year " + className,
+										onClick: _this3._setYear.call(_this3, year)
+									},
+									year
+								);
+							}),
+							_react2.default.createElement(
+								"div",
+								{ className: "timeline__continue" },
+								"\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435 \u0441\u043B\u0435\u0434\u0443\u0435\u0442..."
+							)
+						)
 					)
 				);
 			}
@@ -38304,12 +38316,63 @@
 							"component": "Text",
 							"content": {
 								"year": "1999",
-								"years": [
-									"1999",
-									"2000",
-									"2001"
-								],
-								"text": "Смонтирован 1-й кондиционер. \nОбразование компании \"Сияние\". Монтаж сплит-систем и модульных вентиляционных систем."
+								"text": "Образование компании \"Сияние\". Монтаж сплит-систем и модульных вентиляционных систем.  Смонтирован 1-й кондиционер."
+							}
+						},
+						"quote": {
+							"text": "Заглядывать слишком далеко вперед — недальновидно.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "РАССВЕТ",
+						"main": {
+							"component": "Text",
+							"content": {
+								"year": "2000",
+								"text": "Создание сервисного и монтажного отдела. Продолжается развитие монтажной структуры. Определение основных поставщиков оборудования."
+							}
+						},
+						"quote": {
+							"text": "Заглядывать слишком далеко вперед — недальновидно.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "РАССВЕТ",
+						"main": {
+							"component": "Text",
+							"content": {
+								"year": "2001",
+								"text": "Создание отдела монтажа вентиляции. Создание собственного производства шкафов автоматики."
+							}
+						},
+						"quote": {
+							"text": "Заглядывать слишком далеко вперед — недальновидно.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "РАССВЕТ",
+						"main": {
+							"component": "Text",
+							"content": {
+								"year": "2002",
+								"text": "Открытие проектного отдела. Создание направления промышленная инженерия и плодотворная работа с первыми промышленными предприятиями."
+							}
+						},
+						"quote": {
+							"text": "Заглядывать слишком далеко вперед — недальновидно.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "РАССВЕТ",
+						"main": {
+							"component": "Text",
+							"content": {
+								"year": "2003",
+								"text": "Проведена первая большая работа по полной реконструкции здания банка ФБИР от проектирования до эксплуатации."
 							}
 						},
 						"quote": {
@@ -38322,15 +38385,106 @@
 						"main": {
 							"component": "Text",
 							"content": {
+								"year": "2004",
+								"text": "Новый уровень - монтаж чиллеров и холодильных машин. Образование структурных подразделений: активная продажа, проектирование, монтаж, сервис. Компания становится VIP-дилером по продажам брендов GENERAL, Fujitsu, Daikin, Hundai."
+							}
+						},
+						"quote": {
+							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "ВОСХОД",
+						"main": {
+							"component": "Text",
+							"content": {
+								"year": "2005",
+								"text": "Увеличение объёмов работ в 10 раз. Проектируются и монтируются системы VRF, чиллеры и холодильные машины от 50 до 500 кВт, центральные кондиционеры и различные системы вентиляции."
+							}
+						},
+						"quote": {
+							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "ВОСХОД",
+						"main": {
+							"component": "Text",
+							"content": {
+								"year": "2006",
+								"text": "Компания по итогам трех лет - самый активный дилер Ассоциации Японских Кондиционеров (АЯК)."
+							}
+						},
+						"quote": {
+							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "ВОСХОД",
+						"main": {
+							"component": "Text",
+							"content": {
 								"year": "2007",
-								"years": [
-									"2002",
-									"2003",
-									"2004",
-									"2005",
-									"2006"
-								],
-								"text": "Новый уровень - монтаж чиллеров и холодильных машин. Компания становится VIP-дилером по продажам брендов GENERAL, Fujitsu, Daikin, Hundai."
+								"text": "Сформировано новое структурное подразделение - отопление жилых и технических помещений. Проектирование и выполнение работ первого объекта с системой отопления и водоподготовки \"БАНИ\" пос. Восточный."
+							}
+						},
+						"quote": {
+							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "ВОСХОД",
+						"main": {
+							"component": "Text",
+							"content": {
+								"year": "2008",
+								"text": "Создание направления \"Промышленная Инженерия\". Ключевое партнёрство с компанией RDCM.  Обучение персонала в \"БОШ-Будерус\", определение стандартов и направлений работы в отопительной отрасли. "
+							}
+						},
+						"quote": {
+							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "ВОСХОД",
+						"main": {
+							"component": "Text",
+							"content": {
+								"year": "2009",
+								"text": ". Первый опыт работы с генподрядными организациями. Выполнение комплексных задач по инженерии, не привлекая сторонние организации. Смонтировано более 100 000 м. кабельной продукции."
+							}
+						},
+						"quote": {
+							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "ВОСХОД",
+						"main": {
+							"component": "Text",
+							"content": {
+								"year": "2010",
+								"text": "Создана отдельная мастерская по сборке элементов систем отопления (насосные станции, смесительные группы, коллектора и т.д.) Установлена 1-я климатическая балка"
+							}
+						},
+						"quote": {
+							"text": "Преодоленные трудности — \nэто успешно реализованные возможности.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "ВОСХОД",
+						"main": {
+							"component": "Text",
+							"content": {
+								"year": "2011",
+								"text": "Вступление в НП \"Инженеры по отоплению, вентиляции, кондиционированию воздуха, теплоснабжению и строительной теплофизике\" (АВОК), Российскую Ассоциацию Преприятий Индустрии Климата (АПИК). Смонтировано более 2000 климатических Балок."
 							}
 						},
 						"quote": {
@@ -38344,14 +38498,35 @@
 							"component": "Text",
 							"content": {
 								"year": "2012",
-								"years": [
-									"2007",
-									"2008",
-									"2009",
-									"2010",
-									"2011"
-								],
-								"text": "Смонтировано более 100 000 м. кабельной продукции. Организована четкая структура предприятия. Создана отдельная мастерская по сборке элементов систем отопления (насосные станции, смесительные группы, коллектора и т.д.)"
+								"text": "Создан цех по производству воздуховодов, фасонных изделий из оцинкованной стали. Цех металлоконструкций. Новый уровень - создание структурного подразделения «Сияние Генподряд»."
+							}
+						},
+						"quote": {
+							"text": "Лучший способ оставаться последовательным — \nэто меняться вместе с обстоятельствами.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "ЯРЧЕ!",
+						"main": {
+							"component": "Text",
+							"content": {
+								"year": "2013",
+								"text": "Изготовлено более 50-ти тысяч квадратных метров воздуховодов на собственном производстве."
+							}
+						},
+						"quote": {
+							"text": "Лучший способ оставаться последовательным — \nэто меняться вместе с обстоятельствами.",
+							"author": "Уинстон Черчилль"
+						}
+					},
+					{
+						"title": "ЯРЧЕ!",
+						"main": {
+							"component": "Text",
+							"content": {
+								"year": "2014",
+								"text": "Начато производство собственных вентиляционных решеток. Реализация в качестве Генерального подрядчика объектов деловых и торгово-развлекательных центров."
 							}
 						},
 						"quote": {
@@ -38365,14 +38540,7 @@
 							"component": "Text",
 							"content": {
 								"year": "2015",
-								"years": [
-									"2012",
-									"2013",
-									"2014",
-									"2015",
-									"Продолжение следует..."
-								],
-								"text": "1-е место в конкурсе заботливый работодатель"
+								"text": "Компания получила 1-е место в конкурсе заботливый работодатель."
 							}
 						},
 						"quote": {

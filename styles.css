@@ -675,7 +675,7 @@
 
 	display: flex;
 
-	/* display: none !important;*/
+	display: none !important;
 
 	-webkit-animation-name: preloaderFade;
 
@@ -3111,15 +3111,7 @@
 	font-size: 1.45rem;
 	font-weight: 300;
 
-	-webkit-transition-property: left, -webkit-transform;
-
-	transition-property: left, -webkit-transform;
-
-	transition-property: transform, left;
-
-	transition-property: transform, left, -webkit-transform;
-	-webkit-transition-duration: 1000ms, .3s;
-	        transition-duration: 1000ms, .3s;
+	text-align: center;
 
 	display: -webkit-box;
 
@@ -3136,9 +3128,36 @@
 	}
 }
 /* elements*/
+.timeline__label{
+	min-width: 160px;
+	min-width: 10rem;
+	white-space: nowrap;
+}
+.timeline__wrap{
+	width: calc(100% - 20rem);
+	padding-top: 84px;
+	padding-top: 5.25rem;
+	margin-top: -84px;
+	margin-top: -5.25rem;
+	overflow-x: hidden;
+}
+.timeline__list{
+	-webkit-transition-property: left, -webkit-transform;
+	transition-property: left, -webkit-transform;
+	transition-property: transform, left;
+	transition-property: transform, left, -webkit-transform;
+	-webkit-transition-duration: 1000ms, .3s;
+	        transition-duration: 1000ms, .3s;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
 .timeline__year{
-	min-width: 122px;
-	min-width: 7.625rem;
+	min-width: 128px;
+	min-width: 8rem;
 	text-align: center;
 	opacity: .2;
 	-webkit-transition: .3s;
