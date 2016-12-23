@@ -24,10 +24,6 @@
     "deploy": "gh-pages -d build",
     "surge": "surge ./build siyanie.project.alanev.ru"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alanev/starter.git"
-  },
   "keywords": [
     "start",
     "architecture",
@@ -35,11 +31,14 @@
     "kickstart"
   ],
   "author": "alanev",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/alanev/starter/issues"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siyanie/siyanie-ui.git"
   },
-  "homepage": "https://github.com/alanev/starter#readme",
+  "bugs": {
+    "url": "https://github.com/siyanie/siyanie-ui/issues"
+  },
+  "homepage": "https://github.com/siyanie/siyanie-ui#readme",
   "devDependencies": {
     "ava": "^0.16.0",
     "babel-core": "^6.18.0",
