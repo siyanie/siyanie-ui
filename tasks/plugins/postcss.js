@@ -5,13 +5,13 @@ module.exports = [
 		syntax: 'scss'
 	}),
 
+	require('postcss-each')(),
 	require('postcss-mixins')(),
 	require('postcss-nested')(),
 	require('postcss-extend')(),
 	require('postcss-simple-vars')({
 		variables: require('../../modules/config/config.react')
 	}),
-	require('postcss-each')(),
 
 	// Future css
 	require('postcss-cssnext')(),
