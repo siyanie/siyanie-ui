@@ -30,7 +30,9 @@ class componentName extends Component {
 		}
 	}
 	_setShift () {
-		console.log(this)
+		this.setState({
+			shift: this.refs.gallery.querySelector('.gallery__slide').offsetWidth
+		})
 	}
 	componentDidMount() {
 		this._setShift()

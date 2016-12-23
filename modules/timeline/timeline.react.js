@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 const settings = {
 	start: 1999,
 	end: 2015,
-	shift: 122
+	shift: 16 * 8
 }
 
 class Timeline extends Component {
@@ -36,9 +36,7 @@ class Timeline extends Component {
 		}
 	}
 	_getSlideIndex(current, start) {
-		const index = Math.floor((current - start - 1) / 5)
-
-		return index < 0 ? 0 : index
+		return current - start
 	}
 	render() {
 		const years = []
@@ -53,38 +51,45 @@ class Timeline extends Component {
 		return (
 			<div
 				className="timeline"
-				ref="timeline"
-				style={
-					{
-						transform: `translateX(calc(50% - ${(shift * currentIndex) + (shift / 2)}px))`,
-						left: `${move * -1}px`
-					}
-				}
-				onMouseOver={::this._move}
-				onMouseMove={::this._move}
-				onMouseLeave={::this._unmove}
 			>
-			{
-				years.map(year => {
-					const className =
-						current == year
-							? '_active'
-							: current - 1 == year || current + 1 == year
-								? '_preactive'
-								: current - 2 == year || current + 2 == year
-									? '_prepreactive'
-									: ''
+				<div className="timeline__label">Наша история:</div>
+				<div className="timeline__wrap">
+					<div
+						className="timeline__list"
+						ref="timeline"
+						style={
+							{
+								transform: `translateX(calc(50% - ${(shift * currentIndex) + (shift / 2)}px))`,
+								left: `${move * -1}px`
+							}
+						}
+						onMouseOver={::this._move}
+						onMouseMove={::this._move}
+						onMouseLeave={::this._unmove}
+					>
+						{
+							years.map(year => {
+								const className =
+									current == year
+										? '_active'
+										: current - 1 == year || current + 1 == year
+											? '_preactive'
+											: current - 2 == year || current + 2 == year
+												? '_prepreactive'
+												: ''
 
-					return (
-						<div
-							key={`timeline__year--${year}`}
-							className={`timeline__year ${className}`}
-							onClick={::this._setYear(year)}
-						>{year}</div>
-					)
-				})
-			}
-				<div className="timeline__continue">Продолжение следует...</div>
+								return (
+									<div
+										key={`timeline__year--${year}`}
+										className={`timeline__year ${className}`}
+										onClick={::this._setYear(year)}
+									>{year}</div>
+								)
+							})
+						}
+						<div className="timeline__continue">Продолжение следует...</div>
+					</div>
+				</div>
 			</div>
 		)
 	}

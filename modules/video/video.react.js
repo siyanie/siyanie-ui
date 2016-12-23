@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import config from '../config/config.react'
 import Icon from '../icon/icon.react'
 
 export default class Video extends Component {
@@ -39,7 +40,7 @@ export default class Video extends Component {
 					muted
 					autoPlay
 				>
-					<source src="assets/video/siyanie.mp4" type="video/mp4" />
+					<source src={`${config.assets.videos}siyanie.mp4`} type="video/mp4" />
 				</video>
 				<div
 					className="video__full"
@@ -49,7 +50,7 @@ export default class Video extends Component {
 						ref="video"
 						className="video__source"
 					>
-						<source src="assets/video/fullvideo.mp4" type="video/mp4" />
+						<source src={`${config.assets.videos}fullvideo.mp4`} type="video/mp4" />
 					</video>
 				</div>
 				<div

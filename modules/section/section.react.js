@@ -108,7 +108,7 @@ export default class Section extends Component {
 					/>
 				</ReactCSSTransitionGroup>
 				{
-					this.slides.length > 1
+					this.slides.length > 1 && (!(section == 'about' && subsection == 'history'))
 						? (
 							<div className="section__nav">
 								<div
@@ -137,22 +137,16 @@ export default class Section extends Component {
 									})
 								}
 								</div>
-								{
-									section != 'about' && subsection != 'history'
-										? (
-											<div className="section__arrows">
-												<Arrow
-													className={`_prev ${activeSlide === 0 ? '_disabled' : ''}`}
-													onClick={this._prev.bind(this)}
-												/>
-												<Arrow
-													className={`_next ${activeSlide === this.slides.length - 1 ? '_disabled' : ''}`}
-													onClick={this._next.bind(this)}
-											/>
-											</div>
-										)
-										: null
-								}
+								<div className="section__arrows">
+									<Arrow
+										className={`_prev ${activeSlide === 0 ? '_disabled' : ''}`}
+										onClick={this._prev.bind(this)}
+									/>
+									<Arrow
+										className={`_next ${activeSlide === this.slides.length - 1 ? '_disabled' : ''}`}
+										onClick={this._next.bind(this)}
+								/>
+								</div>
 							</div>
 						)
 						: null

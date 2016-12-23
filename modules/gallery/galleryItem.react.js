@@ -1,13 +1,14 @@
 import React, {Component} from 'react'
 import Lightbox from 'react-images'
 
+import config from '../config/config.react'
 import Icon from '../icon/icon.react'
 
 const remote = (src) => {
 	return /^(https?:)?(\/\/)/.test(src)
 }
 const getImage = (src) => {
-	return remote(src) ? src : `assets/images/${src}`
+	return remote(src) ? src : `${config.assets.images}${src}`
 }
 
 class GalleryItem extends Component {

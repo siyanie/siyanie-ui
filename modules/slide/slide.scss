@@ -173,7 +173,9 @@ $slide-transition: 1s;
 			position: absolute 0;
 			z-index: calc($z-under * 3);
 
-			background: url(http://placehold.alanev.ru/1920x1080/666) center / cover;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
 
 			will-change: opacity, filter;
 		}
@@ -207,7 +209,7 @@ $slide-transition: 1s;
 				margin-bottom: 3rem;
 			}
 
-			@media (--tablets) or (--lower){
+			@media (--tablets), (--lower){
 				margin-bottom: 1rem;
 			}
 		}
@@ -235,7 +237,7 @@ $slide-transition: 1s;
 				padding: 1rem *;
 			}
 
-			@media (--tablets) or (--lower){
+			@media (--tablets), (--lower){
 				min-height: 1.5rem;
 				padding: .5rem *;
 			}
@@ -250,7 +252,7 @@ $slide-transition: 1s;
 						margin: auto;
 					}
 
-					@media (--tablets) or (--lower){
+					@media (--tablets), (--lower){
 						padding: * .5rem;
 					}
 				}

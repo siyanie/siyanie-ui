@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router'
 
+import config from '../config/config.react'
 import Slide from './slide.react'
 import Timeline from '../timeline/timeline.react'
 
@@ -49,7 +50,7 @@ class Slides extends Component {
 				video
 					? (
 						<video
-							src={`assets/video/${video}.mp4`}
+							src={`${config.assets.videos}${video}.mp4`}
 							className="slides__video"
 							autoPlay
 							loop

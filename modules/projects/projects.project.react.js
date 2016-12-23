@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import { Link } from 'react-router'
+import { hashHistory } from 'react-router'
 
+import config from '../config/config.react'
 import Icon from '../icon/icon.react'
 
 class ProjectsProject extends Component {
@@ -13,21 +14,41 @@ class ProjectsProject extends Component {
 	}
 	componentWillMount() {
 		window.Modernizr.on('webp', result => {
-			let preview = this.props.preview
+			const preview = this.props.preview
+			let webp = false
 			if (Object.keys(result).length > 0)
-				preview = preview.replace(/(jpg|jpeg|png)$/, 'webp')
+				webp = true
 
 			this.setState({
-				preview
+				preview: preview.replace(/\.\w+$/, `--phone@1.${webp ? 'webp': '&$'}`)
 			})
 		})
 	}
-	_handleClick() {
-		window.scroll({
-			top: 0,
-			left: 0,
-			behavior: 'smooth'
+	_click() {
+		const elRect = this.refs.link.getBoundingClientRect()
+		this.bg = this.refs.bg.cloneNode()
+
+		Object.assign(this.bg.style, {
+			maxWidth: `${elRect.width}px`,
+			maxHeight: `${elRect.height}px`,
+			top: `${elRect.top}px`,
+			left: `${elRect.left}px`
 		})
+		document.body.appendChild(this.bg)
+
+		setTimeout(() => {
+			this.bg.classList.add('_open')
+		}, config.transtion)
+		setTimeout(() => {
+			this.bg.classList.add('_hidden')
+
+			setTimeout(() => {
+				this.bg.remove()
+				delete this.bg
+			}, config.transtion)
+		}, config.trs)
+
+		hashHistory.push(`/project/${this.props.id}`)
 	}
 	render() {
 		const {
@@ -38,17 +59,19 @@ class ProjectsProject extends Component {
 		} = this.state
 
 		return (
-			<Link
+			<span
 				className="projects__project"
 				to={`/project/${id}`}
-				onClick={::this._handleClick}
+				onClick={::this._click}
+				ref="link"
 			>
 				<div
 					className="projects__bg"
+					ref="bg"
 					style={
 						preview
 						? {
-							backgroundImage: `url(assets/images/${preview})`
+							backgroundImage: `url(${config.assets.images}${preview})`
 						}
 						: null
 					}
@@ -63,7 +86,7 @@ class ProjectsProject extends Component {
 						icon="search"
 					/>
 				</div>
-			</Link>
+			</span>
 		)
 	}
 }

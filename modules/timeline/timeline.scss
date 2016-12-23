@@ -10,8 +10,7 @@
 	font-size: 1.45rem;
 	font-weight: 300;
 
-	transition-property: transform, left;
-	transition-duration: $trsn, $transition;
+	text-align: center;
 
 	display: flex;
 	align-items: center;
@@ -22,8 +21,29 @@
 
 	// elements
 	&__{
+		&label{
+			min-width: 10rem;
+
+			white-space: nowrap;
+		}
+		&wrap{
+			width: calc(100% - 20rem);
+			padding-top: 5.25rem;
+			margin-top: -5.25rem;
+
+			overflow-x: hidden;
+		}
+		&list{
+			transition-property: transform, left;
+			transition-duration: $trsn, $transition;
+
+			display: flex;
+			align-items: center;
+
+			position: relative;
+		}
 		&year{
-			min-width: 7.625rem;
+			min-width: 8rem;
 
 			text-align: center;
 

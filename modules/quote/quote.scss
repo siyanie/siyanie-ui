@@ -25,7 +25,7 @@
 				flex: 1;
 			}
 
-			@media (--tablets) or (--lower){
+			@media (--tablets), (--lower){
 				display: flex;
 			}
 		}
@@ -34,7 +34,7 @@
 
 			letter-spacing: .025em;
 
-			@media (--tablets) or (--lower){
+			@media (--tablets), (--lower){
 				font-size: .7em;
 			}
 
@@ -59,7 +59,7 @@
 				margin-top: .4rem;
 			}
 
-			@media (--tablets) or (--lower){
+			@media (--tablets), (--lower){
 				margin-left: .5em;
 
 				font-size: .7em;

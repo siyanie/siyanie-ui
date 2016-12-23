@@ -4,3 +4,21 @@
 	background-repeat: repeat-y;
 	background-color: color($c-bg a($opacity));
 }
+
+@define-mixin responsive-bg $name, $ext{
+
+	@each $device, $width in (fullhd, desktop, laptop, tablet_l, tablet_p, phone, phone_s), (1920, 1600, 1280, 1024, 768, 480, 320){
+
+		@media (max-width: $(width)px){
+			background-image: url(//siyanie.github.io/siyanie-data/images/$(name)--$(device)@1.$(ext));
+		}
+
+		@media
+			(-webkit-min-device-pixel-ratio: 2) and (max-width: $(width)px),
+			(min-resolution: 192dpi)            and (max-width: $(width)px),
+			(min-resolution: 2dppx)             and (max-width: $(width)px){
+
+			background-image: url(//siyanie.github.io/siyanie-data/images/$(name)--$(device)@2.$(ext));
+		}
+	}
+}

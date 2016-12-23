@@ -42,6 +42,7 @@ clients:
 person:
 mediacenter:
 timeline:
+bg:
 loop:
 events:
 error:

@@ -21,33 +21,18 @@
 
 	display: flex;
 
-	// animation
-	&.anim-enter{
-		opacity: .01;
-	}
-	&.anim-enter-active{
-		opacity: 1;
-		transition-delay: 1s;
-	}
-	&.anim-leave{
-		opacity: 1;
-	}
-	&.anim-leave-active{
-		opacity: .01;
-	}
-	&.anim-enter-active,
-	&.anim-leave-active{
-		transition-duration: 1s;
-	}
-
 	// elements
 	&::after{
 		@extend %shakeBg;
+		@mixin responsive-bg callback, png;
 
 		content: '';
 		position: absolute 0;
 		z-index: $z-under;
-		background: url(assets/images/callback.png) center / cover no-repeat;
+
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
 		opacity: .25;
 	}
 	&__{

@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 
 import config from '../config/config.react'
 import store from '../store/store.react'
+import Bg from '../bg/bg.react'
 import Icon from '../icon/icon.react'
 import Arrow from '../arrow/arrow.react'
 
@@ -105,14 +106,11 @@ class Project extends Component {
 						bgs
 						? bgs.map((bg, index) => (
 							<div
+								key={`project__bg--${bg}`}
 								className={`project__bg ${index === bgIndex ? '_active' : ''}`}
-								key={`project__bg--${index}`}
-								style={
-									{
-										backgroundImage: `url(assets/images/${bg})`
-									}
-								}
-							></div>
+							>
+								<Bg bg={bg} />
+							</div>
 						))
 						: null
 					}

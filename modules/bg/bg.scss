@@ -1,0 +1,22 @@
+.bg{
+
+	transition: ;
+	will-change: opacity;
+
+	// mods
+	&._loading{
+		opacity: 0;
+	}
+	&._loaded{
+		opacity: 1;
+	}
+
+	// elements
+	&__{
+		&image{
+			@extend %center-abs;
+
+			min-size: 100%;
+		}
+	}
+}

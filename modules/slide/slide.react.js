@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 
+import Bg from '../bg/bg.react'
 import Text from '../text/text.react'
 import News from '../news/news.react'
 import Person from '../person/person.react'
 import Gallery from '../gallery/gallery.react'
 import Numbers from '../numbers/numbers.react'
 import Clients from '../clients/clients.react'
-import History from '../history/history.react'
 import MediaCenter from '../mediacenter/mediacenter.react'
 
 const components = {
@@ -16,7 +16,6 @@ const components = {
 	Numbers,
 	Clients,
 	Gallery,
-	History,
 	MediaCenter
 }
 
@@ -60,30 +59,16 @@ class Slide extends Component {
 			)
 		}
 
-		// Detect WEBP
-		if (data.bg) {
-			window.Modernizr.on('webp', result => {
-				if (Object.keys(result).length > 0) {
-					data.bg = data.bg.replace(/(jpg|jpeg|png)$/, 'webp')
-				}
-			})
-		}
-
 		return (
 			<div className={`slide slide--${componentName.toLowerCase()} ${active ? '_active' : ''}`}>
 				{
 					data.bg
 						? (
-							<div
-								className="slide__bg"
-								style={
-									data.bg
-									? {
-										backgroundImage: `url(assets/images/${data.bg})`
-									}
-									: null
-								}
-							></div>
+							<div className="slide__bg">
+								<Bg
+									bg={data.bg}
+								></Bg>
+							</div>
 						)
 						: null
 				}

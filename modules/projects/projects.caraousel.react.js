@@ -3,8 +3,7 @@ import { Component } from 'react'
 import Arrow from '../arrow/arrow.react'
 import ProjectsProject from './projects.project.react'
 
-import store from '../store/store.react'
-const { projects: { content: initialProjects } } = store
+import config from '../config/config.react'
 
 class ProjectsCarousel extends Component {
 	constructor () {
@@ -14,7 +13,7 @@ class ProjectsCarousel extends Component {
 			current: 0,
 			shift: 0,
 			items: 4,
-			projects: initialProjects.slice(0, 8)
+			projects: []
 		}
 	}
 	_next () {
@@ -41,6 +40,17 @@ class ProjectsCarousel extends Component {
 			})
 		}
 	}
+	componentWillMount() {
+		fetch(`${config.assets.data}projects.json`)
+			.then(res => {
+				return res.json()
+			})
+			.then(data => {
+				this.setState({
+					projects: data.content.slice(0, 8)
+				})
+			})
+	}
 	componentDidMount() {
 		this._setShift()
 		window.addEventListener('resize', ::this._setShift)
@@ -62,42 +72,40 @@ class ProjectsCarousel extends Component {
 				className="projects _carousel"
 				ref="projects"
 			>
-				<div className="projects__wrap">
-					<div
-						className="projects__list _carousel"
-						style={
-							{
-								transform: `translateX(-${all ? 0 : current * shift}px)`
-							}
+				<div
+					className="projects__list _carousel"
+					style={
+						{
+							transform: `${all ? null : `translateX(-${all ? 0 : current * shift}px)`}`
 						}
-					>
-					{
-						projects.map(({ id, preview_mid: preview }) => (
-							<ProjectsProject
-								id={id}
-								preview={preview}
-								key={`project--${id}`}
-							/>
-						))
 					}
-					</div>
-					{
-						!all
-							? (
-								<div className="projects__nav">
-									<Arrow
-										className={`slick-prev ${current === 0 ? 'slick-disabled' : ''}`}
-										onClick={::this._prev}
-									/>
-									<Arrow
-										className={`slick-next ${current === projects.length - items ? 'slick-disabled' : ''}`}
-										onClick={::this._next}
-									/>
-								</div>
-							)
-							: null
-					}
+				>
+				{
+					projects.map(({ id, preview_mid: preview }) => (
+						<ProjectsProject
+							id={id}
+							preview={preview}
+							key={`project--${id}`}
+						/>
+					))
+				}
 				</div>
+				{
+					!all
+						? (
+							<div className="projects__nav">
+								<Arrow
+									className={`slick-prev ${current === 0 ? 'slick-disabled' : ''}`}
+									onClick={::this._prev}
+								/>
+								<Arrow
+									className={`slick-next ${current === projects.length - items ? 'slick-disabled' : ''}`}
+									onClick={::this._next}
+								/>
+							</div>
+						)
+						: null
+				}
 			</div>
 		)
 	}
