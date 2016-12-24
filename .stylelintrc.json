@@ -5,7 +5,7 @@
   	"indentation": "tab",
     "number-leading-zero": "never",
     "property-no-unknown": [true, {
-      "ignoreProperties": ["max-size"]
+      "ignoreProperties": ["size", "min-size", "max-size"]
     }],
     "declaration-empty-line-before": null,
     "declaration-block-semicolon-space-before": null,
