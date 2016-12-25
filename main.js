@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1375549ace417558546d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b665eae94b9d6210b018"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -39716,13 +39716,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var projects = void 0;
-	if (_store2.default.projects) {
-		projects = _store2.default.projects.content;
-	} else {
-		projects = [];
-	}
-
 	var Project = function (_Component) {
 		(0, _inherits3.default)(Project, _Component);
 
@@ -39731,15 +39724,17 @@
 
 			var _this = (0, _possibleConstructorReturn3.default)(this, (Project.__proto__ || (0, _getPrototypeOf2.default)(Project)).call(this, props));
 
+			_this.projects = _store2.default.projects ? _store2.default.projects.content : [];
+
 			var projectId = props.id || props.params.project;
-			var project = projects.find(function (_ref) {
+			var project = _this.projects.find(function (_ref) {
 				var id = _ref.id;
 				return id === projectId;
 			});
 			_this.state = {
 				bgIndex: 0,
 				bgs: null,
-				current: projects.indexOf(project)
+				current: _this.projects.indexOf(project)
 			};
 			return _this;
 		}
@@ -39770,7 +39765,7 @@
 				var _this3 = this;
 
 				window.Modernizr.on('webp', function (result) {
-					var bgs = projects[_this3.state.current].bgs;
+					var bgs = _this3.projects[_this3.state.current].bgs;
 					if ((0, _keys2.default)(result).length > 0) bgs = bgs.map(function (bg) {
 						return bg.replace(/(jpg|jpeg|png)$/, 'webp');
 					});
@@ -39794,7 +39789,7 @@
 			value: function _next() {
 				var current = this.state.current;
 
-				if (++current <= projects.length) {
+				if (++current <= this.projects.length) {
 					this._toggle(current);
 				}
 			}
@@ -39827,7 +39822,7 @@
 				    bgIndex = _state.bgIndex,
 				    bgs = _state.bgs,
 				    current = _state.current;
-				var _projects$current = projects[current],
+				var _projects$current = this.projects[current],
 				    id = _projects$current.id,
 				    square = _projects$current.square,
 				    date = _projects$current.date,
@@ -39944,7 +39939,7 @@
 									React.createElement(
 										'div',
 										{
-											className: 'project__arrow _next ' + (current === projects.length ? '_disabled' : ''),
+											className: 'project__arrow _next ' + (current === this.projects.length ? '_disabled' : ''),
 											onClick: this._next.bind(this)
 										},
 										React.createElement(_icon2.default, {
