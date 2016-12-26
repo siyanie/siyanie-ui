@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f329210bf378957b1ae9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "14eddcfb3614e36a3794"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -33355,13 +33355,17 @@
 					section === 'about' && subsection === 'history' ? _react2.default.createElement(_timeline2.default, {
 						selectSlide: selectSlide
 					}) : null,
-					video ? _react2.default.createElement('video', {
-						src: '' + _config2.default.assets.videos + video + '.mp4',
-						className: 'slides__video',
-						autoPlay: true,
-						loop: true,
-						muted: true
-					}) : null
+					video ? _react2.default.createElement(
+						'div',
+						{ className: 'slides__video' },
+						_react2.default.createElement('video', {
+							src: '' + _config2.default.assets.videos + video + '.mp4',
+							className: 'slides__video-source',
+							autoPlay: true,
+							loop: true,
+							muted: true
+						})
+					) : null
 				);
 			}
 		}]);
@@ -33648,7 +33652,7 @@
 				sources.push(_react2.default.createElement('img', {
 					key: 'bg__image--' + bg,
 					className: 'bg__image',
-					src: bg,
+					src: _config2.default.assets.images + bg.replace(/\.(jpg|jpeg|png)$/i, '--desktop@1$&'),
 					alt: '',
 					onLoad: this._loaded.bind(this)
 				}));
@@ -33999,7 +34003,7 @@
 					) : null,
 					_react2.default.createElement(
 						'a',
-						{ href: link, className: 'news__link' },
+						{ href: link, target: '_blank', className: 'news__link' },
 						text ? 'Читать подробнее' : 'Все новости',
 						_react2.default.createElement(_icon2.default, { className: 'news__arrow', icon: 'arrow' }),
 						_react2.default.createElement(
@@ -38177,7 +38181,7 @@
 /* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -38225,31 +38229,32 @@
 
 			_this.state = {
 				current: settings.start,
+				shift: 16 * 8,
 				move: 0
 			};
 			return _this;
 		}
 
 		(0, _createClass3.default)(Timeline, [{
-			key: "_move",
+			key: '_move',
 			value: function _move(_ref) {
 				var x = _ref.nativeEvent.x;
 				var _window = window,
 				    vw = _window.innerWidth;
 
 				this.setState({
-					move: (x / vw - .5) * settings.shift
+					move: (x / vw - .5) * this.state.shift
 				});
 			}
 		}, {
-			key: "_unmove",
+			key: '_unmove',
 			value: function _unmove() {
 				this.setState({
 					move: 0
 				});
 			}
 		}, {
-			key: "_setYear",
+			key: '_setYear',
 			value: function _setYear(year) {
 				var _this2 = this;
 
@@ -38262,22 +38267,33 @@
 				};
 			}
 		}, {
-			key: "_getSlideIndex",
+			key: '_getSlideIndex',
 			value: function _getSlideIndex(current, start) {
 				return current - start;
 			}
 		}, {
-			key: "render",
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				var year = this.refs.timeline.querySelector('.timeline__year');
+				if (year) {
+					this.setState({
+						shift: year.offsetWidth
+					});
+					console.log(year.offsetWidth);
+				}
+			}
+		}, {
+			key: 'render',
 			value: function render() {
 				var _this3 = this;
 
 				var years = [];
 				var start = settings.start,
-				    end = settings.end,
-				    shift = settings.shift;
+				    end = settings.end;
 				var _state = this.state,
 				    current = _state.current,
-				    move = _state.move;
+				    move = _state.move,
+				    shift = _state.shift;
 
 				var currentIndex = current - start;
 
@@ -38286,26 +38302,27 @@
 				}
 
 				return _react2.default.createElement(
-					"div",
+					'div',
 					{
-						className: "timeline"
+						className: 'timeline',
+						ref: 'timeline'
 					},
 					_react2.default.createElement(
-						"div",
-						{ className: "timeline__label" },
-						"\u041D\u0430\u0448\u0430 \u0438\u0441\u0442\u043E\u0440\u0438\u044F:"
+						'div',
+						{ className: 'timeline__label' },
+						'\u041D\u0430\u0448\u0430 \u0438\u0441\u0442\u043E\u0440\u0438\u044F:'
 					),
 					_react2.default.createElement(
-						"div",
-						{ className: "timeline__wrap" },
+						'div',
+						{ className: 'timeline__wrap' },
 						_react2.default.createElement(
-							"div",
+							'div',
 							{
-								className: "timeline__list",
-								ref: "timeline",
+								className: 'timeline__list',
+								ref: 'timeline',
 								style: {
-									transform: "translateX(calc(50% - " + (shift * currentIndex + shift / 2) + "px))",
-									left: move * -1 + "px"
+									transform: 'translateX(calc(50% - ' + (shift * currentIndex + shift / 2) + 'px))',
+									left: move * -1 + 'px'
 								},
 								onMouseOver: this._move.bind(this),
 								onMouseMove: this._move.bind(this),
@@ -38315,19 +38332,19 @@
 								var className = current == year ? '_active' : current - 1 == year || current + 1 == year ? '_preactive' : current - 2 == year || current + 2 == year ? '_prepreactive' : '';
 
 								return _react2.default.createElement(
-									"div",
+									'div',
 									{
-										key: "timeline__year--" + year,
-										className: "timeline__year " + className,
+										key: 'timeline__year--' + year,
+										className: 'timeline__year ' + className,
 										onClick: _this3._setYear.call(_this3, year)
 									},
 									year
 								);
 							}),
 							_react2.default.createElement(
-								"div",
-								{ className: "timeline__continue" },
-								"\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435 \u0441\u043B\u0435\u0434\u0443\u0435\u0442..."
+								'div',
+								{ className: 'timeline__continue' },
+								'\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435 \u0441\u043B\u0435\u0434\u0443\u0435\u0442...'
 							)
 						)
 					)
@@ -41424,9 +41441,9 @@
 
 	var _projectsProject2 = _interopRequireDefault(_projectsProject);
 
-	var _config = __webpack_require__(348);
+	var _store = __webpack_require__(434);
 
-	var _config2 = _interopRequireDefault(_config);
+	var _store2 = _interopRequireDefault(_store);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41442,7 +41459,7 @@
 				current: 0,
 				shift: 0,
 				items: 4,
-				projects: []
+				projects: _store2.default.projects.content
 			};
 			return _this;
 		}
@@ -41480,19 +41497,6 @@
 				}
 			}
 		}, {
-			key: 'componentWillMount',
-			value: function componentWillMount() {
-				var _this2 = this;
-
-				fetch(_config2.default.assets.data + 'projects.json').then(function (res) {
-					return res.json();
-				}).then(function (data) {
-					_this2.setState({
-						projects: data.content.slice(0, 8)
-					});
-				});
-			}
-		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				this._setShift();
@@ -41525,7 +41529,7 @@
 						{
 							className: 'projects__list _carousel',
 							style: {
-								transform: '' + (all ? null : 'translateX(-' + (all ? 0 : current * shift) + 'px)')
+								transform: 'translateX(-' + (all ? 0 : current * shift) + 'px)'
 							}
 						},
 						projects.map(function (_ref) {
@@ -41638,7 +41642,7 @@
 					if ((0, _keys2.default)(result).length > 0) webp = true;
 
 					_this2.setState({
-						preview: preview.replace(/\.\w+$/, '--phone@1.' + (webp ? 'webp' : '&$'))
+						preview: preview.replace(/\.(jpg|jpeg|png)$/i, '--phone@1' + (webp ? '.webp' : '$&'))
 					});
 				});
 			}
