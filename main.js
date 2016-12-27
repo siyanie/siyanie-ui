@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f9bb7d11be998ca50b96"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4e548159474d093651dc"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -1856,33 +1856,41 @@
 
 	var _contacts2 = _interopRequireDefault(_contacts);
 
-	var _callback = __webpack_require__(441);
+	var _contactsMetro = __webpack_require__(441);
+
+	var _contactsMetro2 = _interopRequireDefault(_contactsMetro);
+
+	var _contactsMetro3 = __webpack_require__(443);
+
+	var _contactsMetro4 = _interopRequireDefault(_contactsMetro3);
+
+	var _callback = __webpack_require__(444);
 
 	var _callback2 = _interopRequireDefault(_callback);
 
-	var _project = __webpack_require__(444);
+	var _project = __webpack_require__(448);
 
 	var _project2 = _interopRequireDefault(_project);
 
-	var _projects = __webpack_require__(445);
+	var _projects = __webpack_require__(449);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
-	var _error = __webpack_require__(449);
+	var _error = __webpack_require__(453);
 
 	var _error2 = _interopRequireDefault(_error);
 
-	var _footer = __webpack_require__(450);
+	var _footer = __webpack_require__(454);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
-	var _footerInner = __webpack_require__(452);
+	var _footerInner = __webpack_require__(456);
 
 	var _footerInner2 = _interopRequireDefault(_footerInner);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(453).polyfill();
+	__webpack_require__(457).polyfill();
 
 	var Root = function Root(_ref) {
 		var children = _ref.children;
@@ -1902,6 +1910,8 @@
 				React.createElement(_reactRouter.Route, { path: 'section/:section/:subsection', components: { content: _section2.default, footer: _footerInner2.default } }),
 				React.createElement(_reactRouter.Route, { path: 'callback', components: { content: _callback2.default } }),
 				React.createElement(_reactRouter.Route, { path: 'contacts', components: { content: _contacts2.default, footer: _footer2.default } }),
+				React.createElement(_reactRouter.Route, { path: 'contacts-metro3', components: { content: _contactsMetro2.default, footer: _footer2.default } }),
+				React.createElement(_reactRouter.Route, { path: 'contacts-metro45', components: { content: _contactsMetro4.default, footer: _footer2.default } }),
 				React.createElement(_reactRouter.Route, { path: 'projects', components: { content: _projects2.default, footer: _footer2.default } }),
 				React.createElement(_reactRouter.Route, { path: 'project/:project', components: { content: _project2.default } }),
 				React.createElement(_reactRouter.Redirect, { from: '/section/about', to: '/section/about/onas' }),
@@ -33339,6 +33349,17 @@
 				return _react2.default.createElement(
 					'div',
 					{ className: 'slides section__wrapper', ref: 'slides' },
+					video ? _react2.default.createElement(
+						'div',
+						{ className: 'slides__video' },
+						_react2.default.createElement('video', {
+							src: '' + _config2.default.assets.videos + video + '.mp4',
+							className: 'slides__video-source',
+							autoPlay: true,
+							loop: true,
+							muted: true
+						})
+					) : null,
 					slides.map(function (slide, index) {
 						return _react2.default.createElement(_slide2.default, {
 							key: 'section__slide--' + _this2.subsection + '-' + index,
@@ -33355,18 +33376,7 @@
 					) : null,
 					section === 'about' && subsection === 'history' ? _react2.default.createElement(_timeline2.default, {
 						selectSlide: selectSlide
-					}) : null,
-					video ? _react2.default.createElement(
-						'div',
-						{ className: 'slides__video' },
-						_react2.default.createElement('video', {
-							src: '' + _config2.default.assets.videos + video + '.mp4',
-							className: 'slides__video-source',
-							autoPlay: true,
-							loop: true,
-							muted: true
-						})
-					) : null
+					}) : null
 				);
 			}
 		}]);
@@ -33628,6 +33638,7 @@
 			key: '_getSources',
 			value: function _getSources(webp) {
 				var bg = this.props.bg;
+
 				var sources = [];
 
 				var _loop = function _loop(device) {
@@ -33671,9 +33682,12 @@
 		}, {
 			key: 'render',
 			value: function render() {
+				var className = this.props.className;
+
+
 				return _react2.default.createElement(
 					'picture',
-					{ className: 'bg ' + (this.state.loaded ? '_loaded' : '_loading') },
+					{ className: (className ? className : '') + ' bg ' + (this.state.loaded ? '_loaded' : '_loading') },
 					this.state.sources
 				);
 			}
@@ -39978,6 +39992,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(193);
+
 	var _loadGoogleMapsApi = __webpack_require__(440);
 
 	var _loadGoogleMapsApi2 = _interopRequireDefault(_loadGoogleMapsApi);
@@ -39989,8 +40005,8 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var LatLng = {
-		lng: 37.707416,
-		lat: 55.788968
+		lng: 37.7076,
+		lat: 55.78898
 	};
 	var styles = [{
 		elementType: 'geometry',
@@ -40046,7 +40062,19 @@
 					new googleMaps.Marker({
 						map: map,
 						position: LatLng,
-						title: 'Siyanie'
+						animation: googleMaps.Animation.DROP,
+						icon: {
+							url: '//siyanie.github.io/siyanie-graphics/icons/marker.png',
+							size: new googleMaps.Size(97, 61),
+							origin: new googleMaps.Point(0, 0),
+							anchor: new googleMaps.Point(20, 61)
+
+						},
+						shape: {
+							coords: [0, 0, 0, 61, 40, 61, 40, 0],
+							type: 'poly'
+						},
+						title: '1Siyanie'
 					});
 				}).catch(console.error);
 			}
@@ -40056,10 +40084,64 @@
 				return _react2.default.createElement(
 					'div',
 					{ className: 'contacts' },
-					_react2.default.createElement('div', {
-						ref: 'map',
-						className: 'contacts__map'
-					})
+					_react2.default.createElement(
+						'div',
+						{ className: 'contacts__main' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'contacts__title' },
+							'\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B'
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'contacts__bottom' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'contacts__buttons-wrap' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'contacts__buttons' },
+								_react2.default.createElement(
+									_reactRouter.Link,
+									{ className: 'contacts__button', to: '/contacts-metro3' },
+									'\u043E\u0442 \u043C. \u042D\u043B\u0435\u043A\u0442\u0440\u043E\u0437\u0430\u0432\u043E\u0434\u0441\u0442\u043A\u0430\u044F'
+								),
+								_react2.default.createElement(
+									_reactRouter.Link,
+									{ className: 'contacts__button', to: '/contacts-metro45' },
+									'\u043E\u0442 \u043C. \u041F\u0440\u0435\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0441\u043A\u0430\u044F \u043F\u043B\u043E\u0449\u0430\u0434\u044C'
+								)
+							)
+						),
+						_react2.default.createElement(
+							'footer',
+							{ className: 'contacts__footer' },
+							_react2.default.createElement(
+								'address',
+								{ className: 'contacts__address' },
+								'107023, \u0433. \u041C\u043E\u0441\u043A\u0432\u0430, \u0443\u043B. \u042D\u043B\u0435\u043A\u0442\u0440\u043E\u0437\u0430\u0432\u043E\u0434\u0441\u043A\u0430\u044F, \u0434. 24'
+							),
+							_react2.default.createElement(
+								'a',
+								{ href: 'tel:+7(495)607-7777', className: 'contacts__phone' },
+								'+7 (495) 607-7777'
+							),
+							_react2.default.createElement(
+								'a',
+								{ href: 'mailto:secretery@sgpd.ru', className: 'contacts__email' },
+								'secretery@sgpd.ru'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'contacts__map-wrap' },
+						_react2.default.createElement('div', {
+							ref: 'map',
+							className: 'contacts__map'
+						})
+					)
 				);
 			}
 		}]);
@@ -40137,13 +40219,325 @@
 /* 441 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(249);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(275);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(276);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(280);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(327);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(15);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _popup = __webpack_require__(442);
+
+	var _popup2 = _interopRequireDefault(_popup);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ContactsMetro3 = function (_Component) {
+		(0, _inherits3.default)(ContactsMetro3, _Component);
+
+		function ContactsMetro3() {
+			(0, _classCallCheck3.default)(this, ContactsMetro3);
+			return (0, _possibleConstructorReturn3.default)(this, (ContactsMetro3.__proto__ || (0, _getPrototypeOf2.default)(ContactsMetro3)).apply(this, arguments));
+		}
+
+		(0, _createClass3.default)(ContactsMetro3, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					_popup2.default,
+					{
+						title: '\u043E\u0442 \u043C. \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u0437\u0430\u0432\u043E\u0434\u0441\u043A\u0430\u044F',
+						bg: 'contacts'
+					},
+					_react2.default.createElement(
+						'div',
+						{ className: 'popup__text' },
+						'Выйти из метро и перейти Большую Семеновскую улицу по подземному переходу. \nПройти прямо около 70 метров затем повернуть в Нижний Журавлев переулок. \nДойти до пл. Журавлева (Дворец на Яузе), пересечь сквер до ул. Электрозаводская, затем повернуть направо и дойти до 1-го Электрозаводского переулка. \nПовернуть направо в 1-й Электрозаводский переулок, пройти около 100 метров до двухэтажного желтого здания и за ним повернуть налево на ул. Буженинова. \nПройти 400 метров до входа в 6-этажное бежево-коричневое здание, подъезд № 1 (как ориентир, в этом подъезде СДМ-банк).'
+					),
+					_react2.default.createElement(
+						'a',
+						{ href: '#', target: '_blank', className: 'popup__button' },
+						'PDF'
+					)
+				);
+			}
+		}]);
+		return ContactsMetro3;
+	}(_react.Component);
+
+	exports.default = ContactsMetro3;
+
+/***/ },
+/* 442 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(249);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(275);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(276);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(280);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(327);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(15);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _icon = __webpack_require__(352);
+
+	var _icon2 = _interopRequireDefault(_icon);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Popup = function (_Component) {
+		(0, _inherits3.default)(Popup, _Component);
+
+		function Popup() {
+			(0, _classCallCheck3.default)(this, Popup);
+			return (0, _possibleConstructorReturn3.default)(this, (Popup.__proto__ || (0, _getPrototypeOf2.default)(Popup)).apply(this, arguments));
+		}
+
+		(0, _createClass3.default)(Popup, [{
+			key: '_close',
+			value: function _close() {
+				history.back();
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _props = this.props,
+				    title = _props.title,
+				    bg = _props.bg,
+				    children = _props.children;
+
+
+				return _react2.default.createElement(
+					'div',
+					{ className: 'popup ' + (bg ? 'popup--' + bg : 'callback') },
+					_react2.default.createElement(
+						'div',
+						{ className: 'popup__content' },
+						_react2.default.createElement(
+							'div',
+							{ onClick: this._close.bind(this) },
+							_react2.default.createElement(_icon2.default, {
+								className: 'popup__close',
+								icon: 'cross' })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'popup__title' },
+							title
+						),
+						children
+					)
+				);
+			}
+		}]);
+		return Popup;
+	}(_react.Component);
+
+	exports.default = Popup;
+
+/***/ },
+/* 443 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(249);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(275);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(276);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(280);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(327);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(15);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _popup = __webpack_require__(442);
+
+	var _popup2 = _interopRequireDefault(_popup);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ContactsMetro45 = function (_Component) {
+		(0, _inherits3.default)(ContactsMetro45, _Component);
+
+		function ContactsMetro45() {
+			(0, _classCallCheck3.default)(this, ContactsMetro45);
+			return (0, _possibleConstructorReturn3.default)(this, (ContactsMetro45.__proto__ || (0, _getPrototypeOf2.default)(ContactsMetro45)).apply(this, arguments));
+		}
+
+		(0, _createClass3.default)(ContactsMetro45, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					_popup2.default,
+					{
+						title: 'от м. Преображенская \nплощадь',
+						bg: 'contacts'
+					},
+					_react2.default.createElement(
+						'div',
+						{ className: 'popup__text' },
+						'Из последнего вагона из центра идти влево по подземному переходу к выходу к БЦ «Преображенский». \nПройти вдоль Преображенской площади около 200 метров, мимо храма «Преображения Господня» затем повернуть налево на ул. Буженинова. \nПо ул. Буженинова идти вниз 5-7 минут до 6-этажного бежево-коричневого здания с вывеской «СДМ-Банк», вход в центре здания.'
+					),
+					_react2.default.createElement(
+						'a',
+						{ href: '#', target: '_blank', className: 'popup__button' },
+						'PDF'
+					)
+				);
+			}
+		}]);
+		return ContactsMetro45;
+	}(_react.Component);
+
+	exports.default = ContactsMetro45;
+
+/***/ },
+/* 444 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
-	var _defineProperty2 = __webpack_require__(442);
+	var _getPrototypeOf = __webpack_require__(249);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(275);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(276);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(280);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(327);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(15);
+
+	var _form = __webpack_require__(445);
+
+	var _form2 = _interopRequireDefault(_form);
+
+	var _popup = __webpack_require__(442);
+
+	var _popup2 = _interopRequireDefault(_popup);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Callback = function (_Component) {
+		(0, _inherits3.default)(Callback, _Component);
+
+		function Callback() {
+			(0, _classCallCheck3.default)(this, Callback);
+			return (0, _possibleConstructorReturn3.default)(this, (Callback.__proto__ || (0, _getPrototypeOf2.default)(Callback)).apply(this, arguments));
+		}
+
+		(0, _createClass3.default)(Callback, [{
+			key: 'render',
+			value: function render() {
+				var location = this.props.location;
+
+
+				return React.createElement(
+					_popup2.default,
+					{
+						title: '\u0420\u0430\u0437\u0433\u043E\u0432\u043E\u0440 \u0441 \u043F\u043E\u043B\u044C\u0437\u043E\u0439',
+						bg: 'callback'
+					},
+					React.createElement(_form2.default, { location: location })
+				);
+			}
+		}]);
+		return Callback;
+	}(_react.Component);
+
+	exports.default = Callback;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
+
+/***/ },
+/* 445 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _defineProperty2 = __webpack_require__(446);
 
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -40169,23 +40563,25 @@
 
 	var _react = __webpack_require__(15);
 
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactInputMask = __webpack_require__(447);
+
+	var _reactInputMask2 = _interopRequireDefault(_reactInputMask);
+
 	var _icon = __webpack_require__(352);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
-	var _reactInputMask = __webpack_require__(443);
-
-	var _reactInputMask2 = _interopRequireDefault(_reactInputMask);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Callback = function (_Component) {
-		(0, _inherits3.default)(Callback, _Component);
+	var Form = function (_Component) {
+		(0, _inherits3.default)(Form, _Component);
 
-		function Callback() {
-			(0, _classCallCheck3.default)(this, Callback);
+		function Form() {
+			(0, _classCallCheck3.default)(this, Form);
 
-			var _this = (0, _possibleConstructorReturn3.default)(this, (Callback.__proto__ || (0, _getPrototypeOf2.default)(Callback)).call(this));
+			var _this = (0, _possibleConstructorReturn3.default)(this, (Form.__proto__ || (0, _getPrototypeOf2.default)(Form)).call(this));
 
 			_this.state = {
 				name: '',
@@ -40197,7 +40593,7 @@
 			return _this;
 		}
 
-		(0, _createClass3.default)(Callback, [{
+		(0, _createClass3.default)(Form, [{
 			key: '_changeInput',
 			value: function _changeInput(_ref) {
 				var input = _ref.target;
@@ -40222,11 +40618,6 @@
 				});
 			}
 		}, {
-			key: '_close',
-			value: function _close() {
-				history.back();
-			}
-		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				this.refs.inputName.focus();
@@ -40243,126 +40634,109 @@
 				    resume = this.props.location.query.resume;
 
 
-				return React.createElement(
+				return _react2.default.createElement(
 					'div',
-					{ className: 'callback' },
-					React.createElement(
-						'div',
-						{ className: 'callback__content' },
-						React.createElement(
+					{ className: 'form' },
+					_react2.default.createElement(
+						'form',
+						{
+							method: 'post',
+							className: 'form__form ' + (sent ? '_sent' : ''),
+							onSubmit: this._submit.bind(this)
+						},
+						_react2.default.createElement('input', {
+							type: 'text',
+							name: 'name',
+							value: name,
+							onChange: this._changeInput.bind(this),
+							ref: 'inputName',
+							className: 'form__field ' + (name ? '_filled' : '_empty'),
+							placeholder: '\u0412\u0430\u0448\u0435 \u0438\u043C\u044F',
+							required: true
+						}),
+						_react2.default.createElement('div', { className: 'form__field-line' }),
+						_react2.default.createElement(_reactInputMask2.default, {
+							type: 'tel',
+							name: 'tel',
+							value: tel,
+							onChange: this._changeInput.bind(this),
+							className: 'form__field ' + (tel ? '_filled' : '_empty'),
+							placeholder: '\u0422\u0435\u043B\u0435\u0444\u043E\u043D',
+							required: true,
+							mask: '+7 (999) 999-99-99',
+							maskChar: '_'
+						}),
+						_react2.default.createElement('div', { className: 'form__field-line' }),
+						_react2.default.createElement('input', {
+							type: 'email',
+							name: 'email',
+							value: email,
+							onChange: this._changeInput.bind(this),
+							className: 'form__field ' + (email ? '_filled' : '_empty'),
+							placeholder: 'e-mail'
+						}),
+						_react2.default.createElement('div', { className: 'form__field-line' }),
+						resume ? _react2.default.createElement(
 							'div',
-							{ onClick: this._close.bind(this) },
-							React.createElement(_icon2.default, {
-								className: 'callback__close',
-								icon: 'cross' })
-						),
-						React.createElement(
-							'div',
-							{ className: 'callback__title' },
-							'\u0420\u0430\u0437\u0433\u043E\u0432\u043E\u0440 \u0441 \u043F\u043E\u043B\u044C\u0437\u043E\u0439'
-						),
-						React.createElement(
-							'form',
-							{
-								method: 'post',
-								className: 'callback__form ' + (sent ? '_sent' : ''),
-								onSubmit: this._submit.bind(this)
-							},
-							React.createElement('input', {
-								type: 'text',
-								name: 'name',
-								value: name,
-								onChange: this._changeInput.bind(this),
-								ref: 'inputName',
-								className: 'callback__field ' + (name ? '_filled' : '_empty'),
-								placeholder: '\u0412\u0430\u0448\u0435 \u0438\u043C\u044F',
+							{ className: 'form__file' },
+							_react2.default.createElement('input', {
+								className: 'form__file-input',
+								type: 'file',
+								name: 'resume',
+								id: 'file',
+								onChange: this._file.bind(this),
 								required: true
 							}),
-							React.createElement('div', { className: 'callback__field-line' }),
-							React.createElement(_reactInputMask2.default, {
-								type: 'tel',
-								name: 'tel',
-								value: tel,
-								onChange: this._changeInput.bind(this),
-								className: 'callback__field ' + (tel ? '_filled' : '_empty'),
-								placeholder: '\u0422\u0435\u043B\u0435\u0444\u043E\u043D',
-								required: true,
-								mask: '+7 (999) 999-99-99',
-								maskChar: '_'
-							}),
-							React.createElement('div', { className: 'callback__field-line' }),
-							React.createElement('input', {
-								type: 'email',
-								name: 'email',
-								value: email,
-								onChange: this._changeInput.bind(this),
-								className: 'callback__field ' + (email ? '_filled' : '_empty'),
-								placeholder: 'e-mail'
-							}),
-							React.createElement('div', { className: 'callback__field-line' }),
-							resume ? React.createElement(
-								'div',
-								{ className: 'callback__file' },
-								React.createElement('input', {
-									className: 'callback__file-input',
-									type: 'file',
-									name: 'resume',
-									id: 'file',
-									onChange: this._file.bind(this),
-									required: true
-								}),
-								React.createElement(
-									'label',
-									{
-										ref: 'file',
-										className: 'callback__file-label ' + (file ? '_selected' : ''),
-										htmlFor: 'file'
-									},
-									file ? file.replace(/^.*[\\\/]/, '') : 'Выберите файл'
-								)
-							) : null,
-							React.createElement(
-								'button',
+							_react2.default.createElement(
+								'label',
 								{
-									className: 'callback__submit',
-									disabled: !name || !/\+7 \(\d{3}\) \d{3}(-\d{2}){2}/.test(tel)
+									ref: 'file',
+									className: 'form__file-label ' + (file ? '_selected' : ''),
+									htmlFor: 'file'
 								},
-								'\u041F\u0435\u0440\u0435\u0437\u0432\u043E\u043D\u0438\u0442\u0435'
+								file ? file.replace(/^.*[\\\/]/, '') : 'Выберите файл'
 							)
-						),
-						React.createElement(
-							'div',
+						) : null,
+						_react2.default.createElement(
+							'button',
 							{
-								className: 'callback__thanks ' + (sent ? '_sent' : '')
+								className: 'form__submit',
+								disabled: !name || !/\+7 \(\d{3}\) \d{3}(-\d{2}){2}/.test(tel)
 							},
-							React.createElement(
-								'div',
-								{ className: 'callback__thanks-check' },
-								React.createElement(_icon2.default, {
-									className: 'callback__thanks-icon',
-									icon: 'check'
-								})
-							),
-							React.createElement(
-								'div',
-								{ className: 'callback__thanks-note' },
-								'\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u043F\u0440\u043E\u044F\u0432\u043B\u0435\u043D\u043D\u044B\u0439 \u0438\u043D\u0442\u0435\u0440\u0435\u0441. ',
-								React.createElement('br', null),
-								'\u041C\u044B \u043F\u0435\u0440\u0435\u0437\u0432\u043E\u043D\u0438\u043C \u0412\u0430\u043C \u0432 \u0441\u043A\u043E\u0440\u043E\u043C \u0432\u0440\u0435\u043C\u0435\u043D\u0438.'
-							)
+							'\u041F\u0435\u0440\u0435\u0437\u0432\u043E\u043D\u0438\u0442\u0435'
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{
+							className: 'form__thanks ' + (sent ? '_sent' : '')
+						},
+						_react2.default.createElement(
+							'div',
+							{ className: 'form__thanks-check' },
+							_react2.default.createElement(_icon2.default, {
+								className: 'form__thanks-icon',
+								icon: 'check'
+							})
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'form__thanks-note' },
+							'\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u043F\u0440\u043E\u044F\u0432\u043B\u0435\u043D\u043D\u044B\u0439 \u0438\u043D\u0442\u0435\u0440\u0435\u0441. ',
+							_react2.default.createElement('br', null),
+							'\u041C\u044B \u043F\u0435\u0440\u0435\u0437\u0432\u043E\u043D\u0438\u043C \u0412\u0430\u043C \u0432 \u0441\u043A\u043E\u0440\u043E\u043C \u0432\u0440\u0435\u043C\u0435\u043D\u0438.'
 						)
 					)
 				);
 			}
 		}]);
-		return Callback;
+		return Form;
 	}(_react.Component);
 
-	exports.default = Callback;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
+	exports.default = Form;
 
 /***/ },
-/* 442 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40391,7 +40765,7 @@
 	};
 
 /***/ },
-/* 443 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// https://github.com/sanniassin/react-input-mask
@@ -41230,7 +41604,7 @@
 	module.exports = InputElement;
 
 /***/ },
-/* 444 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -41538,7 +41912,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 445 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41573,11 +41947,11 @@
 
 	var _reactRouter = __webpack_require__(193);
 
-	var _projectsCaraousel = __webpack_require__(446);
+	var _projectsCaraousel = __webpack_require__(450);
 
 	var _projectsCaraousel2 = _interopRequireDefault(_projectsCaraousel);
 
-	var _projectsGrid = __webpack_require__(448);
+	var _projectsGrid = __webpack_require__(452);
 
 	var _projectsGrid2 = _interopRequireDefault(_projectsGrid);
 
@@ -41622,7 +41996,7 @@
 	exports.default = Projects;
 
 /***/ },
-/* 446 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -41657,7 +42031,7 @@
 
 	var _arrow2 = _interopRequireDefault(_arrow);
 
-	var _projectsProject = __webpack_require__(447);
+	var _projectsProject = __webpack_require__(451);
 
 	var _projectsProject2 = _interopRequireDefault(_projectsProject);
 
@@ -41784,7 +42158,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 447 */
+/* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41939,7 +42313,7 @@
 	exports.default = ProjectsProject;
 
 /***/ },
-/* 448 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -41970,7 +42344,7 @@
 
 	var _react = __webpack_require__(15);
 
-	var _projectsProject = __webpack_require__(447);
+	var _projectsProject = __webpack_require__(451);
 
 	var _projectsProject2 = _interopRequireDefault(_projectsProject);
 
@@ -42037,7 +42411,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 449 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42120,7 +42494,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 450 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42151,7 +42525,7 @@
 
 	var _react = __webpack_require__(15);
 
-	var _social = __webpack_require__(451);
+	var _social = __webpack_require__(455);
 
 	var _social2 = _interopRequireDefault(_social);
 
@@ -42218,7 +42592,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 451 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42302,7 +42676,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 452 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42448,7 +42822,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 453 */
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
