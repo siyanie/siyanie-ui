@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "14eddcfb3614e36a3794"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5b1deda6ee640f4c9995"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -1852,33 +1852,37 @@
 
 	var _section2 = _interopRequireDefault(_section);
 
-	var _callback = __webpack_require__(439);
+	var _contacts = __webpack_require__(439);
+
+	var _contacts2 = _interopRequireDefault(_contacts);
+
+	var _callback = __webpack_require__(441);
 
 	var _callback2 = _interopRequireDefault(_callback);
 
-	var _project = __webpack_require__(442);
+	var _project = __webpack_require__(444);
 
 	var _project2 = _interopRequireDefault(_project);
 
-	var _projects = __webpack_require__(443);
+	var _projects = __webpack_require__(445);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
-	var _error = __webpack_require__(447);
+	var _error = __webpack_require__(449);
 
 	var _error2 = _interopRequireDefault(_error);
 
-	var _footer = __webpack_require__(448);
+	var _footer = __webpack_require__(450);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
-	var _footerInner = __webpack_require__(450);
+	var _footerInner = __webpack_require__(452);
 
 	var _footerInner2 = _interopRequireDefault(_footerInner);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(451).polyfill();
+	__webpack_require__(453).polyfill();
 
 	var Root = function Root(_ref) {
 		var children = _ref.children;
@@ -1897,6 +1901,7 @@
 				React.createElement(_reactRouter.IndexRoute, { components: { content: _video2.default, footer: _footer2.default } }),
 				React.createElement(_reactRouter.Route, { path: 'section/:section/:subsection', components: { content: _section2.default, footer: _footerInner2.default } }),
 				React.createElement(_reactRouter.Route, { path: 'callback', components: { content: _callback2.default } }),
+				React.createElement(_reactRouter.Route, { path: 'contacts', components: { content: _contacts2.default, footer: _footer2.default } }),
 				React.createElement(_reactRouter.Route, { path: 'projects', components: { content: _projects2.default, footer: _footer2.default } }),
 				React.createElement(_reactRouter.Route, { path: 'project/:project', components: { content: _project2.default } }),
 				React.createElement(_reactRouter.Redirect, { from: '/section/about', to: '/section/about/onas' }),
@@ -32494,7 +32499,8 @@
 			data: assets,
 			images: assets + 'images/',
 			videos: assets + 'videos/'
-		}
+		},
+		googleKey: 'AIzaSyBnCTjd0wDllSypwCk4oiBpWN2jsT1eJ4o'
 	};
 
 /***/ },
@@ -32616,7 +32622,7 @@
 	}, {
 		id: 'contacts',
 		text: 'Контакты',
-		url: 'https://www.google.ru/maps/place/%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%B7%D0%B0%D0%B2%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D1%8F+%D1%83%D0%BB.,+24,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+107023/@55.7889726,37.7061055,17.5z/data=!4m13!1m7!3m6!1s0x46b5350cb943c82b:0x55282a533f34d8ef!2z0K3Qu9C10LrRgtGA0L7Qt9Cw0LLQvtC00YHQutCw0Y8g0YPQuy4sIDI0LCDQnNC-0YHQutCy0LAsIDEwNzAyMw!3b1!8m2!3d55.788974!4d37.707584!3m4!1s0x46b5350cb943c82b:0x55282a533f34d8ef!8m2!3d55.788974!4d37.707584'
+		url: '/contacts'
 	}, {
 		id: 'projects',
 		text: 'Проекты',
@@ -32634,16 +32640,11 @@
 				    text = _ref2.text,
 				    url = _ref2.url;
 
-
-				var isRemote = /^http/.test(url);
-
 				return React.createElement(
 					_reactRouter.Link,
 					{
 						key: id,
-						to: isRemote ? null : url ? url : '/section/' + id,
-						href: isRemote ? url : null,
-						target: isRemote ? '_blank' : null,
+						to: url ? url : '/section/' + id,
 						className: 'menu__link ' + (params && params.section === id ? '_active' : '')
 					},
 					text
@@ -33516,6 +33517,7 @@
 							bg: data.bg
 						})
 					) : null,
+					_react2.default.createElement('div', { className: 'slide__mask' }),
 					_react2.default.createElement(
 						'div',
 						{ className: 'slide__info' },
@@ -38181,7 +38183,7 @@
 /* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -38229,32 +38231,31 @@
 
 			_this.state = {
 				current: settings.start,
-				shift: 16 * 8,
 				move: 0
 			};
 			return _this;
 		}
 
 		(0, _createClass3.default)(Timeline, [{
-			key: '_move',
+			key: "_move",
 			value: function _move(_ref) {
 				var x = _ref.nativeEvent.x;
 				var _window = window,
 				    vw = _window.innerWidth;
 
 				this.setState({
-					move: (x / vw - .5) * this.state.shift
+					move: (x / vw - .5) * settings.shift
 				});
 			}
 		}, {
-			key: '_unmove',
+			key: "_unmove",
 			value: function _unmove() {
 				this.setState({
 					move: 0
 				});
 			}
 		}, {
-			key: '_setYear',
+			key: "_setYear",
 			value: function _setYear(year) {
 				var _this2 = this;
 
@@ -38267,33 +38268,22 @@
 				};
 			}
 		}, {
-			key: '_getSlideIndex',
+			key: "_getSlideIndex",
 			value: function _getSlideIndex(current, start) {
 				return current - start;
 			}
 		}, {
-			key: 'componentDidMount',
-			value: function componentDidMount() {
-				var year = this.refs.timeline.querySelector('.timeline__year');
-				if (year) {
-					this.setState({
-						shift: year.offsetWidth
-					});
-					console.log(year.offsetWidth);
-				}
-			}
-		}, {
-			key: 'render',
+			key: "render",
 			value: function render() {
 				var _this3 = this;
 
 				var years = [];
 				var start = settings.start,
-				    end = settings.end;
+				    end = settings.end,
+				    shift = settings.shift;
 				var _state = this.state,
 				    current = _state.current,
-				    move = _state.move,
-				    shift = _state.shift;
+				    move = _state.move;
 
 				var currentIndex = current - start;
 
@@ -38302,27 +38292,26 @@
 				}
 
 				return _react2.default.createElement(
-					'div',
+					"div",
 					{
-						className: 'timeline',
-						ref: 'timeline'
+						className: "timeline"
 					},
 					_react2.default.createElement(
-						'div',
-						{ className: 'timeline__label' },
-						'\u041D\u0430\u0448\u0430 \u0438\u0441\u0442\u043E\u0440\u0438\u044F:'
+						"div",
+						{ className: "timeline__label" },
+						"\u041D\u0430\u0448\u0430 \u0438\u0441\u0442\u043E\u0440\u0438\u044F:"
 					),
 					_react2.default.createElement(
-						'div',
-						{ className: 'timeline__wrap' },
+						"div",
+						{ className: "timeline__wrap" },
 						_react2.default.createElement(
-							'div',
+							"div",
 							{
-								className: 'timeline__list',
-								ref: 'timeline',
+								className: "timeline__list",
+								ref: "timeline",
 								style: {
-									transform: 'translateX(calc(50% - ' + (shift * currentIndex + shift / 2) + 'px))',
-									left: move * -1 + 'px'
+									transform: "translateX(calc(50% - " + (shift * currentIndex + shift / 2) + "px))",
+									left: move * -1 + "px"
 								},
 								onMouseOver: this._move.bind(this),
 								onMouseMove: this._move.bind(this),
@@ -38332,19 +38321,19 @@
 								var className = current == year ? '_active' : current - 1 == year || current + 1 == year ? '_preactive' : current - 2 == year || current + 2 == year ? '_prepreactive' : '';
 
 								return _react2.default.createElement(
-									'div',
+									"div",
 									{
-										key: 'timeline__year--' + year,
-										className: 'timeline__year ' + className,
+										key: "timeline__year--" + year,
+										className: "timeline__year " + className,
 										onClick: _this3._setYear.call(_this3, year)
 									},
 									year
 								);
 							}),
 							_react2.default.createElement(
-								'div',
-								{ className: 'timeline__continue' },
-								'\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435 \u0441\u043B\u0435\u0434\u0443\u0435\u0442...'
+								"div",
+								{ className: "timeline__continue" },
+								"\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435 \u0441\u043B\u0435\u0434\u0443\u0435\u0442..."
 							)
 						)
 					)
@@ -39076,7 +39065,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Мы жестко подойдем к отбору компаний, которые будут реализовывать Ваш проект, отбор будет производиться только среди опытнейших организаций, хорошо зарекомендовавших себя на рынке."
+							"content": {
+								"text": "Мы жестко подойдем к отбору компаний, которые будут реализовывать Ваш проект, отбор будет производиться только среди опытнейших организаций, хорошо зарекомендовавших себя на рынке."
+							}
 						},
 						"bg": "services_gen_1.jpg"
 					},
@@ -39088,7 +39079,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Каждый исполнитель пройдет через \"мелкое сито\" тендеров и конкурсов, к работам на объекте будут допущены только те, кто делом доказал свою состоятельность."
+							"content": {
+								"text": "Каждый исполнитель пройдет через \"мелкое сито\" тендеров и конкурсов, к работам на объекте будут допущены только те, кто делом доказал свою состоятельность."
+							}
 						},
 						"bg": "services_gen_2.jpg"
 					},
@@ -39099,7 +39092,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Мы снимем с Вас заботы и найдем возможность сэкономить Ваши средства не в ущерб качеству. Мы не можем реализовать проект дешево и быстро! Мы можем выполнить работы за разумные деньги и в срок!"
+							"content": {
+								"text": "Мы снимем с Вас заботы и найдем возможность сэкономить Ваши средства не в ущерб качеству. Мы не можем реализовать проект дешево и быстро! Мы можем выполнить работы за разумные деньги и в срок!"
+							}
 						},
 						"bg": "services_gen_3.jpg"
 					}
@@ -39115,7 +39110,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Электромонтажным работам в обязательном порядке предшествует поэтапная разработка проекта с учетом специфики объекта. Поэтапный план предполагает четкую последовательность действий при электромонтаже, что позволяет комфортно и безопасно эксплуатировать электрооборудование."
+							"content": {
+								"text": "Электромонтажным работам в обязательном порядке предшествует поэтапная разработка проекта с учетом специфики объекта. Поэтапный план предполагает четкую последовательность действий при электромонтаже, что позволяет комфортно и безопасно эксплуатировать электрооборудование."
+							}
 						},
 						"bg": "services_eom_1.jpg"
 					},
@@ -39126,7 +39123,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Электромонтажные работы включают в себя: прокладку кабельных и воздушных линий электропередач; сборку и установку щитов; монтаж розеток, выключателей, электросчетчиков; монтаж внутреннего, наружного и других видов освещения; прокладку распределительных сетей."
+							"content": {
+								"text": "Электромонтажные работы включают в себя: прокладку кабельных и воздушных линий электропередач; сборку и установку щитов; монтаж розеток, выключателей, электросчетчиков; монтаж внутреннего, наружного и других видов освещения; прокладку распределительных сетей."
+							}
 						},
 						"bg": "services_eom_2.jpg"
 					}
@@ -39142,7 +39141,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Мы имеем многолетний опыт работы в проектировании систем кондиционирования для торговых комплексов, медицинских учреждений, центров обработки данных и других аналогичных помещений."
+							"content": {
+								"text": "Мы имеем многолетний опыт работы в проектировании систем кондиционирования для торговых комплексов, медицинских учреждений, центров обработки данных и других аналогичных помещений."
+							}
 						},
 						"bg": "services_meh_1.jpg"
 					},
@@ -39153,7 +39154,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Мы осуществляем проекты по созданию приточно-вытяжных систем вентиляции, противодымных систем в общественных и промышленных зданиях в полном соответствии с требованиями российских и международных строительных и санитарных норм."
+							"content": {
+								"text": "Мы осуществляем проекты по созданию приточно-вытяжных систем вентиляции, противодымных систем в общественных и промышленных зданиях в полном соответствии с требованиями российских и международных строительных и санитарных норм."
+							}
 						},
 						"bg": "services_meh_2.jpg"
 					},
@@ -39164,7 +39167,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Мы предоставляем полный спектр услуг по созданию внутренних сетей отопления, \nв том числе систем водяного и воздушного отопления, индивидуальных тепловых пунктов (ИТП)."
+							"content": {
+								"text": "Мы предоставляем полный спектр услуг по созданию внутренних сетей отопления, \nв том числе систем водяного и воздушного отопления, индивидуальных тепловых пунктов (ИТП)."
+							}
 						},
 						"bg": "services_meh_3.jpg"
 					},
@@ -39175,7 +39180,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Наши специалисты предлагают широкий спектр услуг по созданию разнообразных систем водоснабжения, в том числе: хозяйственно-питьевой холодной воды, питьевой горячей воды (циркуляционный, а также подающий виды водопроводов), объединенный противопожарный и хозяйственно-питьевой водопровод."
+							"content": {
+								"text": "Наши специалисты предлагают широкий спектр услуг по созданию разнообразных систем водоснабжения, в том числе: хозяйственно-питьевой холодной воды, питьевой горячей воды (циркуляционный, а также подающий виды водопроводов), объединенный противопожарный и хозяйственно-питьевой водопровод."
+							}
 						},
 						"bg": "services_meh_4.jpg"
 					},
@@ -39186,7 +39193,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Компания «Сияние Генподряд» – это профессиональные услуги по проектированию различных систем канализации, в числе которых: производственная канализация (щелочной воды, жиросодержащих вод, химически и механически загрязненной воды, кислотощелочных и кислых вод), бытовая канализация, дождевая канализация (так называемая «ливневка»), дренажная канализация (удаляет и аварийно сбрасывает воды из технических помещений в дренажный колодец)."
+							"content": {
+								"text": "Компания «Сияние Генподряд» – это профессиональные услуги по проектированию различных систем канализации, в числе которых: производственная канализация (щелочной воды, жиросодержащих вод, химически и механически загрязненной воды, кислотощелочных и кислых вод), бытовая канализация, дождевая канализация (так называемая «ливневка»), дренажная канализация (удаляет и аварийно сбрасывает воды из технических помещений в дренажный колодец)."
+							}
 						},
 						"bg": "services_meh_5.jpg"
 					}
@@ -39203,7 +39212,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Комплекс работ по возведению здания. Общестроительные работы одновременно включают в себя различные организационные мероприятия, в том числе, разработку и утверждение проектно-технической документации для строительства и подготовку площадки для возведения здания."
+							"content": {
+								"text": "Комплекс работ по возведению здания. Общестроительные работы одновременно включают в себя различные организационные мероприятия, в том числе, разработку и утверждение проектно-технической документации для строительства и подготовку площадки для возведения здания."
+							}
 						},
 						"bg": "services_obshestroit_1.jpg"
 					}
@@ -39219,7 +39230,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Гарант стабильности бизнес-процессов, ведь работа современного офиса невозможна без электронного документооборота. Наша компания оказывает услуги по разработке проектов и монтажу сетей ЛВС, позволяющих создать телекоммуникационную инфраструктуру и обеспечить эффективное решение задач предприятия."
+							"content": {
+								"text": "Гарант стабильности бизнес-процессов, ведь работа современного офиса невозможна без электронного документооборота. Наша компания оказывает услуги по разработке проектов и монтажу сетей ЛВС, позволяющих создать телекоммуникационную инфраструктуру и обеспечить эффективное решение задач предприятия."
+							}
 						},
 						"bg": "services_sks_1.jpg"
 					},
@@ -39230,7 +39243,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "позволяет обеспечить безопасность объектов, территории и людей путем круглосуточного визуального контроля. Наши специалисты выполнят монтаж систем для офиса, частного дома или любых других объектов в соответствии с проектной документацией."
+							"content": {
+								"text": "позволяет обеспечить безопасность объектов, территории и людей путем круглосуточного визуального контроля. Наши специалисты выполнят монтаж систем для офиса, частного дома или любых других объектов в соответствии с проектной документацией."
+							}
 						},
 						"bg": "services_sks_2.jpg"
 					},
@@ -39241,7 +39256,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Системы контроля управлением доступом являются эффективным средством защиты от незаконного проникновения даже самых крупных объектов, гарантируя безопасность находящихся в нем людей. Наши квалифицированные специалисты осуществляют качественную установку и обслуживание систем в соответствии \nс рекомендациями и нормами."
+							"content": {
+								"text": "Системы контроля управлением доступом являются эффективным средством защиты от незаконного проникновения даже самых крупных объектов, гарантируя безопасность находящихся в нем людей. Наши квалифицированные специалисты осуществляют качественную установку и обслуживание систем в соответствии \nс рекомендациями и нормами."
+							}
 						},
 						"bg": "services_sks_3.jpg"
 					},
@@ -39252,7 +39269,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Монтаж пожарной сигнализации следует выполнять в соответствии с утвержденными нормами, иначе оборудование не сможет выполнить свою основную функцию – предупредить о возгорании. Наши специалисты выполнят установку сигнализации, соблюдая все требования безопасности."
+							"content": {
+								"text": "Монтаж пожарной сигнализации следует выполнять в соответствии с утвержденными нормами, иначе оборудование не сможет выполнить свою основную функцию – предупредить о возгорании. Наши специалисты выполнят установку сигнализации, соблюдая все требования безопасности."
+							}
 						},
 						"bg": "services_sks_4.jpg"
 					},
@@ -39263,7 +39282,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Структурированная кабельная система (СКС) является элементом модернизации цифровой инфраструктуры, инструментом, повышающим рентабельность предприятия и эффективность производственных процессов. Наша компания предлагает услуги по созданию СКС в соответствии с утвержденными нормами."
+							"content": {
+								"text": "Структурированная кабельная система (СКС) является элементом модернизации цифровой инфраструктуры, инструментом, повышающим рентабельность предприятия и эффективность производственных процессов. Наша компания предлагает услуги по созданию СКС в соответствии с утвержденными нормами."
+							}
 						},
 						"bg": "services_sks_5.jpg"
 					},
@@ -39274,7 +39295,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Одним из основных способов коммуникации, позволяющих значительно повысить производительность труда на любом предприятии, будь это офис или торговый центр, является телефонизация. Мы предлагаем услуги по созданию телефонной сети, включая разработку проектов, монтаж и обслуживание."
+							"content": {
+								"text": "Одним из основных способов коммуникации, позволяющих значительно повысить производительность труда на любом предприятии, будь это офис или торговый центр, является телефонизация. Мы предлагаем услуги по созданию телефонной сети, включая разработку проектов, монтаж и обслуживание."
+							}
 						},
 						"bg": "services_sks_6.jpg"
 					}
@@ -39291,7 +39314,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Интерьер помещения является визитной карточкой своего владельца и нередко может отражать характер и жизненное кредо; поэтому в любом проекте отделочным работам уделяется особое внимание, а современное многообразие отделочных материалов позволяет воплотить в жизнь самые искушенные пожелания заказчика."
+							"content": {
+								"text": "Интерьер помещения является визитной карточкой своего владельца и нередко может отражать характер и жизненное кредо; поэтому в любом проекте отделочным работам уделяется особое внимание, а современное многообразие отделочных материалов позволяет воплотить в жизнь самые искушенные пожелания заказчика."
+							}
 						},
 						"bg": "services_otdelka_1.jpg"
 					},
@@ -39303,7 +39328,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Отделочные работы – подразделяют на внешние и внутренние. Под внешней отделкой понимают: гидроизоляционные работы, теплоизоляцию зданий, отделку внешних стен. Внешние отделочные работы подразумевают применение специализированных материалов и выполняются высокопрофессиональными специалистами."
+							"content": {
+								"text": "Отделочные работы – подразделяют на внешние и внутренние. Под внешней отделкой понимают: гидроизоляционные работы, теплоизоляцию зданий, отделку внешних стен. Внешние отделочные работы подразумевают применение специализированных материалов и выполняются высокопрофессиональными специалистами."
+							}
 						},
 						"bg": "services_otdelka_2.jpg"
 					},
@@ -39315,7 +39342,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Внутренние отделочные работы фактически можно назвать ремонтом помещения. Ремонт может быть «черновым» - внутренние поверхности только готовятся к последующей отделке, и полным – с укладкой напольных покрытий, устройством потолка, интерьерной обработкой стен и установкой декоративных элементов."
+							"content": {
+								"text": "Внутренние отделочные работы фактически можно назвать ремонтом помещения. Ремонт может быть «черновым» - внутренние поверхности только готовятся к последующей отделке, и полным – с укладкой напольных покрытий, устройством потолка, интерьерной обработкой стен и установкой декоративных элементов."
+							}
 						},
 						"bg": "services_otdelka_3.jpg"
 					},
@@ -39327,7 +39356,9 @@
 						},
 						"main": {
 							"component": "Text",
-							"content": "Процесс реализации комплекса отделочных работ был бы неполным без создания дизайн-проекта, поэтому для детальной проработки интерьеров помещений и в дальнейшем осуществления авторского надзора к сотрудничеству приглашаются дизайнеры."
+							"content": {
+								"text": "Процесс реализации комплекса отделочных работ был бы неполным без создания дизайн-проекта, поэтому для детальной проработки интерьеров помещений и в дальнейшем осуществления авторского надзора к сотрудничеству приглашаются дизайнеры."
+							}
 						},
 						"bg": "services_otdelka_4.jpg"
 					}
@@ -39378,7 +39409,7 @@
 						}
 					},
 					{
-						"bg": "press-center_news_all.jpg",
+						"bg": "press-center_news_3_football.jpg",
 						"title": "В борьбе за «Кубок Климата»",
 						"quote": {
 							"text": "Никогда не поднимайте свои принципы так высоко, \nчто их нельзя будет приспособить к обстоятельствам.",
@@ -39394,7 +39425,7 @@
 						}
 					},
 					{
-						"bg": "press-center_news_3_football.jpg",
+						"bg": "press-center_news_all.jpg",
 						"quote": {
 							"text": "Никогда не поднимайте свои принципы так высоко, \nчто их нельзя будет приспособить к обстоятельствам.",
 							"author": "Уинстон Черчилль"
@@ -39917,13 +39948,201 @@
 /* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(249);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(275);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(276);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(280);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(327);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(15);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _loadGoogleMapsApi = __webpack_require__(440);
+
+	var _loadGoogleMapsApi2 = _interopRequireDefault(_loadGoogleMapsApi);
+
+	var _config = __webpack_require__(348);
+
+	var _config2 = _interopRequireDefault(_config);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var LatLng = {
+		lng: 37.707416,
+		lat: 55.788968
+	};
+	var styles = [{
+		elementType: 'geometry',
+		stylers: [{ color: '#1e3965' }]
+	}, {
+		elementType: 'labels.icon',
+		stylers: [{ visibility: 'off' }]
+	}, {
+		elementType: 'labels.text.fill',
+		stylers: [{ color: '#4d6a9b' }]
+	}, {
+		elementType: 'labels.text.stroke',
+		stylers: [{ visibility: 'off' }]
+	}, {
+		featureType: 'road',
+		elementType: 'geometry',
+		stylers: [{ color: '#1a2e4b' }]
+	}, {
+		featureType: 'water',
+		elementType: 'geometry',
+		stylers: [{ color: '#182c45' }]
+	}, {
+		featureType: 'water',
+		elementType: 'labels.text.fill',
+		stylers: [{ color: '#4d6a9b' }]
+	}];
+
+	var Contacts = function (_Component) {
+		(0, _inherits3.default)(Contacts, _Component);
+
+		function Contacts() {
+			(0, _classCallCheck3.default)(this, Contacts);
+			return (0, _possibleConstructorReturn3.default)(this, (Contacts.__proto__ || (0, _getPrototypeOf2.default)(Contacts)).apply(this, arguments));
+		}
+
+		(0, _createClass3.default)(Contacts, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				var _this2 = this;
+
+				(0, _loadGoogleMapsApi2.default)({
+					key: _config2.default.googleKey
+				}).then(function (googleMaps) {
+					var map = new googleMaps.Map(_this2.refs.map, {
+						disableDefaultUI: true,
+						center: LatLng,
+						zoom: 16
+					});
+					map.setOptions({
+						styles: styles
+					});
+					new googleMaps.Marker({
+						map: map,
+						position: LatLng,
+						title: 'Siyanie'
+					});
+				}).catch(console.error);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'contacts' },
+					_react2.default.createElement('div', {
+						ref: 'map',
+						className: 'contacts__map'
+					})
+				);
+			}
+		}]);
+		return Contacts;
+	}(_react.Component);
+
+	exports.default = Contacts;
+
+/***/ },
+/* 440 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	exports.default = function () {
+	  var _ref = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+	  var client = _ref.client;
+	  var key = _ref.key;
+	  var language = _ref.language;
+	  var _ref$libraries = _ref.libraries;
+	  var libraries = _ref$libraries === undefined ? [] : _ref$libraries;
+	  var _ref$timeout = _ref.timeout;
+	  var timeout = _ref$timeout === undefined ? 10000 : _ref$timeout;
+	  var v = _ref.v;
+
+	  var callbackName = '__googleMapsApiOnLoadCallback';
+
+	  return new Promise(function (resolve, reject) {
+
+	    // Exit if not running inside a browser.
+	    if (typeof window === 'undefined') {
+	      return reject(new Error('Can only load the Google Maps API in the browser'));
+	    }
+
+	    // Prepare the `script` tag to be inserted into the page.
+	    var scriptElement = document.createElement('script');
+	    var params = ['callback=' + callbackName];
+	    if (client) params.push('client=' + client);
+	    if (key) params.push('key=' + key);
+	    if (language) params.push('language=' + language);
+	    libraries = [].concat(libraries); // Ensure that `libraries` is an array
+	    if (libraries.length) params.push('libraries=' + libraries.join(','));
+	    if (v) params.push('v=' + v);
+	    scriptElement.src = 'https://maps.googleapis.com/maps/api/js?' + params.join('&');
+
+	    // Timeout if necessary.
+	    var timeoutId = null;
+	    if (timeout) {
+	      timeoutId = setTimeout(function () {
+	        window[callbackName] = function () {}; // Set the on load callback to a no-op.
+	        reject(new Error('Could not load the Google Maps API'));
+	      }, timeout);
+	    }
+
+	    // Hook up the on load callback.
+	    window[callbackName] = function () {
+	      if (timeoutId !== null) {
+	        clearTimeout(timeoutId);
+	      }
+	      resolve(window.google.maps);
+	      delete window[callbackName];
+	    };
+
+	    // Insert the `script` tag.
+	    document.body.appendChild(scriptElement);
+	  });
+	};
+
+/***/ },
+/* 441 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
-	var _defineProperty2 = __webpack_require__(440);
+	var _defineProperty2 = __webpack_require__(442);
 
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -39953,7 +40172,7 @@
 
 	var _icon2 = _interopRequireDefault(_icon);
 
-	var _reactInputMask = __webpack_require__(441);
+	var _reactInputMask = __webpack_require__(443);
 
 	var _reactInputMask2 = _interopRequireDefault(_reactInputMask);
 
@@ -40142,7 +40361,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 440 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40171,7 +40390,7 @@
 	};
 
 /***/ },
-/* 441 */
+/* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// https://github.com/sanniassin/react-input-mask
@@ -41010,7 +41229,7 @@
 	module.exports = InputElement;
 
 /***/ },
-/* 442 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -41318,7 +41537,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 443 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41353,11 +41572,11 @@
 
 	var _reactRouter = __webpack_require__(193);
 
-	var _projectsCaraousel = __webpack_require__(444);
+	var _projectsCaraousel = __webpack_require__(446);
 
 	var _projectsCaraousel2 = _interopRequireDefault(_projectsCaraousel);
 
-	var _projectsGrid = __webpack_require__(446);
+	var _projectsGrid = __webpack_require__(448);
 
 	var _projectsGrid2 = _interopRequireDefault(_projectsGrid);
 
@@ -41402,7 +41621,7 @@
 	exports.default = Projects;
 
 /***/ },
-/* 444 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -41437,7 +41656,7 @@
 
 	var _arrow2 = _interopRequireDefault(_arrow);
 
-	var _projectsProject = __webpack_require__(445);
+	var _projectsProject = __webpack_require__(447);
 
 	var _projectsProject2 = _interopRequireDefault(_projectsProject);
 
@@ -41564,7 +41783,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 445 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41671,7 +41890,7 @@
 					setTimeout(function () {
 						_this3.bg.remove();
 						delete _this3.bg;
-					}, _config2.default.transtion);
+					}, _config2.default.transtion * 2);
 				}, _config2.default.trs);
 
 				_reactRouter.hashHistory.push('/project/' + this.props.id);
@@ -41719,7 +41938,7 @@
 	exports.default = ProjectsProject;
 
 /***/ },
-/* 446 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -41750,7 +41969,7 @@
 
 	var _react = __webpack_require__(15);
 
-	var _projectsProject = __webpack_require__(445);
+	var _projectsProject = __webpack_require__(447);
 
 	var _projectsProject2 = _interopRequireDefault(_projectsProject);
 
@@ -41817,7 +42036,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 447 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -41900,7 +42119,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 448 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -41931,7 +42150,7 @@
 
 	var _react = __webpack_require__(15);
 
-	var _social = __webpack_require__(449);
+	var _social = __webpack_require__(451);
 
 	var _social2 = _interopRequireDefault(_social);
 
@@ -41998,7 +42217,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 449 */
+/* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42082,7 +42301,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 450 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -42228,7 +42447,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 451 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
