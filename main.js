@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5b1deda6ee640f4c9995"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f9bb7d11be998ca50b96"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -40037,7 +40037,8 @@
 					var map = new googleMaps.Map(_this2.refs.map, {
 						disableDefaultUI: true,
 						center: LatLng,
-						zoom: 16
+						zoom: 16,
+						backgroundColor: 'none'
 					});
 					map.setOptions({
 						styles: styles
