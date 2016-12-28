@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3dd438e263777a84997d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b67cd6ca9476dcfdda74"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -36939,6 +36939,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactResponsive = __webpack_require__(350);
+
+	var _reactResponsive2 = _interopRequireDefault(_reactResponsive);
+
 	var _config = __webpack_require__(348);
 
 	var _config2 = _interopRequireDefault(_config);
@@ -37032,9 +37036,18 @@
 							_react2.default.createElement(
 								'div',
 								{ className: 'video__title' },
-								'\u0421\u0438\u044F\u043D\u0438\u0435',
-								_react2.default.createElement('br', null),
-								'\u0433\u0435\u043D\u043F\u043E\u0434\u0440\u044F\u0434'
+								_react2.default.createElement(
+									_reactResponsive2.default,
+									{ query: '(min-width: 1024px)' },
+									'\u0414\u0435\u043B\u0430 \u0432\u0430\u0436\u043D\u0435\u0435 \u0441\u043B\u043E\u0432'
+								),
+								_react2.default.createElement(
+									_reactResponsive2.default,
+									{ query: '(max-width: 1023px)' },
+									'\u0421\u0438\u044F\u043D\u0438\u0435',
+									_react2.default.createElement('br', null),
+									'\u0433\u0435\u043D\u043F\u043E\u0434\u0440\u044F\u0434'
+								)
 							),
 							_react2.default.createElement(
 								'div',
