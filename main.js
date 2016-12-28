@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "815f1c157958bc443c8a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "44621138e1c8ad11d47b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -1888,9 +1888,13 @@
 
 	var _footerTrue2 = _interopRequireDefault(_footerTrue);
 
+	var _footerNo = __webpack_require__(459);
+
+	var _footerNo2 = _interopRequireDefault(_footerNo);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(459).polyfill();
+	__webpack_require__(460).polyfill();
 
 	var Root = function Root(_ref) {
 		var children = _ref.children;
@@ -1913,7 +1917,7 @@
 				React.createElement(_reactRouter.Route, { path: 'contacts-metro3', components: { content: _contactsMetro2.default, footer: _footer2.default } }),
 				React.createElement(_reactRouter.Route, { path: 'contacts-metro45', components: { content: _contactsMetro4.default, footer: _footer2.default } }),
 				React.createElement(_reactRouter.Route, { path: 'projects', components: { content: _projects2.default, footer: _footer2.default } }),
-				React.createElement(_reactRouter.Route, { path: 'project/:project', components: { content: _project2.default } }),
+				React.createElement(_reactRouter.Route, { path: 'project/:project', components: { content: _project2.default, footer: _footerNo2.default } }),
 				React.createElement(_reactRouter.Redirect, { from: '/section/about', to: '/section/about/onas' }),
 				React.createElement(_reactRouter.Redirect, { from: '/section/services', to: '/section/services/gen' }),
 				React.createElement(_reactRouter.Redirect, { from: '/section/press-center', to: '/section/press-center/news' }),
@@ -45468,6 +45472,74 @@
 
 /***/ },
 /* 459 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(249);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(275);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(276);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(280);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(327);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(15);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactResponsive = __webpack_require__(350);
+
+	var _reactResponsive2 = _interopRequireDefault(_reactResponsive);
+
+	var _footer = __webpack_require__(455);
+
+	var _footer2 = _interopRequireDefault(_footer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var FooterNo = function (_Component) {
+		(0, _inherits3.default)(FooterNo, _Component);
+
+		function FooterNo() {
+			(0, _classCallCheck3.default)(this, FooterNo);
+			return (0, _possibleConstructorReturn3.default)(this, (FooterNo.__proto__ || (0, _getPrototypeOf2.default)(FooterNo)).apply(this, arguments));
+		}
+
+		(0, _createClass3.default)(FooterNo, [{
+			key: 'render',
+			value: function render() {
+				console.log();
+				return _react2.default.createElement(
+					_reactResponsive2.default,
+					{ query: '(max-device-width: 1023px)' },
+					_react2.default.createElement(_footer2.default, null)
+				);
+			}
+		}]);
+		return FooterNo;
+	}(_react.Component);
+
+	exports.default = FooterNo;
+
+/***/ },
+/* 460 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
