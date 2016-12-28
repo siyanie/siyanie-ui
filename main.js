@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "44621138e1c8ad11d47b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3dd438e263777a84997d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -32602,7 +32602,7 @@
 							),
 							React.createElement(
 								_reactResponsive2.default,
-								{ query: '(min-device-width: 1024px)' },
+								{ query: '(min-width: 1024px)' },
 								React.createElement(
 									'div',
 									{ className: 'header__phone' },
@@ -35012,7 +35012,7 @@
 					{ className: 'menu' },
 					_react2.default.createElement(
 						_reactResponsive2.default,
-						{ query: '(max-device-width: 1024px)' },
+						{ query: '(max-width: 1023px)' },
 						_react2.default.createElement('div', {
 							className: 'menu__icon',
 							onClick: this._toggle.bind(this)
@@ -36082,7 +36082,7 @@
 				"name": "Новости",
 				"content": [
 					{
-						"bg": "press-center_news_4_newyear.jpg",
+						"bg": "press-center_news_3_newyear.jpg",
 						"title": "С Новым годом!",
 						"quote": {
 							"text": "Построенное дешево и сердито \nдержится только на честном слове."
@@ -36105,8 +36105,7 @@
 							"component": "News",
 							"content": {
 								"date": "29 октября 2016",
-								"text": "Наша компания не остается равнодушной к трудностям других и с радостью оказывает поддержку благотворительным фондам. 29 октября 2016 года в рамках проекта «Спорт во благо» прошёл благотворительный забег «Добрый Грязный Трейл». Компания «Сияние Генподряд» приняла участие в пробеге,  организованном для помощи детям с синдромом Дауна.",
-								"link": "https://facebook.com"
+								"text": "Наша компания не остается равнодушной к трудностям других и с радостью оказывает поддержку благотворительным фондам. 29 октября 2016 года в рамках проекта «Спорт во благо» прошёл благотворительный забег «Добрый Грязный Трейл». Компания «Сияние Генподряд» приняла участие в пробеге,  организованном для помощи детям с синдромом Дауна."
 							}
 						}
 					},
@@ -36122,7 +36121,7 @@
 							"content": {
 								"date": "17 ноября 2016",
 								"text": "17 ноября 2016 года в 19:00 в кафе «МАРТ» состоится презентация книги «Любовь меняет все. Любовь Казарновская в беседе с Амарией Рай». Компания «Сияние Генподряд» является генеральным партнёром этого прекрасного вечера. Наша компания желает Любови Юрьевне Казарновской успехов и творческих побед!",
-								"link": "https://vk.com"
+								"link": "https://instagram.com/p/BNWnN8GgucA/?taken-by=siyanie.group"
 							}
 						}
 					},
@@ -36137,8 +36136,7 @@
 							"component": "News",
 							"content": {
 								"date": "18 декабря 2016",
-								"text": "18 декабря компания «Сияние» приняла участие в корпоративном турнире по мини-футболу \"Кубок Климата 2016\". В турнире участвовали команды ведущих производителей и поставщиков оборудования систем вентиляции и кондиционирования, всего 16 известных компаний. Наша команда проявила себя как достойный соперник и завоевала почетную бронзу! ",
-								"link": "https://instagram.com"
+								"text": "18 декабря компания «Сияние» приняла участие в корпоративном турнире по мини-футболу \"Кубок Климата 2016\". В турнире участвовали команды ведущих производителей и поставщиков оборудования систем вентиляции и кондиционирования, всего 16 известных компаний. Наша команда проявила себя как достойный соперник и завоевала почетную бронзу! "
 							}
 						}
 					},
@@ -36748,7 +36746,7 @@
 					),
 					React.createElement(
 						_reactResponsive2.default,
-						{ query: '(min-device-width: 1024px)' },
+						{ query: '(min-width: 1024px)' },
 						React.createElement(
 							_reactRouter.Link,
 							{
@@ -36941,10 +36939,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactResponsive = __webpack_require__(350);
-
-	var _reactResponsive2 = _interopRequireDefault(_reactResponsive);
-
 	var _config = __webpack_require__(348);
 
 	var _config2 = _interopRequireDefault(_config);
@@ -37038,18 +37032,9 @@
 							_react2.default.createElement(
 								'div',
 								{ className: 'video__title' },
-								_react2.default.createElement(
-									_reactResponsive2.default,
-									{ query: '(min-device-width: 1024px)' },
-									'\u0414\u0435\u043B\u0430 \u0432\u0430\u0436\u043D\u0435\u0435 \u0441\u043B\u043E\u0432'
-								),
-								_react2.default.createElement(
-									_reactResponsive2.default,
-									{ query: '(max-device-width: 1023px)' },
-									'\u0421\u0438\u044F\u043D\u0438\u0435 ',
-									_react2.default.createElement('br', null),
-									'\u0433\u0435\u043D\u043F\u043E\u0434\u0440\u044F\u0434'
-								)
+								'\u0421\u0438\u044F\u043D\u0438\u0435',
+								_react2.default.createElement('br', null),
+								'\u0433\u0435\u043D\u043F\u043E\u0434\u0440\u044F\u0434'
 							),
 							_react2.default.createElement(
 								'div',
@@ -37280,7 +37265,7 @@
 						),
 						React.createElement(
 							_reactResponsive2.default,
-							{ query: '(min-device-width: 1024px)' },
+							{ query: '(min-width: 1024px)' },
 							React.createElement(
 								'div',
 								{ className: 'section__arrows' },
@@ -37738,9 +37723,13 @@
 						'div',
 						{ className: 'slide__info' },
 						sectionName ? _react2.default.createElement(
-							'div',
-							{ className: 'slide__section' },
-							sectionName
+							_reactResponsive2.default,
+							{ query: '(max-width: 1023px)' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'slide__section' },
+								sectionName
+							)
 						) : null,
 						data.title ? _react2.default.createElement(
 							'div',
@@ -37754,7 +37743,7 @@
 					),
 					data.quote ? _react2.default.createElement(
 						_reactResponsive2.default,
-						{ query: '(min-device-width: 1024px)' },
+						{ query: '(min-width: 1024px)' },
 						_react2.default.createElement(
 							'div',
 							{ className: 'slide__footer', ref: 'footer' },
@@ -42548,7 +42537,7 @@
 						disableDefaultUI: true,
 						center: LatLng,
 						zoom: 16,
-						backgroundColor: 'none'
+						backgroundColor: '#1e3965'
 					});
 					map.setOptions({
 						styles: styles
@@ -42600,7 +42589,7 @@
 						{ className: 'contacts__bottom' },
 						_react2.default.createElement(
 							_reactResponsive2.default,
-							{ query: '(min-device-width: 1024px)' },
+							{ query: '(min-width: 1024px)' },
 							_react2.default.createElement(
 								'div',
 								{ className: 'contacts__buttons-wrap' },
@@ -44324,7 +44313,7 @@
 									{ className: 'project__logotype' },
 									React.createElement(
 										_reactResponsive2.default,
-										{ query: '(max-device-width: 1023px)' },
+										{ query: '(max-width: 1023px)' },
 										React.createElement(
 											'div',
 											{
@@ -44343,7 +44332,7 @@
 									}),
 									React.createElement(
 										_reactResponsive2.default,
-										{ query: '(max-device-width: 1023px)' },
+										{ query: '(max-width: 1023px)' },
 										React.createElement(
 											'div',
 											{
@@ -44373,7 +44362,7 @@
 								),
 								React.createElement(
 									_reactResponsive2.default,
-									{ query: '(min-device-width: 1024px)' },
+									{ query: '(min-width: 1024px)' },
 									React.createElement(
 										'div',
 										{ className: 'project__text' },
@@ -44388,7 +44377,7 @@
 							),
 							React.createElement(
 								_reactResponsive2.default,
-								{ query: '(min-device-width: 1024px)' },
+								{ query: '(min-width: 1024px)' },
 								React.createElement(
 									'div',
 									{ className: 'project__footer' },
@@ -45106,7 +45095,7 @@
 						{ className: 'footer__content' },
 						React.createElement(
 							_reactResponsive2.default,
-							{ query: '(max-device-width: 1023px)' },
+							{ query: '(max-width: 1023px)' },
 							React.createElement(
 								'div',
 								{ className: 'footer__phone' },
@@ -45115,7 +45104,7 @@
 						),
 						React.createElement(
 							_reactResponsive2.default,
-							{ query: '(min-device-width: 1024px)' },
+							{ query: '(min-width: 1024px)' },
 							React.createElement(
 								'div',
 								{ className: 'footer__copyright' },
@@ -45133,7 +45122,7 @@
 						),
 						React.createElement(
 							_reactResponsive2.default,
-							{ query: '(min-device-width: 1024px)' },
+							{ query: '(min-width: 1024px)' },
 							React.createElement(
 								'div',
 								{ className: 'footer__dev' },
@@ -45308,13 +45297,13 @@
 					null,
 					_react2.default.createElement(
 						_reactResponsive2.default,
-						{ query: '(max-device-width: 1023px)' },
-						_react2.default.createElement(_footer2.default, null)
+						{ query: '(max-width: 1023px)' },
+						_react2.default.createElement(_footer2.default, this.props)
 					),
 					_react2.default.createElement(
 						_reactResponsive2.default,
-						{ query: '(min-device-width: 1024px)' },
-						_react2.default.createElement(_footerInner2.default, null)
+						{ query: '(min-width: 1024px)' },
+						_react2.default.createElement(_footerInner2.default, this.props)
 					)
 				);
 			}
@@ -45525,11 +45514,10 @@
 		(0, _createClass3.default)(FooterNo, [{
 			key: 'render',
 			value: function render() {
-				console.log();
 				return _react2.default.createElement(
 					_reactResponsive2.default,
-					{ query: '(max-device-width: 1023px)' },
-					_react2.default.createElement(_footer2.default, null)
+					{ query: '(max-width: 1023px)' },
+					_react2.default.createElement(_footer2.default, this.props)
 				);
 			}
 		}]);
