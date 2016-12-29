@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "68207bda8494d98ff026"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7d58fe8b5313d1b9348d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -44044,10 +44044,6 @@
 		value: true
 	});
 
-	var _slicedToArray2 = __webpack_require__(363);
-
-	var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
 	var _keys = __webpack_require__(374);
 
 	var _keys2 = _interopRequireDefault(_keys);
@@ -44205,43 +44201,17 @@
 		}, {
 			key: '_touchStart',
 			value: function _touchStart(_ref2) {
-				var _ref2$touches = _ref2.touches;
-				_ref2$touches = _ref2$touches === undefined ? [] : _ref2$touches;
+				var pageX = _ref2.pageX;
 
-				var _ref2$touches2 = (0, _slicedToArray3.default)(_ref2$touches, 1),
-				    _ref2$touches2$ = _ref2$touches2[0],
-				    touch = _ref2$touches2$ === undefined ? {} : _ref2$touches2$,
-				    pageX = _ref2.pageX;
-
-				this.touch.start = touch.pageX || pageX;
-			}
-		}, {
-			key: '_touchMove',
-			value: function _touchMove(_ref3) {
-				var _ref3$touches = _ref3.touches;
-				_ref3$touches = _ref3$touches === undefined ? [] : _ref3$touches;
-
-				var _ref3$touches2 = (0, _slicedToArray3.default)(_ref3$touches, 1),
-				    _ref3$touches2$ = _ref3$touches2[0],
-				    touch = _ref3$touches2$ === undefined ? {} : _ref3$touches2$,
-				    pageX = _ref3.pageX;
-
-				this.touch.end = touch.pageX || pageX;
+				this.touch.start = pageX;
 			}
 		}, {
 			key: '_touchEnd',
-			value: function _touchEnd(_ref4) {
-				var _ref4$touches = _ref4.touches;
-				_ref4$touches = _ref4$touches === undefined ? [] : _ref4$touches;
-
-				var _ref4$touches2 = (0, _slicedToArray3.default)(_ref4$touches, 1),
-				    _ref4$touches2$ = _ref4$touches2[0],
-				    touch = _ref4$touches2$ === undefined ? {} : _ref4$touches2$,
-				    pageX = _ref4.pageX;
-
+			value: function _touchEnd(_ref3) {
+				var pageX = _ref3.pageX;
 				var start = this.touch.start;
 
-				var end = this.touch.end ? this.touch.end : touch.pageX ? touch.pageX : pageX ? pageX : start;
+				var end = pageX ? pageX : start;
 
 				var delta = start - end;
 
@@ -44300,9 +44270,6 @@
 							'div',
 							{
 								className: 'project__bgs',
-								onTouchStart: this._touchStart.bind(this),
-								onTouchMove: this._touchMove.bind(this),
-								onTouchEnd: this._touchEnd.bind(this),
 								onMouseDown: this._touchStart.bind(this),
 								onMouseUp: this._touchEnd.bind(this)
 							},
