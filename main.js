@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "02effbd78854ee5c28e5"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4e99bce3abf3f119fe25"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -36636,7 +36636,7 @@
 						),
 						React.createElement(
 							'a',
-							{ href: 'tel:495 607-7777', className: 'phone__value' },
+							{ href: 'tel:84956077777', className: 'phone__value' },
 							React.createElement(
 								'span',
 								{ className: 'phone__prefix' },
@@ -36901,17 +36901,21 @@
 						className: 'video ' + (open ? 'video--open' : 'video--closed')
 					},
 					_react2.default.createElement(
-						'video',
-						{
-							className: 'video__bg',
-							width: '1280',
-							height: '506',
-							preload: 'none',
-							loop: true,
-							muted: true,
-							autoPlay: true
-						},
-						_react2.default.createElement('source', { src: _config2.default.assets.videos + 'siyanie.mp4', type: 'video/mp4' })
+						_reactResponsive2.default,
+						{ query: '(min-width: 1025px)' },
+						_react2.default.createElement(
+							'video',
+							{
+								className: 'video__bg',
+								width: '1280',
+								height: '506',
+								preload: 'none',
+								loop: true,
+								muted: true,
+								autoPlay: true
+							},
+							_react2.default.createElement('source', { src: _config2.default.assets.videos + 'siyanie.mp4', type: 'video/mp4' })
+						)
 					),
 					_react2.default.createElement(
 						'div',
@@ -46842,8 +46846,10 @@
 			value: function _next() {
 				var current = this.current;
 
-				if (++current <= projects.length) {
+				if (++current < projects.length) {
 					this._toggle(current);
+				} else {
+					this._toggle(0);
 				}
 			}
 		}, {
@@ -46853,6 +46859,8 @@
 
 				if (--current >= 0) {
 					this._toggle(current);
+				} else {
+					this._toggle(projects.length - 1);
 				}
 			}
 		}, {
