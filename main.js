@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "38783a45fb231f57858c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "68207bda8494d98ff026"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -37292,7 +37292,8 @@
 				_ref2$touches = _ref2$touches === undefined ? [] : _ref2$touches;
 
 				var _ref2$touches2 = (0, _slicedToArray3.default)(_ref2$touches, 1),
-				    touch = _ref2$touches2[0],
+				    _ref2$touches2$ = _ref2$touches2[0],
+				    touch = _ref2$touches2$ === undefined ? {} : _ref2$touches2$,
 				    pageX = _ref2.pageX;
 
 				this.touch.end = touch.pageX || pageX;
@@ -44221,7 +44222,8 @@
 				_ref3$touches = _ref3$touches === undefined ? [] : _ref3$touches;
 
 				var _ref3$touches2 = (0, _slicedToArray3.default)(_ref3$touches, 1),
-				    touch = _ref3$touches2[0],
+				    _ref3$touches2$ = _ref3$touches2[0],
+				    touch = _ref3$touches2$ === undefined ? {} : _ref3$touches2$,
 				    pageX = _ref3.pageX;
 
 				this.touch.end = touch.pageX || pageX;
