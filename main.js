@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fde6b10d5394da292bdb"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d5a18ea4323099d352b8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -28803,19 +28803,15 @@
 					_react2.default.createElement(_preloader2.default, { preloaded: this._preloaded.bind(this) }),
 					_react2.default.createElement(_header2.default, { params: this.props.params }),
 					_react2.default.createElement(
-						'div',
-						{ className: 'g-page__main' },
-						_react2.default.createElement(
-							_reactAddonsCssTransitionGroup2.default,
-							{
-								component: 'div',
-								className: 'g-page__main',
-								transitionName: 'anim',
-								transitionLeaveTimeout: _config2.default.trs * 2,
-								transitionEnterTimeout: _config2.default.trs * 2
-							},
-							_react2.default.cloneElement(content || _react2.default.createElement('div', null), { key: key })
-						)
+						_reactAddonsCssTransitionGroup2.default,
+						{
+							component: 'div',
+							className: 'g-page__main',
+							transitionName: 'anim',
+							transitionLeaveTimeout: _config2.default.trs * 2,
+							transitionEnterTimeout: _config2.default.trs * 2
+						},
+						_react2.default.cloneElement(content || _react2.default.createElement('div', null), { key: key })
 					),
 					_react2.default.createElement(
 						_reactAddonsCssTransitionGroup2.default,
@@ -36327,14 +36323,14 @@
 							"content": {
 								"items": [
 									"climat_horizont",
-									"climat_vertikal",
 									"genpodryad_gorizont",
-									"genpodryad_vertikal",
-									"group_horizont",
-									"group_vertikal",
 									"service_horizont",
-									"service_vertikal",
+									"group_horizont",
 									"vent_horizont",
+									"climat_vertikal",
+									"genpodryad_vertikal",
+									"group_vertikal",
+									"service_vertikal",
 									"vent_vertikal"
 								]
 							}
