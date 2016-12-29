@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "067a99387758e6f1c36b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fde6b10d5394da292bdb"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -40276,7 +40276,8 @@
 
 			_this.state = {
 				sources: [],
-				loaded: false
+				loaded: false,
+				bg: null
 			};
 			return _this;
 		}
@@ -40287,11 +40288,10 @@
 				var _this2 = this;
 
 				window.Modernizr.on('webp', function (result) {
-					var webp = false;
-					if ((0, _keys2.default)(result).length > 0) webp = true;
+					var webp = (0, _keys2.default)(result).length > 0;
 
 					_this2.setState({
-						sources: _this2._getSources(webp)
+						bg: _this2._setBg(webp)
 					});
 				});
 			}
@@ -40348,9 +40348,24 @@
 					var _devices$device2 = (0, _slicedToArray3.default)(_configSizes2.default[device], 1),
 					    width = _devices$device2[0];
 
-					console.log(vw, width);
 					return vw > width;
 				}) || 'phone';
+			}
+		}, {
+			key: '_setBg',
+			value: function _setBg(webp) {
+				var bg = this.props.bg;
+
+				var BG = bg.split('.');
+
+				return _react2.default.createElement('img', {
+					className: 'bg__image',
+					width: window.innerWidth,
+					height: window.innerHeight,
+					src: '' + _config2.default.assets.images + BG[0] + '--' + this._getDevice() + '@' + _utils2.default.getDPI() + '.' + (webp ? 'webp' : BG[1]),
+					alt: '',
+					onLoad: this._loaded.bind(this)
+				});
 			}
 		}, {
 			key: '_loaded',
@@ -40362,23 +40377,12 @@
 		}, {
 			key: 'render',
 			value: function render() {
-				var _props = this.props,
-				    className = _props.className,
-				    bg = _props.bg;
-
-				var BG = bg.split('.');
+				var className = this.props.className;
 
 				return _react2.default.createElement(
 					'div',
 					{ className: (className ? className : '') + ' bg ' + (this.state.loaded ? '_loaded' : '_loading') },
-					_react2.default.createElement('img', {
-						className: 'bg__image',
-						width: window.innerWidth,
-						height: window.innerHeight,
-						src: '' + _config2.default.assets.images + BG[0] + '--' + this._getDevice() + '@' + _utils2.default.getDPI() + '.' + BG[1],
-						alt: '',
-						onLoad: this._loaded.bind(this)
-					})
+					this.state.bg
 				);
 			}
 		}]);
