@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "363951563c8264aa65bf"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "38783a45fb231f57858c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -36187,27 +36187,57 @@
 										]
 									},
 									{
+										"name": "Благотворительный фонд\n \"Даунсайд Ап\"",
 										"previews": [
-											"http://placehold.alanev.ru/205x290",
-											"http://placehold.alanev.ru/205x290",
-											"http://placehold.alanev.ru/205x290"
+											"doc_downsidup_sm.jpg"
 										],
 										"images": [
-											"http://placehold.alanev.ru/550x770",
-											"http://placehold.alanev.ru/550x770",
-											"http://placehold.alanev.ru/550x770"
+											"doc_downsidup_big.jpg"
 										]
 									},
 									{
+										"name": "Благодарность \nот Любви Казарновской",
 										"previews": [
-											"http://placehold.alanev.ru/205x290",
-											"http://placehold.alanev.ru/205x290",
-											"http://placehold.alanev.ru/205x290"
+											"doc_kazarn_sm.jpg"
 										],
 										"images": [
-											"http://placehold.alanev.ru/550x770",
-											"http://placehold.alanev.ru/550x770",
-											"http://placehold.alanev.ru/550x770"
+											"doc_kazarn_big.jpg"
+										]
+									},
+									{
+										"name": "Рекомендательное письмо \nООО \"Бекар-Эксплуатация\"",
+										"previews": [
+											"doc_becar_sm.jpg"
+										],
+										"images": [
+											"doc_becar_big.jpg"
+										]
+									},
+									{
+										"name": "Благодарственное \nписьмо ООО \"Элита-Мск\"",
+										"previews": [
+											"doc_elita_sm.jpg"
+										],
+										"images": [
+											"doc_elita_big.jpg"
+										]
+									},
+									{
+										"name": "Благодарность от \nООО \"Минимакс\"",
+										"previews": [
+											"doc_minimax_sm.jpg"
+										],
+										"images": [
+											"doc_minimax_big.jpg"
+										]
+									},
+									{
+										"name": "Боагрдарность от \nкомпании \"ОВК-ХОЛДИНГ\"",
+										"previews": [
+											"doc_ovk_sm.jpg"
+										],
+										"images": [
+											"doc_ovk_big.jpg"
 										]
 									}
 								]
@@ -36249,75 +36279,30 @@
 										]
 									},
 									{
+										"name": "Оцийиальный дистрибьютор DAICHI",
 										"previews": [
-											"http://placehold.alanev.ru/205x290/345",
-											"http://placehold.alanev.ru/205x290/456",
-											"http://placehold.alanev.ru/205x290/567"
+											"doc_daichi_sm.jpg"
 										],
 										"images": [
-											"http://placehold.alanev.ru/550x770/345",
-											"http://placehold.alanev.ru/550x770/456",
-											"http://placehold.alanev.ru/550x770/567"
+											"doc_daichi_big.jpg"
 										]
 									},
 									{
+										"name": "Официальный партнер NED",
 										"previews": [
-											"http://placehold.alanev.ru/205x290/678",
-											"http://placehold.alanev.ru/205x290/789",
-											"http://placehold.alanev.ru/205x290/89a"
+											"doc_ned_sm.jpg"
 										],
 										"images": [
-											"http://placehold.alanev.ru/550x770/678",
-											"http://placehold.alanev.ru/550x770/789",
-											"http://placehold.alanev.ru/550x770/89a"
+											"doc_ned_big.jpg"
 										]
 									},
 									{
+										"name": "Официальный дилер Breez",
 										"previews": [
-											"http://placehold.alanev.ru/205x290/9ab",
-											"http://placehold.alanev.ru/205x290/abc",
-											"http://placehold.alanev.ru/205x290/bcf"
+											"doc_breez_sm.jpg"
 										],
 										"images": [
-											"http://placehold.alanev.ru/550x770/9ab",
-											"http://placehold.alanev.ru/550x770/abc",
-											"http://placehold.alanev.ru/550x770/bcf"
-										]
-									},
-									{
-										"previews": [
-											"http://placehold.alanev.ru/205x290/9ab",
-											"http://placehold.alanev.ru/205x290/abc",
-											"http://placehold.alanev.ru/205x290/bcf"
-										],
-										"images": [
-											"http://placehold.alanev.ru/550x770/9ab",
-											"http://placehold.alanev.ru/550x770/abc",
-											"http://placehold.alanev.ru/550x770/bcf"
-										]
-									},
-									{
-										"previews": [
-											"http://placehold.alanev.ru/205x290/9ab",
-											"http://placehold.alanev.ru/205x290/abc",
-											"http://placehold.alanev.ru/205x290/bcf"
-										],
-										"images": [
-											"http://placehold.alanev.ru/550x770/9ab",
-											"http://placehold.alanev.ru/550x770/abc",
-											"http://placehold.alanev.ru/550x770/bcf"
-										]
-									},
-									{
-										"previews": [
-											"http://placehold.alanev.ru/205x290/9ab",
-											"http://placehold.alanev.ru/205x290/abc",
-											"http://placehold.alanev.ru/205x290/bcf"
-										],
-										"images": [
-											"http://placehold.alanev.ru/550x770/9ab",
-											"http://placehold.alanev.ru/550x770/abc",
-											"http://placehold.alanev.ru/550x770/bcf"
+											"doc_breez_big.jpg"
 										]
 									}
 								]
@@ -36339,136 +36324,16 @@
 							"component": "MediaCenter",
 							"content": {
 								"items": [
-									{
-										"image": "http://placehold.alanev.ru/160x50",
-										"links": [
-											{
-												"name": "png",
-												"url": "http://placehold.alanev.ru/160x50"
-											},
-											{
-												"name": "ai",
-												"url": "http://placehold.alanev.ru/160x50"
-											}
-										]
-									},
-									{
-										"image": "http://placehold.alanev.ru/160x50",
-										"links": [
-											{
-												"name": "png",
-												"url": "http://placehold.alanev.ru/160x50"
-											},
-											{
-												"name": "ai",
-												"url": "http://placehold.alanev.ru/160x50"
-											}
-										]
-									},
-									{
-										"image": "http://placehold.alanev.ru/160x50",
-										"links": [
-											{
-												"name": "png",
-												"url": "http://placehold.alanev.ru/160x50"
-											},
-											{
-												"name": "ai",
-												"url": "http://placehold.alanev.ru/160x50"
-											}
-										]
-									},
-									{
-										"image": "http://placehold.alanev.ru/160x50",
-										"links": [
-											{
-												"name": "png",
-												"url": "http://placehold.alanev.ru/160x50"
-											},
-											{
-												"name": "ai",
-												"url": "http://placehold.alanev.ru/160x50"
-											}
-										]
-									},
-									{
-										"image": "http://placehold.alanev.ru/160x50",
-										"links": [
-											{
-												"name": "png",
-												"url": "http://placehold.alanev.ru/160x50"
-											},
-											{
-												"name": "ai",
-												"url": "http://placehold.alanev.ru/160x50"
-											}
-										]
-									},
-									{
-										"image": "http://placehold.alanev.ru/100x100",
-										"links": [
-											{
-												"name": "png",
-												"url": "http://placehold.alanev.ru/100x100"
-											},
-											{
-												"name": "ai",
-												"url": "http://placehold.alanev.ru/100x100"
-											}
-										]
-									},
-									{
-										"image": "http://placehold.alanev.ru/100x100",
-										"links": [
-											{
-												"name": "png",
-												"url": "http://placehold.alanev.ru/100x100"
-											},
-											{
-												"name": "ai",
-												"url": "http://placehold.alanev.ru/100x100"
-											}
-										]
-									},
-									{
-										"image": "http://placehold.alanev.ru/100x100",
-										"links": [
-											{
-												"name": "png",
-												"url": "http://placehold.alanev.ru/100x100"
-											},
-											{
-												"name": "ai",
-												"url": "http://placehold.alanev.ru/100x100"
-											}
-										]
-									},
-									{
-										"image": "http://placehold.alanev.ru/100x100",
-										"links": [
-											{
-												"name": "png",
-												"url": "http://placehold.alanev.ru/100x100"
-											},
-											{
-												"name": "ai",
-												"url": "http://placehold.alanev.ru/100x100"
-											}
-										]
-									},
-									{
-										"image": "http://placehold.alanev.ru/100x100",
-										"links": [
-											{
-												"name": "png",
-												"url": "http://placehold.alanev.ru/100x100"
-											},
-											{
-												"name": "ai",
-												"url": "http://placehold.alanev.ru/100x100"
-											}
-										]
-									}
+									"climat_horizont",
+									"climat_vertikal",
+									"genpodryad_gorizont",
+									"genpodryad_vertikal",
+									"group_horizont",
+									"group_vertikal",
+									"service_horizont",
+									"service_vertikal",
+									"vent_horizont",
+									"vent_vertikal"
 								]
 							}
 						}
@@ -36486,38 +36351,21 @@
 		"name": "Проекты",
 		"content": [
 			{
-				"id": "bork",
-				"title": "Офис компании BORK",
-				"square": "2800 кв.м.",
-				"date": "2015 г.",
-				"address": "г. Москва, Пресненская набережная, д.6 стр. 2.",
-				"text": "Монтажные работы систем вентиляции, кондиционирования и отопления; водопровод, канализация.",
-				"preview_sm": "project_alkatel_sm.jpg",
-				"preview_mid": "project_alkatel_mid.jpg",
-				"bgs": [
-					"project_alkatel_big.jpg",
-					"project_alkatel_big_2.jpg",
-					"project_alkatel_big_3.jpg",
-					"project_alkatel_big_4.jpg",
-					"project_alkatel_big_5.jpg"
-				]
-			},
-			{
 				"id": "johnson",
 				"title": "Офисные помещения компании Johnson&Johnson",
 				"square": "800 кв.м.",
-				"date": "август 2013 г. - ноябрь 2013 г.",
+				"date": "август 2013 г. - ноябрь 2013 г. ",
 				"address": "г. Москва, Якиманский переулок, вл.6 в Многофункциональном комплексе \"Имперский дом\".",
 				"text": "Монтажные работы систем вентиляции, кондиционирования, отопления; водоснабжение и канализация.",
-				"preview_sm": "project_arktika_sm.jpg",
-				"preview_mid": "project_arktika_mid.jpg",
+				"preview_sm": "project_johnson_sm.jpg",
+				"preview_mid": "project_johnson_mid.jpg",
 				"bgs": [
-					"project_arktika_big.jpg",
-					"project_arktika_big_2.jpg",
-					"project_arktika_big_3.jpg",
-					"project_arktika_big_4.jpg",
-					"project_arktika_big_5.jpg",
-					"project_arktika_big_6.jpg"
+					"project_johnson_big.jpg",
+					"project_johnson_big_2.jpg",
+					"project_johnson_big_3.jpg",
+					"project_johnson_big_4.jpg",
+					"project_johnson_big_5.jpg",
+					"project_johnson_big_6.jpg"
 				]
 			},
 			{
@@ -36533,11 +36381,30 @@
 					"project_alfabank_big.jpg",
 					"project_alfabank_big_2.jpg",
 					"project_alfabank_big_3.jpg",
-					"project_alfabank_big_4.jpg"
+					"project_alfabank_big_4.jpg",
+					"project_alfabank_big_5.jpg"
 				]
 			},
 			{
-				"id": "honeywell",
+				"id": "openbank",
+				"title": "Коммерческий банк \"Открытие\"",
+				"square": "3500 кв.м.",
+				"date": "январь 2012 г. - июль 2012 г. ",
+				"address": "г. Москва, Кожевническая ул., дом 8/4 корпус \"А\", БЦ \"Вивальди Плаза\".",
+				"text": "Монтажные работы систем вентиляции и кондиционирования критических систем.",
+				"preview_sm": "project_openbank_sm.jpg",
+				"preview_mid": "project_openbank_mid.jpg",
+				"bgs": [
+					"project_openbank_big.jpg",
+					"project_openbank_big_2.jpg",
+					"project_openbank_big_3.jpg",
+					"project_openbank_big_4.jpg",
+					"project_openbank_big_5.jpg",
+					"project_openbank_big_6.jpg"
+				]
+			},
+			{
+				"id": "sinop",
 				"title": "Бизнес-центр «Синоп»",
 				"square": "5300 кв.м",
 				"date": "февраль 2015 г. - декабрь 2015 г.",
@@ -36572,89 +36439,125 @@
 				]
 			},
 			{
-				"id": "gazprom",
-				"title": "Штаб-квартира Газпром Экспорт ",
-				"square": "14000 кв.м.",
-				"date": "2014 г. -2015 г.",
-				"address": "г. Санкт-Петербург, площадь Островского, 2а.",
-				"text": "Монтажные работы систем вентиляции, кондиционирования, отопления, водоснабжения и канализации.",
-				"preview_sm": "project_alkatel_sm.jpg",
-				"preview_mid": "project_alkatel_mid.jpg",
+				"id": "raiffeisen",
+				"title": "Штаб-квартира \"РайффайзенБанк\"",
+				"square": "10000 кв.м.",
+				"date": "декабрь 2013 г. - апрель 2014 г. ",
+				"address": "г. Москва, пр-т Андропова, д.18/2. 2-6 этаж.",
+				"text": "Монтажные работы систем вентиляции, кондиционирования, отопления; водоснабжение и канализация.",
+				"preview_sm": "project_raiffeisen_sm.jpg",
+				"preview_mid": "project_raiffeisen_mid.jpg",
 				"bgs": [
-					"project_alkatel_big.jpg",
-					"project_alkatel_big_2.jpg",
-					"project_alkatel_big_3.jpg",
-					"project_alkatel_big_4.jpg",
-					"project_alkatel_big_5.jpg"
-				]
-			},
-			{
-				"id": "openbank",
-				"title": "Коммерческий банк \"Открытие\"",
-				"square": "3500 кв.м.",
-				"date": "январь 2012 г. - июль 2012 г. ",
-				"address": "г. Москва, Кожевническая ул., дом 8/4 корпус \"А\", БЦ \"Вивальди Плаза\".",
-				"text": "Монтажные работы систем вентиляции и кондиционирования критических систем.",
-				"preview_sm": "project_arktika_sm.jpg",
-				"preview_mid": "project_arktika_mid.jpg",
-				"bgs": [
-					"project_arktika_big.jpg",
-					"project_arktika_big_2.jpg",
-					"project_arktika_big_3.jpg",
-					"project_arktika_big_4.jpg",
-					"project_arktika_big_5.jpg",
-					"project_arktika_big_6.jpg"
+					"project_raiffeisen_big.jpg",
+					"project_raiffeisen_big_2.jpg",
+					"project_raiffeisen_big_3.jpg",
+					"project_raiffeisen_big_4.jpg",
+					"project_raiffeisen_big_5.jpg",
+					"project_raiffeisen_big_6.jpg",
+					"project_raiffeisen_big_7.jpg"
 				]
 			},
 			{
 				"id": "samsung",
+				"title": "Офис отделения \"Samsung\"",
+				"square": "5500 кв.м.",
+				"date": "март 2011 - июнь 2011",
+				"address": "г. Москва, ул. Воздвиженка, д. 10",
+				"text": "Монтажные и проектные работы систем вентиляции, кондиционирования, водоснабжения, канализации.",
+				"preview_sm": "project_samsung_sm.jpg",
+				"preview_mid": "project_samsung_mid.jpg",
+				"bgs": [
+					"project_samsung_big.jpg",
+					"project_samsung_big_2.jpg",
+					"project_samsung_big_3.jpg",
+					"project_samsung_big_4.jpg"
+				]
+			},
+			{
+				"id": "aegis",
+				"title": "Офис компании \"AEGIS\"",
+				"square": "2500 кв.м.",
+				"date": "апрель 2012 - сентябрь 2012",
+				"address": "г. Москва, Краснопресненская наб., Москва-Сити, Imperia Tower",
+				"text": "Монтажные работы систем вентиляции, кондиционирования, отопления, водоснабжения и канализации.",
+				"preview_sm": "project_aegis_sm.jpg",
+				"preview_mid": "project_aegis_mid.jpg",
+				"bgs": [
+					"project_aegis_big.jpg",
+					"project_aegis_big_2.jpg",
+					"project_aegis_big_3.jpg",
+					"project_aegis_big_4.jpg",
+					"project_aegis_big_5.jpg",
+					"project_aegis_big_6.jpg",
+					"project_aegis_big_7.jpg"
+				]
+			},
+			{
+				"id": "linxtelecom",
+				"title": "\"LINXTELECOM\" центр обработки данных",
+				"square": "500 кв.м.",
+				"date": "октябрь 2014",
+				"address": "Московская обл., Химки, «Клязьма-Старбеево» д. 15-16 ",
+				"text": "Монтажные работы систем вентиляции, кондиционирования, отопления, водоснабжения и канализации.",
+				"preview_sm": "project_linxtelecom_sm.jpg",
+				"preview_mid": "project_linxtelecom_mid.jpg",
+				"bgs": [
+					"project_linxtelecom_big.jpg",
+					"project_linxtelecom_big_2.jpg",
+					"project_linxtelecom_big_3.jpg"
+				]
+			},
+			{
+				"id": "eek",
+				"title": "Евразийская экономическая комиссия",
+				"square": "7500 кв.м.",
+				"date": "февраль 2013 г. - июнь 2013 г.",
+				"address": "г. Москва, ул. Летниковская, д.2, стр.1 Офисные помещения в ДЦ \"Вивальди Плаза\"",
+				"text": "Проектные и монтажные работы систем вентиляции, кондиционирования, отопления, водоснабжения и канализации.",
+				"preview_sm": "project_eek_sm.jpg",
+				"preview_mid": "project_eek_mid.jpg",
+				"bgs": [
+					"project_eek_big.jpg",
+					"project_eek_big_2.jpg",
+					"project_eek_big_3.jpg",
+					"project_eek_big_4.jpg",
+					"project_eek_big_5.jpg"
+				]
+			},
+			{
+				"id": "novatek",
 				"title": "Штаб-квартира \"Новатэк\"",
 				"square": "16000 кв.м.",
 				"date": "июнь 2010 г. - апрель 2011 г. ",
 				"address": "г. Москва, ул. Удальцова, д.2.",
 				"text": "Монтажные работы систем вентиляции, кондиционирования и отопления; водопровод, канализация, климатические балки фирмы Halton.",
-				"preview_sm": "project_alfabank_sm.jpg",
-				"preview_mid": "project_alfabank_mid.jpg",
+				"preview_sm": "project_novatek_sm.jpg",
+				"preview_mid": "project_novatek_mid.jpg",
 				"bgs": [
-					"project_alfabank_big.jpg",
-					"project_alfabank_big_2.jpg",
-					"project_alfabank_big_3.jpg",
-					"project_alfabank_big_4.jpg"
+					"project_novatek_big.jpg",
+					"project_novatek_big_2.jpg",
+					"project_novatek_big_3.jpg",
+					"project_novatek_big_4.jpg",
+					"project_novatek_big_5.jpg"
 				]
 			},
 			{
-				"id": "raiffeisen",
-				"title": "Штаб-квартира \"РайффайзенБанк\"",
-				"square": "10000 кв.м.",
-				"date": "декабрь 2013 г. - апрель 2014 г. ",
-				"address": "Монтажные работы систем вентиляции, кондиционирования, отопления; водоснабжение и канализация.",
-				"text": "г. Москва, пр-т Андропова, д.18/2. 2-6 этаж.",
-				"preview_sm": "project_sinop_sm.jpg",
-				"preview_mid": "project_sinop_mid.jpg",
+				"id": "groupm",
+				"title": "Торговые площади \"GROUPM\"",
+				"square": "5800 кв.м.",
+				"date": "Сентябрь 2011 - январь 2012",
+				"address": "Москва, Цветной б-р, БЦ МФК \"Легенда Цветного\"",
+				"text": "Монтажные работы систем вентиляции и кондиционирования и отопления.",
+				"preview_sm": "project_groupm_sm.jpg",
+				"preview_mid": "project_groupm_mid.jpg",
 				"bgs": [
-					"project_sinop_big.jpg",
-					"project_sinop_big_2.jpg",
-					"project_sinop_big_3.jpg",
-					"project_sinop_big_4.jpg"
-				]
-			},
-			{
-				"id": "rostelekom",
-				"title": "Штаб-квартира «Ростелеком»",
-				"square": "48000 кв.м.",
-				"date": "2015 г.",
-				"address": "г. Москва, п. Румянцево, БП Comcity.",
-				"text": "Монтажные работы систем вентиляции и кондиционирования, водоснабжения и канализации.",
-				"preview_sm": "project_nokia_sm.jpg",
-				"preview_mid": "project_nokia_mid.jpg",
-				"bgs": [
-					"project_nokia_big.jpg",
-					"project_nokia_big_2.jpg",
-					"project_nokia_big_3.jpg",
-					"project_nokia_big_4.jpg",
-					"project_nokia_big_5.jpg",
-					"project_nokia_big_6.jpg",
-					"project_nokia_big_7.jpg"
+					"project_groupm_big.jpg",
+					"project_groupm_big_2.jpg",
+					"project_groupm_big_3.jpg",
+					"project_groupm_big_4.jpg",
+					"project_groupm_big_5.jpg",
+					"project_groupm_big_6.jpg",
+					"project_groupm_big_7.jpg"
 				]
 			}
 		]
@@ -42220,7 +42123,7 @@
 /* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -42250,6 +42153,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _config = __webpack_require__(348);
+
+	var _config2 = _interopRequireDefault(_config);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var MediaCenter = function (_Component) {
@@ -42261,38 +42168,35 @@
 		}
 
 		(0, _createClass3.default)(MediaCenter, [{
-			key: "render",
+			key: 'render',
 			value: function render() {
 				var items = this.props.data.items;
 
 
 				return _react2.default.createElement(
-					"div",
-					{ className: "mediacenter" },
-					items.map(function (_ref, index) {
-						var image = _ref.image,
-						    links = _ref.links;
+					'div',
+					{ className: 'mediacenter' },
+					items.map(function (id, index) {
 						return _react2.default.createElement(
-							"div",
+							'div',
 							{
-								className: "mediacenter__item",
-								key: "mediacenter__item--" + index
+								className: 'mediacenter__item',
+								key: 'mediacenter__item--' + index
 							},
-							_react2.default.createElement("img", { src: image, alt: "", className: "mediacenter__image" }),
+							_react2.default.createElement('img', { src: _config2.default.assets.images + 'media/' + id + '.png', alt: '', className: 'mediacenter__image' }),
 							_react2.default.createElement(
-								"div",
-								{ className: "mediacenter__label" },
-								links.map(function (_ref2, i) {
-									var name = _ref2.name,
-									    url = _ref2.url;
+								'div',
+								{ className: 'mediacenter__label' },
+								['png', 'ai'].map(function (ext, i) {
 									return _react2.default.createElement(
-										"a",
+										'a',
 										{
-											href: url,
-											className: "mediacenter__link",
-											key: "mediacenter__item--" + index + "__link--" + i
+											target: '_blank',
+											href: _config2.default.assets.images + 'media/' + id + '.' + ext,
+											className: 'mediacenter__link',
+											key: 'mediacenter__item--' + index + '__link--' + i
 										},
-										name
+										ext
 									);
 								})
 							)
@@ -44631,19 +44535,23 @@
 
 				return _react2.default.createElement(
 					'div',
-					{ className: 'projects__underscroll' },
-					_react2.default.createElement(_projectsCaraousel2.default, {
-						all: all,
-						ref: 'carousel'
-					}),
-					all ? _react2.default.createElement(_projectsGrid2.default, null) : null,
+					{ className: 'projects__wrap ' + (all ? '_all' : '') },
 					_react2.default.createElement(
-						_reactRouter.Link,
-						{
-							className: 'projects__more ' + (all ? '_hidden' : ''),
-							to: '/projects?all=true'
-						},
-						'\u0415\u0449\u0435 \u043F\u0440\u043E\u0435\u043A\u0442\u044B'
+						'div',
+						{ className: 'projects__underscroll' },
+						_react2.default.createElement(_projectsCaraousel2.default, {
+							all: all,
+							ref: 'carousel'
+						}),
+						all ? _react2.default.createElement(_projectsGrid2.default, null) : null,
+						_react2.default.createElement(
+							_reactRouter.Link,
+							{
+								className: 'projects__more ' + (all ? '_hidden' : ''),
+								to: '/projects?all=true'
+							},
+							'\u0415\u0449\u0435 \u043F\u0440\u043E\u0435\u043A\u0442\u044B'
+						)
 					)
 				);
 			}
