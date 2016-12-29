@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "4e99bce3abf3f119fe25"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "45e8b50ee397c18688ba"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -37353,6 +37353,7 @@
 					video ? _react2.default.createElement(
 						'div',
 						{ className: 'slides__video' },
+						_react2.default.createElement('div', { className: 'slide__mask' }),
 						_react2.default.createElement('video', {
 							src: '' + _config2.default.assets.videos + video + '.mp4',
 							className: 'slides__video-source',
@@ -40140,6 +40141,7 @@
 
 				var componentName = data.main.component;
 				var Content = components[componentName];
+				var isHistory = params.subsection === 'history';
 
 				return _react2.default.createElement(
 					'div',
@@ -40151,7 +40153,7 @@
 							bg: data.bg
 						})
 					) : null,
-					_react2.default.createElement('div', { className: 'slide__mask' }),
+					!isHistory ? _react2.default.createElement('div', { className: 'slide__mask' }) : null,
 					_react2.default.createElement(
 						'div',
 						{ className: 'slide__info' },
