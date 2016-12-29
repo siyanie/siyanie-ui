@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b67cd6ca9476dcfdda74"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "363951563c8264aa65bf"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -1884,17 +1884,17 @@
 
 	var _footer2 = _interopRequireDefault(_footer);
 
-	var _footerTrue = __webpack_require__(457);
+	var _footerTrue = __webpack_require__(458);
 
 	var _footerTrue2 = _interopRequireDefault(_footerTrue);
 
-	var _footerNo = __webpack_require__(459);
+	var _footerNo = __webpack_require__(460);
 
 	var _footerNo2 = _interopRequireDefault(_footerNo);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(460).polyfill();
+	__webpack_require__(461).polyfill();
 
 	var Root = function Root(_ref) {
 		var children = _ref.children;
@@ -36149,7 +36149,7 @@
 						"main": {
 							"component": "News",
 							"content": {
-								"link": "https://facebook.com"
+								"link": "https://facebook.com/siyaniegenpodryad"
 							}
 						}
 					}
@@ -36998,6 +36998,7 @@
 					_react2.default.createElement(
 						'video',
 						{
+							poster: '//siyanie.github.io/siyanie-data/images/about_onas_5--tablet_l@1.jpg',
 							className: 'video__bg',
 							width: '1280',
 							height: '506',
@@ -37371,35 +37372,54 @@
 		(0, _createClass3.default)(Slides, [{
 			key: '_touchStart',
 			value: function _touchStart(_ref) {
-				var _ref$touches = (0, _slicedToArray3.default)(_ref.touches, 1),
-				    touch = _ref$touches[0];
+				var _ref$touches = _ref.touches;
+				_ref$touches = _ref$touches === undefined ? [] : _ref$touches;
 
-				this.touch.end = touch.pageX;
-				this.touch.start = touch.pageX;
+				var _ref$touches2 = (0, _slicedToArray3.default)(_ref$touches, 1),
+				    _ref$touches2$ = _ref$touches2[0],
+				    touch = _ref$touches2$ === undefined ? {} : _ref$touches2$,
+				    pageX = _ref.pageX;
+
+				this.touch.start = touch.pageX || pageX;
 			}
 		}, {
 			key: '_touchMove',
 			value: function _touchMove(_ref2) {
-				var _ref2$touches = (0, _slicedToArray3.default)(_ref2.touches, 1),
-				    touch = _ref2$touches[0];
+				var _ref2$touches = _ref2.touches;
+				_ref2$touches = _ref2$touches === undefined ? [] : _ref2$touches;
 
-				this.touch.end = touch.pageX;
+				var _ref2$touches2 = (0, _slicedToArray3.default)(_ref2$touches, 1),
+				    touch = _ref2$touches2[0],
+				    pageX = _ref2.pageX;
+
+				this.touch.end = touch.pageX || pageX;
 			}
 		}, {
 			key: '_touchEnd',
-			value: function _touchEnd() {
-				var _touch = this.touch,
-				    start = _touch.start,
-				    end = _touch.end;
+			value: function _touchEnd(_ref3) {
+				var _ref3$touches = _ref3.touches;
+				_ref3$touches = _ref3$touches === undefined ? [] : _ref3$touches;
+
+				var _ref3$touches2 = (0, _slicedToArray3.default)(_ref3$touches, 1),
+				    _ref3$touches2$ = _ref3$touches2[0],
+				    touch = _ref3$touches2$ === undefined ? {} : _ref3$touches2$,
+				    pageX = _ref3.pageX;
+
+				var start = this.touch.start;
+
+				var end = this.touch.end ? this.touch.end : touch.pageX ? touch.pageX : pageX ? pageX : start;
+
 				var _props = this.props,
 				    activeSlide = _props.activeSlide,
 				    selectSlide = _props.selectSlide;
 
 
-				if (start > end) {
+				var delta = start - end;
+
+				if (delta > 0 && delta > 50) {
 					selectSlide(activeSlide + 1)();
 				}
-				if (end > start) {
+				if (delta < 0 && delta < -50) {
 					selectSlide(activeSlide - 1)();
 				}
 			}
@@ -37426,7 +37446,9 @@
 						ref: 'slides',
 						onTouchStart: this._touchStart.bind(this),
 						onTouchMove: this._touchMove.bind(this),
-						onTouchEnd: this._touchEnd.bind(this)
+						onTouchEnd: this._touchEnd.bind(this),
+						onMouseDown: this._touchStart.bind(this),
+						onMouseUp: this._touchEnd.bind(this)
 					},
 					video ? _react2.default.createElement(
 						'div',
@@ -37976,7 +37998,7 @@
 		fullhd: [1920],
 		desktop: [1600],
 		laptop: [1280],
-		tablet_l: [1024],
+		tablet_l: [800],
 		tablet_p: [768, 1280],
 		phone: [480, 800],
 		phone_s: [320, 568]
@@ -43008,13 +43030,17 @@
 		(0, _createClass3.default)(Callback, [{
 			key: 'render',
 			value: function render() {
-				var location = this.props.location;
+				var _props = this.props,
+				    location = _props.location,
+				    resume = _props.location.query.resume;
 
+
+				console.log(resume);
 
 				return React.createElement(
 					_popup2.default,
 					{
-						title: '\u0420\u0430\u0437\u0433\u043E\u0432\u043E\u0440 \u0441 \u043F\u043E\u043B\u044C\u0437\u043E\u0439',
+						title: resume ? 'Сияй как звезда' : 'Разговор с пользой',
 						bg: 'callback'
 					},
 					React.createElement(_form2.default, { location: location })
@@ -44113,6 +44139,10 @@
 		value: true
 	});
 
+	var _slicedToArray2 = __webpack_require__(363);
+
+	var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
 	var _keys = __webpack_require__(374);
 
 	var _keys2 = _interopRequireDefault(_keys);
@@ -44191,6 +44221,7 @@
 				bgs: null,
 				current: projects.indexOf(project)
 			};
+			_this.touch = {};
 			return _this;
 		}
 
@@ -44212,6 +44243,15 @@
 					this._handleDot(0)();
 				} else {
 					this._handleDot(this.state.bgIndex + 1)();
+				}
+			}
+		}, {
+			key: '_prevBg',
+			value: function _prevBg() {
+				if (this.state.bgIndex <= 0) {
+					this._handleDot(this.state.bgs.length - 1)();
+				} else {
+					this._handleDot(this.state.bgIndex - 1)();
 				}
 			}
 		}, {
@@ -44258,6 +44298,55 @@
 				}
 			}
 		}, {
+			key: '_touchStart',
+			value: function _touchStart(_ref2) {
+				var _ref2$touches = _ref2.touches;
+				_ref2$touches = _ref2$touches === undefined ? [] : _ref2$touches;
+
+				var _ref2$touches2 = (0, _slicedToArray3.default)(_ref2$touches, 1),
+				    _ref2$touches2$ = _ref2$touches2[0],
+				    touch = _ref2$touches2$ === undefined ? {} : _ref2$touches2$,
+				    pageX = _ref2.pageX;
+
+				this.touch.start = touch.pageX || pageX;
+			}
+		}, {
+			key: '_touchMove',
+			value: function _touchMove(_ref3) {
+				var _ref3$touches = _ref3.touches;
+				_ref3$touches = _ref3$touches === undefined ? [] : _ref3$touches;
+
+				var _ref3$touches2 = (0, _slicedToArray3.default)(_ref3$touches, 1),
+				    touch = _ref3$touches2[0],
+				    pageX = _ref3.pageX;
+
+				this.touch.end = touch.pageX || pageX;
+			}
+		}, {
+			key: '_touchEnd',
+			value: function _touchEnd(_ref4) {
+				var _ref4$touches = _ref4.touches;
+				_ref4$touches = _ref4$touches === undefined ? [] : _ref4$touches;
+
+				var _ref4$touches2 = (0, _slicedToArray3.default)(_ref4$touches, 1),
+				    _ref4$touches2$ = _ref4$touches2[0],
+				    touch = _ref4$touches2$ === undefined ? {} : _ref4$touches2$,
+				    pageX = _ref4.pageX;
+
+				var start = this.touch.start;
+
+				var end = this.touch.end ? this.touch.end : touch.pageX ? touch.pageX : pageX ? pageX : start;
+
+				var delta = start - end;
+
+				if (delta > 0 && delta > 50) {
+					this._prevBg();
+				}
+				if (delta < 0 && delta < -50) {
+					this._nextBg();
+				}
+			}
+		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				this._setBgs();
@@ -44301,16 +44390,35 @@
 							key: 'project--' + id,
 							className: 'project ' + (loaded ? '_loaded' : '_no_loaded')
 						},
-						bgs ? bgs.map(function (bg, index) {
-							return React.createElement(
-								'div',
-								{
-									key: 'project__bg--' + bg,
-									className: 'project__bg ' + (index === bgIndex ? '_active' : '')
-								},
-								React.createElement(_bg2.default, { bg: bg })
-							);
-						}) : null,
+						React.createElement(
+							'div',
+							{
+								className: 'project__bgs',
+								onTouchStart: this._touchStart.bind(this),
+								onTouchMove: this._touchMove.bind(this),
+								onTouchEnd: this._touchEnd.bind(this),
+								onMouseDown: this._touchStart.bind(this),
+								onMouseUp: this._touchEnd.bind(this)
+							},
+							bgs ? bgs.map(function (bg, index) {
+								return React.createElement(
+									'div',
+									{
+										key: 'project__bg--' + bg,
+										className: 'project__bg ' + (index === bgIndex ? '_active' : '')
+									},
+									React.createElement(_bg2.default, { bg: bg })
+								);
+							}) : null
+						),
+						React.createElement(
+							_reactResponsive2.default,
+							{ query: '(max-width:1023px)' },
+							React.createElement(_arrow2.default, {
+								className: 'slick-prev project__prevBg',
+								onClick: this._prevBg.bind(this)
+							})
+						),
 						React.createElement(_arrow2.default, {
 							className: 'slick-next project__nextBg',
 							onClick: this._nextBg.bind(this)
@@ -44389,27 +44497,31 @@
 								)
 							),
 							React.createElement(
-								_reactResponsive2.default,
-								{ query: '(min-width: 1024px)' },
+								'div',
+								{ className: 'project__footer' },
 								React.createElement(
-									'div',
-									{ className: 'project__footer' },
+									_reactResponsive2.default,
+									{ query: '(min-width: 1024px)' },
 									React.createElement(
 										'div',
 										{ className: 'project__slogan' },
 										title
-									),
-									React.createElement(
-										'div',
-										{ className: 'project__dots' },
-										bgs ? bgs.map(function (url, index) {
-											return React.createElement('div', {
-												key: 'project__dot' + index,
-												className: 'project__dot ' + (index === bgIndex ? '_active' : ''),
-												onClick: _this4._handleDot.call(_this4, index)
-											});
-										}) : null
-									),
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'project__dots' },
+									bgs ? bgs.map(function (url, index) {
+										return React.createElement('div', {
+											key: 'project__dot' + index,
+											className: 'project__dot ' + (index === bgIndex ? '_active' : ''),
+											onClick: _this4._handleDot.call(_this4, index)
+										});
+									}) : null
+								),
+								React.createElement(
+									_reactResponsive2.default,
+									{ query: '(min-width: 1024px)' },
 									React.createElement(
 										'div',
 										{ className: 'project__nav' },
@@ -45071,21 +45183,9 @@
 
 	var _react = __webpack_require__(15);
 
-	var _reactResponsive = __webpack_require__(350);
+	var _footerMain = __webpack_require__(456);
 
-	var _reactResponsive2 = _interopRequireDefault(_reactResponsive);
-
-	var _icon = __webpack_require__(358);
-
-	var _icon2 = _interopRequireDefault(_icon);
-
-	var _phoneReact = __webpack_require__(357);
-
-	var _phoneReact2 = _interopRequireDefault(_phoneReact);
-
-	var _social = __webpack_require__(456);
-
-	var _social2 = _interopRequireDefault(_social);
+	var _footerMain2 = _interopRequireDefault(_footerMain);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45103,56 +45203,7 @@
 				return React.createElement(
 					'div',
 					{ className: 'footer' },
-					React.createElement(
-						'div',
-						{ className: 'footer__content' },
-						React.createElement(
-							_reactResponsive2.default,
-							{ query: '(max-width: 1023px)' },
-							React.createElement(
-								'div',
-								{ className: 'footer__phone' },
-								React.createElement(_phoneReact2.default, null)
-							)
-						),
-						React.createElement(
-							_reactResponsive2.default,
-							{ query: '(min-width: 1024px)' },
-							React.createElement(
-								'div',
-								{ className: 'footer__copyright' },
-								React.createElement(
-									'span',
-									null,
-									'\u0413\u0440\u0443\u043F\u043F\u0430 \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0439'
-								),
-								React.createElement(
-									'span',
-									{ className: 'footer__logo' },
-									React.createElement(_icon2.default, { className: 'footer__logo-icon', icon: 'siyanie-mono' })
-								)
-							)
-						),
-						React.createElement(
-							_reactResponsive2.default,
-							{ query: '(min-width: 1024px)' },
-							React.createElement(
-								'div',
-								{ className: 'footer__dev' },
-								'\u0421\u0432\u0435\u0442 \u043D\u0430 \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044E \u043F\u0440\u043E\u043B\u0438\u043B\u0430 \u0441\u0442\u0443\u0434\u0438\u044F',
-								React.createElement(
-									'a',
-									{ href: 'http://magicdesign.ru/', className: 'footer__dev-name' },
-									' MAGIC design & digital'
-								)
-							)
-						),
-						React.createElement(
-							'div',
-							{ className: 'footer__social' },
-							React.createElement(_social2.default, null)
-						)
-					)
+					React.createElement(_footerMain2.default, null)
 				);
 			}
 		}]);
@@ -45164,6 +45215,127 @@
 
 /***/ },
 /* 456 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(249);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(275);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(276);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(280);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(327);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(15);
+
+	var _reactRouter = __webpack_require__(193);
+
+	var _reactResponsive = __webpack_require__(350);
+
+	var _reactResponsive2 = _interopRequireDefault(_reactResponsive);
+
+	var _icon = __webpack_require__(358);
+
+	var _icon2 = _interopRequireDefault(_icon);
+
+	var _phoneReact = __webpack_require__(357);
+
+	var _phoneReact2 = _interopRequireDefault(_phoneReact);
+
+	var _social = __webpack_require__(457);
+
+	var _social2 = _interopRequireDefault(_social);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var FooterMain = function (_Component) {
+		(0, _inherits3.default)(FooterMain, _Component);
+
+		function FooterMain() {
+			(0, _classCallCheck3.default)(this, FooterMain);
+			return (0, _possibleConstructorReturn3.default)(this, (FooterMain.__proto__ || (0, _getPrototypeOf2.default)(FooterMain)).apply(this, arguments));
+		}
+
+		(0, _createClass3.default)(FooterMain, [{
+			key: 'render',
+			value: function render() {
+				return React.createElement(
+					'div',
+					{ className: 'footer__content' },
+					React.createElement(
+						_reactResponsive2.default,
+						{ query: '(max-width: 1023px)' },
+						React.createElement(
+							'div',
+							{ className: 'footer__phone' },
+							React.createElement(_phoneReact2.default, null)
+						)
+					),
+					React.createElement(
+						_reactResponsive2.default,
+						{ query: '(min-width: 1024px)' },
+						React.createElement(
+							'div',
+							{ className: 'footer__copyright' },
+							React.createElement(
+								'span',
+								null,
+								'\u0413\u0440\u0443\u043F\u043F\u0430 \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0439'
+							),
+							React.createElement(
+								_reactRouter.Link,
+								{ to: '/section/about/history', className: 'footer__logo' },
+								React.createElement(_icon2.default, { className: 'footer__logo-icon', icon: 'siyanie-mono' })
+							)
+						)
+					),
+					React.createElement(
+						_reactResponsive2.default,
+						{ query: '(min-width: 1024px)' },
+						React.createElement(
+							'div',
+							{ className: 'footer__dev' },
+							'\u0421\u0432\u0435\u0442 \u043D\u0430 \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044E \u043F\u0440\u043E\u043B\u0438\u043B\u0430 \u0441\u0442\u0443\u0434\u0438\u044F',
+							React.createElement(
+								'a',
+								{ href: 'http://magicdesign.ru/', target: '_blank', className: 'footer__dev-name' },
+								' MAGIC design & digital'
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'footer__social' },
+						React.createElement(_social2.default, null)
+					)
+				);
+			}
+		}]);
+		return FooterMain;
+	}(_react.Component);
+
+	exports.default = FooterMain;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
+
+/***/ },
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -45233,6 +45405,7 @@
 							{
 								key: index,
 								href: url,
+								target: '_blank',
 								className: 'social__link social__link--' + service },
 							React.createElement(_iconReact2.default, { className: 'social__icon', icon: 'social-' + service })
 						);
@@ -45247,7 +45420,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 457 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45284,11 +45457,11 @@
 
 	var _reactResponsive2 = _interopRequireDefault(_reactResponsive);
 
-	var _footer = __webpack_require__(455);
+	var _footerMain = __webpack_require__(456);
 
-	var _footer2 = _interopRequireDefault(_footer);
+	var _footerMain2 = _interopRequireDefault(_footerMain);
 
-	var _footerInner = __webpack_require__(458);
+	var _footerInner = __webpack_require__(459);
 
 	var _footerInner2 = _interopRequireDefault(_footerInner);
 
@@ -45307,11 +45480,11 @@
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					null,
+					{ className: 'footer' },
 					_react2.default.createElement(
 						_reactResponsive2.default,
 						{ query: '(max-width: 1023px)' },
-						_react2.default.createElement(_footer2.default, this.props)
+						_react2.default.createElement(_footerMain2.default, this.props)
 					),
 					_react2.default.createElement(
 						_reactResponsive2.default,
@@ -45327,7 +45500,7 @@
 	exports.default = FooterInnterTrue;
 
 /***/ },
-/* 458 */
+/* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
@@ -45385,6 +45558,7 @@
 			_this.state = {
 				activeDot: 0
 			};
+			_this._dot = _this._dot.bind(_this);
 			return _this;
 		}
 
@@ -45400,12 +45574,12 @@
 		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
-				window.addEventListener('dot', this._dot.bind(this));
+				window.addEventListener('dot', this._dot);
 			}
 		}, {
 			key: 'componentWillUnmount',
 			value: function componentWillUnmount() {
-				window.removeEventListener('dot', this._dot.bind(this));
+				window.removeEventListener('dot', this._dot);
 			}
 		}, {
 			key: 'render',
@@ -45422,46 +45596,42 @@
 
 				return React.createElement(
 					'div',
-					{ className: 'footer' },
+					{ className: 'footer__content' },
 					React.createElement(
-						'div',
-						{ className: 'footer__content' },
+						'menu',
+						{ className: 'footer__menu' },
 						React.createElement(
-							'menu',
-							{ className: 'footer__menu' },
-							React.createElement(
-								'div',
-								{ className: 'footer__section' },
-								sectionName
-							),
-							React.createElement(_icon2.default, { className: 'footer__section-arrow', icon: 'arrow' }),
-							(0, _keys2.default)(subsections).map(function (key, index) {
-								var subsection = subsections[key];
-								var Dots = subsection.content.map(function (s, index) {
-									return React.createElement('div', {
-										key: index,
-										className: 'footer__dot ' + (subsectionKey === key && _this2.state.activeDot === index ? '_active' : '') });
-								});
+							'div',
+							{ className: 'footer__section' },
+							sectionName
+						),
+						React.createElement(_icon2.default, { className: 'footer__section-arrow', icon: 'arrow' }),
+						(0, _keys2.default)(subsections).map(function (key, index) {
+							var subsection = subsections[key];
+							var Dots = subsection.content.map(function (s, index) {
+								return React.createElement('div', {
+									key: index,
+									className: 'footer__dot ' + (subsectionKey === key && _this2.state.activeDot === index ? '_active' : '') });
+							});
 
-								return React.createElement(
-									'span',
-									{ key: index, className: 'footer__subsection' },
-									React.createElement(
-										_reactRouter.Link,
-										{
-											to: '/section/' + sectionKey + '/' + key,
-											className: 'footer__link',
-											activeClassName: '_active' },
-										subsection.name
-									),
-									subsection.content.length > 1 ? React.createElement(
-										'div',
-										{ className: 'footer__dots' },
-										Dots
-									) : ''
-								);
-							})
-						)
+							return React.createElement(
+								'span',
+								{ key: index, className: 'footer__subsection' },
+								React.createElement(
+									_reactRouter.Link,
+									{
+										to: '/section/' + sectionKey + '/' + key,
+										className: 'footer__link',
+										activeClassName: '_active' },
+									subsection.name
+								),
+								subsection.content.length > 1 ? React.createElement(
+									'div',
+									{ className: 'footer__dots' },
+									Dots
+								) : ''
+							);
+						})
 					)
 				);
 			}
@@ -45473,7 +45643,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ },
-/* 459 */
+/* 460 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45540,7 +45710,7 @@
 	exports.default = FooterNo;
 
 /***/ },
-/* 460 */
+/* 461 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
