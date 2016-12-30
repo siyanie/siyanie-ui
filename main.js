@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d5a18ea4323099d352b8"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "69ca6bd8d2132c024656"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -28802,17 +28802,19 @@
 					},
 					_react2.default.createElement(_preloader2.default, { preloaded: this._preloaded.bind(this) }),
 					_react2.default.createElement(_header2.default, { params: this.props.params }),
+					_react2.default.createElement('div', { className: 'g-page__line' }),
 					_react2.default.createElement(
 						_reactAddonsCssTransitionGroup2.default,
 						{
 							component: 'div',
-							className: 'g-page__main',
+							className: 'g-page__main g-page__main--' + pathname.split('/')[1],
 							transitionName: 'anim',
 							transitionLeaveTimeout: _config2.default.trs * 2,
 							transitionEnterTimeout: _config2.default.trs * 2
 						},
 						_react2.default.cloneElement(content || _react2.default.createElement('div', null), { key: key })
 					),
+					_react2.default.createElement('div', { className: 'g-page__line' }),
 					_react2.default.createElement(
 						_reactAddonsCssTransitionGroup2.default,
 						{
@@ -45910,8 +45912,8 @@
 							),
 							_react2.default.createElement(
 								'a',
-								{ href: 'mailto:secretery@sgpd.ru', className: 'contacts__email' },
-								'secretery@sgpd.ru'
+								{ href: 'mailto:secretary@sgpd.ru', className: 'contacts__email' },
+								'secretary@sgpd.ru'
 							)
 						)
 					)
