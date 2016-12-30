@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "69ca6bd8d2132c024656"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d6791648dfb098da6f92"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -36874,17 +36874,26 @@
 		(0, _createClass3.default)(Video, [{
 			key: '_toggle',
 			value: function _toggle() {
-				var video = this.refs.video;
-
-				if (video.paused) {
-					video.currentTime = 0;
-					video.play();
-				} else {
-					video.pause();
-				}
 				this.setState({
 					open: !this.state.open
 				});
+			}
+		}, {
+			key: '_close',
+			value: function _close() {
+				var video = this.refs.video;
+
+				video.pause();
+				this._toggle();
+			}
+		}, {
+			key: '_open',
+			value: function _open() {
+				var video = this.refs.video;
+
+				video.currentTime = 0;
+				video.play();
+				this._toggle();
 			}
 		}, {
 			key: 'render',
@@ -36919,7 +36928,7 @@
 						'div',
 						{
 							className: 'video__full',
-							onClick: this._toggle.bind(this)
+							onClick: this._close.bind(this)
 						},
 						_react2.default.createElement(
 							'video',
@@ -36936,7 +36945,7 @@
 						'div',
 						{
 							className: 'video__preview',
-							onClick: this._toggle.bind(this)
+							onClick: this._open.bind(this)
 						},
 						_react2.default.createElement(
 							'div',
@@ -46296,8 +46305,6 @@
 				    resume = _props.location.query.resume;
 
 
-				console.log(resume);
-
 				return React.createElement(
 					_popup2.default,
 					{
@@ -46375,6 +46382,7 @@
 				tel: '',
 				email: '',
 				file: '',
+				error: false,
 				sent: false
 			};
 			return _this;
@@ -46399,10 +46407,38 @@
 		}, {
 			key: '_submit',
 			value: function _submit(e) {
+				var _this2 = this;
+
 				e.preventDefault();
-				this.setState({
-					sent: true
+				this._send(function () {
+					_this2.setState({
+						error: true
+					});
+				}, function () {
+					_this2.setState({
+						sent: true
+					});
 				});
+			}
+		}, {
+			key: '_send',
+			value: function _send(error, success) {
+				var xhr = new XMLHttpRequest();
+				var body = new FormData(this.refs.form);
+
+				xhr.open('POST', '//siyanie.alanev.ru/', true);
+
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState != 4) return;
+
+					if (xhr.status === 200) {
+						success();
+					} else {
+						error();
+					}
+				};
+
+				xhr.send(body);
 			}
 		}, {
 			key: 'componentDidMount',
@@ -46418,6 +46454,7 @@
 				    email = _state.email,
 				    file = _state.file,
 				    sent = _state.sent,
+				    error = _state.error,
 				    resume = this.props.location.query.resume;
 
 
@@ -46428,6 +46465,7 @@
 						'form',
 						{
 							method: 'post',
+							ref: 'form',
 							className: 'form__form ' + (sent ? '_sent' : ''),
 							onSubmit: this._submit.bind(this)
 						},
@@ -46491,7 +46529,14 @@
 								disabled: !name || !/\+7 \(\d{3}\) \d{3}(-\d{2}){2}/.test(tel)
 							},
 							'\u041F\u0435\u0440\u0435\u0437\u0432\u043E\u043D\u0438\u0442\u0435'
-						)
+						),
+						error ? _react2.default.createElement(
+							'div',
+							{ className: 'form__error' },
+							'\u0412\u043E\u0437\u043D\u0438\u043A\u043B\u0430 \u043E\u0448\u0438\u0431\u043A\u0430 ',
+							_react2.default.createElement('br', null),
+							'\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u043E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0435\u0449\u0435 \u0440\u0430\u0437'
+						) : null
 					),
 					_react2.default.createElement(
 						'div',
