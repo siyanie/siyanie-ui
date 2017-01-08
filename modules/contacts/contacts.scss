@@ -1,0 +1,137 @@
+.contacts{
+	@extend %section;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+	// elements
+	&__{
+		&map{
+			min-size: 100%;
+		}
+		&map-wrap{
+			position: absolute 0;
+			z-index: calc($z-higher * 1);
+		}
+		&main,
+		&bottom{
+			position: relative;
+			z-index: calc($z-higher * 2);
+		}
+		&main{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		&bottom{
+			width: 100%;
+			align-self: stretch;
+		}
+		&buttons-wrap{
+			@extend .section__content;
+
+			position: relative;
+			bottom: 1rem;
+			display: flex;
+			justify-content: space-between;
+		}
+		&buttons{
+			position: relative;
+			width: 100%;
+		}
+		&button{
+			position: absolute * * 0;
+
+			// mods
+			&:first-child{
+				left: 0;
+			}
+			&:last-child{
+				right: 0;
+			}
+		}
+		&title{
+			@extend .title;
+
+			position: relative;
+			top: 2rem;
+
+			@media (--h-tablet-with-bar){
+				top: 1rem;
+			}
+
+			@media (--h-tablet){
+				top: 0;
+			}
+		}
+		&button{
+			@extend %button;
+		}
+		&footer{
+			@ref .slide__footer, background;
+
+			padding: 1rem *;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			@media (--tablets-p){
+				padding-bottom: 2rem;
+			}
+		}
+		&address{
+			position: relative;
+
+			// subelements
+			&::before{
+				@extend .quote__text::before;
+
+				@media (--tablets-p){
+					content: none;
+				}
+			}
+		}
+		&address,
+		&phone{
+			font-family: $font-family--quote;
+			font-style: normal;
+
+			@media (--tablets){
+				font-size: 1.75rem;
+			}
+
+			@media (--tablets-p){
+				font-size: 1rem;
+			}
+		}
+		&phone,
+		&email{
+			display: inline-block;
+
+			@extend .link;
+		}
+		&email{
+
+			text-decoration: underline;
+
+			@media (--tablets){
+				margin: .5rem * *;
+			}
+
+			@media (--tablets-p){
+				font-size: 1rem;
+			}
+
+			// mods
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+}
+.gm-style > div:first-child > div:nth-last-child(2){
+	@mixin bg-lines .2;
+}

@@ -26,8 +26,13 @@
 		&content{
 			box-sizing: ;
 			max-width: 1280px;
+			width: 100%;
 			padding: * 3rem;
 			margin: * auto;
+
+			@media (--tablets-p){
+				padding: * 1rem;
+			}
 		}
 		&wrapper{
 			flex: 1;

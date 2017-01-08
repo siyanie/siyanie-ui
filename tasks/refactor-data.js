@@ -9,16 +9,18 @@ readFile(`data/${file}.json`)
 
 		for(let key in data) {
 			const { content } = data[key]
-			content.map((item, index) => {
-				const { bg } = item
-				if (!bg)
-					assign(item, {
-						bg: `${file}_${key}_${index + 1}.jpg`
-					})
+			content.map((item) => {
+				let { main, main: { content } } = item
 
+				if (typeof content === 'string') {
+					main.content = {
+						text: content
+					}
+				}
 				return item
 			})
 		}
+
 		writeFile(
 			`data/${file}.json`,
 			JSON.stringify(

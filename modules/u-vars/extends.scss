@@ -17,3 +17,26 @@
 	position: absolute 50% * * 50%;
 	transform: translate(-50%, -50%);
 }
+%button{
+	@extend .link;
+
+	box-sizing: border-box;
+	padding: .875rem 2.125rem;
+	border: 1px solid currentColor;
+
+	font-size: .875rem;
+	font-weight: 700;
+	line-height: 1;
+
+	text-transform: uppercase;
+
+	opacity: .3;
+
+	transition: ;
+
+	// mods
+	&:hover{
+		opacity: 1;
+		cursor: pointer;
+	}
+}

@@ -10,15 +10,34 @@
 			@extend .link;
 
 			box-sizing: ;
-			size: $social__link-width;
-			padding: .5rem;
 
 			background: currentColor;
 			fill: $c-primary;
 
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@media (--tablets){
+				size: $social__link-width;
+				padding: .5rem;
+			}
+
+			@media (--tablets-p){
+				padding: .25rem;
+				size: 1.625rem;
+			}
+
 			// pseudoselectors
 			&:not(:last-child){
-				margin-right: 1rem;
+
+				@media (--tablets){
+					margin-right: 1rem;
+				}
+
+				@media (--tablets-p){
+					margin-right: .5rem;
+				}
 			}
 
 			// pseudoclasses

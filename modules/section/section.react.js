@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import MediaQuery from 'react-responsive'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import config from '../config/config.react'
@@ -20,6 +21,9 @@ export default class Section extends Component {
 	}
 	_select (activeSlide) {
 		return () => {
+			if (activeSlide < 0) return
+			if (activeSlide >= this.slides.length) return
+
 			if (activeSlide !== this.state.activeSlide) {
 				this.setState({
 					activeSlide
@@ -137,16 +141,18 @@ export default class Section extends Component {
 									})
 								}
 								</div>
-								<div className="section__arrows">
-									<Arrow
-										className={`_prev ${activeSlide === 0 ? '_disabled' : ''}`}
-										onClick={this._prev.bind(this)}
+								<MediaQuery query="(min-width: 1024px)">
+									<div className="section__arrows">
+										<Arrow
+											className={`_prev ${activeSlide === 0 ? '_disabled' : ''}`}
+											onClick={this._prev.bind(this)}
+										/>
+										<Arrow
+											className={`_next ${activeSlide === this.slides.length - 1 ? '_disabled' : ''}`}
+											onClick={this._next.bind(this)}
 									/>
-									<Arrow
-										className={`_next ${activeSlide === this.slides.length - 1 ? '_disabled' : ''}`}
-										onClick={this._next.bind(this)}
-								/>
-								</div>
+									</div>
+								</MediaQuery>
 							</div>
 						)
 						: null

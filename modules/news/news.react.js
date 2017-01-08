@@ -17,7 +17,9 @@ class News extends Component {
 				? 'instagram'
 				: /https?:\/\/vk\.com/.test(link)
 					? 'vk'
-					: 'facebook'
+					: /https?:\/\/facebook\.com/.test(link)
+						? 'facebook'
+						: null
 
 		return (
 			<div className="news">
@@ -28,17 +30,29 @@ class News extends Component {
 						)
 						: null
 				}
-				<a href={link} className="news__link">
 				{
-					text
-						? 'Читать подробнее'
-						: 'Все новости'
+					link
+						? (
+							<a href={link} target="_blank" className="news__link">
+							{
+								text
+									? 'Читать подробнее'
+									: 'Все новости'
+							}
+								<Icon className="news__arrow" icon="arrow"></Icon>
+								{
+									socialIcon
+										? (
+											<div className="news__social">
+												<Icon className="news__social-icon" icon={`social-${socialIcon}`}></Icon>
+											</div>
+										)
+										: null
+								}
+							</a>
+						)
+						: null
 				}
-					<Icon className="news__arrow" icon="arrow"></Icon>
-					<div className="news__social">
-						<Icon className="news__social-icon" icon={`social-${socialIcon}`}></Icon>
-					</div>
-				</a>
 			</div>
 		)
 	}

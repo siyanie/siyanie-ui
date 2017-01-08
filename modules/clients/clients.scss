@@ -7,10 +7,18 @@
 	// elements
 	&__{
 		&client{
+			display: inline-block;
+
 			transform: translateX(-100%);
 			transition: $transition;
 
 			fill: currentColor;
+
+			@media (--tablets-p){
+				box-sizing: border-box;
+				size: 50% 20vh;
+				padding: 5%;
+			}
 
 			// pseudosectors
 			&:not(:last-child):not(:nth-child(5n)){
@@ -19,7 +27,7 @@
 					margin-right: 5rem;
 				}
 
-				@media (--tablets){
+				@media (--tablets-only){
 					margin-right: 3rem;
 				}
 			}
@@ -50,7 +58,14 @@
 			}
 		}
 		&logo{
-			max-size: 10rem 6rem;
+
+			@media (--tablets){
+				max-size: 10rem 6rem;
+			}
+
+			@media (--tablets-p){
+				max-size: 100%;
+			}
 		}
 	}
 }

@@ -64,7 +64,15 @@ $project__height: $content__height;
 			flex: 1;
 		}
 		&wrap{
-			overflow: hidden;
+			// mods
+			&:not(._all){
+				max-height: ref(.projects._carousel .projects__project, min-height);
+			}
+			&._all{
+				max-height: calc(100vh * 3);
+
+				transition: max-height calc($trsn * 3);
+			}
 		}
 		&list{
 			flex: 1;
@@ -112,7 +120,7 @@ $project__height: $content__height;
 		}
 		&bg{
 			position: absolute -.5rem;
-			size: 100%;
+			z-index: $z-under;
 
 			filter: blur(5px);
 			background-position: center;
@@ -126,9 +134,11 @@ $project__height: $content__height;
 
 				position: fixed $header__height * * 0 !important;
 				max-size: 100% !important;
+				size: 100%;
 			}
 			&._hidden{
 				opacity: 0;
+				transition: calc($transition * 2);
 			}
 
 			// subelements
@@ -158,6 +168,9 @@ $project__height: $content__height;
 			// mods
 			&[data-icon='logo-gazprom']{
 				margin: -20% * *;
+			}
+			&[data-icon='logo-eek']{
+				width: 40%;
 			}
 			&[data-icon='logo-nokia'],
 			&[data-icon='logo-bork']{

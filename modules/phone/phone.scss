@@ -3,7 +3,17 @@
 	display: flex;
 	align-items: center;
 
+	@media (--tablets-p){
+		font-size: 1.5rem;
+	}
+
 	// mods
+	&:hover{
+
+		@media (--tablets-p){
+			color: white;
+		}
+	}
 	&:hover &__{
 		&button{
 			background: $c-primary--bright;
@@ -12,6 +22,10 @@
 			transition:
 				background $transition,
 				box-shadow calc($transition * 3);
+
+			@media (--tablets-p){
+				color: white;
+			}
 		}
 		&note{
 			opacity: 1;
@@ -24,8 +38,9 @@
 			@extend .link;
 		}
 		&button{
+			@extend .link;
+
 			size: 1.5rem;
-			transform: translate(-50%, 10%);
 
 			border-radius: ;
 
@@ -34,9 +49,22 @@
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
+
+			@media (--tablets){
+				transform: translate(-50%, 10%);
+			}
+
+			@media (--tablets-p){
+				transform: translate(0, 10%);
+				margin-right: .5rem;
+			}
 		}
 		&icon{
 			max-size: 1.125rem;
+
+			@media (--tablets-p){
+				max-size: 1.5rem;
+			}
 		}
 		&prefix,
 		&number{
@@ -48,7 +76,10 @@
 		&number,
 		&note{
 			fill: currentColor;
-			color: white;
+
+			@media (--tablets){
+				color: white;
+			}
 		}
 		&note{
 			position: absolute 100% 0 * *;

@@ -3,6 +3,12 @@
 	display: flex;
 	justify-content: center;
 
+	@media (--tablets-p){
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
 	// elements
 	&__{
 		&number{
@@ -11,7 +17,10 @@
 
 			// mods
 			&:not(:last-child){
-				margin-right: 5rem;
+
+				@media (--tablets){
+					margin-right: 5rem;
+				}
 			}
 
 			// animation
@@ -32,13 +41,27 @@
 			}
 		}
 		&value{
-			font-size: 10rem;
 			font-family: $font-family--title;
+
+			@media (--tablets){
+				font-size: 10rem;
+			}
+
+			@media (--tablets-p){
+				font-size: 3.5rem;
+			}
 		}
 		&label{
-			margin: -2rem * *;
 
 			transition: 1s .5s;
+
+			@media (--tablets){
+				margin: -2rem * *;
+			}
+
+			@media (--tablets-p){
+				margin: -1rem * *;
+			}
 
 			// mods
 			.slide:not(._active) &{

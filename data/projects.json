@@ -2,38 +2,21 @@
   "name": "Проекты",
   "content": [
     {
-      "id": "bork",
-      "title": "Офис компании BORK",
-      "square": "2800 кв.м.",
-      "date": "2015 г.",
-      "address": "г. Москва, Пресненская набережная, д.6 стр. 2.",
-      "text": "Монтажные работы систем вентиляции, кондиционирования и отопления; водопровод, канализация.",
-      "preview_sm": "project_alkatel_sm.jpg",
-      "preview_mid": "project_alkatel_mid.jpg",
-      "bgs": [
-        "project_alkatel_big.jpg",
-        "project_alkatel_big_2.jpg",
-        "project_alkatel_big_3.jpg",
-        "project_alkatel_big_4.jpg",
-        "project_alkatel_big_5.jpg"
-      ]
-    },
-    {
       "id": "johnson",
       "title": "Офисные помещения компании Johnson&Johnson",
       "square": "800 кв.м.",
-      "date": "август 2013 г. - ноябрь 2013 г.",
+      "date": "август 2013 г. - ноябрь 2013 г. ",
       "address": "г. Москва, Якиманский переулок, вл.6 в Многофункциональном комплексе \"Имперский дом\".",
       "text": "Монтажные работы систем вентиляции, кондиционирования, отопления; водоснабжение и канализация.",
-      "preview_sm": "project_arktika_sm.jpg",
-      "preview_mid": "project_arktika_mid.jpg",
+      "preview_sm": "project_johnson_sm.jpg",
+      "preview_mid": "project_johnson_mid.jpg",
       "bgs": [
-        "project_arktika_big.jpg",
-        "project_arktika_big_2.jpg",
-        "project_arktika_big_3.jpg",
-        "project_arktika_big_4.jpg",
-        "project_arktika_big_5.jpg",
-        "project_arktika_big_6.jpg"
+        "project_johnson_big.jpg",
+        "project_johnson_big_2.jpg",
+        "project_johnson_big_3.jpg",
+        "project_johnson_big_4.jpg",
+        "project_johnson_big_5.jpg",
+        "project_johnson_big_6.jpg"
       ]
     },
     {
@@ -49,11 +32,30 @@
         "project_alfabank_big.jpg",
         "project_alfabank_big_2.jpg",
         "project_alfabank_big_3.jpg",
-        "project_alfabank_big_4.jpg"
+        "project_alfabank_big_4.jpg",
+        "project_alfabank_big_5.jpg"
       ]
     },
     {
-      "id": "honeywell",
+      "id": "openbank",
+      "title": "Коммерческий банк \"Открытие\"",
+      "square": "3500 кв.м.",
+      "date": "январь 2012 г. - июль 2012 г. ",
+      "address": "г. Москва, Кожевническая ул., дом 8/4 корпус \"А\", БЦ \"Вивальди Плаза\".",
+      "text": "Монтажные работы систем вентиляции и кондиционирования критических систем.",
+      "preview_sm": "project_openbank_sm.jpg",
+      "preview_mid": "project_openbank_mid.jpg",
+      "bgs": [
+        "project_openbank_big.jpg",
+        "project_openbank_big_2.jpg",
+        "project_openbank_big_3.jpg",
+        "project_openbank_big_4.jpg",
+        "project_openbank_big_5.jpg",
+        "project_openbank_big_6.jpg"
+      ]
+    },
+    {
+      "id": "sinop",
       "title": "Бизнес-центр «Синоп»",
       "square": "5300 кв.м",
       "date": "февраль 2015 г. - декабрь 2015 г.",
@@ -88,89 +90,125 @@
       ]
     },
     {
-      "id": "gazprom",
-      "title": "Штаб-квартира Газпром Экспорт ",
-      "square": "14000 кв.м.",
-      "date": "2014 г. -2015 г.",
-      "address": "г. Санкт-Петербург, площадь Островского, 2а.",
-      "text": "Монтажные работы систем вентиляции, кондиционирования, отопления, водоснабжения и канализации.",
-      "preview_sm": "project_alkatel_sm.jpg",
-      "preview_mid": "project_alkatel_mid.jpg",
+      "id": "raiffeisen",
+      "title": "Штаб-квартира \"РайффайзенБанк\"",
+      "square": "10000 кв.м.",
+      "date": "декабрь 2013 г. - апрель 2014 г. ",
+      "address": "г. Москва, пр-т Андропова, д.18/2. 2-6 этаж.",
+      "text": "Монтажные работы систем вентиляции, кондиционирования, отопления; водоснабжение и канализация.",
+      "preview_sm": "project_raiffeisen_sm.jpg",
+      "preview_mid": "project_raiffeisen_mid.jpg",
       "bgs": [
-        "project_alkatel_big.jpg",
-        "project_alkatel_big_2.jpg",
-        "project_alkatel_big_3.jpg",
-        "project_alkatel_big_4.jpg",
-        "project_alkatel_big_5.jpg"
-      ]
-    },
-    {
-      "id": "openbank",
-      "title": "Коммерческий банк \"Открытие\"",
-      "square": "3500 кв.м.",
-      "date": "январь 2012 г. - июль 2012 г. ",
-      "address": "г. Москва, Кожевническая ул., дом 8/4 корпус \"А\", БЦ \"Вивальди Плаза\".",
-      "text": "Монтажные работы систем вентиляции и кондиционирования критических систем.",
-      "preview_sm": "project_arktika_sm.jpg",
-      "preview_mid": "project_arktika_mid.jpg",
-      "bgs": [
-        "project_arktika_big.jpg",
-        "project_arktika_big_2.jpg",
-        "project_arktika_big_3.jpg",
-        "project_arktika_big_4.jpg",
-        "project_arktika_big_5.jpg",
-        "project_arktika_big_6.jpg"
+        "project_raiffeisen_big.jpg",
+        "project_raiffeisen_big_2.jpg",
+        "project_raiffeisen_big_3.jpg",
+        "project_raiffeisen_big_4.jpg",
+        "project_raiffeisen_big_5.jpg",
+        "project_raiffeisen_big_6.jpg",
+        "project_raiffeisen_big_7.jpg"
       ]
     },
     {
       "id": "samsung",
+      "title": "Офис отделения \"Samsung\"",
+      "square": "5500 кв.м.",
+      "date": "март 2011 - июнь 2011",
+      "address": "г. Москва, ул. Воздвиженка, д. 10",
+      "text": "Монтажные и проектные работы систем вентиляции, кондиционирования, водоснабжения, канализации.",
+      "preview_sm": "project_samsung_sm.jpg",
+      "preview_mid": "project_samsung_mid.jpg",
+      "bgs": [
+        "project_samsung_big.jpg",
+        "project_samsung_big_2.jpg",
+        "project_samsung_big_3.jpg",
+        "project_samsung_big_4.jpg"
+      ]
+    },
+    {
+      "id": "aegis",
+      "title": "Офис компании \"AEGIS\"",
+      "square": "2500 кв.м.",
+      "date": "апрель 2012 - сентябрь 2012",
+      "address": "г. Москва, Краснопресненская наб., Москва-Сити, Imperia Tower",
+      "text": "Монтажные работы систем вентиляции, кондиционирования, отопления, водоснабжения и канализации.",
+      "preview_sm": "project_aegis_sm.jpg",
+      "preview_mid": "project_aegis_mid.jpg",
+      "bgs": [
+        "project_aegis_big.jpg",
+        "project_aegis_big_2.jpg",
+        "project_aegis_big_3.jpg",
+        "project_aegis_big_4.jpg",
+        "project_aegis_big_5.jpg",
+        "project_aegis_big_6.jpg",
+        "project_aegis_big_7.jpg"
+      ]
+    },
+    {
+      "id": "linxtelecom",
+      "title": "\"LINXTELECOM\" центр обработки данных",
+      "square": "500 кв.м.",
+      "date": "октябрь 2014",
+      "address": "Московская обл., Химки, «Клязьма-Старбеево» д. 15-16 ",
+      "text": "Монтажные работы систем вентиляции, кондиционирования, отопления, водоснабжения и канализации.",
+      "preview_sm": "project_linxtelecom_sm.jpg",
+      "preview_mid": "project_linxtelecom_mid.jpg",
+      "bgs": [
+        "project_linxtelecom_big.jpg",
+        "project_linxtelecom_big_2.jpg",
+        "project_linxtelecom_big_3.jpg"
+      ]
+    },
+    {
+      "id": "eek",
+      "title": "Евразийская экономическая комиссия",
+      "square": "7500 кв.м.",
+      "date": "февраль 2013 г. - июнь 2013 г.",
+      "address": "г. Москва, ул. Летниковская, д.2, стр.1 Офисные помещения в ДЦ \"Вивальди Плаза\"",
+      "text": "Проектные и монтажные работы систем вентиляции, кондиционирования, отопления, водоснабжения и канализации.",
+      "preview_sm": "project_eek_sm.jpg",
+      "preview_mid": "project_eek_mid.jpg",
+      "bgs": [
+        "project_eek_big.jpg",
+        "project_eek_big_2.jpg",
+        "project_eek_big_3.jpg",
+        "project_eek_big_4.jpg",
+        "project_eek_big_5.jpg"
+      ]
+    },
+    {
+      "id": "novatek",
       "title": "Штаб-квартира \"Новатэк\"",
       "square": "16000 кв.м.",
       "date": "июнь 2010 г. - апрель 2011 г. ",
       "address": "г. Москва, ул. Удальцова, д.2.",
       "text": "Монтажные работы систем вентиляции, кондиционирования и отопления; водопровод, канализация, климатические балки фирмы Halton.",
-      "preview_sm": "project_alfabank_sm.jpg",
-      "preview_mid": "project_alfabank_mid.jpg",
+      "preview_sm": "project_novatek_sm.jpg",
+      "preview_mid": "project_novatek_mid.jpg",
       "bgs": [
-        "project_alfabank_big.jpg",
-        "project_alfabank_big_2.jpg",
-        "project_alfabank_big_3.jpg",
-        "project_alfabank_big_4.jpg"
+        "project_novatek_big.jpg",
+        "project_novatek_big_2.jpg",
+        "project_novatek_big_3.jpg",
+        "project_novatek_big_4.jpg",
+        "project_novatek_big_5.jpg"
       ]
     },
     {
-      "id": "raiffeisen",
-      "title": "Штаб-квартира \"РайффайзенБанк\"",
-      "square": "10000 кв.м.",
-      "date": "декабрь 2013 г. - апрель 2014 г. ",
-      "address": "Монтажные работы систем вентиляции, кондиционирования, отопления; водоснабжение и канализация.",
-      "text": "г. Москва, пр-т Андропова, д.18/2. 2-6 этаж.",
-      "preview_sm": "project_sinop_sm.jpg",
-      "preview_mid": "project_sinop_mid.jpg",
+      "id": "groupm",
+      "title": "Торговые площади \"GROUPM\"",
+      "square": "5800 кв.м.",
+      "date": "Сентябрь 2011 - январь 2012",
+      "address": "Москва, Цветной б-р, БЦ МФК \"Легенда Цветного\"",
+      "text": "Монтажные работы систем вентиляции и кондиционирования и отопления.",
+      "preview_sm": "project_groupm_sm.jpg",
+      "preview_mid": "project_groupm_mid.jpg",
       "bgs": [
-        "project_sinop_big.jpg",
-        "project_sinop_big_2.jpg",
-        "project_sinop_big_3.jpg",
-        "project_sinop_big_4.jpg"
-      ]
-    },
-    {
-      "id": "rostelekom",
-      "title": "Штаб-квартира «Ростелеком»",
-      "square": "48000 кв.м.",
-      "date": "2015 г.",
-      "address": "г. Москва, п. Румянцево, БП Comcity.",
-      "text": "Монтажные работы систем вентиляции и кондиционирования, водоснабжения и канализации.",
-      "preview_sm": "project_nokia_sm.jpg",
-      "preview_mid": "project_nokia_mid.jpg",
-      "bgs": [
-        "project_nokia_big.jpg",
-        "project_nokia_big_2.jpg",
-        "project_nokia_big_3.jpg",
-        "project_nokia_big_4.jpg",
-        "project_nokia_big_5.jpg",
-        "project_nokia_big_6.jpg",
-        "project_nokia_big_7.jpg"
+        "project_groupm_big.jpg",
+        "project_groupm_big_2.jpg",
+        "project_groupm_big_3.jpg",
+        "project_groupm_big_4.jpg",
+        "project_groupm_big_5.jpg",
+        "project_groupm_big_6.jpg",
+        "project_groupm_big_7.jpg"
       ]
     }
   ]

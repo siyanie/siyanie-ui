@@ -2,18 +2,28 @@
 
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
 	justify-content: space-between;
 
 	// elements
 	&__{
 		&item{
-			margin: 2rem;
+			float: left;
+			box-sizing: border-box;
+			max-size: 20% 50%;
+			size: 20% 50%;
+			padding: 1rem 2rem;
+
+			display: inline-flex;
+			flex-direction: column;
+			justify-content: center;
+
+			// mods
 		}
 		&image{
+			max-width: 100%;
+			height: auto;
 			vertical-align: bottom;
-		}
-		&label{
-			margin: 1rem * *;
 		}
 		&link{
 

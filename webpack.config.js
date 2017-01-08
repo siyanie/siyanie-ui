@@ -50,6 +50,11 @@ module.exports = {
 			React: 'react'
 		}),
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin()
+		new webpack.NoErrorsPlugin(),
+		new webpack.optimize.UglifyJsPlugin({
+			compress: {
+				warnings: false
+			}
+		})
 	]
 }

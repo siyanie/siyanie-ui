@@ -3,7 +3,7 @@ import { Component } from 'react'
 import Arrow from '../arrow/arrow.react'
 import ProjectsProject from './projects.project.react'
 
-import config from '../config/config.react'
+import store from '../store/store.react'
 
 class ProjectsCarousel extends Component {
 	constructor () {
@@ -13,7 +13,7 @@ class ProjectsCarousel extends Component {
 			current: 0,
 			shift: 0,
 			items: 4,
-			projects: []
+			projects: store.projects.content
 		}
 	}
 	_next () {
@@ -40,17 +40,6 @@ class ProjectsCarousel extends Component {
 			})
 		}
 	}
-	componentWillMount() {
-		fetch(`${config.assets.data}projects.json`)
-			.then(res => {
-				return res.json()
-			})
-			.then(data => {
-				this.setState({
-					projects: data.content.slice(0, 8)
-				})
-			})
-	}
 	componentDidMount() {
 		this._setShift()
 		window.addEventListener('resize', ::this._setShift)
@@ -76,7 +65,7 @@ class ProjectsCarousel extends Component {
 					className="projects__list _carousel"
 					style={
 						{
-							transform: `${all ? null : `translateX(-${all ? 0 : current * shift}px)`}`
+							transform: `translateX(-${all ? 0 : current * shift}px)`
 						}
 					}
 				>

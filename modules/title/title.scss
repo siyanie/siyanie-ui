@@ -8,4 +8,8 @@
 
 	user-select: none;
 	cursor: inherit;
+
+	@media (--tablets-p){
+		font-size: 2rem;
+	}
 }

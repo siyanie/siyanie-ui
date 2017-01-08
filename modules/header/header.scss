@@ -2,6 +2,8 @@
 
 	color: $c-primary-text;
 
+	position: relative;
+
 	// elements
 	&__{
 		&content{
@@ -14,7 +16,7 @@
 			align-items: center;
 			justify-content: space-between;
 
-			@media (--lower){
+			@media (--h-tablet){
 				min-height: $header__height--lower;
 				padding: 3vh *;
 			}
@@ -26,7 +28,14 @@
 			// subelement
 			&-{
 				&icon{
-					max-size: 11.25rem 3.25rem;
+
+					@media (--tablets){
+						max-size: 11.25rem 3.25rem;
+					}
+
+					@media (--tablets-p){
+						max-size: 8.75rem 2.5rem;
+					}
 				}
 			}
 		}

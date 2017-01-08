@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 
+import config from '../config/config.react'
+
 class MediaCenter extends Component {
 	render() {
 		const {
@@ -11,20 +13,21 @@ class MediaCenter extends Component {
 		return (
 			<div className="mediacenter">
 			{
-				items.map(({ image, links }, index) => (
+				items.map((id, index) => (
 					<div
 						className="mediacenter__item"
 						key={`mediacenter__item--${index}`}
 					>
-						<img src={image} alt="" className="mediacenter__image"/>
+						<img src={`${config.assets.images}media/${id}.png`} alt="" className="mediacenter__image"/>
 						<div className="mediacenter__label">
 						{
-							links.map(({ name, url }, i) => (
+							['png', 'ai'].map((ext, i) => (
 								<a
-									href={url}
+									target="_blank"
+									href={`${config.assets.images}media/${id}.${ext}`}
 									className="mediacenter__link"
 									key={`mediacenter__item--${index}__link--${i}`}
-								>{name}</a>
+								>{ext}</a>
 							))
 						}
 						</div>

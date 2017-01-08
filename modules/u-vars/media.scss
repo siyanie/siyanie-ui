@@ -1,5 +1,13 @@
 @custom-media --wides (width >= 1440px);
 @custom-media --desktops (width >= 1280px);
-@custom-media --tablets (width < 1280px) and (width >= 1024px);
-@custom-media --lower (height <= 800px);
-@custom-media --higher (height > 800px);
+@custom-media --tablets-only (width < 1280px) and (width >= 1024px);
+@custom-media --tablets (width >= 1024px);
+@custom-media --tablets-p (width < 1024px);
+@custom-media --phones (width < 768px);
+@custom-media --phones-and-tablets (width >= 768px) and (width < 1280px);
+
+@custom-media --h-phone (height <= 640px);
+@custom-media --h-tablet-with-bar (height <= 720px);
+@custom-media --h-tablet (height <= 800px);
+@custom-media --h-tablet-only (height <= 800px) and (height > 720px);
+@custom-media --h-desktop (height > 800px);

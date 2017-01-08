@@ -1,6 +1,7 @@
 .menu{
 
 	padding: 0;
+	margin: 0;
 
 	font-size: $font-size--secondary;
 	font-weight: bold;
@@ -8,17 +9,78 @@
 
 	text-transform: uppercase;
 
-	display: flex;
+	@media (--tablets-p){
+		font-size: 1.25rem;
+	}
 
 	// elements
 	&__{
+		&icon{
+			size: 1.5rem .25rem;
+			padding: .25rem *;
+			border-top: .25rem solid currentColor;
+			border-bottom: .25rem solid currentColor;
+
+			background: currentColor;
+			background-clip: content-box;
+			color: $c-blue;
+
+			// &::before,
+			// &::after{
+			// 	content: '';
+			// 	display: block;
+			// 	size: inherit;
+
+			// 	background: inherit;
+			// }
+		}
+		&links{
+			display: flex;
+
+			@media (--tablets-p){
+				position: absolute 100% 0 *;
+				z-index: $z-over-everything;
+
+				text-align: center;
+
+				color: white;
+
+				transition: ;
+
+				flex-direction: column;
+			}
+
+			// mods
+			&._hidden{
+
+				@media (--tablets-p){
+					visibility: hidden;
+					opacity: 0;
+				}
+			}
+		}
 		&link{
 			@extend .link;
 			// @extend .link--dark;
 
+			@media (--tablets-p){
+				padding: 1.5rem *;
+
+				background: $c-blue;
+
+				@each $color1, $color2, $i in ($c-blue, #1f2c57, #2a3779, #37439e, #424fc0, #4b57da), ($c-blue, #202e5d, #2a3779, #37439e, #424fc0, #4b57da){
+					&:nth-child($i){
+						background: linear-gradient($color1, $color2);
+					}
+				}
+			}
+
 			// pseudoclasses
 			&:not(:last-child){
-				margin-right: 2.75rem;
+
+				@media (--tablets){
+					margin-right: 2.75rem;
+				}
 			}
 			&:last-child{
 				color: white;

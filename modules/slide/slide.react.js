@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
+import MediaQuery from 'react-responsive'
 
+import store from '../store/store.react'
 import Bg from '../bg/bg.react'
 import Text from '../text/text.react'
 import News from '../news/news.react'
@@ -26,38 +28,10 @@ class Slide extends Component {
 			params,
 			active
 		} = this.props
+		const { name: sectionName } = store.sections[params.section]
 		const componentName = data.main.component
 		const Content = components[componentName]
-		let Footer, Title
-
-		if (data.quote) {
-			Footer = (
-				<div className="slide__footer" ref="footer">
-					<div className="quote slide__footer-content">
-						<div className="quote__content">
-							<span className="quote__text">{data.quote.text}</span>
-						</div>
-						{
-							data.quote.author
-								? <div className="quote__author">{data.quote.author}</div>
-								: ''
-						}
-					</div>
-				</div>
-			)
-		}
-		if (data.title) {
-			Title = (
-				<div
-					className="slide__title"
-					dangerouslySetInnerHTML={
-						{
-							__html: data.title
-						}
-					}
-				/>
-			)
-		}
+		const isHistory = params.subsection === 'history'
 
 		return (
 			<div className={`slide slide--${componentName.toLowerCase()} ${active ? '_active' : ''}`}>
@@ -72,14 +46,55 @@ class Slide extends Component {
 						)
 						: null
 				}
+				{
+					!isHistory
+						? (
+							<div className="slide__mask"></div>
+						)
+						: null
+				}
 				<div className="slide__info">
-					{Title}
+					{
+						sectionName
+							? (
+								<MediaQuery query="(max-width: 1023px)">
+									<div className="slide__section">{sectionName}</div>
+								</MediaQuery>
+							)
+							: null
+					}
+					{
+						data.title
+							? (
+								<div className="slide__title">{data.title}</div>
+							)
+							: null
+					}
 					<Content
 						data={data.main.content}
 						params={params}
 					/>
 				</div>
-				{Footer}
+				{
+					data.quote
+						? (
+							<MediaQuery query="(min-width: 1024px)">
+								<div className="slide__footer" ref="footer">
+									<div className="quote slide__footer-content">
+										<div className="quote__content">
+											<span className="quote__text">{data.quote.text}</span>
+										</div>
+										{
+											data.quote.author
+												? <div className="quote__author">{data.quote.author}</div>
+												: ''
+										}
+									</div>
+								</div>
+							</MediaQuery>
+						)
+						: null
+				}
 			</div>
 		)
 	}

@@ -15,19 +15,20 @@
 	display: flex;
 	align-items: center;
 
-	@media (--lower){
-		margin-top: -5rem;
+	@media (--h-tablet){
+		margin-top: -2rem;
 	}
 
 	// elements
 	&__{
 		&label{
-			min-width: 10rem;
+			min-width: 8rem;
+			padding: * .5rem * 4rem;
 
 			white-space: nowrap;
 		}
 		&wrap{
-			width: calc(100% - 20rem);
+			width: calc(100% - 25rem);
 			padding-top: 5.25rem;
 			margin-top: -5.25rem;
 
@@ -70,7 +71,7 @@
 					transition-delay: calc($trsn / 2);
 					transition-duration: $trsn;
 
-					@media (--lower){
+					@media (--h-tablet){
 						min-height: 2rem;
 					}
 				}
@@ -102,6 +103,10 @@
 			white-space: nowrap;
 
 			animation-delay: .3s;
+
+			@media (--tablets-only){
+				margin: * 1rem;
+			}
 		}
 	}
 }

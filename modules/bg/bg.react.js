@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 import devices from '../config/config.sizes.react'
 import config from '../config/config.react'
+import utils from '../utils/utils.react'
 
 class Bg extends Component {
 	constructor() {
@@ -9,16 +10,16 @@ class Bg extends Component {
 
 		this.state = {
 			sources: [],
-			loaded: false
+			loaded: false,
+			bg: null
 		}
 	}
 	componentWillMount() {
 		window.Modernizr.on('webp', result => {
-			let webp = false
-			if (Object.keys(result).length > 0)webp = true
+			const webp = Object.keys(result).length > 0
 
 			this.setState({
-				sources: this._getSources(webp)
+				bg: this._setBg(webp)
 			})
 		})
 	}
@@ -28,7 +29,7 @@ class Bg extends Component {
 		})
 	}
 	_getSources(webp) {
-		const bg = this.props.bg
+		const { bg } = this.props
 		const sources = []
 
 		for (let device in devices) {
@@ -52,24 +53,50 @@ class Bg extends Component {
 			<img
 				key={`bg__image--${bg}`}
 				className="bg__image"
-				src={bg}
+				src={config.assets.images + bg.replace(/\.(jpg|jpeg|png)$/i, '--desktop@1$&')}
 				alt=""
 				onLoad={::this._loaded}
 			/>
 		))
 
-		return  sources
+		return sources
+	}
+	_getDevice() {
+		const vw = window.innerWidth
+		return Object.keys(devices).find(device => {
+			const [width] = devices[device]
+			return vw > width
+		}) || 'phone'
+	}
+	_setBg(webp) {
+		const { bg } = this.props
+		const BG = bg.split('.')
+
+		return (
+			<img
+				className="bg__image"
+				width={window.innerWidth}
+				height={window.innerHeight}
+				src={`${config.assets.images}${BG[0]}--${this._getDevice()}@${utils.getDPI()}.${webp ? 'webp' : BG[1]}`}
+				alt=""
+				onLoad={::this._loaded}
+			/>
+		)
 	}
 	_loaded () {
+		const { onLoad } = this.props
 		this.setState({
 			loaded: true
 		})
+
+		if (onLoad) onLoad()
 	}
 	render() {
+		const { className } = this.props
 		return (
-			<picture className={`bg ${this.state.loaded ? '_loaded' : '_loading'}`}>
-				{this.state.sources}
-			</picture>
+			<div className={`${className ? className : ''} bg ${this.state.loaded ? '_loaded' : '_loading'}`}>
+				{this.state.bg}
+			</div>
 		)
 	}
 }

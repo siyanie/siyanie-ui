@@ -1,6 +1,8 @@
 import { Component } from 'react'
-import Icon from '../icon/icon.react.js'
 import { Link } from 'react-router'
+import MediaQuery from 'react-responsive'
+
+import Icon from '../icon/icon.react.js'
 
 export default class Phone extends Component {
 	render () {
@@ -13,14 +15,16 @@ export default class Phone extends Component {
 					>
 						<Icon className="phone__icon" icon="phone" />
 					</Link>
-					<a href="tel:495 607-7777" className="phone__value">
+					<a href="tel:84956077777" className="phone__value">
 						<span className="phone__prefix">495 </span>
 						<span className="phone__number">607-7777</span>
 					</a>
 				</span>
-				<Link
-					to="/callback"
-					className="phone__note">перезвонить</Link>
+				<MediaQuery query="(min-width: 1024px)">
+					<Link
+						to="/callback"
+						className="phone__note">перезвонить</Link>
+				</MediaQuery>
 			</span>
 		)
 	}

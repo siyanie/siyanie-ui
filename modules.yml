@@ -43,6 +43,9 @@ person:
 mediacenter:
 timeline:
 bg:
+googleapi:
+contacts:
+form:
 loop:
 events:
 error:

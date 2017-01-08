@@ -10,6 +10,8 @@
 	transition: $transition;
 
 	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	// mods
 	&:not(._disabled):hover{

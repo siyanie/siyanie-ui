@@ -1,5 +1,17 @@
+*::-webkit-media-controls-panel{
+	display: none !important;
+	-webkit-appearance: none;
+}
+*::-webkit-media-controls-start-playback-button{
+	display: none !important;
+	-webkit-appearance: none;
+}
 .video{
 	@extend %section;
+	@mixin responsive-bg about_onas_5, jpg;
+
+	background-size: cover;
+	background-position: center;
 
 	// animation
 
@@ -19,37 +31,6 @@
 		&button{
 			transform: scale(.8);
 		}
-	}
-
-	// pseudoelements
-	&::before,
-	&::after{
-		content: '';
-		position: absolute * 0;
-		z-index: calc($z-higher * 10);
-
-		min-height: 5vh;
-
-		background: $c-primary;
-
-		transition: min-height $transition;
-	}
-	&::before{
-		top: 0;
-	}
-	&::after{
-		bottom: 0;
-	}
-
-	// mods
-	&:hover{
-		&::before,
-		&::after{
-			min-height: 0;
-		}
-	}
-	&:hover &__button{
-		background: $c-primary--bright;
 	}
 
 	// elements
@@ -83,6 +64,7 @@
 			position: relative;
 			z-index: $z-higher;
 
+			box-sizing: border-box;
 			min-height: 100%;
 
 			cursor: pointer;
@@ -90,6 +72,49 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+
+			// pseudoelements
+			&::before,
+			&::after{
+
+				@media (--tablets){
+					content: '';
+					position: absolute * 0;
+					z-index: calc($z-higher * 10);
+
+					min-height: 5vh;
+
+					background: $c-primary;
+
+					transition: min-height $transition;
+				}
+			}
+			&::before{
+
+				@media (--tablets){
+					top: 0;
+				}
+			}
+			&::after{
+
+				@media (--tablets){
+					bottom: 0;
+				}
+			}
+
+			// mods
+			&:hover{
+				&::before,
+				&::after{
+
+					@media (--tablets){
+						min-height: 0;
+					}
+				}
+			}
+		}
+		&preview:hover &button{
+			background: $c-primary--bright;
 		}
 		&preview,
 		&title,
@@ -101,7 +126,7 @@
 		}
 		&button{
 			size: 5rem;
-			margin: 3rem auto -8rem;
+			margin: * auto;
 
 			border-radius: ;
 
@@ -111,6 +136,16 @@
 			fill: currentColor;
 
 			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@media (--tablets){
+				margin: 3rem * 8rem;
+			}
+
+			@media (--tablets-p){
+				margin: 1rem * *;
+			}
 		}
 		&icon{
 			max-size: 2rem 3rem;

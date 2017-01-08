@@ -10,21 +10,23 @@ class Projects extends Component {
 		const { all } = this.props.location.query
 
 		return (
-			<div className="projects__underscroll">
-				<ProjectsCarousel
-					all={all}
-					ref="carousel"
-				/>
-				{
-					all
-						? <ProjectsGrid />
-						: null
-				}
-				<Link
-					className={`projects__more ${all ? '_hidden' : ''}`}
-					to="/projects?all=true"
-				>Еще проекты</Link>
-			</div>
+			<div className={`projects__wrap ${all ? '_all' : ''}`}>
+				<div className="projects__underscroll">
+					<ProjectsCarousel
+						all={all}
+						ref="carousel"
+					/>
+					{
+						all
+							? <ProjectsGrid />
+							: null
+					}
+					<Link
+						className={`projects__more ${all ? '_hidden' : ''}`}
+						to="/projects?all=true"
+					>Еще проекты</Link>
+				</div>
+				</div>
 		)
 	}
 }

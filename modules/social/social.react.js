@@ -20,6 +20,7 @@ export default class Social extends Component {
 					<a
 						key={index}
 						href={url}
+						target="_blank"
 						className={`social__link social__link--${service}`}>
 						<Icon className="social__icon" icon={`social-${service}`} />
 					</a>

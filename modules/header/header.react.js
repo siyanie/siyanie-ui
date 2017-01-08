@@ -1,8 +1,10 @@
 import { Component } from 'react'
+import { Link } from 'react-router'
+import MediaQuery from 'react-responsive'
+
 import Menu from '../menu/menu.react.js'
 import Phone from '../phone/phone.react.js'
 import Icon from '../icon/icon.react.js'
-import { Link } from 'react-router'
 
 export default class Header extends Component {
 	render () {
@@ -16,9 +18,11 @@ export default class Header extends Component {
 						<div className="header__menu">
 							<Menu params={this.props.params} />
 						</div>
-						<div className="header__phone">
-							<Phone />
-						</div>
+						<MediaQuery query="(min-width: 1024px)">
+							<div className="header__phone">
+								<Phone />
+							</div>
+						</MediaQuery>
 					</div>
 				</div>
 			</div>

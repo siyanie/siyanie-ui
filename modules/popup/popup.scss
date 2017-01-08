@@ -1,10 +1,92 @@
-/* stylelint-disable */
 .popup{
 
+	position: fixed 0;
+	z-index: $z-over-everything;
+
+	font-size: 1.125rem;
+
+	background: $c-primary;
+
+	color: white;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	// mods
+	&--callback::after{
+		@mixin responsive-bg callback, png;
+	}
+	&--contacts::after{
+		@mixin responsive-bg popup-contacts, png;
+	}
 
 	// elements
-	&__{
+	&::after{
+		@extend %shakeBg;
 
+		content: '';
+		position: absolute 0;
+		z-index: $z-under;
+
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		opacity: .25;
+	}
+	&__{
+		&content{
+			margin: auto;
+
+			position: relative;
+		}
+		&close{
+			position: absolute * 0 110% *;
+			size: 1.25rem;
+
+			fill: $c-primary-text;
+
+			transition: ;
+
+			// mods
+			&:hover{
+				fill: white;
+				cursor: pointer;
+			}
+		}
+		&title,
+		&text{
+			white-space: pre-wrap;
+		}
+		&title{
+			@extend .title;
+
+			margin: * * 2rem;
+		}
+		&text{
+			max-width: 28rem;
+			margin: * auto;
+
+			text-align: center;
+		}
+		&button{
+			@extend .link;
+
+			display: block;
+			box-sizing: border-box;
+			width: 10rem;
+			border: 2px solid currentColor;
+			margin: 2rem auto *;
+
+			line-height: 1.5;
+
+			text-align: center;
+
+			// mods
+			&:hover{
+				background: white;
+				color: $c-primary;
+			}
+		}
 	}
 }

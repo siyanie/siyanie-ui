@@ -1,4 +1,6 @@
 .bg{
+	position: absolute 0;
+	z-index: -99999;
 
 	transition: ;
 	will-change: opacity;
@@ -15,8 +17,10 @@
 	&__{
 		&image{
 			@extend %center-abs;
+			z-index: $z-under;
 
 			min-size: 100%;
+			height: auto;
 		}
 	}
 }

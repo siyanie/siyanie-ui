@@ -5,7 +5,9 @@
 	// elements
 	&__{
 		&quote{
-			@extend .quote__content;
+			@ref .quote__content, font-family;
+			@ref .quote__content, font-size;
+			@ref .quote__content, line-height;
 
 			max-width: 50rem;
 			margin: * auto;
@@ -25,29 +27,10 @@
 			opacity: .3;
 		}
 		&button{
-			@extend .link;
+			@extend %button;
 
 			position: absolute * 5% 4rem *;
-
-			box-sizing: border-box;
-			padding: .875rem 2.125rem;
-			border: 1px solid currentColor;
-
-			font-size: .875rem;
-			font-weight: 700;
-			line-height: 1;
-
-			text-transform: uppercase;
-
-			opacity: .3;
-
-			transition: ;
-
-			// mods
-			&:hover{
-				opacity: 1;
-				cursor: pointer;
-			}
+			z-index: $z-higher;
 		}
 	}
 }

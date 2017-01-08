@@ -20,7 +20,7 @@ class ProjectsProject extends Component {
 				webp = true
 
 			this.setState({
-				preview: preview.replace(/\.\w+$/, `--phone@1.${webp ? 'webp': '&$'}`)
+				preview: preview.replace(/\.(jpg|jpeg|png)$/i, `--phone@1${webp ? '.webp': '$&'}`)
 			})
 		})
 	}
@@ -45,7 +45,7 @@ class ProjectsProject extends Component {
 			setTimeout(() => {
 				this.bg.remove()
 				delete this.bg
-			}, config.transtion)
+			}, config.transtion * 2)
 		}, config.trs)
 
 		hashHistory.push(`/project/${this.props.id}`)

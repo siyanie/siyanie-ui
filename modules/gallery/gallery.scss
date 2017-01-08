@@ -6,12 +6,13 @@
 	&__{
 		&list{
 			@extend .slide__info;
+			z-index: 0;
 			margin: 0 *;
 
 			display: flex;
 			justify-content: space-between;
 
-			@media (--lower){
+			@media (--h-tablet){
 				margin-top: 0;
 			}
 		}
@@ -81,7 +82,7 @@
 			display: flex;
 			justify-content: center;
 
-			@media (--lower){
+			@media (--h-tablet){
 				margin-top: .5rem;
 			}
 		}

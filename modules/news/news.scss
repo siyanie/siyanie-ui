@@ -1,11 +1,15 @@
 .news{
+	flex: 1;
+	min-height: 100%;
 
 	// mods
-	.slide:last-child &{
+	.slide--news:last-child &{
 		min-height: 100%;
+		flex: 1;
 
 		display: flex;
 		flex-direction: column;
+		align-self: center;
 		justify-content: center;
 	}
 
@@ -14,14 +18,22 @@
 		&link{
 			@extend .link;
 
-			margin-top: 1rem;
-
 			text-decoration: underline;
 
 			display: inline-flex;
 			align-items: center;
 
 			// mods
+			&:not(:only-child){
+				margin-top: 1rem;
+
+				@media (--tablets-p){
+					display: none;
+				}
+			}
+			&:only-child{
+				align-self: center;
+			}
 			&:hover{
 				text-decoration: none;
 			}

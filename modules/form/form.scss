@@ -1,0 +1,198 @@
+@keyframes formCheck{
+	from{
+		max-width: 0;
+		margin-left: -6rem;
+	}
+	to{
+		max-width: 6rem;
+		margin-left: 0;
+	}
+}
+.form{
+
+	// elements
+	&__{
+		&form,
+		&thanks{
+			overflow: hidden;
+		}
+		&form{
+			max-height: 50vh;
+
+			text-align: center;
+
+			transition: ;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			// mods
+			&._sent{
+				display: none;
+			}
+		}
+		&field,
+		&submit{
+			all: initial;
+
+			font-family: $font-family--condensed;
+			font-family: inherit;
+			font-style: italic;
+			font-size: inherit;
+
+			text-align: center;
+		}
+		&field{
+			box-sizing: border-box;
+			max-width: 24rem;
+			width: 100%;
+			padding: 1rem *;
+
+			line-height: 1.1;
+
+			opacity: 1;
+			color: $c-primary-text;
+
+			transition: ;
+
+			// mods
+			&._filled,
+			&:focus{
+
+				color: white;
+			}
+			&:focus + &-line{
+				background: $c-blue;
+
+				@media (--tablets){
+					width: 24rem;
+				}
+
+				@media (--tablets-p){
+					width: 100%;
+				}
+			}
+			// subelements
+			&-line{
+				size: 4.5rem 1px;
+
+				background: $c-primary-text;
+
+				transition: ;
+				will-change: width, background;
+
+				// mods
+				&:not(:last-of-type){
+					margin: * * 1.5rem;
+				}
+			}
+		}
+		&file{
+
+			// subelements
+			&-{
+				&input{
+					display: none;
+				}
+				&label{
+					display: inline-block;
+					border: 1px solid $c-primary-text;
+					padding: .25rem 1rem;
+					margin-top: 1rem;
+
+					font-style: italic;
+
+					color: color(white a(.5));
+
+					cursor: pointer;
+
+					transition: ;
+
+					// mods
+					&._selected,
+					&:hover{
+						background: white;
+						color: $c-primary;
+					}
+				}
+			}
+		}
+		&submit{
+			box-sizing: border-box;
+			min-size: 11rem 2.5rem;
+			margin: 2.25rem;
+
+			box-shadow: inset 0 0 0 .125rem currentColor;
+			color: currentColor;
+
+			transition: ;
+
+			// mods
+			&:hover{
+				background: $c-blue;
+				box-shadow: none;
+
+				cursor: pointer;
+			}
+			&:disabled{
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
+		&error{
+			margin-top: 1rem;
+
+			color: $c-bright;
+		}
+		&thanks{
+			display: none;
+			margin: 6rem * 2.5rem;
+
+			text-align: center;
+
+			transition: ;
+
+			flex-direction: column;
+			align-items: center;
+
+			// mods
+			&._sent{
+				display: flex;
+			}
+			&._sent &-{
+				&check{
+					animation-name: formCheck;
+				}
+				&note{
+					opacity: 1;
+				}
+			}
+
+			// subelements
+			&-{
+				&check{
+					animation-duration: calc($transition * 2);
+					animation-fill-mode: forwards;
+					animation-timing-function: ease-in;
+					will-change: margin-left, max-width;
+
+					overflow: hidden;
+				}
+				&icon{
+					width: 6rem;
+					height: 4.5rem;
+
+					fill: $c-primary--bright;
+				}
+				&note{
+					margin: 5.5rem * *;
+
+					opacity: 0;
+
+					transition: ;
+				}
+			}
+		}
+	}
+}

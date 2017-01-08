@@ -35,11 +35,16 @@
 	&__{
 		&wrap{
 			@extend %section;
+			z-index: $z-higher;
+			margin-bottom: -1px;
 
-			height: calc(100vh - $header__height);
 			overflow: hidden;
 
-			@media (--lower){
+			@media (--tablets){
+				height: calc(100vh - $header__height);
+			}
+
+			@media (--h-tablet) and (--tablets){
 				height: calc(100vh - $header__height--lower);
 			}
 		}
@@ -47,7 +52,6 @@
 			@extend %shakeBg;
 
 			position: absolute 0;
-			z-index: $z-under;
 
 			background-size: cover;
 
@@ -78,31 +82,84 @@
 			}
 		}
 		&content{
-			position: relative;
-			box-sizing: border-box;
-			width: 25vw;
-			min-width: 25rem;
-			height: 100%;
-			padding: * 2rem 5vh calc(2rem + 2vw);
 
-			font-size: 1rem;
+			@media (--tablets){
+				position: relative;
 
-			background: color($c-bg a(.4));
+				box-sizing: border-box;
+				width: 25vw;
+				height: 100%;
+				min-width: 25rem;
+				padding: * 2rem 5vh calc(2rem + 2vw);
+				margin-top: -2px;
 
-			animation-fill-mode: forwards;
-			animation-name: projectContent;
-			animation-delay: $trsn;
-			animation-duration: $trsn;
-			transition: ;
+				font-size: 1rem;
 
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
+				background: color($c-bg a(.4));
+
+				animation-fill-mode: forwards;
+				animation-name: projectContent;
+				animation-delay: $trsn;
+				animation-duration: $trsn;
+				transition: ;
+
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+		}
+		&logotype{
+
+			@media (--tablets-p){
+				position: absolute 0 0 *;
+
+				box-sizing: border-box;
+				height: 3.5rem;
+				padding: .5rem 1rem;
+
+				background: color($c-bg a(.4));
+
+				display: flex;
+				justify-content: space-between;
+			}
 		}
 		&logo{
 			box-sizing: border-box;
-			width: 100%;
-			padding: * 25%;
+
+			@media (--tablets){
+				width: 100%;
+				padding: * 25%;
+			}
+
+			@media (--tablets-p){
+				width: auto;
+				height: 100%;
+				max-size: 100%;
+			}
+
+			@media (--h-tablet-with-bar) and (--tablets){
+				max-height: 5rem;
+			}
+
+			// mods
+			&[data-icon="logo-nokia"]{
+
+				@media (--tablets-p){
+					width: 50%;
+				}
+			}
+		}
+		&data{
+
+			@media (--tablets-p){
+				position: absolute * 0 0;
+				box-sizing: border-box;
+				padding: .5rem 1rem;
+
+				text-align: center;
+
+				background: color($c-bg a(.4));
+			}
 		}
 		&square{
 			font-weight: 700;
@@ -114,16 +171,22 @@
 		&date,
 		&address,
 		&text{
-			opacity: .4;
 
-			transition: ;
+			@media (--tablets){
+				opacity: .4;
+
+				transition: ;
+			}
 		}
 		&content:hover &{
 			&square,
 			&date,
 			&address,
 			&text{
-				opacity: 1;
+
+				@media (--tablets){
+					opacity: 1;
+				}
 			}
 		}
 		&slogan{
@@ -134,9 +197,20 @@
 			letter-spacing: .05em;
 
 			text-transform: uppercase;
+
+			@media (--h-tablet-with-bar){
+				margin: 1.5rem *;
+			}
 		}
 		&dots{
 			display: flex;
+
+			@media (--tablets-p){
+				position: absolute * 0;
+				bottom: 5rem;
+
+				justify-content: center;
+			}
 		}
 		&dot{
 			size: .5rem;
@@ -164,17 +238,24 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+
+			@media (--h-tablet-with-bar){
+				margin-top: 1.5rem;
+			}
 		}
 		&arrow,
 		&all{
-			opacity: .4;
 
-			transition: ;
+			@media (--tablets){
+				opacity: .4;
 
-			// mods
-			&:not(._disabled):hover{
-				opacity: 1;
-				cursor: pointer;
+				transition: ;
+
+				// mods
+				&:not(._disabled):hover{
+					opacity: 1;
+					cursor: pointer;
+				}
 			}
 		}
 		&all{

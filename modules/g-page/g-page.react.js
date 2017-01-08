@@ -21,7 +21,8 @@ export default class Page extends Component {
 	render () {
 		const {
 			params: {
-				section
+				section,
+				project
 			},
 			content,
 			footer,
@@ -32,10 +33,13 @@ export default class Page extends Component {
 		const {
 			preloading
 		} = this.state
-		let key
 
-		if (section) key = section
-		else key = pathname.split('/')[1] || 'root'
+		const key =
+			section
+				? section
+				: project
+					? project
+					: pathname.split('/')[1] || 'root'
 
 		return (
 			<div
@@ -43,17 +47,17 @@ export default class Page extends Component {
 			>
 				<Preloader preloaded={::this._preloaded} />
 				<Header params={this.props.params} />
-				<div className="g-page__main">
-					<ReactCSSTransitionGroup
-						component="div"
-						className="g-page__main"
-						transitionName="anim"
-						transitionLeaveTimeout={config.trs * 2}
-						transitionEnterTimeout={config.trs * 2}
-					>
-						{React.cloneElement(content || <div />, { key })}
-					</ReactCSSTransitionGroup>
-				</div>
+				<div className="g-page__line"></div>
+				<ReactCSSTransitionGroup
+					component="div"
+					className={`g-page__main g-page__main--${pathname.split('/')[1]}`}
+					transitionName="anim"
+					transitionLeaveTimeout={config.trs * 2}
+					transitionEnterTimeout={config.trs * 2}
+				>
+					{React.cloneElement(content || <div />, { key })}
+				</ReactCSSTransitionGroup>
+				<div className="g-page__line"></div>
 				<ReactCSSTransitionGroup
 					component="div"
 					className={`footer__wrap ${!footer ? '_hidden' : ''}`}

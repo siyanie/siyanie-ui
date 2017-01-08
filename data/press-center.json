@@ -5,6 +5,20 @@
 			"name": "Новости",
 			"content": [
 				{
+					"bg": "press-center_news_3_newyear.jpg",
+					"title": "С Новым годом!",
+					"quote": {
+						"text": "Построенное дешево и сердито \nдержится только на честном слове."
+					},
+					"main": {
+						"component": "News",
+            "content": {
+					    "date": "29 декабря 2016",
+              "text": " Новый год всегда связывают с надеждами на лучшее, поэтому пусть все хорошее, что радовало Вас в уходящем году, найдет свое продолжение в году наступающем!\nЖелаем Вам крепкого здоровья, осуществления Ваших замыслов и планов, уважения и взаимопонимания в коллективе. Пусть наступающий год принесет Вам надежных партнеров и верных друзей, пусть он будет насыщен новыми творческими идеями, хорошими новостями и финансовыми успехами!\n«Сияние Генподряд» поздравляет Вас с Новым Годом!"
+            }
+					}
+				},
+				{
 					"bg": "press-center_news_1_run.jpg",
 					"title": "Благотворительный забег",
 					"quote": {
@@ -14,8 +28,7 @@
 						"component": "News",
             "content": {
 					    "date": "29 октября 2016",
-              "text": "Наша компания не остается равнодушной к трудностям других и с радостью оказывает поддержку благотворительным фондам. 29 октября 2016 года в рамках проекта «Спорт во благо» прошёл благотворительный забег «Добрый Грязный Трейл». Компания «Сияние Генподряд» приняла участие в пробеге,  организованном для помощи детям с синдромом Дауна.",
-               "link": "https://facebook.com"
+              "text": "Наша компания не остается равнодушной к трудностям других и с радостью оказывает поддержку благотворительным фондам. 29 октября 2016 года в рамках проекта «Спорт во благо» прошёл благотворительный забег «Добрый Грязный Трейл». Компания «Сияние Генподряд» приняла участие в пробеге,  организованном для помощи детям с синдромом Дауна."
             }
 					}
 				},
@@ -31,13 +44,13 @@
             "content": {
 				    	"date": "17 ноября 2016",
               "text": "17 ноября 2016 года в 19:00 в кафе «МАРТ» состоится презентация книги «Любовь меняет все. Любовь Казарновская в беседе с Амарией Рай». Компания «Сияние Генподряд» является генеральным партнёром этого прекрасного вечера. Наша компания желает Любови Юрьевне Казарновской успехов и творческих побед!",
-              "link": "https://vk.com"
+              "link": "https://instagram.com/p/BNWnN8GgucA/?taken-by=siyanie.group"
             }
 					}
 				},
 				{
-					"bg": "press-center_news_all.jpg",
-					"title": "В борьбе за «Кубок Климата»",
+					"bg": "press-center_news_3_football.jpg",
+					"title": "Кубок климата 2016",
 					"quote": {
 						"text": "Никогда не поднимайте свои принципы так высоко, \nчто их нельзя будет приспособить к обстоятельствам.",
 						"author": "Уинстон Черчилль"
@@ -46,13 +59,12 @@
 						"component": "News",
             "content": {
 			  	  	"date": "18 декабря 2016",
-              "text": "18 декабря 2016 года наша компания примет участие в турнире по мини-футболу за «Кубок Климата». Это самый ожидаемый проект для компаний в области  кондиционирования, холодоснабжения, вентиляции и отопления. «Сияние Генподряд» за здоровый и активный образ жизни. Фотографии с летнего турнира тёплыми воспоминаниями стимулируют нас к будущей победе. Благодарим организаторов за возможность принять участие в таком интересном и масштабном соревновании.",
-              "link": "https://instagram.com"
+              "text": "18 декабря компания «Сияние» приняла участие в корпоративном турнире по мини-футболу \"Кубок Климата 2016\". В турнире участвовали команды ведущих производителей и поставщиков оборудования систем вентиляции и кондиционирования, всего 16 известных компаний. Наша команда проявила себя как достойный соперник и завоевала почетную бронзу! "
             }
 					}
 				},
 				{
-					"bg": "press-center_news_3_football.jpg",
+					"bg": "press-center_news_all.jpg",
 					"quote": {
 						"text": "Никогда не поднимайте свои принципы так высоко, \nчто их нельзя будет приспособить к обстоятельствам.",
 						"author": "Уинстон Черчилль"
@@ -60,7 +72,7 @@
 					"main": {
 						"component": "News",
 						"content": {
-              "link": "https://facebook.com"
+              "link": "https://facebook.com/siyaniegenpodryad"
             }
 					}
 				}
@@ -98,27 +110,57 @@
                   ]
                 },
                 {
+                  "name": "Благотворительный фонд\n \"Даунсайд Ап\"",
                   "previews": [
-                    "http://placehold.alanev.ru/205x290",
-                    "http://placehold.alanev.ru/205x290",
-                    "http://placehold.alanev.ru/205x290"
+                    "doc_downsidup_sm.jpg"
                   ],
                   "images": [
-                    "http://placehold.alanev.ru/550x770",
-                    "http://placehold.alanev.ru/550x770",
-                    "http://placehold.alanev.ru/550x770"
+                    "doc_downsidup_big.jpg"
                   ]
                 },
                 {
+                  "name": "Благодарность \nот Любви Казарновской",
                   "previews": [
-                    "http://placehold.alanev.ru/205x290",
-                    "http://placehold.alanev.ru/205x290",
-                    "http://placehold.alanev.ru/205x290"
+                    "doc_kazarn_sm.jpg"
                   ],
                   "images": [
-                    "http://placehold.alanev.ru/550x770",
-                    "http://placehold.alanev.ru/550x770",
-                    "http://placehold.alanev.ru/550x770"
+                    "doc_kazarn_big.jpg"
+                  ]
+                },
+                {
+                  "name": "Рекомендательное письмо \nООО \"Бекар-Эксплуатация\"",
+                  "previews": [
+                    "doc_becar_sm.jpg"
+                  ],
+                  "images": [
+                    "doc_becar_big.jpg"
+                  ]
+                },
+                {
+                  "name": "Благодарственное \nписьмо ООО \"Элита-Мск\"",
+                  "previews": [
+                    "doc_elita_sm.jpg"
+                  ],
+                  "images": [
+                    "doc_elita_big.jpg"
+                  ]
+                },
+                {
+                  "name": "Благодарность от \nООО \"Минимакс\"",
+                  "previews": [
+                    "doc_minimax_sm.jpg"
+                  ],
+                  "images": [
+                    "doc_minimax_big.jpg"
+                  ]
+                },
+                {
+                  "name": "Боагрдарность от \nкомпании \"ОВК-ХОЛДИНГ\"",
+                  "previews": [
+                    "doc_ovk_sm.jpg"
+                  ],
+                  "images": [
+                    "doc_ovk_big.jpg"
                   ]
                 }
               ]
@@ -160,75 +202,30 @@
                   ]
                 },
                 {
+                  "name": "Оцийиальный дистрибьютор DAICHI",
                   "previews": [
-                    "http://placehold.alanev.ru/205x290/345",
-                    "http://placehold.alanev.ru/205x290/456",
-                    "http://placehold.alanev.ru/205x290/567"
+                    "doc_daichi_sm.jpg"
                   ],
                   "images": [
-                    "http://placehold.alanev.ru/550x770/345",
-                    "http://placehold.alanev.ru/550x770/456",
-                    "http://placehold.alanev.ru/550x770/567"
+                    "doc_daichi_big.jpg"
                   ]
                 },
                 {
+                  "name": "Официальный партнер NED",
                   "previews": [
-                    "http://placehold.alanev.ru/205x290/678",
-                    "http://placehold.alanev.ru/205x290/789",
-                    "http://placehold.alanev.ru/205x290/89a"
+                    "doc_ned_sm.jpg"
                   ],
                   "images": [
-                    "http://placehold.alanev.ru/550x770/678",
-                    "http://placehold.alanev.ru/550x770/789",
-                    "http://placehold.alanev.ru/550x770/89a"
+                    "doc_ned_big.jpg"
                   ]
                 },
                 {
+                  "name": "Официальный дилер Breez",
                   "previews": [
-                    "http://placehold.alanev.ru/205x290/9ab",
-                    "http://placehold.alanev.ru/205x290/abc",
-                    "http://placehold.alanev.ru/205x290/bcf"
+                    "doc_breez_sm.jpg"
                   ],
                   "images": [
-                    "http://placehold.alanev.ru/550x770/9ab",
-                    "http://placehold.alanev.ru/550x770/abc",
-                    "http://placehold.alanev.ru/550x770/bcf"
-                  ]
-                },
-                {
-                  "previews": [
-                    "http://placehold.alanev.ru/205x290/9ab",
-                    "http://placehold.alanev.ru/205x290/abc",
-                    "http://placehold.alanev.ru/205x290/bcf"
-                  ],
-                  "images": [
-                    "http://placehold.alanev.ru/550x770/9ab",
-                    "http://placehold.alanev.ru/550x770/abc",
-                    "http://placehold.alanev.ru/550x770/bcf"
-                  ]
-                },
-                {
-                  "previews": [
-                    "http://placehold.alanev.ru/205x290/9ab",
-                    "http://placehold.alanev.ru/205x290/abc",
-                    "http://placehold.alanev.ru/205x290/bcf"
-                  ],
-                  "images": [
-                    "http://placehold.alanev.ru/550x770/9ab",
-                    "http://placehold.alanev.ru/550x770/abc",
-                    "http://placehold.alanev.ru/550x770/bcf"
-                  ]
-                },
-                {
-                  "previews": [
-                    "http://placehold.alanev.ru/205x290/9ab",
-                    "http://placehold.alanev.ru/205x290/abc",
-                    "http://placehold.alanev.ru/205x290/bcf"
-                  ],
-                  "images": [
-                    "http://placehold.alanev.ru/550x770/9ab",
-                    "http://placehold.alanev.ru/550x770/abc",
-                    "http://placehold.alanev.ru/550x770/bcf"
+                    "doc_breez_big.jpg"
                   ]
                 }
               ]
@@ -250,136 +247,16 @@
             "component": "MediaCenter",
             "content": {
               "items": [
-                {
-                  "image": "http://placehold.alanev.ru/160x50",
-                  "links": [
-                    {
-                      "name": "png",
-                      "url": "http://placehold.alanev.ru/160x50"
-                    },
-                    {
-                      "name": "ai",
-                      "url": "http://placehold.alanev.ru/160x50"
-                    }
-                  ]
-                },
-                {
-                  "image": "http://placehold.alanev.ru/160x50",
-                  "links": [
-                    {
-                      "name": "png",
-                      "url": "http://placehold.alanev.ru/160x50"
-                    },
-                    {
-                      "name": "ai",
-                      "url": "http://placehold.alanev.ru/160x50"
-                    }
-                  ]
-                },
-                {
-                  "image": "http://placehold.alanev.ru/160x50",
-                  "links": [
-                    {
-                      "name": "png",
-                      "url": "http://placehold.alanev.ru/160x50"
-                    },
-                    {
-                      "name": "ai",
-                      "url": "http://placehold.alanev.ru/160x50"
-                    }
-                  ]
-                },
-                {
-                  "image": "http://placehold.alanev.ru/160x50",
-                  "links": [
-                    {
-                      "name": "png",
-                      "url": "http://placehold.alanev.ru/160x50"
-                    },
-                    {
-                      "name": "ai",
-                      "url": "http://placehold.alanev.ru/160x50"
-                    }
-                  ]
-                },
-                {
-                  "image": "http://placehold.alanev.ru/160x50",
-                  "links": [
-                    {
-                      "name": "png",
-                      "url": "http://placehold.alanev.ru/160x50"
-                    },
-                    {
-                      "name": "ai",
-                      "url": "http://placehold.alanev.ru/160x50"
-                    }
-                  ]
-                },
-                {
-                  "image": "http://placehold.alanev.ru/100x100",
-                  "links": [
-                    {
-                      "name": "png",
-                      "url": "http://placehold.alanev.ru/100x100"
-                    },
-                    {
-                      "name": "ai",
-                      "url": "http://placehold.alanev.ru/100x100"
-                    }
-                  ]
-                },
-                {
-                  "image": "http://placehold.alanev.ru/100x100",
-                  "links": [
-                    {
-                      "name": "png",
-                      "url": "http://placehold.alanev.ru/100x100"
-                    },
-                    {
-                      "name": "ai",
-                      "url": "http://placehold.alanev.ru/100x100"
-                    }
-                  ]
-                },
-                {
-                  "image": "http://placehold.alanev.ru/100x100",
-                  "links": [
-                    {
-                      "name": "png",
-                      "url": "http://placehold.alanev.ru/100x100"
-                    },
-                    {
-                      "name": "ai",
-                      "url": "http://placehold.alanev.ru/100x100"
-                    }
-                  ]
-                },
-                {
-                  "image": "http://placehold.alanev.ru/100x100",
-                  "links": [
-                    {
-                      "name": "png",
-                      "url": "http://placehold.alanev.ru/100x100"
-                    },
-                    {
-                      "name": "ai",
-                      "url": "http://placehold.alanev.ru/100x100"
-                    }
-                  ]
-                },
-                {
-                  "image": "http://placehold.alanev.ru/100x100",
-                  "links": [
-                    {
-                      "name": "png",
-                      "url": "http://placehold.alanev.ru/100x100"
-                    },
-                    {
-                      "name": "ai",
-                      "url": "http://placehold.alanev.ru/100x100"
-                    }
-                  ]
-                }
+                "climat_horizont",
+                "genpodryad_gorizont",
+                "service_horizont",
+                "group_horizont",
+                "vent_horizont",
+                "climat_vertikal",
+                "genpodryad_vertikal",
+                "group_vertikal",
+                "service_vertikal",
+                "vent_vertikal"
               ]
             }
           }
