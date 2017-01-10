@@ -15,10 +15,18 @@ export default class Phone extends Component {
 					>
 						<Icon className="phone__icon" icon="phone" />
 					</Link>
-					<a href="tel:84956077777" className="phone__value">
-						<span className="phone__prefix">495 </span>
-						<span className="phone__number">607-7777</span>
-					</a>
+					<MediaQuery query="(max-width: 1023px)">
+						<a href="tel:84956077777" className="phone__value">
+							<span className="phone__prefix">495 </span>
+							<span className="phone__number">607-7777</span>
+						</a>
+					</MediaQuery>
+					<MediaQuery query="(min-width: 1024px)">
+						<Link to="/callback" className="phone__value">
+							<span className="phone__prefix">495 </span>
+							<span className="phone__number">607-7777</span>
+						</Link>
+					</MediaQuery>
 				</span>
 				<MediaQuery query="(min-width: 1024px)">
 					<Link
