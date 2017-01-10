@@ -1,4 +1,3 @@
-import 'whatwg-fetch'
 require('smoothscroll-polyfill').polyfill()
 
 import { render } from 'react-dom'

@@ -64,11 +64,9 @@ class componentName extends Component {
 				/>
 				<div
 					className="gallery__list"
-					style={
-						{
-							transform: `translateX(-${current * shift}px)`
-						}
-					}
+					style={{
+						transform: `translateX(-${current * shift}px)`
+					}}
 				>
 				{
 					docs.map((data, index) => (

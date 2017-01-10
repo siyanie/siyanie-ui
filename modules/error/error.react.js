@@ -7,11 +7,9 @@ class ErrorPage extends Component {
 			<div className="error">
 				<div
 					className="error__bg"
-					style={
-						{
-							clipPath: 'url(#icon--error)'
-						}
-					}
+					style={{
+						clipPath: 'url(#icon--error)'
+					}}
 				></div>
 				<div className="error__info">
 					Страница не найдена. <br/>

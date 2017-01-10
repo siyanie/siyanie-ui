@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import Icon from '../icon/icon.react.js'
+import Icon from '../icon/icon.react'
 
 const socials = [{
 	service: 'vk',

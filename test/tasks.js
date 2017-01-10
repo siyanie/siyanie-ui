@@ -9,8 +9,10 @@ const tasks = [
 		[
 			'index.html',
 			'styles.css',
-			'defer.js',
-			'modernizr.js'
+			'main.js',
+			'modernizr.js',
+			'assets/fonts',
+			'assets/icons'
 		]
 	}
 ]
@@ -28,7 +30,7 @@ tasks.forEach(({ name, output }) => {
 		t => exec(`npm run ${name}`)
 			.then(() => {
 				return Promise
-					.all(output.map(path => stat(`../build/${path}`)))
+					.all(output.map(path => stat(`build/${path}`)))
 					.then(() => t.pass())
 					.catch(({ path }) => {
 						console.log(`No ${path}`)

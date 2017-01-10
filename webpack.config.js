@@ -28,17 +28,6 @@ module.exports = {
 			]
 		},
 		{
-			test: /\.svg$/,
-			loader: 'babel?presets[]=es2015,presets[]=react!svg-react'
-		},
-		{
-			test: /\.yml$/,
-			loaders: [
-				'json',
-				'yaml'
-			]
-		},
-		{
 			test: /\.json$/,
 			loaders: [
 				'json'

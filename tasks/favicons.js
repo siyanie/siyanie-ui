@@ -1,7 +1,9 @@
 const fs = require('fs')
 const prms = require('./utils/prms')
 const writeFile = prms(fs.writeFile)
+const mkdir = require('./utils/mkdir')
 const favicons = require('favicons')
+
 const source = 'node_modules/siyanie-graphics/src/icons/siyanie.svg'
 const config = {
 	appName: 'Сияние',
@@ -11,7 +13,7 @@ const config = {
 	background: '#15233c',
 	path: '/assets/icons',
 	display: 'standalone',
-	orientation: 'landscape',
+	orientation: 'portrait',
 	start_url: '/#/',
 	version: '1.0',
 	logging: true,
@@ -44,4 +46,7 @@ const callback = (error, response) => {
 		.catch(console.error)
 }
 
+mkdir('build/assets/icons')
 favicons(source, config, callback)
+
+console.log(process.cwd())

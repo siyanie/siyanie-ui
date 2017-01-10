@@ -63,11 +63,9 @@ class ProjectsCarousel extends Component {
 			>
 				<div
 					className="projects__list _carousel"
-					style={
-						{
-							transform: `translateX(-${all ? 0 : current * shift}px)`
-						}
-					}
+					style={{
+						transform: `translateX(-${all ? 0 : current * shift}px)`
+					}}
 				>
 				{
 					projects.map(({ id, preview_mid: preview }) => (
