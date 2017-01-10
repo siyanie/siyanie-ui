@@ -6,7 +6,6 @@ const watchOptions = {
 // tasks
 const styles = require('./styles')
 const templates = require('./templates')
-const images = require('./images')
 const server = require('./server')
 
 server()
@@ -23,16 +22,6 @@ watch(['modules/*/*.html', 'src/*.html'], watchOptions)
 		templates(undefined, undefined, () => {
 			console.log(e, path, 'done')
 		})
-	})
-
-watch(['modules/**/*.{png,jpg}'], watchOptions)
-	.on('change', path => {
-		images([path])
-		console.log(path, 'changed')
-	})
-	.on('add', path => {
-		images([path])
-		console.log(path, 'added')
 	})
 
 watch(['modules.yml'])
