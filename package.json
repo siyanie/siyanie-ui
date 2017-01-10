@@ -15,7 +15,7 @@
     "build:light": "npm run styles && npm run templates && npm run scripts",
     "dev": "webpack-dev-server --content-base build/ --port 8181 --hot --inline",
     "test": "ava test/*.js",
-    "posttest": "npm run lint && npm run gh-pages",
+    "posttest": "npm run lint",
     "lint": "npm run lint:scripts && npm run lint:html && npm run lint:styles",
     "lint:scripts": "eslint '{modules,src,tasks,test}/**/*.js'",
     "lint:styles": "stylelint '{modules,src}/**/*.scss'",
