@@ -97,7 +97,7 @@ class Contacts extends Component {
 					<MediaQuery query="(min-width: 1024px)">
 						<div className="contacts__buttons-wrap">
 							<div className="contacts__buttons">
-								<Link className="contacts__button" to="/contacts-metro3">от м. Электрозаводсткая</Link>
+								<Link className="contacts__button" to="/contacts-metro3">от м. Электрозаводская</Link>
 								<Link className="contacts__button" to="/contacts-metro45">от м. Преображенская площадь</Link>
 							</div>
 						</div>
