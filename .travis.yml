@@ -3,7 +3,7 @@ before_script:
 - git config --global user.name "eugeneAlanev"
 - git remote rm origin
 - git remote add origin https://eugeneAlanev:${GH_TOKEN}@github.com/siyanie/siyanie-ui.git
-script: npm run gh-pages
+script: npm run travis
 env:
   global:
   - secure: BrrlCyh3LVsjui1sIkAA44Cay7boAMAij6sx3F+A1J48QF6HoQmA0AlXpXk7pb5FoVQeuNBBcLK5HDYaZtis2/qNkdEWA+bwuKdLZwdyjxqUJCcANbH6GySE+9dQeVOXrrWk2vUyhdM2Jk7mxRqpNUhLwz5fS0BIs5IXMkwf8uDBflMch7OQptII80h+KfKfwVKg+woAlPUkWTTYl0agR8zcRKKTlwJNhPMThg8LxWr6KKvimO19p/sSR0T3AsvS8A92000Bxk4VQf5XIHGCue/0eI8T1waF+xzLYIlYrmKGTRMhyPYbMAXZwI0GgAR7s4lKbw2P8Rv2a2CIWOY/CfbQ/406PK/RGDW50zB7y1ehOy9nrfBcEzwP9/3QBQ4OFWV7nN2t/Yk9JETXRIXpAy1wDN+f+OJavgwq5hVB+vD/1fmr36IT9ISdLdDkCl05gW6g5qLgdKiLXLJpYRaubrbpxvp5+piXbx6hNedJdEmzhVcGh398dUavvM8Hch32bp+7iFENwTEkdIyvTw5uTIhVXrSnTonIkakTZ65hO7RsXuztM279kDVJHYqHVvciIReoqksVvPxPUVfy1a/PlszV6V7ozPlzKcxuQS8KGToFC37n69igbZMIlDh3gy7lI8+BrRLNf23G4pZKYXjm6DZQIjsmEeCHlrlvbGmuAuM=
