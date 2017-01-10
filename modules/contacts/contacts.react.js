@@ -7,8 +7,8 @@ import config from '../config/config.react'
 
 
 const LatLng = {
-	lng: 37.7076,
-	lat: 55.78898
+	lng: 37.707621,
+	lat: 55.788501
 }
 const styles = [
 	{
