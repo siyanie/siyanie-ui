@@ -15,13 +15,13 @@
     "build:light": "npm run styles && npm run templates && npm run scripts",
     "dev": "webpack-dev-server --content-base build/ --port 8181 --hot --inline",
     "test": "ava test/*.js",
-    "posttest": "npm run lint",
+    "posttest": "npm run lint && npm run gh-pages",
     "lint": "npm run lint:scripts && npm run lint:html && npm run lint:styles",
     "lint:scripts": "eslint '{modules,src,tasks,test}/**/*.js'",
     "lint:styles": "stylelint '{modules,src}/**/*.scss'",
     "lint:html": "htmlhint '{modules,src,build}/**/*.html'",
-    "predeploy": "npm run build:light",
-    "deploy": "gh-pages -d build"
+    "deploy": "npm run build:light && npm run gh-pages",
+    "gh-pages": "gh-pages -d build"
   },
   "keywords": [
     "start",
