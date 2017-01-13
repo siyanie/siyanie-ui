@@ -25,11 +25,19 @@
 			padding: 10% 0;
 		}
 		&old{
+			.u-support--no-calc &,
+			.u-support--no-flexwrap &,
+			.u-support--no-transforms &,
+			.u-support--no-transitions &,
 			.u-support--no-flexwrap &{
 				display: block;
 			}
 		}
 	}
+	.u-support--no-calc .g-page > :not(&),
+	.u-support--no-flexwrap .g-page > :not(&),
+	.u-support--no-transforms .g-page > :not(&),
+	.u-support--no-transitions .g-page > :not(&),
 	.u-support--no-flexwrap .g-page > :not(&){
 		display: none;
 	}

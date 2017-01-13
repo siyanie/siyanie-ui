@@ -6,12 +6,12 @@
   ],
   "feature-detects": [
     "css/calc",
-    "css/columns",
     "css/flexbox",
     "css/flexboxlegacy",
     "css/flexboxtweener",
     "css/flexwrap",
     "css/transforms",
+    "css/transitions",
     "img/webp",
     "svg/inline"
   ]
