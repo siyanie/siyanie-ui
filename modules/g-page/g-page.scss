@@ -8,12 +8,14 @@
 
 	background: $c-primary;
 
+	position: relative;
 	display: flex;
 	flex-direction: column;
 
 	// elements
 	&__{
 		&content{
+			position: absolute 0;
 			flex: 1;
 			min-height: 100%;
 

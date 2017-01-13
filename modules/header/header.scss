@@ -30,11 +30,11 @@
 				&icon{
 
 					@media (--tablets){
-						max-size: 11.25rem 3.25rem;
+						size: 11.25rem 3.25rem;
 					}
 
 					@media (--tablets-p){
-						max-size: 8.75rem 2.5rem;
+						size: 8.75rem 2.5rem;
 					}
 				}
 			}

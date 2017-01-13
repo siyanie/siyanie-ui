@@ -35,7 +35,7 @@
 			overflow-x: hidden;
 		}
 		&list{
-			transition-property: transform, left;
+			transition-property: margin-left, left;
 			transition-duration: $trsn, $transition;
 
 			display: flex;

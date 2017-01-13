@@ -3,7 +3,7 @@ const utils = {
 		return window.innerWidth / window.devicePixelRatio
 	},
 	getDPI() {
-		return window.devicePixelRatio
+		return Math.round(window.devicePixelRatio)
 	},
 	loadScript() {
 

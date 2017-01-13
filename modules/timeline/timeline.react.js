@@ -58,7 +58,7 @@ class Timeline extends Component {
 						className="timeline__list"
 						ref="timeline"
 						style={{
-							transform: `translateX(calc(50% - ${(shift * currentIndex) + (shift / 2)}px))`,
+							marginLeft: `calc(50% - ${(shift * currentIndex) + (shift / 2)}px)`,
 							left: `${move * -1}px`
 						}}
 						onMouseOver={::this._move}

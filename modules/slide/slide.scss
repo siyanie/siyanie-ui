@@ -11,6 +11,7 @@ $slide-transition: 1s;
 
 	overflow: hidden;
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 
 	// MODS START
@@ -272,6 +273,8 @@ $slide-transition: 1s;
 
 			display: flex;
 			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 
 			@media (--desktops) and (--h-desktop){
 				min-height: 8rem;
@@ -290,7 +293,6 @@ $slide-transition: 1s;
 					@media (--desktops) and (--h-desktop){
 						flex: 1;
 						max-width: 50rem;
-						margin: auto;
 					}
 
 					@media (--tablets-only), (--h-tablet){
