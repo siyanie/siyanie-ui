@@ -203,6 +203,10 @@ $project__height: $content__height;
 
 			transition: ;
 
+			@media (--ie){
+				display: none;
+			}
+
 			// mods
 			&._hidden{
 				visibility: hidden;

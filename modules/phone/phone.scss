@@ -16,15 +16,19 @@
 	}
 	&:hover &__{
 		&button{
-			background: $c-primary--bright;
-			box-shadow: 0 0 0 .5rem $c-primary--bright;
 
-			transition:
-				background $transition,
-				box-shadow calc($transition * 3);
+			// subelements
+			&::after{
+				opacity: 1;
 
-			@media (--tablets-p){
-				color: white;
+				transform: scale(1.2);
+				transition:
+					opacity $transition,
+					transform calc($transition * 3);
+
+				@media (--tablets-p){
+					transform: scale(1.5)
+				}
 			}
 		}
 		&note{
@@ -44,8 +48,7 @@
 
 			border-radius: ;
 
-			transition: calc($transition * 3);
-
+			position: relative;
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
@@ -57,6 +60,21 @@
 			@media (--tablets-p){
 				transform: translate(0, 10%);
 				margin-right: .5rem;
+			}
+
+			// pseudoelements
+			&::after{
+				content: '';
+
+				position: absolute 0;
+				z-index: $z-under;
+
+				background-color: $c-primary--bright;
+				border-radius: inherit;
+
+				opacity: 0;
+				transition: calc($transition * 3);
+				will-change: opacity, transform;
 			}
 		}
 		&icon{

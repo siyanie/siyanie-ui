@@ -15,8 +15,9 @@ class Timeline extends Component {
 			move: 0
 		}
 	}
-	_move({ nativeEvent: { x } }) {
+	_move({ nativeEvent: { pageX: x } }) {
 		const { innerWidth: vw } = window
+
 		this.setState({
 			move: ((x / vw - .5) * settings.shift)
 		})

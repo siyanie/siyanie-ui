@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 class ${name[0].toUpperCase() + name.substring(1)} extends Component {
 	render() {
@@ -6,8 +6,8 @@ class ${name[0].toUpperCase() + name.substring(1)} extends Component {
 			<div>
 
 			</div>
-		);
+		)
 	}
 }
 
-export default ${name[0].toUpperCase() + name.substring(1)};
+export default ${name[0].toUpperCase() + name.substring(1)}

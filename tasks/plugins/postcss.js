@@ -16,7 +16,7 @@ module.exports = [
 	}),
 	require('postcss-extend')(),
 	require('postcss-simple-vars')({
-		variables: require('../../modules/config/config.react')
+		variables: require('../../modules/config/config.props.react')
 	}),
 
 	// Future css

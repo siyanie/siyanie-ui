@@ -1,7 +1,14 @@
-const assets = '//siyanie.github.io/siyanie-data/'
+const { hostname } = location
+const isDevHost = hostname == 'localhost' || hostname == 'siyanie.github.io'
+const assets =
+	isDevHost
+		? '//siyanie.github.io/siyanie-data/'
+		: '//data.siyanie-genpodryad.ru/'
+
+console.log(assets)
+
 module.exports = {
-	trs: 1000,
-	transtion: 300,
+	isDevHost,
 	assets: {
 		data: assets,
 		pdf: `${assets}pdf/`,
@@ -9,5 +16,4 @@ module.exports = {
 		videos: `${assets}videos/`
 	},
 	googleKey: 'AIzaSyBnCTjd0wDllSypwCk4oiBpWN2jsT1eJ4o',
-	breackpoint: 1024
 }

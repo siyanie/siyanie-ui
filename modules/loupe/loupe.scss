@@ -19,25 +19,26 @@
 
 			// elements
 			&::after{
-				size: 5rem;
+				transform: scale(1.5);
 			}
 		}
 	}
 
 	// elements
 	&::after{
-		@extend %center-abs;
+		content: '';
 
+		position: absolute 0;
 		z-index: $z-under;
 
-		content: '';
 		size: inherit;
 
 		background: currentColor;
-		border-radius: inherit;
+		border-radius: 50%;
 
 		transition: inherit;
-		will-change: width, height;
+		transform-origin: center;
+		will-change: transform;
 	}
 	&__{
 		&icon{
