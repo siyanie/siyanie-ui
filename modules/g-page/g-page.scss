@@ -58,6 +58,13 @@
 			flex-direction: column;
 
 			position: relative;
+
+			// mods
+			&--{
+				&projects{
+					display: block;
+				}
+			}
 		}
 		&main--project + &line{
 			visibility: hidden;

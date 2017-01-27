@@ -11,3 +11,5 @@
 @custom-media --h-tablet (height <= 800px);
 @custom-media --h-tablet-only (height <= 800px) and (height > 720px);
 @custom-media --h-desktop (height > 800px);
+
+@custom-media --ie (-ms-high-contrast:none);
