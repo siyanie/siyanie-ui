@@ -27,7 +27,7 @@
 					transform calc($transition * 3);
 
 				@media (--tablets-p){
-					transform: scale(1.5)
+					transform: scale(1.5);
 				}
 			}
 		}
