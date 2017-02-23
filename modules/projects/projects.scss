@@ -187,7 +187,9 @@ $project__height: $content__height;
 			position: relative;
 			z-index: $z-higher;
 
-			margin: 1rem * -calc(1rem + .875rem);
+			padding: .5rem 1rem;
+			border: 1px solid currentColor;
+			margin: 1rem auto -calc(1rem + .875rem);
 
 			font-size: .875rem;
 			font-weight: 700;
@@ -211,6 +213,9 @@ $project__height: $content__height;
 			&._hidden{
 				visibility: hidden;
 				opacity: 0;
+			}
+			&:hover{
+				color: white;
 			}
 		}
 		// hover

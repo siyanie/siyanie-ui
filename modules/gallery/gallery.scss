@@ -25,6 +25,8 @@
 		&images{
 			position: relative;
 
+			display: inline-block;
+
 			// mods
 			&:hover{
 				cursor: pointer;
