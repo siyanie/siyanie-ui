@@ -9,7 +9,7 @@ module.exports = {
 	],
 	output: {
 		path: path.join(__dirname, 'build'),
-		publicPath: '/static/',
+		publicPath: '/',
 		filename: 'main.js',
 	},
 	module: {
@@ -40,10 +40,10 @@ module.exports = {
 		}),
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin(),
-		new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false
-			}
-		})
+		// new webpack.optimize.UglifyJsPlugin({
+		// 	compress: {
+		// 		warnings: false
+		// 	}
+		// })
 	]
 }
