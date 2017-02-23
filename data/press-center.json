@@ -202,6 +202,19 @@
                   ]
                 },
                 {
+                  "name": "Допуск СРО на проектирование",
+                  "previews": [
+                    "doc_dopusk_sro_1_sm.jpg",
+                    "doc_dopusk_sro_2_sm.jpg",
+                    "doc_dopusk_sro_3_sm.jpg"
+                  ],
+                  "images": [
+                    "doc_dopusk_sro_1_big.jpg",
+                    "doc_dopusk_sro_2_big.jpg",
+                    "doc_dopusk_sro_3_big.jpg"
+                  ]
+                },
+                {
                   "name": "Оцийиальный дистрибьютор DAICHI",
                   "previews": [
                     "doc_daichi_sm.jpg"
