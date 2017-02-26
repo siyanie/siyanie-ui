@@ -131,28 +131,6 @@
 			"name": "Проектная команда",
 			"content": [
 				{
-					"bg": "about_rukovodstvo_bezborodov.jpg",
-					"main": {
-						"component": "Person",
-						"content": {
-							"quote": "Никогда не сдавайся.",
-							"name": "Заместитель генерального директора",
-							"post": "Безбородов Андрей Иванович"
-						}
-					}
-				},
-				{
-					"bg": "about_rukovodstvo_zyablickaya.jpg",
-					"main": {
-						"component": "Person",
-						"content": {
-							"quote": "Не верю в судьбу; судьбы нет - каждый сам пишет свою историю.",
-							"name": "Зяблицкая Алена Сергеевна",
-							"post": "Руководитель ТО"
-						}
-					}
-				},
-				{
 					"title": "Руководитель проекта",
 					"quote": {
 						"text": "Если захочется переделывать людей — начни с себя.\nЭто и полезнее, и безопаснее.",
@@ -344,6 +322,28 @@
 		"work": {
 			"name": "Работа в сиянии",
 			"content": [
+				{
+					"bg": "about_rukovodstvo_bezborodov.jpg",
+					"main": {
+						"component": "Person",
+						"content": {
+							"quote": "Никогда не сдавайся.",
+							"name": "Заместитель генерального директора",
+							"post": "Безбородов Андрей Иванович"
+						}
+					}
+				},
+				{
+					"bg": "about_rukovodstvo_zyablickaya.jpg",
+					"main": {
+						"component": "Person",
+						"content": {
+							"quote": "Не верю в судьбу; судьбы нет - каждый сам пишет свою историю.",
+							"name": "Зяблицкая Алена Сергеевна",
+							"post": "Руководитель ТО"
+						}
+					}
+				},
 				{
 					"bg": "about_rabota_burluckaya.jpg",
 					"main": {
