@@ -36,7 +36,7 @@ render(
 				<Redirect from="/section/services" to="/section/services/gen" />
 				<Redirect from="/section/press-center" to="/section/press-center/news" />
 
-				<Route path="*" components={{ content: ErrorPage}} />
+				<Route path="*" components={{ content: ErrorPage, footer: Footer}} />
 			</Route>
 		</Router>
 	</Root>,
