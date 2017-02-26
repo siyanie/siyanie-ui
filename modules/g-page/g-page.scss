@@ -14,16 +14,20 @@
 
 	// elements
 	&__{
+		&wrapper,
 		&content{
-			position: absolute 0;
-			flex: 1;
-			min-height: 100%;
-
-			overflow-x: hidden;
-
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+		}
+		&wrapper{
+			position: absolute 0;
+
+			overflow-x: hidden;
+		}
+		&content{
+			flex: 1;
+			min-height: 100%;
 
 			// siblings
 			.preloader:not(._hidden) + &{

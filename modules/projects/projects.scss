@@ -71,7 +71,7 @@ $project__height: $content__height;
 			&._all{
 				max-height: calc(100vh * 3);
 
-				transition: max-height calc($trsn * 3);
+				// transition: max-height calc($trsn * 3);
 			}
 		}
 		&list{

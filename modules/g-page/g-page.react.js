@@ -33,13 +33,13 @@ export default class Page extends Component {
 		const {
 			preloading
 		} = this.state
-
+		const pageName = pathname.split('/')[1]
 		const key =
 			section
 				? section
 				: project
 					? project
-					: pathname.split('/')[1] || 'root'
+					: pageName || 'root'
 
 		return (
 			<div
@@ -50,7 +50,7 @@ export default class Page extends Component {
 				<div className="g-page__line"></div>
 				<ReactCSSTransitionGroup
 					component="div"
-					className={`g-page__main g-page__main--${pathname.split('/')[1]}`}
+					className={`g-page__main g-page__main--${pageName}`}
 					transitionName="anim"
 					transitionLeaveTimeout={config.trs * 2}
 					transitionEnterTimeout={config.trs * 2}
