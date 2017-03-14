@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "375cb923cb8b0ae48f2e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "520773560647cf001ebc"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33349,15 +33349,15 @@
 						"main": {
 							"component": "Text",
 							"content": {
-								"text": "Основная функция — контроль качества выполняемых работ.\nКаждое направление курирует свой инженер.\nКаждый пишет свою программу индивидуальных\nиспытаний. При этом каждый, отвечая за свое направление,\nработает в команде."
+								"text": "Инженер – человек, способный взять теорию и приделать к ней колеса."
 							}
 						}
 					},
 					{
 						"title": "Инженер по ОТ и ТБ",
 						"quote": {
-							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
-							"author": "Дейл Карнеги"
+							"text": "Мужество — это искусство сохранять достоинство под прессом дурных обстоятельств.",
+							"author": "Уинстон Черчилль"
 						},
 						"bg": "about_team_4.jpg",
 						"main": {
@@ -33377,14 +33377,14 @@
 						"main": {
 							"component": "Text",
 							"content": {
-								"text": "Весь процесс строительства проходит под постоянным\nконтролем сотрудников отдела контроля качества.\nОтдел контроля качества работает независимо\nот проектной команды, обеспечивает контроль качества\nстроительных работ, а также ведет мониторинг\nтехнического состояния строительной площадки."
+								"text": "Если бы технология действовала безошибочно, мы все остались бы без работы."
 							}
 						}
 					},
 					{
 						"title": "Вся компания работает\nна реализацию проекта",
 						"quote": {
-							"text": "Будьте заняты. Это самое дешевое лекарство на земле\n— и одно из самых эффективных.",
+							"text": "Для мудрого человека каждый день начинается новая жизнь.",
 							"author": "Дейл Карнеги"
 						},
 						"bg": "about_team_6.jpg",
@@ -45555,10 +45555,12 @@
 	        var props = _objectWithoutProperties(_props, ["mask", "alwaysShowMask", "maskChar", "formatChars"]);
 
 	        if (this.mask) {
-	            var handlersKeys = ["onFocus", "onBlur", "onChange", "onKeyDown", "onKeyPress", "onPaste"];
-	            handlersKeys.forEach(function (key) {
-	                props[key] = _this7[key];
-	            });
+	            if (!props.disabled && !props.readOnly) {
+	                var handlersKeys = ["onFocus", "onBlur", "onChange", "onKeyDown", "onKeyPress", "onPaste"];
+	                handlersKeys.forEach(function (key) {
+	                    props[key] = _this7[key];
+	                });
+	            }
 
 	            if (props.value != null) {
 	                props.value = this.state.value;
